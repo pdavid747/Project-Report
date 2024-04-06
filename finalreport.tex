@@ -195,7 +195,7 @@ The quadcopter we have designed has an X configuration where each motor lies at 
 
 \begin{figure}[h] % 'h' for 'here'
   \centering
-  \includegraphics[width=0.35\textwidth]{Quad.jpg} 
+  \includegraphics[width=0.35\textwidth]{Pictures/Quad.jpg} 
   \caption{Bzzz quadcopter}
   \label{fig:QuadDiagram}
 \end{figure}
@@ -204,7 +204,7 @@ quadcopter is shaped like an 'X,' with each arm extending diagonally from the ce
 \subsection*{Frame}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{frame_housing.png} 
+  \includegraphics[width=0.35\textwidth]{Pictures/frame_housing.png} 
   \caption{Central hub attached to the arms}
   \label{fig:Central_hub_arms}
 \end{figure}
@@ -221,7 +221,7 @@ quadcopter is shaped like an 'X,' with each arm extending diagonally from the ce
 \subsection*{Landing gear}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{legs_baseplate.png} 
+  \includegraphics[width=0.35\textwidth]{Pictures/legs_baseplate.png} 
   \caption{Quadcopter legs feet and dampers}
   \label{fig:feet_dampers}
 \end{figure}
@@ -236,7 +236,7 @@ quadcopter is shaped like an 'X,' with each arm extending diagonally from the ce
 \subsection*{Electronic housing}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{electronic_housing.png} 
+  \includegraphics[width=0.35\textwidth]{Pictures/electronic_housing.png} 
   \caption{Electronic Housing}
   \label{fig:electronic_housing}
 \end{figure}
@@ -364,7 +364,7 @@ In this section we will go through the quadcopters dynamics and how we can manip
   \centering
   \begin{tikzpicture}
     % Place the image in the document
-    \node[anchor=south west, inner sep=0] (image) at (0,0) {\includegraphics[width=0.45\textwidth]{Quad.jpg}};
+    \node[anchor=south west, inner sep=0] (image) at (0,0) {\includegraphics[width=0.45\textwidth]{Pictures/Quad.jpg}};
     % Set the origin of the diagram in the middle of the quadcopter
     \coordinate (O) at ($(image.south west)!0.5!(image.north east) + (0,-1cm)$);
   
@@ -1350,7 +1350,7 @@ Where, \( \sigma_{\text{barom}}, \sigma_{\text{gps}}, \sigma_{\text{ToF}} \) are
 In the fist simulation \(\alpha\) and \(\beta\) along with the Time of Flight bias (\(d^{ToF}\)), Barometer bias (\(d^{bar}\)), altitude velocity and throttle refferance are being predicted.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{no_constant_PD.png}
+  \includegraphics[width=0.5\textwidth]{Pictures/no_constant_PD.png}
   \caption{Simulation1: Both alpha and beta being predicted}
   \label{fig:no_constant_PD}
 \end{figure}
@@ -1377,7 +1377,7 @@ filter's skilful tracking and estimation of critical system parameters and senso
 In the second simulation \(\alpha\) is set at as a constant and \(\beta\) is estimated along with the Time of Flight bias (\(d^{ToF}\)), Barometer bias (\(d^{bar}\)), altitude velocity and throttle reference are being predicted.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{a_constant_PD.png}
+  \includegraphics[width=0.5\textwidth]{Pictures/a_constant_PD.png}
   \caption{Simulation2: constant alpha and beta being predicted}
   \label{fig:a_constant_PD}
 \end{figure}
@@ -1402,7 +1402,7 @@ the potential for instability from abrupt changes. With the Kalman filter's prec
 In the third simulation \(\beta\) is set at as a constant and \(\alpha\) is estimated along with the Time of Flight bias (\(d^{ToF}\)), Barometer bias (\(d^{bar}\)), altitude velocity and throttle reference are being predicted.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{b_constant_PD.png}
+  \includegraphics[width=0.5\textwidth]{Pictures/b_constant_PD.png}
   \caption{Simulation3: constant beta and alpha being predicted}
   \label{fig:b_constant_PD}
 \end{figure}
@@ -1446,7 +1446,7 @@ This section outlines the various harware that is used in forming the overall st
 \subsection{Motors}\label{motors}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\textwidth]{motors.png} 
+  \includegraphics[width=0.3\textwidth]{Pictures/motors.png} 
   \caption{1400KV Brushless Motor}
   \label{fig:motor}
 \end{figure}
@@ -1458,14 +1458,14 @@ The motor is suitable for use with 3-4 cell batteries, again making it compatibl
 \subsection{Radio}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\textwidth]{radio.jpg};
+  \includegraphics[width=0.4\textwidth]{Pictures/radio.jpg};
   \caption{Radio Controller with Pitch, Roll, Yaw, and Throttle Indicators}
   \label{fig:radio_controller}
 \end{figure}
 \subsection{Receiver}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\textwidth]{reciever.png}
+  \includegraphics[width=0.3\textwidth]{Pictures/reciever.png}
   \caption{Radiolink R12DS 2.4GHz RC Receiver}
   \label{fig:receiver}
 \end{figure}
@@ -1518,7 +1518,7 @@ While tuning the altitude hold controller, the Raspberry Pi uses the gains 1 and
 \subsection{Flight Controller}\label{flight_controller}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{flight_controller.png}
+  \includegraphics[width=0.35\textwidth]{Pictures/flight_controller.png}
   \caption{Flight controller}
   \label{fig:flightController}
 \end{figure}
@@ -1530,7 +1530,7 @@ The flight controller is made up of two main components:
 \subsubsection{Raspberry Pi}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\textwidth]{raspberry_pi.png}
+  \includegraphics[width=0.3\textwidth]{Pictures/raspberry_pi.png}
   \caption{Raspberry Pi}
   \label{fig:rasberry_pi}  
 \end{figure}
@@ -1546,7 +1546,7 @@ using an altitude hold control algorithm and a Kalman filter. When in position c
 \subsubsection{ESP32}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\textwidth]{esp32.png}
+  \includegraphics[width=0.3\textwidth]{Pictures/esp32.png}
   \caption{esp32}
   \label{fig:esp32}
 \end{figure}
@@ -1561,7 +1561,7 @@ throttle configurations. It then sends back flight information to ensure coordin
 \subsection{Inertial Measurement Unit (IMU)}\label{IMU}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.2\textwidth]{IMU.png}
+  \includegraphics[width=0.2\textwidth]{Pictures/IMU.png}
   \caption{IMU}
   \label{fig:IMU}
 \end{figure}
@@ -1585,7 +1585,7 @@ measurement scales for its sensors, with the specific ranges employed in the qua
 \subsection{ESC's (Electronic Speed Controller)}\label{esc}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{esc.png}
+  \includegraphics[width=0.35\textwidth]{Pictures/esc.png}
   \caption{ESC (Electronic Speed Controller)}
   \label{fig:esc}
 \end{figure}
@@ -1598,7 +1598,7 @@ A longer ’on’ time (wider pulse) means more power is delivered to the motor,
 \subsection{Power Distribution board}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{power_distribution_and_escs.png}
+  \includegraphics[width=0.5\textwidth]{Pictures/power_distribution_and_escs.png}
   \caption{Power distribution board}
   \label{fig:power_distribution}
 \end{figure}
@@ -1606,7 +1606,7 @@ A longer ’on’ time (wider pulse) means more power is delivered to the motor,
 \subsection{Propellers}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{props.png}
+  \includegraphics[width=0.35\textwidth]{Pictures/props.png}
   \caption{propellers}
   \label{fig:propellers}
 \end{figure}
@@ -1623,7 +1623,7 @@ For more information on how these propellers generate thrust, counteract rotatio
 \subsection{Voltage Regulator}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{voltage_regulator.png}
+  \includegraphics[width=0.35\textwidth]{Pictures/voltage_regulator.png}
   \caption{Voltage regulator}
   \label{fig:voltage_regulator}
 \end{figure}
@@ -1634,7 +1634,7 @@ is adjustable between 5V and 12V, catering to various components. Additionally, 
 \subsection{Battery}\label{battery}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{battery.png}
+  \includegraphics[width=0.35\textwidth]{Pictures/battery.png}
   \caption{battery}
   \label{fig:battery}
 \end{figure}
@@ -1657,13 +1657,13 @@ This section outlines the various different sensors that were used on the quadco
   \begin{figure}[H]
     \begin{minipage}{0.5\textwidth}
       \centering
-      \includegraphics[width=0.5\textwidth]{gnss_rover.png}
+      \includegraphics[width=0.5\textwidth]{Pictures/gnss_rover.png}
       \caption{GNSS Rover module}
       \label{fig:gnss_rover}
     \end{minipage}
     \begin{minipage}{0.5\textwidth}
       \centering
-      \includegraphics[width=0.5\textwidth]{quad_antenna.png}
+      \includegraphics[width=0.5\textwidth]{Pictures/quad_antenna.png}
       \caption{Quadcopter antenna}
       \label{fig:Quadcopter antenna}
   \end{minipage}
@@ -1682,13 +1682,13 @@ the quadcopter with unparalleled precision in its operations, making it exceptio
 \begin{figure}[H]
   \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=0.5\textwidth]{gnss_base_station.png}
+    \includegraphics[width=0.5\textwidth]{Pictures/gnss_base_station.png}
     \caption{GNSS Base Station module}
     \label{fig:gnss_base_station}
   \end{minipage}
   \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=0.5\textwidth]{base_station_antenna.png}
+    \includegraphics[width=0.5\textwidth]{Pictures/base_station_antenna.png}
     \caption{Base Station antenna}
     \label{fig:base_station_antenna}
   \end{minipage}
@@ -1704,13 +1704,13 @@ autonomous flying systems depend on high positioning precision and dependabilit
 \begin{figure}[H]
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=0.7\textwidth]{base_station_box.png}
+    \includegraphics[width=0.7\textwidth]{Pictures/base_station_box.png}
     \caption{Base station container}
     \label{fig:Base_station_container}
   \end{minipage}
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=0.4\textwidth]{base_station_stand.jpg}
+    \includegraphics[width=0.4\textwidth]{Pictures/base_station_stand.jpg}
     \caption{Base station stand with antenna}
     \label{fig:Base_station_stand}
   \end{minipage}
@@ -1721,7 +1721,7 @@ rover module, the telemetry radio—which is essential for transmitting correcti
 An essential part of the high-performance GNSS base station module is the Taoglas A.80 L1/L2 GNSS Antenna (figure:\ref{fig:base_station_antenna}). In order to ensure that the base station can efficiently support precise positioning for the GNSS rover module, this antenna was installed on a tripod to secure its position and optimise signal reception (figure:\ref{fig:Base_station_stand}) for RCTCM corrections. 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\textwidth]{telemetry radio.png}
+  \includegraphics[width=0.3\textwidth]{Pictures/telemetry radio.png}
   \caption{telemetry radio for transmitting correction data}
   \label{fig:telemetry_radio}
 \end{figure}
@@ -1731,7 +1731,7 @@ It's important to ensure that the radio telemetry is properly configured to comm
 \subsubsection{Time of Flight sensor}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\textwidth]{ToF_sensor.png}
+  \includegraphics[width=0.3\textwidth]{Pictures/ToF_sensor.png}
   \caption{Time of Flight sensor}
   \label{fig:ToF}
 \end{figure}
@@ -1742,7 +1742,7 @@ the backboard, totalling 12g. The device is also CE certified for eye safety.
 \subsubsection{Barometer}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.2\textwidth]{bmp180.png}
+  \includegraphics[width=0.2\textwidth]{Pictures/bmp180.png}
   \caption{Pressure sensor}
   \label{fig:bmp180}
 \end{figure}
@@ -1752,7 +1752,7 @@ low noise levels. Its pressure measuring range is 300 hPa to 1100 hPa, which all
 \subsubsection{Anemometer}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\textwidth]{Anemometer.png}
+  \includegraphics[width=0.4\textwidth]{Pictures/Anemometer.png}
   \caption{Anemometer}
   \label{fig:Anemometer}
 \end{figure}
@@ -1760,7 +1760,7 @@ low noise levels. Its pressure measuring range is 300 hPa to 1100 hPa, which all
 \subsection{Hardware schematic}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{Hardware_schematic.png}
+  \includegraphics[width=0.8\textwidth]{Pictures/Hardware_schematic.png}
   \caption{Hardware schematic}
   \label{fig:hardware_schematic}
 \end{figure}
@@ -1854,20 +1854,20 @@ In order to form the flight controller, Two PCB's were designed one for Anemomet
 \begin{figure}[H]
   \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=0.5\textwidth]{Pi_PCB_bottom.png}
+    \includegraphics[width=0.5\textwidth]{Pictures/Pi_PCB_bottom.png}
     \caption{Pi PCB (bottom)}
     \label{fig:Pi_PCB_bottom}
   \end{minipage}
   \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=0.5\textwidth]{Pi_PCB_top.png}
+    \includegraphics[width=0.5\textwidth]{Pictures/Pi_PCB_top.png}
     \caption{Pi PCB (top)}
     \label{fig:Pi_PCB_top}
   \end{minipage}
 \end{figure}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{Pi_PCB_on_Pi.png}
+  \includegraphics[width=0.35\textwidth]{Pictures/Pi_PCB_on_Pi.png}
   \caption{Pi PCB attached to Pi}
   \label{fig:Pi_PCB_on_Pi}
 \end{figure}
@@ -1879,7 +1879,7 @@ The mounting holes at the four corners of the PCB are used to fasten the board t
 \subsubsection{ESP PCB}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{Esp_IMU_board.png}
+  \includegraphics[width=0.35\textwidth]{Pictures/Esp_IMU_board.png}
   \caption{ESP32 PCB with IMU attached}
   \label{fig:Esp_IMU_PCB}
 \end{figure}
@@ -1889,7 +1889,7 @@ The ESP, the IMU, and the buzzer can all be accommodated on the board. Furthermo
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.35\textwidth]{flight_controller.png}
+  \includegraphics[width=0.35\textwidth]{Pictures/flight_controller.png}
   \caption{Flight controller}
   \label{fig:flightController2}
 \end{figure}
@@ -1900,7 +1900,7 @@ The USB connection between the Raspberry Pi and the ESP32 completes this assembl
 \subsubsection{Sensor PCB}\label{sensorpcb}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\textwidth]{sensorpcb.png}
+  \includegraphics[width=0.3\textwidth]{Pictures/sensorpcb.png}
   \caption{Sensor PCB, including ToF and Barometer sensors}
   \label{fig:sensorpcb}
 \end{figure}
