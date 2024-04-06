@@ -28,23 +28,23 @@
 \contentsline {subsubsection}{\numberline {3.4.2}ESP32}{38}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}Inertial Measurement Unit (IMU)}{39}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}ESC's (Electronic Speed Controller)}{40}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Power Distribution board}{40}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Propellers}{41}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}Voltage Regulator}{41}{subsection.3.9}%
-\contentsline {subsection}{\numberline {3.10}Battery}{42}{subsection.3.10}%
-\contentsline {subsection}{\numberline {3.11}Sensors}{42}{subsection.3.11}%
-\contentsline {subsubsection}{\numberline {3.11.1}GNSS Rover Module}{43}{subsubsection.3.11.1}%
-\contentsline {subsubsection}{\numberline {3.11.2}GNSS Base Station}{44}{subsubsection.3.11.2}%
-\contentsline {subsubsection}{\numberline {3.11.3}Base station container and stand}{45}{subsubsection.3.11.3}%
-\contentsline {subsubsection}{\numberline {3.11.4}Time of Flight sensor}{46}{subsubsection.3.11.4}%
-\contentsline {subsubsection}{\numberline {3.11.5}Barometer}{46}{subsubsection.3.11.5}%
-\contentsline {subsubsection}{\numberline {3.11.6}Anemometer}{47}{subsubsection.3.11.6}%
-\contentsline {subsection}{\numberline {3.12}Hardware schematic}{47}{subsection.3.12}%
-\contentsline {subsection}{\numberline {3.13}Cost of materials}{48}{subsection.3.13}%
-\contentsline {subsection}{\numberline {3.14}PCB design}{50}{subsection.3.14}%
-\contentsline {subsubsection}{\numberline {3.14.1}Raspberry Pi PCB}{50}{subsubsection.3.14.1}%
-\contentsline {subsubsection}{\numberline {3.14.2}ESP PCB}{51}{subsubsection.3.14.2}%
-\contentsline {subsubsection}{\numberline {3.14.3}Sensor PCB}{52}{subsubsection.3.14.3}%
+\contentsline {subsection}{\numberline {3.7}Propellers}{40}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Voltage Regulator}{41}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Battery}{41}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Sensors}{42}{subsection.3.10}%
+\contentsline {subsubsection}{\numberline {3.10.1}GNSS Rover Module}{42}{subsubsection.3.10.1}%
+\contentsline {subsubsection}{\numberline {3.10.2}GNSS Base Station}{43}{subsubsection.3.10.2}%
+\contentsline {subsubsection}{\numberline {3.10.3}Base station container and stand}{44}{subsubsection.3.10.3}%
+\contentsline {subsubsection}{\numberline {3.10.4}Time of Flight sensor}{45}{subsubsection.3.10.4}%
+\contentsline {subsubsection}{\numberline {3.10.5}Barometer}{45}{subsubsection.3.10.5}%
+\contentsline {subsubsection}{\numberline {3.10.6}Anemometer}{46}{subsubsection.3.10.6}%
+\contentsline {subsection}{\numberline {3.11}Hardware schematic}{46}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}Cost of materials}{47}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}PCB design}{49}{subsection.3.13}%
+\contentsline {subsubsection}{\numberline {3.13.1}Raspberry Pi PCB}{49}{subsubsection.3.13.1}%
+\contentsline {subsubsection}{\numberline {3.13.2}ESP PCB}{50}{subsubsection.3.13.2}%
+\contentsline {subsubsection}{\numberline {3.13.3}Sensor PCB}{51}{subsubsection.3.13.3}%
+\contentsline {subsubsection}{\numberline {3.13.4}Power Distribution PCB}{51}{subsubsection.3.13.4}%
 \contentsline {section}{\numberline {4}Software}{52}{section.4}%
 \contentsline {section}{\numberline {5}Altitude control}{52}{section.5}%
 \contentsline {section}{\numberline {6}Position control}{52}{section.6}%

@@ -1595,14 +1595,6 @@ batteries (section:\ref{battery}). To guarantee durability and dependability, it
 The ESC controllers work by receiving a digital signal, known as Pulse-Width Modulation (PWM) which have a pulse, the ’width’ of these pulses (i.e., how long they stay ’on’ versus ’off’ in a given cycle) is adjusted to control the speed of the motor. This is known as the duty cycle.
 A longer ’on’ time (wider pulse) means more power is delivered to the motor, making it spin faster. The ESC also includes features like a built-in BEC to power flight controllers and safety protocols for heat and voltage protection, ensuring reliable operation.
 
-\subsection{Power Distribution board}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{Pictures/power_distribution_and_escs.png}
-  \caption{Power distribution board}
-  \label{fig:power_distribution}
-\end{figure}
-
 \subsection{Propellers}
 \begin{figure}[H]
   \centering
@@ -1651,7 +1643,7 @@ The battery's weight and dimensions are indicative of its high capacity and vol
 often a JST-XH connector and is used for balance charging. This keeps the battery's general health and efficiency intact by ensuring that each cell is charged equally.
 
 \subsection{Sensors}
-This section outlines the various different sensors that were used on the quadcopter, delving into the specs....
+This section outlines the various different sensors that were used on the quadcopter, delving into the specs, compatibility and test performance. The analysis includes an examination of the sensors' roles in navigation, stabilization, and telemetry data acquisition
 \subsection*{GNSS modules}
 \subsubsection{GNSS Rover Module}
   \begin{figure}[H]
@@ -1907,6 +1899,21 @@ The USB connection between the Raspberry Pi and the ESP32 completes this assembl
 The sensor PCB is designed to be installed at the quadcopter's base attached to the baseplate. By ensuring that the Time-of-Flight (ToF) and Barometer sensors are exposed to the environment without obstruction, a crucial aspect for accurate measurements, this placement optimises their operation. The sensors are positioned strategically to reduce interference from other electronics and to provide a steady platform for the correct collection of altitude data, 
 which is essential to the flight control system. The method of establishing communication between the Raspberry Pi and the Sensor PCB involves attaching a Flexible Flat Cable (FFC) to the IDC ribbon cable connector. The ToF sensor is attached via bolts and the barometer is soldered on.
 
+\subsubsection{Power Distribution PCB}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Pictures/power_distribution_and_escs.png}
+  \caption{Power distribution board}
+  \label{fig:power_distribution}
+\end{figure}
+The power distribution PCB depicted above in figure:\ref{fig:power_distribution} is the central hub for distributing powers across the quadcopter. Each Electronic Speed Controller (ESC) is connected to the PDB, which receives power from the main battery. The ESCs then regulate the power to the motors, adjusting speed and rotation based on the 
+control signals received, via PWM (Pulse Width Modulation) from the flight controller.
+
+The ESCs are essential for supplying the controlled, variable power required for the exact movements of the quadcopter. They are coupled to their respective motors. The quadcopter's manoeuvrability is made possible by the ESCs, which make sure the motors react appropriately to inputs from the flight controller. The PDB guarantees that all 
+the electronic components receive the power they require.
+
+Stable power delivery to the flight controller is ensured by the voltage regulator, which is essential for its computational tasks and stability functions. It powers vital navigation and control systems, such as the GNSS module, IMU, Anemometer, ToF sensor and Barometer, by converting the battery's fluctuating voltage to a constant level, 
+which helps the quadcopter fly precisely and steadily.
 \section{Software}
 
 \section{Altitude control}
