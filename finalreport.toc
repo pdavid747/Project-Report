@@ -1,0 +1,50 @@
+\contentsline {section}{\numberline {1}Introduction}{7}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Literature review}{7}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Methodology}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Structure of the quadcopter}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Thrust Overview}{13}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Quadcopter position manipulation}{14}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Electronic Speed Controllers (ESCs)}{15}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Pitch}{15}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Roll}{16}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Yaw}{17}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}IMU(Inertial Measurement Unit)}{19}{subsubsection.2.3.5}%
+\contentsline {subsubsection}{\numberline {2.3.6}Flight controller}{19}{subsubsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.4}Control and Estimation}{19}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Quaternians}{19}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Attitude dynamics}{21}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Altitude control}{22}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}PD control}{27}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Simulations}{29}{subsubsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.5}Position control}{34}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}PID control}{34}{subsubsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.6}Simulations}{34}{subsection.2.6}%
+\contentsline {section}{\numberline {3}hardware}{34}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Motors}{34}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Radio}{35}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Receiver}{35}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Flight Controller}{37}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Raspberry Pi}{37}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}ESP32}{38}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Inertial Measurement Unit (IMU)}{39}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}ESC's (Electronic Speed Controller)}{40}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Power Distribution board}{40}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Propellers}{41}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Voltage Regulator}{41}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Battery}{42}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Sensors}{42}{subsection.3.11}%
+\contentsline {subsubsection}{\numberline {3.11.1}GNSS Rover Module}{43}{subsubsection.3.11.1}%
+\contentsline {subsubsection}{\numberline {3.11.2}GNSS Base Station}{44}{subsubsection.3.11.2}%
+\contentsline {subsubsection}{\numberline {3.11.3}Base station container and stand}{45}{subsubsection.3.11.3}%
+\contentsline {subsubsection}{\numberline {3.11.4}Time of Flight sensor}{46}{subsubsection.3.11.4}%
+\contentsline {subsubsection}{\numberline {3.11.5}Barometer}{46}{subsubsection.3.11.5}%
+\contentsline {subsubsection}{\numberline {3.11.6}Anemometer}{47}{subsubsection.3.11.6}%
+\contentsline {subsection}{\numberline {3.12}Hardware schematic}{47}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}Cost of materials}{48}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}PCB design}{50}{subsection.3.14}%
+\contentsline {subsubsection}{\numberline {3.14.1}Raspberry Pi PCB}{50}{subsubsection.3.14.1}%
+\contentsline {subsubsection}{\numberline {3.14.2}ESP PCB}{51}{subsubsection.3.14.2}%
+\contentsline {subsubsection}{\numberline {3.14.3}Sensor PCB}{52}{subsubsection.3.14.3}%
+\contentsline {section}{\numberline {4}Software}{52}{section.4}%
+\contentsline {section}{\numberline {5}Altitude control}{52}{section.5}%
+\contentsline {section}{\numberline {6}Position control}{52}{section.6}%
