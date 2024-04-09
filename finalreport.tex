@@ -12,6 +12,7 @@
 \usepackage{fancyhdr} 
 \usepackage{tikz}
 \usepackage{setspace}
+\usepackage{caption}
 \usepackage{booktabs}
 
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning, 3d,calc}
@@ -1993,13 +1994,45 @@ The quadcopter was placed on digital scales and the lift (in g) was measured for
 \subsection*{Altitude control whilst quadcopter is static}
 \subsection*{Quadcopter moving whilst in altitude control mode}
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Pictures/Altitude_hold_test_moving.png}
-  \caption{Altitude hold test whilst quadcopter is moving}
-  \label{fig:Altitude_hold_test_moving}
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Pictures/Altitude_hold_test_moving.png}
+    \captionsetup{justification=centering}
+    \caption{Altitude control test \\ whilst quadcopter is moving}
+    \label{fig:Altitude_hold_test_moving}
+  \end{minipage}
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Pictures/GNSS_Altitude_hold_test_moving.png}
+    \captionsetup{justification=centering}
+    \caption{GNSS Data from Altitude \\ Control flight path}
+    \label{fig:GNSS_Altitude_hold_test_moving}
+  \end{minipage}
 \end{figure}
+In this test, the quadcopter was taken off and landed as normal. During the flight the altitude control feature was initalised on the quadcopter and flown the quadcopter, flying in a radius of around 10m, shown in figure:\ref{fig:GNSS_Altitude_hold_test_moving}.
+
+It is crucial to take into account the circumstances and external influences that might have affected the recorded outcomes when assessing how well the quadcopter's altitude control capability performed. The quadcopter flew with an altitude accuracy of about 0.6 metres from the reference altitude of 3.1m, as stated in the test description. 
+This indicates a reasonably stable performance while operating in the altitude control mode. This degree of accuracy is impressive, especially in light of the difficulties caused by outside variables like strong winds and the dynamics of the quadcopter's motion.
+
+The disparity in altitude control, as seen in figure:\ref{fig:Altitude_hold_test_moving},can be linked to the high wind velocity that was present throughout the test. Because wind exerts unpredictable forces on the quadcopter, it can create significant unpredictability in altitude control, making it more difficult to keep a steady altitude.
+
+Furthermore, altitude control may become even more challenging due to the quadcopter's movement, particularly when it involves pitch and roll changes. A forward/backword pitch or left/right roll can cause a drop in altitude if it isn't corrected for by increasing the throttle, as figure:\ref{fig:ToF_altitude_error} shows bellow. This is due to the 
+fact that when the quadcopter is tilted forward or sidewards for movement, it directs some of the thrust horizontally, thereby reducing the vertical thrust component that counteracts gravity. In such cases, in order to maintain the required height, the altitude control system has to dynamically adjust the throttle which can cause the controler to osolate between movements.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Pictures/ToF_altitude_error.png}
+  \caption{Moving quadcopter causing an decrease in altitude if throttle percentage is kept the same}
+  \label{fig:ToF_altitude_error}
+\end{figure}
+
+In light of the operational and environmental difficulties encountered, the quadcopter's performance in the altitude control mode, as proven in this test, was deemed good. Even if there is still space for development, the altitude accuracy of 0.6 metres from the reference altitude shows that the system is capable of handling external elements 
+like wind and movement dynamics. It can be further with additional calibration of the P and D values in the controller. The altitude control capability will need to be continuously improved and tested in a variety of scenarios in order to function more precisely and consistently.
+
 \subsection{Position control}
 
+\section{Time analysis}
+\section{Objective analysis}
 \bibliographystyle{IEEEtran}
 \bibliography{finalReport.bib}
 
