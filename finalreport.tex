@@ -2,7 +2,7 @@
 
 \RequirePackage{units}
 \usepackage{amsmath,amsfonts,amssymb,mathtools}
-\usepackage[margin=1.2in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{graphicx} 
 \usepackage{float}
 \usepackage{pgfplots}
@@ -945,7 +945,7 @@ Let \( y_{t}^z = z_t \) be the output equation of the system.
   The experimental results are shown in Figure \ref{fig:liftpwm}, from
   which it seems that a reasonable model for the lifting force is
   \begin{equation}
-    F_{\rm prop} = \alpha \tau + \beta_0,
+    F_{\rm prop} = \alpha_0 \tau + \beta_0,
     \label{eq:Fprop}
   \end{equation}
   where $\alpha_0>0$ and $\beta_0<0$ are constants, which depend on the level of
@@ -953,6 +953,57 @@ Let \( y_{t}^z = z_t \) be the output equation of the system.
   estimated from the data shown in Figure \ref{fig:liftpwm}, their exact
   value is unknown while flying.
   
+  \begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+          width= 2.2in,
+          height=1.2in,
+          scale only axis,
+          ylabel={Lift (g)},
+          xlabel={Throttle reference (\%)},
+          xmajorgrids,
+          ymajorgrids,
+          ylabel near ticks,
+          xmin=10, xmax=40,
+          ymin=0, ymax=2500,
+          legend columns=1,
+          legend style={fill=white, fill opacity=0.4, text opacity=1, font=\scriptsize},
+          legend style={at={(axis cs:10.5,2450)},anchor=north west},
+          legend cell align={left},
+        ]
+  
+        \addplot[mark=x, blue, only marks, line width=1.2pt]
+        table
+          [x=throttle_percentage, y=weight_decrease, col sep=comma]
+          {Data/1045_full.csv};
+        \addlegendentry{Full battery ($R^2=99.99\%$)};
+  
+        \addplot[mark=none, blue!50, only marks, line width=1.2pt, mark=x]
+        table
+          [x=throttle_percentage, y=weight_decrease, col sep=comma]
+          {Data/1045_low.csv};
+        \addlegendentry{Low battery ($R^2=90.1\%$)};
+  
+  
+        \addplot[domain=0:50, blue, dashed]
+        table
+          [x=throttle_percentage, y = {create col/linear regression = {y=weight_decrease}}, col sep=comma]
+          {Data/1045_full.csv};
+        \addplot[no marks, blue, dashed, domain=0:50]{\pgfplotstableregressiona*x+\pgfplotstableregressionb};
+  
+        \addplot[domain=0:50, blue!50, dashed]
+        table
+          [x=throttle_percentage, y = {create col/linear regression = {y=weight_decrease}}, col sep=comma]
+          {Data/1045_low.csv};
+        \addplot[no marks, blue!50, dashed, domain=0:50]{\pgfplotstableregressiona*x+\pgfplotstableregressionb};
+  
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Static lift (g) plotted against throttle reference (\%).}
+    \label{fig:liftpwm}
+  \end{figure}
+
   From the model of Equation \eqref{eq:Fprop}, the total acceleration is
   \begin{equation}
     a
@@ -995,57 +1046,7 @@ Let \( y_{t}^z = z_t \) be the output equation of the system.
   Note that this system is at equilibrium whenever $\alpha \tau_t + \beta = 0$,
   that is, equivalently, $\tau_t = -\beta / \alpha$. This defines the \textit{hovering
     throttle signal}, $\tau^{\rm eq} = -\beta / \alpha$.
-  
-    \begin{figure}[h]
-        \centering
-        \begin{tikzpicture}
-          \begin{axis}[
-              width= 2.2in,
-              height=1.2in,
-              scale only axis,
-              ylabel={Lift (g)},
-              xlabel={Throttle reference (\%)},
-              xmajorgrids,
-              ymajorgrids,
-              ylabel near ticks,
-              xmin=10, xmax=40,
-              ymin=0, ymax=2500,
-              legend columns=1,
-              legend style={fill=white, fill opacity=0.4, text opacity=1, font=\scriptsize},
-              legend style={at={(axis cs:10.5,2450)},anchor=north west},
-              legend cell align={left},
-            ]
-      
-            \addplot[mark=x, blue, only marks, line width=1.2pt]
-            table
-              [x=throttle_percentage, y=weight_decrease, col sep=comma]
-              {Data/1045_full.csv};
-            \addlegendentry{Full battery ($R^2=99.99\%$)};
-      
-            \addplot[mark=none, blue!50, only marks, line width=1.2pt, mark=x]
-            table
-              [x=throttle_percentage, y=weight_decrease, col sep=comma]
-              {Data/1045_low.csv};
-            \addlegendentry{Low battery ($R^2=90.1\%$)};
-      
-      
-            \addplot[domain=0:50, blue, dashed]
-            table
-              [x=throttle_percentage, y = {create col/linear regression = {y=weight_decrease}}, col sep=comma]
-              {Data/1045_full.csv};
-            \addplot[no marks, blue, dashed, domain=0:50]{\pgfplotstableregressiona*x+\pgfplotstableregressionb};
-      
-            \addplot[domain=0:50, blue!50, dashed]
-            table
-              [x=throttle_percentage, y = {create col/linear regression = {y=weight_decrease}}, col sep=comma]
-              {Data/1045_low.csv};
-            \addplot[no marks, blue!50, dashed, domain=0:50]{\pgfplotstableregressiona*x+\pgfplotstableregressionb};
-      
-          \end{axis}
-        \end{tikzpicture}
-        \caption{Static lift (g) plotted against throttle reference (\%).}
-        \label{fig:liftpwm}
-    \end{figure}
+
 
     \subsubsection*{Estimator Design}\label{estimator_design}
     \subsubsection*{State Vector Definition}
@@ -1097,7 +1098,7 @@ Let \( y_{t}^z = z_t \) be the output equation of the system.
     \end{bmatrix}
     \end{equation}
     where \( T_s \) is the sampling time, and \( \tau_t \) represents the throttle signal at time \( t \).
-
+  
     \begin{equation}
       x_{t+1} = 
       \begin{bmatrix}
@@ -1350,7 +1351,7 @@ Where, \( \sigma_{\text{barom}}, \sigma_{\text{gps}}, \sigma_{\text{ToF}} \) are
 In the fist simulation \(\alpha\) and \(\beta\) along with the Time of Flight bias (\(d^{ToF}\)), Barometer bias (\(d^{bar}\)), altitude velocity and throttle refferance are being predicted.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{Pictures/no_constant_PD.png}
+  \includegraphics[width=0.9\textwidth]{Pictures/no_constant_PD.png}
   \caption{Simulation1: Both alpha and beta being predicted}
   \label{fig:no_constant_PD}
 \end{figure}
@@ -1377,7 +1378,7 @@ filter's skilful tracking and estimation of critical system parameters and senso
 In the second simulation \(\alpha\) is set at as a constant and \(\beta\) is estimated along with the Time of Flight bias (\(d^{ToF}\)), Barometer bias (\(d^{bar}\)), altitude velocity and throttle reference are being predicted.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{Pictures/a_constant_PD.png}
+  \includegraphics[width=0.9\textwidth]{Pictures/a_constant_PD.png}
   \caption{Simulation2: constant alpha and beta being predicted}
   \label{fig:a_constant_PD}
 \end{figure}
@@ -1402,7 +1403,7 @@ the potential for instability from abrupt changes. With the Kalman filter's prec
 In the third simulation \(\beta\) is set at as a constant and \(\alpha\) is estimated along with the Time of Flight bias (\(d^{ToF}\)), Barometer bias (\(d^{bar}\)), altitude velocity and throttle reference are being predicted.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{Pictures/b_constant_PD.png}
+  \includegraphics[width=0.9\textwidth]{Pictures/b_constant_PD.png}
   \caption{Simulation3: constant beta and alpha being predicted}
   \label{fig:b_constant_PD}
 \end{figure}
@@ -1619,9 +1620,11 @@ For more information on how these propellers generate thrust, counteract rotatio
   \caption{Voltage regulator}
   \label{fig:voltage_regulator}
 \end{figure}
-******************************************
-The Matek Systems Matek - UBEC DUO is a dual-output voltage regulator designed for RC models and quadcopters, it provides versatility in power management. It supports a wide input voltage range and offers two output channels with significant current capabilities. One channel is fixed at 5V, suitable for receivers or flight controllers, while the other 
-is adjustable between 5V and 12V, catering to various components. Additionally, it features a remote-controllable power switch, enhancing its utility in managing electronic devices in the drone.
+
+The  Matek Systems Matek - UBEC DUO is a dual-output voltage regulator that offers flexible power management. Wide input voltage range support is provided, and two output channels with substantial power management. While one channel can be adjusted between 5V and 12V to accommodate different components, the other is 
+set at 5V and ideal for receivers or flight controllers.
+
+The GNSS base station module and the flight controller/Raspberry Pi are powered by the voltage regulator on the quadcopter. The GNSS base station is powered by five volts, whereas the flight controller is powered by six, both modules are powered from battery's seen in figure:\ref{battery}.
 
 \subsection{Battery}\label{battery}
 \begin{figure}[H]
@@ -1669,7 +1672,8 @@ for the quadcopter, hence gaining precise position control on the quadcopter.
 To complement the capabilities of the GNSS rover module, it is coupled with the Tallysman 33-SSL889XF L1/L2 GNSS Antenna. This pairing is key to maximizing the performance of the ZED-F9P module, as the Tallysman antenna is designed to optimize signal reception 
 and accuracy for L1/L2 frequencies. Such an integration ensures that the quadcopter benefits from the best possible GNSS performance, crucial for maintaining high precision and reliability in navigation and positioning tasks. This setup is expected to provide 
 the quadcopter with unparalleled precision in its operations, making it exceptionally suited for tasks in accuracy in position control.
-\subsubsection*{Tests performed on the module}
+
+For testing evaluation on this module please see section:\ref{GNSS_rover_module}
 
 \subsubsection{GNSS Base Station}
 \begin{figure}[H]
@@ -1691,7 +1695,8 @@ constellations with 0.2-meter accuracy. This makes it a superior choice when uti
 
 The Taoglas A.80 L1/L2 GNSS Antenna is used in conjunction with the GNSS module to support its exceptional performance. This antenna is a perfect fit for the ZED-F9R module because it is specifically made to improve signal reception and accuracy for L1/L2 frequencies. Advanced navigation and 
 autonomous flying systems depend on high positioning precision and dependability, which is ensured by the synergy between the Taoglas antenna and the GNSS module when provinding the GNSS rover module above with RTCM correction data. Even in challenging conditions, this combination offers a reliable way to provide exact position tracking and navigation capabilities.
-\subsubsection*{Tests performed on the module}
+
+For testing evaluation on this module please see section:\ref{GNSS_base_station}
 
 \subsubsection{GNSS Calibration (U-center)}
 
@@ -1710,7 +1715,7 @@ autonomous flying systems depend on high positioning precision and dependabilit
     \label{fig:Base_station_stand}
   \end{minipage}
 \end{figure}
-A container was created (figure:\ref{fig:Base_station_container}) to guarantee the base station's component organisation and water resistance. The GNSS base station module (figure:\ref{fig:gnss_base_station}), a battery (figure:\ref{fig:battery}), and a voltage regulator (figure:\ref{fig:voltage_regulator}) were all kept secure from water damage within this container. To ensure clear contact with the GNSS 
+A container was designed (figure:\ref{fig:Base_station_container}) to guarantee the base station's component organisation and water resistance. The GNSS base station module (figure:\ref{fig:gnss_base_station}), a battery (figure:\ref{fig:battery}), and a voltage regulator (figure:\ref{fig:voltage_regulator}) were all kept secure from water damage within this container. To ensure clear contact with the GNSS 
 rover module, the telemetry radio—which is essential for transmitting correction data—was placed strategically on the outside (figure:\ref{fig:gnss_rover}).
 
 An essential part of the high-performance GNSS base station module is the Taoglas A.80 L1/L2 GNSS Antenna (figure:\ref{fig:base_station_antenna}). In order to ensure that the base station can efficiently support precise positioning for the GNSS rover module, this antenna was installed on a tripod to secure its position and optimise signal reception (figure:\ref{fig:Base_station_stand}) for RCTCM corrections. 
@@ -1752,6 +1757,14 @@ low noise levels. Its pressure measuring range is 300 hPa to 1100 hPa, which all
   \label{fig:Anemometer}
 \end{figure}
 
+For the purpose of detecting wind speed, the quadcopter's sensor package includes an anemometer, The LI-550 TriSonica Mini in figure:\ref{fig:Anemometer}. Real-time wind measurements are essential for the aircraft's stability and manoeuvrability, particularly when performing precise duties like surveying or search and rescue missions \cite{uav_wilderness_sar}. This advanced anemometer, capable of operating within a broad voltage range of 5 - 32 V and consuming a modest power of 400 mW,ensures reliable performance even in the most demanding environments.
+With its robust design, the anemometer remains functional at altitudes up to 5000 meters and within a wide temperature range of -20 to 72 °C, making it versatile for various atmospheric conditions.
+
+High-tech instruments called ultrasonic anemometers like the LI-550 TriSonica Mini, are used to measure wind directions and speeds very precisely. The system uses the differential time of flight of ultrasonic pulses between pairs of sensors placed at key angles to function. The device determines wind velocity and bearing by computing the variance when wind modifies the speed of these pulses, with an accuacy of 0.2m/s.
+
+The device's high-resolution wind direction readings, which span a range of 0 to 359°, further highlight its remarkable precision in wind speed and direction measurements and guarantee accurate navigation corrections. Real-time, high-fidelity wind data can be obtained using the anemometer's advanced design, which permits a maximum sampling frequency of 40 Hz and ultrasonic frequency settings around 60 kHz. The anemometer's lightweight design, weighing only 50–67 grammes, ensures that its sophisticated features won't negatively affect the quadcopter's payload.
+
+The sensitivity, resolution, and reaction time of the sensor are critical in delivering real-time analytics for the quadcopter's navigation system and data gathering goals. Therefore, in order to accomplish a thorough analysis and improve the quadcopter's capacity to adjust to abrupt gusts or changing wind patterns, this sensor can provide high-resolution data in three-dimensional space.
 \subsection{Hardware schematic}
 \begin{figure}[H]
   \centering
@@ -1866,7 +1879,7 @@ In order to form the flight controller, Two PCB's were designed one for Anemomet
   \caption{Pi PCB attached to Pi}
   \label{fig:Pi_PCB_on_Pi}
 \end{figure}
-The custom designed Raspberry Pi shield is shown in figures:\ref{fig:Pi_PCB_bottom} and \ref{fig:Pi_PCB_top} The radio receiver is connected to the Raspberry Pi GPIO via an SBUS connection in this circuit and the Anemometer and GNSS connections via UART. The Raspberry Pi's SPI, I2C, and UART communication 
+The custom designed Raspberry Pi shield is shown in figures:\ref{fig:Pi_PCB_bottom} and \ref{fig:Pi_PCB_top} The radio receiver is connected to the Raspberry Pi GPIO via an SBUS connection in this circuit and the Anemometer and GNSS connections via UART. The Raspberry Pi's I2C and UART communication 
 pins are linked to a IDC ribbon cable connector for communication with the sensor PCB, see section:\ref{sensorpcb}.
 
 The mounting holes at the four corners of the PCB are used to fasten the board to the Pi after it has been plugged into the Pi's GPIO pins. This is depicted in figure:\ref{fig:Pi_PCB_on_Pi}
@@ -1919,8 +1932,73 @@ Stable power delivery to the flight controller is ensured by the voltage regulat
 which helps the quadcopter fly precisely and steadily.
 \section{Software}
 
-\section{Altitude control}
-\section{Position control}
+\section{Tests}
+
+\subsection{GNSS rover module}\label{GNSS_rover_module}
+\subsection{GNSS base station}\label{GNSS_base_station}
+
+\subsection{Testing initial estimate for \(\alpha_0\) and \(\beta_0\)}
+  \begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+          width= 4in,
+          height=2in,
+          scale only axis,
+          ylabel={Lift (g)},
+          xlabel={Throttle reference (\%)},
+          xmajorgrids,
+          ymajorgrids,
+          ylabel near ticks,
+          xmin=10, xmax=40,
+          ymin=0, ymax=2500,
+          legend columns=1,
+          legend style={fill=white, fill opacity=0.4, text opacity=1, font=\scriptsize},
+          legend style={at={(axis cs:10.5,2450)},anchor=north west},
+          legend cell align={left},
+        ]
+
+        \addplot[mark=x, blue, only marks, line width=1.2pt]
+        table
+          [x=throttle_percentage, y=weight_decrease, col sep=comma]
+          {Data/1045_full.csv};
+        \addlegendentry{Full battery ($R^2=99.99\%$)};
+
+        \addplot[mark=none, blue!50, only marks, line width=1.2pt, mark=x]
+        table
+          [x=throttle_percentage, y=weight_decrease, col sep=comma]
+          {Data/1045_low.csv};
+        \addlegendentry{Low battery ($R^2=90.1\%$)};
+
+
+        \addplot[domain=0:50, blue, dashed]
+        table
+          [x=throttle_percentage, y = {create col/linear regression = {y=weight_decrease}}, col sep=comma]
+          {Data/1045_full.csv};
+        \addplot[no marks, blue, dashed, domain=0:50]{\pgfplotstableregressiona*x+\pgfplotstableregressionb};
+
+        \addplot[domain=0:50, blue!50, dashed]
+        table
+          [x=throttle_percentage, y = {create col/linear regression = {y=weight_decrease}}, col sep=comma]
+          {Data/1045_low.csv};
+        \addplot[no marks, blue!50, dashed, domain=0:50]{\pgfplotstableregressiona*x+\pgfplotstableregressionb};
+
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Static lift (g) plotted against throttle reference (\%).}
+    \label{fig:liftpwm}
+  \end{figure}
+The quadcopter was placed on digital scales and the lift (in g) was measured for different values of \(\tau\)
+\subsection{Altitude control}
+\subsection*{Altitude control whilst quadcopter is static}
+\subsection*{Quadcopter moving whilst in altitude control mode}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Pictures/Altitude_hold_test_moving.png}
+  \caption{Altitude hold test whilst quadcopter is moving}
+  \label{fig:Altitude_hold_test_moving}
+\end{figure}
+\subsection{Position control}
 
 \bibliographystyle{IEEEtran}
 \bibliography{finalReport.bib}

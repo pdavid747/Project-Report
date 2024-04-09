@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: finalreport.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: finalReport.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in photographyAndVideo
+Warning--empty journal in AhmedHassan2016
+Warning--empty journal in ReinforcementLearning
+Warning--empty journal in QuaternionBasedAttitudeControl
+Warning--empty journal in uav_wilderness_sar
+
+Done.
+You've used 17 entries,
+            4087 wiz_defined-function locations,
+            937 strings with 10798 characters,
+and the built_in function-call counts, 11654 in all, are:
+= -- 938
+> -- 283
+< -- 84
++ -- 153
+- -- 52
+* -- 558
+:= -- 1796
+add.period$ -- 34
+call.type$ -- 17
+change.case$ -- 18
+chr.to.int$ -- 183
+cite$ -- 22
+duplicate$ -- 864
+empty$ -- 918
+format.name$ -- 66
+if$ -- 2699
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 151
+newline$ -- 78
+num.names$ -- 17
+pop$ -- 358
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 902
+stack$ -- 0
+substring$ -- 462
+swap$ -- 680
+text.length$ -- 23
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 17
+warning$ -- 5
+while$ -- 50
+width$ -- 19
+write$ -- 182
+(There were 5 warnings)
