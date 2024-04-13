@@ -179,7 +179,7 @@ In essence, this paper makes a significant contribution to the field of UAV cont
 ******************************************************************************
 In the paper \cite{ReinforcementLearning} "Reinforcement Learning for Altitude Hold and Path Planning in a Quadcopter," the authors Karthik P.B., Vikrant Fernandes, Keshav Kumar, and Kavi Arya explore the application of reinforcement learning (RL) techniques to improve the control and stability of drones, specifically focusing on altitude holding and path planning. The research is grounded in the challenge of maintaining the stability and control of drones in dynamic and uncertain environments, highlighting the need for adaptive and robust control systems.
 
-The study introduces a framework that utilizes reinforcement learning, with a particular emphasis on Q-learning—a model-free learning algorithm—for controlling the altitude of a quadcopter. The researchers employed PD (Proportional-Derivative) control to stabilize the quadcopter's x and y axes, while the altitude and path planning were managed through the Q-learning algorithm. The training of the quadcopter was conducted in a simulated environment before real-world testing, which is a common practice in RL to minimize risks and costs associated with direct real-world training.
+The study introduces a framework that utilises reinforcement learning, with a particular emphasis on Q-learning—a model-free learning algorithm—for controlling the altitude of a quadcopter. The researchers employed PD (Proportional-Derivative) control to stabilize the quadcopter's x and y axes, while the altitude and path planning were managed through the Q-learning algorithm. The training of the quadcopter was conducted in a simulated environment before real-world testing, which is a common practice in RL to minimize risks and costs associated with direct real-world training.
 
 A comparative analysis between the RL approach and a traditional PD algorithm was conducted to evaluate the effectiveness of reinforcement learning in handling the quadcopter's altitude control and path navigation. The paper highlights the potential of RL in improving the quadcopter's performance in navigating through waypoints in an environment with obstacles, formulated as a dimensional grid for the purpose of the study.
 
@@ -1277,7 +1277,7 @@ The Kalman filter equations for the above system are:
 
 
 \subsubsection{PD control}\label{PD_control}
-In order to utalise altitude control on the quadcopter we have used a PD (Proportional-Derivative) controller. a PD controller is a control loop feedback mechanism which is widely used in industrial control systems. It is a type of linear feedback control system that combines two kinds of control:
+In order to utilise altitude control on the quadcopter we have used a PD (Proportional-Derivative) controller. a PD controller is a control loop feedback mechanism which is widely used in industrial control systems. It is a type of linear feedback control system that combines two kinds of control:
 \begin{itemize}
   \item \textbf{Proportional control(P)}: This part of the algorithm reacts to the current error, which is the difference between the set point and the processes current value. The proportional term analyses the error and produces a linear output based on the error. This results in the rapid 
   response of the system to deviations from the desired setpoint, helping to stabilize the system by moving the process variable in the right direction. The Proportional gain is a variable parameter that sets the level of aggression of the PID controller in its response to error. A high Kp will
@@ -1686,10 +1686,10 @@ using an altitude hold control algorithm and a Kalman filter. When in position c
   \caption{esp32}
   \label{fig:esp32}
 \end{figure}
-The ESP32 stands out as an exceptionally versatile and cost-effective microcontroller. This particular microcontroller stands out due, to its 32 bit architecture and the capability to run at a system clock speed of up to 240MHz with the version utilized in this project operating at 160MHz. This ensures processing power for handling demanding tasks.
+The ESP32 stands out as an exceptionally versatile and cost-effective microcontroller. This particular microcontroller stands out due, to its 32 bit architecture and the capability to run at a system clock speed of up to 240MHz with the version utilised in this project operating at 160MHz. This ensures processing power for handling demanding tasks.
 
 A crucial aspect for a quadcopter is an attitude control system, which requires a microcontroller of performing pulse width modulation (PWM) at high frequencies preferably above 50Hz to ensure precise control over motor speeds. The ESP32s PWM capabilities along with its 160MHz clock speed make it a great choice for real time control operations. The strong community support and extensive 
-documentation further enhance its suitability for projects offering developers an array of resources to utilize.
+documentation further enhance its suitability for projects offering developers an array of resources to utilise.
 
 In the quadcopter project the ESP32 functions as the bridge between the Raspberry Pi and the quadcopters hardware such, as speed controllers (ESCs) and motors. It implements an attitude control algorithm written in python to maintain stability and respond to navigation commands. Using UART communication the ESP32 gets flight details from the Raspberry Pi, such, as orientations and 
 throttle configurations. It then sends back flight information to ensure coordination of control systems for top notch flight efficiency. This interaction showcases the ESP32s ability to operate within a system of components proving its worth, in creating cutting edge aerial vehicles.
@@ -1715,7 +1715,7 @@ The MPU9250's ability to output data from all nine sensors (gyroscope, accelerom
 
 For the above reasons as well as its low cost the MPU9250 IMU has been chosen.
 
-This project utilizes both I2C and SPI protocols for communication, with the MPU9250 IMU connected to the ESP 32 WROOM using the I2C protocol at a data transmission rate of 400KHz. Through the I2C protocol, the ESP 32 WROOM, serving as the master device on the bus, retrieves sensor data from the IMU, which functions as the slave device. The MPU9250 IMU offers various configurable 
+This project utilises both I2C and SPI protocols for communication, with the MPU9250 IMU connected to the ESP 32 WROOM using the I2C protocol at a data transmission rate of 400KHz. Through the I2C protocol, the ESP 32 WROOM, serving as the master device on the bus, retrieves sensor data from the IMU, which functions as the slave device. The MPU9250 IMU offers various configurable 
 measurement scales for its sensors, with the specific ranges employed in the quadcopter being: Gyroscope ±2000 degrees per second (dps), accelerometer ±16g and Magnetometer ±4800µT.
 
 \subsection{ESC's (Electronic Speed Controller)}\label{esc}
@@ -1870,7 +1870,7 @@ It's important to ensure that the radio telemetry is properly configured to comm
   \caption{Time of Flight sensor}
   \label{fig:ToF}
 \end{figure}
-The ToF sensor used to measure the altitude of the drone is shown in Figure \ref{fig:ToF} is the TR-EVO-60M sensor utilizes infrared Time-of-Flight technology to detect objects at distances ranging from 0.5 to 60 meters indoors and 0.5 to 10-60 meters outdoors. With an impressive update rate of up to 240 readings per second, it ensures real-time data collection. Accuracy varies from ±4cm within 14m to 1.5\%
+The ToF sensor used to measure the altitude of the drone is shown in Figure \ref{fig:ToF} is the TR-EVO-60M sensor utilises infrared Time-of-Flight technology to detect objects at distances ranging from 0.5 to 60 meters indoors and 0.5 to 10-60 meters outdoors. With an impressive update rate of up to 240 readings per second, it ensures real-time data collection. Accuracy varies from ±4cm within 14m to 1.5\%
 beyond 14m, and it provides a minimalistic Field of View of approximately 2°. The device requires a 5V DC power supply, with an operational current between 90mA to 330mA. Communication is versatile, with USB, UART, and I2C options available, and it features a Micro USB connector. Its compact dimensions are approximately 29x29x22mm, with a feather-light weight of 9g for the sensor and an additional 3g for 
 the backboard, totalling 12g. The device is also CE certified for eye safety.
 
@@ -1913,7 +1913,7 @@ serves both for communication and power distribution throughout the system.
 
 Powering this intricate system is the battery (figure:\ref{fig:battery}), which routes energy to the Raspberry Pi and associated components through a power header situated on the Pi PCB. This centralized power distribution is crucial for maintaining a consistent electrical flow to the entire system.
 
-For navigation and environmental interaction, the Raspberry Pi utilizes UART connections to interface with two specialized sensors. One connection leads to an Anemometer, tasked with measuring wind speed—a critical parameter for flight dynamics and control. Another UART channel connects to a GNSS module, which provides precise location data, enhancing the quadcopter's navigational capabilities.
+For navigation and environmental interaction, the Raspberry Pi utilises UART connections to interface with two specialized sensors. One connection leads to an Anemometer, tasked with measuring wind speed—a critical parameter for flight dynamics and control. Another UART channel connects to a GNSS module, which provides precise location data, enhancing the quadcopter's navigational capabilities.
 
 Additionally, the Pi PCB is equipped with an SBUS connection to a receiver. This interface is used to relay remote control commands from a pilot for Pitch Roll and Yaw or to receive instructions to switch to different autonomous flight modes, thus playing a pivotal role in the control schema of the quadcopter.
 
@@ -2072,7 +2072,27 @@ which helps the quadcopter fly precisely and steadily.
   \caption{Main loop flowchart}
   \label{fig:main_loop_flowchart}
 \end{figure}
+The drone control software initiates operations by setting up the necessary runtime environment, a process that includes initializing global variables and parameter configurations essential for flight operations. Within this phase, critical system parameters, such as the minimum altitude for altitude hold and sensor calibration data, 
+are loaded into the system from a predefined constants module. Moreover, instances of the DataLogger and AltitudeHoldKalmanFilter classes are created to ensure real-time data logging and altitude estimation capabilities, respectively.
 
+Upon defining all requisite classes and functions, the system transitions into the main operational loop. This loop represents the heart of the control system, where sensor readings and actuator commands are processed in a continuous cycle. Each iteration begins by checking a conditional flag that determines if the loop should persist. 
+This 'Keep Running Check' assesses conditions including user input and system status, ensuring that the software can gracefully exit when required, thus safeguarding against unexpected behaviors or external commands to cease operations.
+
+The flight control logic incorporates a check for critical 'kill' and 'save' switches, as provided by the RC (Remote Control) class, enabling the operator to remotely terminate the flight or command the system to preserve flight data logs. The software performs an 'Emergency Check' to detect if immediate safety measures are warranted, 
+such as instances where the drone deviates from its altitude bounds or in the event of communication loss. These measures are predicated on real-time sensor data sourced from the TimeOfFlightSensor, with emergency responses enacted through the \(take_emergency_measure function\). Depending on the severity of the situation, actions like 
+throttle alteration are executed to mitigate any emergent risks.
+
+Subsequently, the control system engages a 'Flight Mode Check', where it determines the appropriate control response—altitude hold or position control—based on the input from the RC class. Should the drone be in a suitable state, the AltitudeController class is employed to compute the necessary control signals using feedback from 
+altitude and position sensors. This controller is part of a sophisticated PID system that dynamically adjusts the drone's propulsion to maintain desired flight parameters.
+
+Communication with peripheral modules is handled by the EspBridge class, which serializes the control and telemetry data and transmits it to the ESP module for further communication or processing. Additionally, flight data is meticulously recorded using the DataLogger class, which logs time-stamped sensor readings and control commands. 
+This data serves as a black box record, enabling post-flight analysis and contributing to system improvements and troubleshooting.
+
+The classes provided reveal a system designed with concurrent operations in mind. The EvoSensor and Gnss classes use multi-threading to handle sensor data acquisition in parallel to the main control loop, mitigating the latency effects on sensor readings and control responsiveness. These classes utilize thread locks to synchronize 
+access to shared resources, preventing data races and ensuring the integrity of sensor data used for control decisions. Moreover, the DataLogger class's implementation ensures that data can be recorded without impacting the performance of the main control loop.
+
+In conclusion, the drone control system's architecture facilitates robust and reliable operations through a well-orchestrated series of checks and controls. It maintains an unyielding adherence to safety through real-time monitoring and emergency management while executing precise flight control. The asynchronous handling of 
+sensor data acquisition and the multi-threaded design underscore the system's capability to perform efficiently in a real-time context, reflecting a system ready to meet the rigorous demands of aerial operations.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.6\textwidth]{Pictures/sensor_flowchart.png}
@@ -2202,10 +2222,19 @@ fact that when the quadcopter is tilted forward or sidewards for movement, it d
 
 In light of the operational and environmental difficulties encountered, the quadcopter's performance in the altitude control mode, as proven in this test, was deemed good. Even if there is still space for development, the altitude accuracy of 0.6 metres from the reference altitude shows that the system is capable of handling external elements 
 like wind and movement dynamics. It can be further with additional calibration of the P and D values in the controller. The altitude control capability will need to be continuously improved and tested in a variety of scenarios in order to function more precisely and consistently.
-
-\subsection{Position control}
-
 \section{Time analysis}
+\begin{figure}[H]
+  \centering
+  \rotatebox{-90}{\includegraphics[width=1.2\textwidth]{Pictures/gantt_chart.png}}
+  \caption{Gantt chart}
+  \label{fig:gantt_chart}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.2\textwidth]{Pictures/Gantt_chart_key.png}
+  \caption{Gantt chart key}
+  \label{fig:gantt_chart_key}
+\end{figure}
 \section{Objective analysis}
 \bibliographystyle{IEEEtran}
 \bibliography{finalReport.bib}
