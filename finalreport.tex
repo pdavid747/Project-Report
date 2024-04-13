@@ -2066,6 +2066,18 @@ the electronic components receive the power they require.
 Stable power delivery to the flight controller is ensured by the voltage regulator, which is essential for its computational tasks and stability functions. It powers vital navigation and control systems, such as the GNSS module, IMU, Anemometer, ToF sensor and Barometer, by converting the battery's fluctuating voltage to a constant level, 
 which helps the quadcopter fly precisely and steadily.
 \section{Software}
+All code for this project is housed on a \href{https://github.com/QUB-ASL/bzzz}{GitHub} repository, which acts as a central location for version control and communication. To help developers understand and contribute to the project, the repository has extensive documentation. Its methodical arrangement makes it simple to navigate through a
+variety of components, such as control systems, Kalman filters, and sensor integration. 
+
+My involvement, in the project has been diverse encompassing a combination of knowledge and practical application. I have created features to interpret GNSS data guaranteeing usable location information from satellite signals for the drone. Likewise I have focused on interpreting barometer data, which plays a role in determining altitude 
+alongside the Kalman filter results. I took charge of setting up all sensors in the system paving the way for sensor fusion and data amalgamation.
+
+Documentation plays a role in any system and I have offered comprehensive explanations and usage guidelines for the Kalman filter module to enhance its clarity and accessibility for future enhancements. The development of the Kalman filter itself was an aspect of my work involving simulations to optimize its performance in Altitude and 
+Position control tasks. Furthermore I devised a PID controller for Positioning control aswell as a PD controller for altitude control which encompass the kalman filter for sensor fusion, determining accurate funcionality was achieved through simulation design. This underscores the projects dedication to responsive control mechanisms.
+
+These contributions demonstrate my involvement, with the project and dedication to enhancing the capabilities of this system while aligning with its objectives.
+
+\subsection{Main Loop}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{Pictures/main_loop_flowchart.png}
@@ -2093,12 +2105,15 @@ access to shared resources, preventing data races and ensuring the integrity of 
 
 In conclusion, the drone control system's architecture facilitates robust and reliable operations through a well-orchestrated series of checks and controls. It maintains an unyielding adherence to safety through real-time monitoring and emergency management while executing precise flight control. The asynchronous handling of 
 sensor data acquisition and the multi-threaded design underscore the system's capability to perform efficiently in a real-time context, reflecting a system ready to meet the rigorous demands of aerial operations.
+
+\subsection{Sensor Data Aqusition}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\textwidth]{Pictures/sensor_flowchart.png}
+  \includegraphics[width=0.5\textwidth]{Pictures/sensor_flowchart.png}
   \caption{Sensor flowchart}
   \label{fig:Sensor_flowchart}
 \end{figure}
+
 \section{Tests}
 
 \subsection{GNSS rover module}\label{GNSS_rover_module}
@@ -2236,6 +2251,7 @@ like wind and movement dynamics. It can be further with additional calibration 
   \label{fig:gantt_chart_key}
 \end{figure}
 \section{Objective analysis}
+Upon starting this project objectives were layed out seen below, 
 \bibliographystyle{IEEEtran}
 \bibliography{finalReport.bib}
 

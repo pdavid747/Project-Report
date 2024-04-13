@@ -1,0 +1,58 @@
+\contentsline {section}{\numberline {1}Introduction}{7}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Literature review}{7}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Methodology}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Structure of the quadcopter}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Thrust Overview}{13}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Quadcopter position manipulation}{14}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Electronic Speed Controllers (ESCs)}{14}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Pitch}{15}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Roll}{16}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Yaw}{17}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}IMU(Inertial Measurement Unit)}{18}{subsubsection.2.3.5}%
+\contentsline {subsubsection}{\numberline {2.3.6}Flight controller}{19}{subsubsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.4}Control and Estimation}{19}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Quaternians}{19}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Attitude dynamics}{21}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Altitude control}{21}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}PD control}{26}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Simulations}{28}{subsubsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.5}Position control}{33}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}PID control}{33}{subsubsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.6}Simulations}{35}{subsection.2.6}%
+\contentsline {section}{\numberline {3}hardware}{38}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Motors}{38}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Radio}{39}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Receiver}{39}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Flight Controller}{41}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Raspberry Pi}{41}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}ESP32}{42}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Inertial Measurement Unit (IMU)}{43}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}ESC's (Electronic Speed Controller)}{44}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Propellers}{44}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Voltage Regulator}{45}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Battery}{45}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Sensors}{46}{subsection.3.10}%
+\contentsline {subsubsection}{\numberline {3.10.1}GNSS Rover Module}{46}{subsubsection.3.10.1}%
+\contentsline {subsubsection}{\numberline {3.10.2}GNSS Base Station}{47}{subsubsection.3.10.2}%
+\contentsline {subsubsection}{\numberline {3.10.3}GNSS Calibration (U-center)}{48}{subsubsection.3.10.3}%
+\contentsline {subsubsection}{\numberline {3.10.4}Base station container and stand}{48}{subsubsection.3.10.4}%
+\contentsline {subsubsection}{\numberline {3.10.5}Time of Flight sensor}{49}{subsubsection.3.10.5}%
+\contentsline {subsubsection}{\numberline {3.10.6}Barometer}{49}{subsubsection.3.10.6}%
+\contentsline {subsubsection}{\numberline {3.10.7}Anemometer}{50}{subsubsection.3.10.7}%
+\contentsline {subsection}{\numberline {3.11}Hardware schematic}{51}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}Cost of materials}{52}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}PCB design}{54}{subsection.3.13}%
+\contentsline {subsubsection}{\numberline {3.13.1}Raspberry Pi PCB}{54}{subsubsection.3.13.1}%
+\contentsline {subsubsection}{\numberline {3.13.2}ESP PCB}{55}{subsubsection.3.13.2}%
+\contentsline {subsubsection}{\numberline {3.13.3}Sensor PCB}{56}{subsubsection.3.13.3}%
+\contentsline {subsubsection}{\numberline {3.13.4}Power Distribution PCB}{56}{subsubsection.3.13.4}%
+\contentsline {section}{\numberline {4}Software}{57}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Main Loop}{58}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Sensor Data Aqusition}{60}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Tests}{61}{section.5}%
+\contentsline {subsection}{\numberline {5.1}GNSS rover module}{61}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}GNSS base station}{61}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{61}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Altitude control}{62}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Time analysis}{64}{section.6}%
+\contentsline {section}{\numberline {7}Objective analysis}{65}{section.7}%
