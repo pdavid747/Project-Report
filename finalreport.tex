@@ -1017,7 +1017,14 @@ Let \( y_{t}^z = z_t \) be the output equation of the system.
     {}={}
     \alpha \tau + \beta,
   \end{equation}
-  where $\alpha = \alpha_0/m$ and $\beta = (\beta_0 - mg) / m$.
+  where,
+  \begin{equation}\label{eq:alpha}
+    \alpha = \alpha_0/m
+  \end{equation}
+  and
+  \begin{equation}\label{eq:beta}
+    \beta = (\beta_0 - mg) / m
+  \end{equation}
   
   As a result, a dynamical model of the system is
   \begin{equation}
@@ -2027,14 +2034,26 @@ the electronic components receive the power they require.
 Stable power delivery to the flight controller is ensured by the voltage regulator, which is essential for its computational tasks and stability functions. It powers vital navigation and control systems, such as the GNSS module, IMU, Anemometer, ToF sensor and Barometer, by converting the battery's fluctuating voltage to a constant level, 
 which helps the quadcopter fly precisely and steadily.
 \section{Software}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Pictures/main_loop_flowchart.png}
+  \caption{Main loop flowchart}
+  \label{fig:main_loop_flowchart}
+\end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Pictures/sensor_flowchart.png}
+  \caption{Sensor flowchart}
+  \label{fig:Sensor_flowchart}
+\end{figure}
 \section{Tests}
 
 \subsection{GNSS rover module}\label{GNSS_rover_module}
 \subsection{GNSS base station}\label{GNSS_base_station}
 
 \subsection{Testing initial estimate for \(\alpha_0\) and \(\beta_0\)}
-  \begin{figure}[h!]
+  \begin{figure}[h]
     \centering
     \begin{tikzpicture}
       \begin{axis}[
@@ -2082,11 +2101,35 @@ which helps the quadcopter fly precisely and steadily.
       \end{axis}
     \end{tikzpicture}
     \caption{Static lift (g) plotted against throttle reference (\%).}
-    \label{fig:liftpwm}
+    \label{fig:liftpwm_test}
   \end{figure}
-The quadcopter was placed on digital scales and the lift (in g) was measured for different values of \(\tau\)
+
+The quadcopter was placed on digital scales ontop of a platform to minnimize ground effect, and the lift (in g) was measured for different values of \(\tau\).
+The experimental results are shown in Figure \ref{fig:liftpwm_test}, the graph shows a clear linear relationship between the throttle reference and the static lift produced by the 
+quadcopter. There are two sets of data represented by two different linear fits: one for when the battery is full and another for when the battery is low.
+
+From the trendlines in the graph the derived model for the lifting force is \(F_{\rm prop} = \alpha_0 \tau + \beta_0\), where $\alpha_0>0$ and $\beta_0<0$ are constants, 
+which depend on the level of charge of the battery.
+
+\begin{itemize}
+  \item \textbf{Full Battery}: The graph shows that the quadcopter has a relatively constant lift force across various throttle references when the battery is fully charged. The high 
+    \(R^2\) value of 99.99\% which indicates an almost perfect linear correlation, is evidence of this. When the battery is fully charged, the slope of this line would be \(\alpha_0\)
+    and where the line intersects the y-axis (lift) is \(\beta_0\).
+  \item \textbf{Low Battery}: The slope of the line becomes less steep when the battery is low, indicating that \(\alpha_0\) is smaller when the battery is low than when it is full.
+    Additionally, the \(R^2\) value is lower (90.1\%), indicating a less consistent relationship that may be caused by variations in battery performance as the charge decreases. again 
+    where the line intersects the y-axis (lift) is \(\beta_0\).
+\end{itemize}
+In conclusion, the values for \(\alpha_0\) and \(\beta_0\) were found to be 8654 and -797.67 respectively. These values were then used in equations:\ref{eq:alpha} and \ref{eq:beta} for 
+deriving the initial values for \(\alpha\) and \(\beta\) in the Kalman filter.
+
 \subsection{Altitude control}
 \subsection*{Altitude control whilst quadcopter is static}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Pictures/Test_alitiude_control_little_movement.png}
+  \caption{Altitude control whilst quadcopter has little horizontal movement}
+  \label{fig:Altitude_control_no_movement}
+\end{figure}
 \subsection*{Quadcopter moving whilst in altitude control mode}
 \begin{figure}[H]
   \begin{minipage}{0.5\textwidth}
@@ -2106,13 +2149,17 @@ The quadcopter was placed on digital scales and the lift (in g) was measured for
 \end{figure}
 In this test, the quadcopter was taken off and landed as normal. During the flight the altitude control feature was initalised on the quadcopter and flown the quadcopter, flying in a radius of around 10m, shown in figure:\ref{fig:GNSS_Altitude_hold_test_moving}.
 
-It is crucial to take into account the circumstances and external influences that might have affected the recorded outcomes when assessing how well the quadcopter's altitude control capability performed. The quadcopter flew with an altitude accuracy of about 0.6 metres from the reference altitude of 3.1m, as stated in the test description. 
+figure:\ref{fig:GNSS_Altitude_hold_test_moving} illustrates the quadcopters altitude in orange, refferance altitude in green, throttle signal in red and the velocity in blue.
+
+It is crucial to take into account the circumstances and external influences that might have affected the recorded outcomes when assessing how well the quadcopter's altitude control capability performed. The quadcopter flew with an altitude accuracy of about \(\pm30\) centimetres from the reference altitude of 3.1m, as stated in the test description. 
 This indicates a reasonably stable performance while operating in the altitude control mode. This degree of accuracy is impressive, especially in light of the difficulties caused by outside variables like strong winds and the dynamics of the quadcopter's motion.
+
+As the test continues the altitude trimmer on the side of the remote was increased, this in turn gradually increases the refferance altitude. From the graph we can see that the quadcopter successfully reacted to this change in refferance, furthermore showcasing the quadcopers control algorithms abilities.
 
 The disparity in altitude control, as seen in figure:\ref{fig:Altitude_hold_test_moving},can be linked to the high wind velocity that was present throughout the test. Because wind exerts unpredictable forces on the quadcopter, it can create significant unpredictability in altitude control, making it more difficult to keep a steady altitude.
 
 Furthermore, altitude control may become even more challenging due to the quadcopter's movement, particularly when it involves pitch and roll changes. A forward/backword pitch or left/right roll can cause a drop in altitude if it isn't corrected for by increasing the throttle, as figure:\ref{fig:ToF_altitude_error} shows bellow. This is due to the 
-fact that when the quadcopter is tilted forward or sidewards for movement, it directs some of the thrust horizontally, thereby reducing the vertical thrust component that counteracts gravity. In such cases, in order to maintain the required height, the altitude control system has to dynamically adjust the throttle which can cause the controler to osolate between movements.
+fact that when the quadcopter is tilted forward or sidewards for movement, it directs some of the thrust horizontally, thereby reducing the vertical thrust component that counteracts gravity. In such cases, in order to maintain the required height, the altitude control system has to dynamically adjust the throttle which can cause the controler to osolate between movements. (a possible soloution to this is shown in section......)
 
 \begin{figure}[H]
   \centering

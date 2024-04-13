@@ -47,11 +47,11 @@
 \contentsline {subsubsection}{\numberline {3.13.3}Sensor PCB}{54}{subsubsection.3.13.3}%
 \contentsline {subsubsection}{\numberline {3.13.4}Power Distribution PCB}{54}{subsubsection.3.13.4}%
 \contentsline {section}{\numberline {4}Software}{55}{section.4}%
-\contentsline {section}{\numberline {5}Tests}{55}{section.5}%
-\contentsline {subsection}{\numberline {5.1}GNSS rover module}{55}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}GNSS base station}{55}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{55}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Altitude control}{56}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Position control}{57}{subsection.5.5}%
-\contentsline {section}{\numberline {6}Time analysis}{57}{section.6}%
-\contentsline {section}{\numberline {7}Objective analysis}{57}{section.7}%
+\contentsline {section}{\numberline {5}Tests}{57}{section.5}%
+\contentsline {subsection}{\numberline {5.1}GNSS rover module}{57}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}GNSS base station}{57}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{57}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Altitude control}{58}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Position control}{59}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Time analysis}{59}{section.6}%
+\contentsline {section}{\numberline {7}Objective analysis}{59}{section.7}%
