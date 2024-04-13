@@ -1529,13 +1529,31 @@ Thought the simulations below the PID gains we set as follows:
   \item \(K_i\): 0.2
   \item \(K_d\): 0.05
 \end{itemize}
+
+\subsection*{Constant force of wind acting on the Quadcopter}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{Pictures/Drone_path_wind.png} 
   \caption{Path of drone from Initial to reference \\ position with wind as an acting force}
   \label{fig:Drone_path_wind}
 \end{figure}
+The tracking of the flight direction and velocity of the quadcopter is shown in this simulation while it experiences a continuous northwest breeze. A Proportional-Integral-Derivative (PID) control system, specifically designed to mitigate wind impacts and preserve course stability, is fitted to the quadcopter. A thorough examination of the quadcopter's 
+performance under these testing circumstances is included below.
 
+The flight path of the quadcopter exhibits impressive resistance to the external wind force. Even with the constant pressure of the northwest wind, the drone manages to navigate to its intended position within 20 seconds. This is a result of the PID control system's skilful design, which makes constant adjustments to the environmental factors. 
+The simulated flight route shows several smart realignments that demonstrate the drone's flexibility and responsiveness to changing circumstances.
+
+The latitude and longitude velocities show variations in the velocity graph, which indicates that the PID controllers responded quickly to the initial positional inaccuracy. The drone's velocity stabilises shortly after, demonstrating how well the integral and derivative parts of the PID system work together to keep the drone moving steadily in spite of the wind.
+
+The minimal variance in longitude velocity is very significant, suggesting that the quadcopter is able to efficiently offset the wind's influence along this axis. Rapid mitigation of the more noticeable variations in latitude velocity indicates a well-calibrated system that is both robust in operation and responsive to changes in the environment.
+
+The quadcopter's navigation system faces a complicated dynamic due to the northwest wind.The PID controllers can handle crosswind effects well, since the wind isn't blowing directly at the drone but rather at an angle in a cross wind both latitude and longitude PID controllers are being used synchronously. It maintains control without overcorrecting, tracking the 
+target while making adjustments for lateral drift.
+
+In Conclusion, the quadcopter's PID control system responds to windy circumstances with remarkable consistency, excellent adaptability, and well-tuned stabilisation capabilities. The drone's capacity to precisely maintain course and velocity is demonstrated by its ability to adapt to a constant northwest wind. This degree of control, which is significant for a number of 
+real-world applications, validates the system's efficacy and dependability and represents a promising standard for durable drone navigation systems.
+
+\subsection*{Varying forces of wind acting on the Quadcopter}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{Pictures/Drone_path_wind_varys.png} 
@@ -1543,7 +1561,20 @@ Thought the simulations below the PID gains we set as follows:
   \caption{Path of drone from Initial to reference position with varying\\ wind as an acting force changing slightly every 20 seconds}
   \label{fig:Drone_path_wind_varys}
 \end{figure}
+The quadcopter's ability to navigate is tested in this sophisticated simulation as it endures the unpredictable whims of a changing northwest wind, which is intended to replicate the fluctuating volatility of actual wind patterns in real life. Thanks to its Proportional-Integral-Derivative (PID) control system, the drone is able to actively counteract the effects 
+of wind and maintain an impressive degree of course stability during the test conditions. This thorough analysis demonstrates a system with remarkable design resilience and flexibility.
 
+The quadcopter's flight path shows is capabilities in fighting gusts of wind, the quadcopter demonstrates an innate capacity to quickly and accurately change its bearings to the desired target point. This smooth transition is a result of the PID control system's careful tuning, which allows it to analyse and respond to the changes in environment. 
+The simulated route's constant vector changes demonstrate the quadcopter's agility and the control system's responsiveness.
+
+The latitude and longitude velocities show variations in the velocity graph every 20 seconds, which indicates that the PID controllers responded quickly to the initial positional inaccuracy as well as the constant forces of rolling winds thought. The drone’s velocity stabilises shortly after every external wind force, demonstrating how well the integral and 
+derivative parts of the PID system work together to keep the drone moving steadily in spite of the rolling wind.
+
+The quadcopter's navigation system faces a complicated dynamic due to the northwest rolling wind. The PID controllers can handle crosswind effects well, since the wind isn't blowing directly at the drone but rather at an angle in a cross wind both latitude and longitude PID controllers are being used synchronously. It maintains control without overcorrection, tracking the 
+target while making adjustments for lateral drift which is changing every 20 seconds.
+
+In conclusion, the PID control mechanism of the quadcopter performs well, adapting to the complex dynamics of varying winds. The drone's performance in the simulation, which demonstrated great flexibility, accuracy, and stabilisation,  confirms its effectiveness and dependability. The outcomes persuasively support the quadcopter's use in a wide range of real-world 
+scenarios where accuracy and control are critical due to erratic environmental conditions.
 \section{hardware}\label{hardware}
 This section outlines the various hardware that is used in forming the overall structure of the quadcopter.
 
