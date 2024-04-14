@@ -81,8 +81,7 @@ The main methodological tools for this will be the linear-quadratic regulator (L
 estimation of the position of the quadcopter can be done using a GPS module in combination with other sensors
 (IMU and altimeter etc.).
 \subsection*{Problem Statement}
-Throughout this project I will be designing a loitering controller for a Quadcopter using a GNSS, Time of Flight and barometer
-sensor. The objective of this is to enhance the quadcopters’ ability to maintain a fixed position in space with high accuracy and
+Throughout this project I will be designing a loitering controller for a quadcopter. The objective of this is to enhance the quadcopters’ ability to maintain a fixed position in space with high accuracy and
 minimal drift, this is a challenge in both commercial and civilian quadcopter use.
 
 Loitering technology in drones offers a range of benefits and applications. Security and surveillance, where home/business owners can have real time surveillance, programming a quadcopter to parole specific areas. As well as aerial photography and video, for those interested in photography or vloging, drones with loitering capabilities will allow for stable and high-quality aerial shots allowing for anything from time laps videos to landscape shots.
@@ -94,7 +93,7 @@ I will elaborate more on these concepts below.
 \newpage
 \subsection*{Objectives}
 \begin{enumerate}
-    \item To design, implement and test a Kalman filter to estimate the (x, y, z)-	position and the heading of the quadcopter using information from the IMU, GPS module, time of flight and barometer sensors.
+    \item To design, implement and test a Kalman filter to estimate the (x, y, z)-	position and the heading of the quadcopter using information from the IMU, the altimeter, and a GPS module.
     \item To design, implement and test a control system for loitering.
     \item To perform certain hardware tasks (proper mounting and connection of the GPS module to the on-board
     Raspberry Pi)
@@ -147,7 +146,8 @@ They concluded that between waypoint 1 and home the best result they were able t
 
 Factors to consider for large errors between waypoints that cause the Quadcopter's level of accuracy to not be good are wind speed and inaccurate tuning of the PID controller they were using, this is most prevalent when testing between waypoint 2 and 3. Overall, although there could be improvements, I think the results were good especially in test 2 between waypoint 1 and 2 as they were off by only 16cm.
 
-Furthermore, within this paper there is no mention of researchers utilising the Kalman filter for position estimation. This would be useful, as if satellite connections were to drop suddenly, the Kalman filter could provide a reliable alternative for estimating the quadcopter's position by fusing readings of the GPS and LiDAR sensors. The Kalman filter, known for its efficiency in dealing with uncertainty and noise in sensor data, could allow for continuous and accurate position tracking even in the absence of GPS signals. This redundancy is crucial for maintaining the stability and safety of the quadcopter during flight, especially in environments where GPS signals are obstructed or non-existent. Incorporating such a filter could significantly enhance the robustness of the control system against signal drop-out, making the quadcopter more reliable for critical applications where consistent positioning is paramount.
+Furthermore, within this paper there is no mention of researchers utilising the Kalman filter for position estimation. This would be useful, as if satellite connections were to drop suddenly, the Kalman filter could provide a reliable alternative for estimating the quadcopter's position by fusing readings of the GPS and LiDAR sensors. The Kalman filter, known for its efficiency in dealing with uncertainty and noise in sensor data, could allow for continuous and accurate position tracking even in the absence of GPS signals. This redundancy is crucial for
+maintaining the stability and safety of the quadcopter during flight, especially in environments where GPS signals are obstructed or non-existent. Incorporating such a filter could significantly enhance the robustness of the control system against signal drop-out, making the quadcopter more reliable for critical applications where consistent positioning is paramount.
 
 The paper presents a detailed study on using GPS technology for the development of an autonomous UAV quadcopter. The GPS module plays a crucial role in outdoor navigation, particularly in altitude stabilization and trajectory mapping for automated flights. The quadcopter uses GPS data for precise positioning and executing flight paths, ensuring stability and accuracy in various outdoor environments.
 
@@ -1196,7 +1196,7 @@ Let \( y_{t}^z = z_t \) be the output equation of the system.
         d^{bar}_{t+1} = d^{bar}_t + w_{t}^{d^{bar}}
     \end{equation}
     The bias $(d^{bar})$ should stay consistent throughout readings, 
-    the second reading of the bias should be equal to the first allowing for some additional noise/offest.
+    the second reading of the bias should be equal to the first allowing for some additional noise/offset.
 
     For the GPS (GNSS module) sensor's output, 
     denoted by \( y^{gnss} \), is described by the equation,
@@ -1338,7 +1338,7 @@ In this implementation the tuning parapmeters were:
   \item Equilibrium Throttle is set to 0.4
 \end{itemize}
 
-\subsubsection{Simulations}
+\subsubsection{Simulations}\label{PD_simulations}
 In the world of autonomous systems, behaviour prediction and control accuracy is critical, especially for systems with complicated dynamics like quadcopters. At the heart of this endeavour are simulations, which provide a flexible and perceptive environment for algorithm creation and validation. 
 This section explores the extensive simulation environment that was meticulously developed to evaluate and improve the two essential parts of our control system: the proportional-derivative (PD) controller and the Kalman filter.
 
@@ -1530,7 +1530,7 @@ where,
   \item \(\frac{d}{dt}e_{\text{lat}}(t)\) and \(\frac{d}{dt}e_{\text{long}}(t)\) are the rates of change of the position errors, providing a measure of how quickly the error is changing, which can help anticipate and counteract the system's future behaviour.
 \end{itemize}
 
-\subsection{Simulations}
+\subsubsection{Simulations}\label{PID_simulations}
 The accuracy of control mechanisms is critical in the field of autonomous systems, especially for robots and drones that have to manoeuvre through challenging settings. The use of simulations, which provide a flexible and insightful platform for designing and testing algorithms, is essential to improving these control systems. 
 The purpose of this simulation environment is to evaluate and improve Position Control with Proportional-Integral-Derivative controllers. By modifying control inputs in response to variations between the desired and present positions, PID controllers play a crucial role in autonomous systems' capacity to achieve desired 
 position and stability. By using complex simulations, we are able to precisely adjust the PID parameters to maximise system performance in a variety of scenarios, guaranteeing accuracy and resilience in the control of self-governing systems.
@@ -2202,7 +2202,7 @@ which depend on the level of charge of the battery.
 In conclusion, the values for \(\alpha_0\) and \(\beta_0\) were found to be 8654 and -797.67 respectively. These values were then used in equations:\ref{eq:alpha} and \ref{eq:beta} for 
 deriving the initial values for \(\alpha\) and \(\beta\) in the Kalman filter.
 
-\subsection{Altitude control}
+\subsection{Altitude control}\label{altitude_cotrol_tests}
 \subsection*{Altitude control whilst quadcopter is static}
 \begin{figure}[H]
   \centering
@@ -2292,7 +2292,7 @@ Lastly, the PD control implementation for altitude control faced hurdles. The it
 Upon starting this project objectives were layed out as well as the learning outcomes, as seen below, 
 \subsection*{Objectives}
 \begin{enumerate}
-  \item To design, implement and test a Kalman filter to estimate the (x, y, z)-	position and the heading of the quadcopter using information from the IMU, GPS module, time of flight and barometer sensors.
+  \item To design, implement and test a Kalman filter to estimate the (x, y, z)-	position and the heading of the quadcopter using information from the IMU, the altimeter, and a GPS module.
   \item To design, implement and test a control system for loitering.
   \item To perform certain hardware tasks (proper mounting and connection of the GPS module to the on-board
   Raspberry Pi)
@@ -2310,6 +2310,32 @@ Upon starting this project objectives were layed out as well as the learning out
   \item Be able to integrate different systems involving hardware and software components.
   \item Be able to use git and GitHub (branches, pull requests, etc).
 \end{enumerate}
+
+\subsubsection*{Objective 1}
+A key step towards accomplishing the project's first goal was the effective application of a Kalman filter to determine the quadcopter's altitude, seen in section:\ref{Altitude_control}. Utilising the combined advantages of sensor fusion, the Kalman filter was meticulously developed to incorporate information from a barometer, GNSS module, and time-of-flight module. This integration facilitated centimetre 
+level accuracy in altitude control (seen in section:\ref{altitude_cotrol_tests}), demonstrating the high level of engineering and strong algorithmic design which back the filter. The quadcopter's comprehensive spatial awareness was ensured by the exact altitude measurements provided by the designed code to parse the barometer, GNSS module, and time-of-flight sensors altitude. A smooth integration of sensor inputs made possible by the meticulous calibration
+and fine-tuning of the filter parameters led to improved flight stability, providing a solid basis for more challenging goals in the future.
+
+\subsubsection*{Objective 2}
+Reaching the goal of creating, implementing and testing a control system, for monitoring marked a milestone in the project. This was achieved by utilizing Proportional Derivative (PD) in section:\ref{PD_control} and Proportional Integral Derivative (PID) control algorithms in section:\ref{PID_control}, which were thoroughly detailed and assessed throughout sections of the paper.
+
+The theoretical foundation for both control methods was first confirmed through simulations that showcased their effectiveness in handling the loitering actions of the quadcopter. These simulations played a role in adjusting the control parameters and ensuring that the algorithms could function optimally in real world scenarios. Particularly the PD controller demonstrated performance during these trials 
+showcasing a built design that effectively combined responsiveness with stability. The simulations can be viewed in sections:\ref{PD_simulations} and \ref{PID_simulations}.
+
+Following this practical field tests were carried out to validate the application of the PD controller seen in section:\ref{altitude_cotrol_tests}. The outcomes were highly promising as the PD controller enabled stable loitering in changing environmental conditions. This success did not just affirm the practicality of using the PD control strategy but also underscored the improvements that incorporating the designed PID algorithm for position control would have. 
+By employing this approach it guarantees that the quadcopter can uphold a position with minimal deviation meeting crucial needs for activities, like aerial photography, surveillance and environmental monitoring.
+
+\subsubsection*{Objective 3}
+\subsubsection*{Objective 4}
+
+\subsubsection*{Learning outcome 1}
+\subsubsection*{Learning outcome 2}
+\subsubsection*{Learning outcome 3}
+\subsubsection*{Learning outcome 4}
+\subsubsection*{Learning outcome 5}
+\subsubsection*{Learning outcome 6}
+\subsubsection*{Learning outcome 7}
+\subsubsection*{Learning outcome 8}
 
 \section{Conclusions}
 \bibliographystyle{IEEEtran}

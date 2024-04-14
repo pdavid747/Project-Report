@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.20)  14 APR 2024 20:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.20)  14 APR 2024 22:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1033,86 +1033,4 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\alpha' on input line 2135.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2135.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2135.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 2135.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2135.
-
-PGFPlots: reading {Data/1045_full.csv}
-Missing character: There is no ; in font nullfont!
-PGFPlots: reading {Data/1045_low.csv}
-Missing character: There is no ; in font nullfont!
-PGFPlots: reading {Data/1045_full.csv}
-PGFPlots: reading {Data/1045_low.csv}
-[60 <./Pictures/sensor_flowchart.png>]
-<Pictures/Test_alitiude_control_little_movement.png, id=979, 1029.8475pt x 585.68813pt>
-File: Pictures/Test_alitiude_control_little_movement.png Graphic file (type png)
-<use Pictures/Test_alitiude_control_little_movement.png>
-Package pdftex.def Info: Pictures/Test_alitiude_control_little_movement.png  used on input line 2209.
-(pdftex.def)             Requested size: 328.82707pt x 187.004pt.
- [61]
-<Pictures/Altitude_hold_test_moving.png, id=985, 1110.0672pt x 550.6974pt>
-File: Pictures/Altitude_hold_test_moving.png Graphic file (type png)
-<use Pictures/Altitude_hold_test_moving.png>
-Package pdftex.def Info: Pictures/Altitude_hold_test_moving.png  used on input line 2217.
-(pdftex.def)             Requested size: 234.8775pt x 116.51537pt.
-<Pictures/GNSS_Altitude_hold_test_moving.png, id=986, 1040.688pt x 624.4128pt>
-File: Pictures/GNSS_Altitude_hold_test_moving.png Graphic file (type png)
-<use Pictures/GNSS_Altitude_hold_test_moving.png>
-Package pdftex.def Info: Pictures/GNSS_Altitude_hold_test_moving.png  used on input line 2224.
-(pdftex.def)             Requested size: 234.8775pt x 140.9251pt.
-
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 2215--2229
-[]$[]$ $[]$ 
- []
-
-[62 <./Pictures/Test_alitiude_control_little_movement.png> <./Pictures/Altitude_hold_test_moving.png> <./Pictures/GNSS_Altitude_hold_test_moving.png>]
-<Pictures/ToF_altitude_error.png, id=1002, 662.475pt x 278.03876pt>
-File: Pictures/ToF_altitude_error.png Graphic file (type png)
-<use Pictures/ToF_altitude_error.png>
-Package pdftex.def Info: Pictures/ToF_altitude_error.png  used on input line 2246.
-(pdftex.def)             Requested size: 281.85587pt x 118.2943pt.
-<Pictures/gantt_chart.png, id=1005, 1065.9825pt x 317.185pt>
-File: Pictures/gantt_chart.png Graphic file (type png)
-<use Pictures/gantt_chart.png>
-Package pdftex.def Info: Pictures/gantt_chart.png  used on input line 2259.
-(pdftex.def)             Requested size: 563.70459pt x 167.73456pt.
-<Pictures/Gantt_chart_key.png, id=1006, 86.3225pt x 89.33376pt>
-File: Pictures/Gantt_chart_key.png Graphic file (type png)
-<use Pictures/Gantt_chart_key.png>
-Package pdftex.def Info: Pictures/Gantt_chart_key.png  used on input line 2265.
-(pdftex.def)             Requested size: 93.94957pt x 97.22871pt.
- [63 <./Pictures/ToF_altitude_error.png>] [64 <./Pictures/gantt_chart.png>] [65 <./Pictures/Gantt_chart_key.png>] (./finalreport.bbl [66]) [67] (./finalreport.aux)
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.6pt have occurred.
-
-Package rerunfilecheck Info: File `finalreport.out' has not changed.
-(rerunfilecheck)             Checksum: 72D46132E902361991BB825C9E49C93B;8336.
- ) 
-Here is how much of TeX's memory you used:
- 36099 strings out of 476025
- 853243 string characters out of 5790017
- 1877388 words of memory out of 5000000
- 55617 multiletter control sequences out of 15000+600000
- 524316 words of font info for 79 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 99i,19n,103p,1008b,2303s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on finalreport.pdf (68 pages, 32313801 bytes).
-PDF statistics:
- 1208 PDF objects out of 1440 (max. 8388607)
- 1002 compressed objects within 11 object streams
- 323 named destinations out of 1000 (max. 500000)
- 710 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+Package hype
