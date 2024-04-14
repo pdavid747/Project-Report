@@ -2251,6 +2251,9 @@ fact that when the quadcopter is tilted forward or sidewards for movement, it d
 In light of the operational and environmental difficulties encountered, the quadcopter's performance in the altitude control mode, as proven in this test, was deemed good. Even if there is still space for development, the altitude accuracy of 0.6 metres from the reference altitude shows that the system is capable of handling external elements 
 like wind and movement dynamics. It can be further with additional calibration of the P and D values in the controller. The altitude control capability will need to be continuously improved and tested in a variety of scenarios in order to function more precisely and consistently.
 \section{Time analysis}
+In the Time analysis segrment, systematic analysis of the various aspects of the bzzz project, detailing the duration and sequencing of the developmental phases, implementation, and testing of the bzzz quadcopter. The meticulous break down of time alocation for each task in the project, highlighting efficiency gains and bottlenecks encountered.
+
+Below in figures:\ref{fig:gantt_chart} and \ref{fig:gantt_chart_key} is the gantt chart and key provided in the Intrim report:
 \begin{figure}[H]
   \centering
   \rotatebox{-90}{\includegraphics[width=1.2\textwidth]{Pictures/gantt_chart.png}}
@@ -2263,8 +2266,52 @@ like wind and movement dynamics. It can be further with additional calibration 
   \caption{Gantt chart key}
   \label{fig:gantt_chart_key}
 \end{figure}
+
+\subsection*{Steps within time constrains}
+The parsing of GNSS data aswell as testing the code was a notable sucess, our results demonstrated the codes ability to efficiently managed to extract and interpret the GNSS data streams using multi threading, parsing Latitude, Longatude and  Altitude data, which are crucial for the quadcopter's navigational systems. The sucess in this area was due to the extensive 
+resurch that was done in GNSS data strings prior to writing the code.
+
+The GNSS rover module testing proved to be a strong point, offering insightful information on the system's performance and capabilities in real-world scenarios. A number of successful trials that verified the module's functionality and reliability  for more integration with the UAV system were made possible by the well-organized testing processes.
+
+Controller research also progressed within the alocated time constraints, exploring various control strategies that could be applied to the bzzz quadcopter. Due to this extensive resurch it was determined that a PD controller for altitude control and a PID controller for position control was most applicable. The derived plan from the resurch pathed the way for a quick 
+turnaround when it came to simulating the controller. 
+
+Finally, designing simulations for the kalman filter progressed well, this was due to the fact that extensive documentation was written prior to designing these simulations. This documentation layed the groundwork for simulation implementation providing great results from the get go meaning that little tuning was needed, allowing for a quick turn around. 
+
+\subsection*{Steps outside time constraints}
+The Design of the kalman filter documentation percisted chalanges, taking longer than expected. The complexity of the mathematical modeling required a more extensive developmental phase to ensure the filter's accuracy and reliability when it came to making simulations and overall implementation. On the otehr hand the estended time spent writing the detailed documentation on the filter 
+was made up for when designing simulations and overall implementation as it paved the way for these processes. 
+
+The decision to implement a base station introduced unexpected complexities into the system architecture. This ment having to do further research into calibration, figuring out a way to brodcast the correctionn data from the base station to the rover module, designing a water ressistant casing and finally the design of the station that allowed for portability. 
+
+Testing setbacks for altitude control were encountered due to unfavorable weather conditions and an unfortunate incident of crashing. These external factors meant that this process to longer than anticipated.
+
+Lastly, the PD control implementation for altitude control faced hurdles. The iterative process of tuning the PD parameters to achieve the desired level of control and stability took additional time. Although the simulations provided promising results they were not directly transferable to real life conditions due to several factors such as weight and enviormental conditions.
+
 \section{Objective analysis}
-Upon starting this project objectives were layed out seen below, 
+Upon starting this project objectives were layed out as well as the learning outcomes, as seen below, 
+\subsection*{Objectives}
+\begin{enumerate}
+  \item To design, implement and test a Kalman filter to estimate the (x, y, z)-	position and the heading of the quadcopter using information from the IMU, GPS module, time of flight and barometer sensors.
+  \item To design, implement and test a control system for loitering.
+  \item To perform certain hardware tasks (proper mounting and connection of the GPS module to the on-board
+  Raspberry Pi)
+  \item To perform experiments and record flight data
+\end{enumerate}
+
+\subsection*{Learning Outcomes}
+\begin{enumerate}
+  \item Have mastered the theory of LQR and Kalman filtering.
+  \item Understand how a GPS module works and be able to interface it.
+  \item Be able to design a PCB.
+  \item Have a solid understanding of the attitude and translational dynamics of a quadcopter.
+  \item Be able to perform simulations of dynamical systems in Python.
+  \item Be able to operate a quadcopter using an RC.
+  \item Be able to integrate different systems involving hardware and software components.
+  \item Be able to use git and GitHub (branches, pull requests, etc).
+\end{enumerate}
+
+\section{Conclusions}
 \bibliographystyle{IEEEtran}
 \bibliography{finalReport.bib}
 
