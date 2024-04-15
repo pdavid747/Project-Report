@@ -1813,7 +1813,7 @@ This section outlines the various different sensors that were used on the quadco
   \end{minipage}
 \end{figure}
 The SparkFun GPS-RTK-SMA Breakout - ZED-F9P Fig.\ref{fig:gnss_rover} will prove to be a good option for my onboard GPS module due to its precise GNSS capabilities. It is significantly better than the MikroElektronika GPS Click featuring the LEA-6S, 
-especially in its technical specification. The u-blox ZED-F9P module within, is known for high accuracy and multi- band GNSS support. This allows the quadcopter to utilise real-time kinematic (RTK) positioning which is great for applications
+especially in its technical specification. The u-blox ZED-F9P module within, is known for high accuracy and multi- band GNSS support with a maximum update frequeccy of 25Hz. This allows the quadcopter to utilise real-time kinematic (RTK) positioning which is great for applications
 which need centimetre level signalling \cite{sbg_systems_2024}. Ensures comprehensive coverage and reliability due to its ability to access a wide range of satellite systems (GPS, GLONASS, Galileo, and BeiDou). This should prove ideal for getting centimeter accurate data 
 for the quadcopter, hence gaining precise position control on the quadcopter.
 
@@ -1839,14 +1839,12 @@ For testing evaluation on this module please see section:\ref{GNSS_rover_module}
   \end{minipage}
 \end{figure}
 The SparkFun GPS-RTK Dead Reckoning Breakout - ZED-F9R (Fig.\ref{fig:gnss_base_station}) features make it a highly sophisticated option for GPS-related applications. The modules feature a 184-channel u-blox F9 engine GNSS receiver which will receive signals from GPS, GLONASS, Galileo, and BeiDou 
-constellations with 0.2-meter accuracy. This makes it a superior choice when utilising base station NTRIP technology as well as RTCM (Radio Technical Commission for Maritime Services) messages to communicate correction data to the onboard GNSS module.
+constellations with 0.2-meter accuracy with a maximum update frequeccy of 25Hz. This makes it a superior choice when utilising base station NTRIP technology as well as RTCM (Radio Technical Commission for Maritime Services) messages to communicate correction data to the onboard GNSS module.
 
 The Taoglas A.80 L1/L2 GNSS Antenna is used in conjunction with the GNSS module to support its exceptional performance. This antenna is a perfect fit for the ZED-F9R module because it is specifically made to improve signal reception and accuracy for L1/L2 frequencies. Advanced navigation and 
 autonomous flying systems depend on high positioning precision and dependability, which is ensured by the synergy between the Taoglas antenna and the GNSS module when provinding the GNSS rover module above with RTCM correction data. Even in challenging conditions, this combination offers a reliable way to provide exact position tracking and navigation capabilities.
 
 For testing evaluation on this module please see section:\ref{GNSS_base_station}
-
-\subsubsection{GNSS Calibration (U-center)}
 
 \subsubsection{Base station container and stand}
 \begin{figure}[H]
@@ -1867,6 +1865,7 @@ A container was designed (figure:\ref{fig:Base_station_container}) to guarantee 
 rover module, the telemetry radio—which is essential for transmitting correction data—was placed strategically on the outside (figure:\ref{fig:gnss_rover}).
 
 An essential part of the high-performance GNSS base station module is the Taoglas A.80 L1/L2 GNSS Antenna (figure:\ref{fig:base_station_antenna}). In order to ensure that the base station can efficiently support precise positioning for the GNSS rover module, this antenna was installed on a tripod to secure its position and optimise signal reception (figure:\ref{fig:Base_station_stand}) for RCTCM corrections. 
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.3\textwidth]{Pictures/telemetry radio.png}
@@ -1875,6 +1874,22 @@ An essential part of the high-performance GNSS base station module is the Taogl
 \end{figure}
 The Holybro SiK Telemetry Radio V3 100mW 433MH 915MHz (Fig\ref{fig:telemetry_radio}) will be used to transmit the RCTCM data from the base station to the on board GNSS module to provide it with the necessary correction data mentioned above. This radio is a lightweight and typically offers a range of over 300 meters. 
 It's important to ensure that the radio telemetry is properly configured to communicate with the GNSS module. This involves setting up parameters such as frequency, power output, and the transmitting of RCTCM data.
+
+\subsubsection{GNSS Calibration (U-center)}
+The U-center software, created by u blox is a tool used for setting up, testing and assessing GNSS module data. It offers a range of features to adjust communication ports, protocols, data rates and message settings that are essential, for enhancing the performance of GNSS receivers. Additionally U-center plays a role in updating firmware to ensure GNSS modules operate with the relevant enhancements.
+
+In terms of visuals U-center provides real time data display showing satellite tracking details, signal strengths and other important GNSS information. It presents coordinates, altitude measurements, velocity data and offers detailed insights into the accuracy and reliability of the GNSS data including estimates on positional accuracy. This detailed information is crucial for evaluating the precision and 
+functionality of GNSS modules across applications. Please see a screen grab of the U-center UI below................................................
+
+When configuring modules like the SparkFun GPS RTK SMA Breakout. ZED F9P to output GNGGA for altitude and GNGLL for latitude and longitude settings, in U-center involves connecting the module to the software interface. By accessing the Configuration View within U-centers interface users can enable desired NMEA messages while disabling others to streamline output. Saving these configurations in the module’s 
+non volatile memory ensures they are maintained through power cycles. When it comes to how updates are made, the SparkFun GPS RTK SMA Breakout ZED F9P and SparkFun GPS RTK Dead Reckoning Breakout ZED F9R can both handle update rates of, up to 25 Hz. This rapid update frequency is ideal for tasks that demand fast results. The ZED F9R, equipped with built in sensors brings advantages for dead reckoning by delivering 
+improved accuracy and consistency even in tough conditions.
+
+To establish a base station that solely outputs RTK corrections you simply need to set the GNSS modules mode to function as a base station choose the RTK correction messages, in this case RTCM3 is used, and specify the output via the correct communication port. These adjustments guarantee that the base station transmits RTK corrections ensuring efficient and accurate data transmission. In order to get the most reliable RTK
+data from the base station, the 'survey in' feature was used. During the Survey-in process, the base station collects GNSS data over time, and this data is used to calculate a more reliable and stable coordinate estimate of its location. For our particlar use case we wanted the base stations position to be as accurate as possible, in order to achieve this the minimum duration for the survey and the desired positional accuracy
+were set to 5 minutes and 0.2m, ensuring that the base station's location is determined with high confidence before it begins to transmit the  RTK corrections to rover unit.
+
+By integrating these functionalities and setups we can attain high levels of precision and dependability in our GNSS modules, highlighting U-center as a vital tool in satellite navigation practices.
 
 \subsubsection{Time of Flight sensor}
 \begin{figure}[H]
@@ -2122,7 +2137,7 @@ sensor data acquisition and the multi-threaded design underscore the system's ca
 \subsection{Sensor Data Aqusition}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{Pictures/sensor_flowchart.png}
+  \includegraphics[width=0.8\textwidth]{Pictures/sensor_flowchart.png}
   \caption{Sensor flowchart}
   \label{fig:Sensor_flowchart}
 \end{figure}

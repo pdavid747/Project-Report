@@ -34,10 +34,10 @@
 \contentsline {subsection}{\numberline {3.10}Sensors}{46}{subsection.3.10}%
 \contentsline {subsubsection}{\numberline {3.10.1}GNSS Rover Module}{46}{subsubsection.3.10.1}%
 \contentsline {subsubsection}{\numberline {3.10.2}GNSS Base Station}{47}{subsubsection.3.10.2}%
-\contentsline {subsubsection}{\numberline {3.10.3}GNSS Calibration (U-center)}{48}{subsubsection.3.10.3}%
-\contentsline {subsubsection}{\numberline {3.10.4}Base station container and stand}{48}{subsubsection.3.10.4}%
+\contentsline {subsubsection}{\numberline {3.10.3}Base station container and stand}{48}{subsubsection.3.10.3}%
+\contentsline {subsubsection}{\numberline {3.10.4}GNSS Calibration (U-center)}{48}{subsubsection.3.10.4}%
 \contentsline {subsubsection}{\numberline {3.10.5}Time of Flight sensor}{49}{subsubsection.3.10.5}%
-\contentsline {subsubsection}{\numberline {3.10.6}Barometer}{49}{subsubsection.3.10.6}%
+\contentsline {subsubsection}{\numberline {3.10.6}Barometer}{50}{subsubsection.3.10.6}%
 \contentsline {subsubsection}{\numberline {3.10.7}Anemometer}{50}{subsubsection.3.10.7}%
 \contentsline {subsection}{\numberline {3.11}Hardware schematic}{51}{subsection.3.11}%
 \contentsline {subsection}{\numberline {3.12}Cost of materials}{52}{subsection.3.12}%
