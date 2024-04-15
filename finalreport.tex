@@ -2003,7 +2003,7 @@ This schematic layout encapsulates a meticulously designed system where power, c
 In conclusion, the parts list above indicates an approximate total cost of £3730 for creating the quadcopter. This estimate does not include additional costs for PCB design, wiring, connectors (e.g., nuts and bolts), or any necessary 3D printed components. It is based on the assumption that a minimal quantity of batteries will be purchased. It's crucial to remember that actual pricing could change based on changes in the market, delivery charges, and any possible discounts for large purchases.
 While this offers a useful starting point for budgeting, builders should be ready for possible fluctuations in the final overall cost. It's also advised to think about setting aside money for unanticipated costs or modifications that could improve the quadcopter's functionality.
 
-\subsection{PCB design}
+\subsection{PCB design}\label{PCB_section}
 \subsubsection*{Formation of the flight controller}
 In order to form the flight controller, Two PCB's were designed one for Anemometer, GNSS and Receiver connections depicted above in figures:\ref{fig:Pi_PCB_bottom} and \ref{fig:Pi_PCB_top}, and the other for mounting the IMU and ESC connections, depicted in figure:\ref{fig:Esp_IMU_PCB}.
 \subsubsection{Raspberry Pi PCB}
@@ -2127,7 +2127,7 @@ sensor data acquisition and the multi-threaded design underscore the system's ca
   \label{fig:Sensor_flowchart}
 \end{figure}
 
-\section{Tests}
+\section{Tests}\label{tests}
 
 \subsection{GNSS rover module}\label{GNSS_rover_module}
 \subsection{GNSS base station}\label{GNSS_base_station}
@@ -2267,7 +2267,7 @@ Below in figures:\ref{fig:gantt_chart} and \ref{fig:gantt_chart_key} is the gant
   \label{fig:gantt_chart_key}
 \end{figure}
 
-\subsection*{Steps within time constrains}
+\subsection*{Steps within time constraints}
 The parsing of GNSS data aswell as testing the code was a notable sucess, our results demonstrated the codes ability to efficiently managed to extract and interpret the GNSS data streams using multi threading, parsing Latitude, Longatude and  Altitude data, which are crucial for the quadcopter's navigational systems. The sucess in this area was due to the extensive 
 resurch that was done in GNSS data strings prior to writing the code.
 
@@ -2326,16 +2326,32 @@ Following this practical field tests were carried out to validate the applicatio
 By employing this approach it guarantees that the quadcopter can uphold a position with minimal deviation meeting crucial needs for activities, like aerial photography, surveillance and environmental monitoring.
 
 \subsubsection*{Objective 3}
-\subsubsection*{Objective 4}
+Throught this project there was various hardware tasks that needed to be completed for implementing loitering control. This includeded designining PCB's for vaious components seen in section:\ref{PCB_section}, as well as essincial tasks such as soldering of the vaious hardware components seen in section:\ref{hardware} especially the ToF sensor, GNSS modules, Barometer, Radio telemetry units and voltage regulator. 
 
-\subsubsection*{Learning outcome 1}
-\subsubsection*{Learning outcome 2}
-\subsubsection*{Learning outcome 3}
-\subsubsection*{Learning outcome 4}
-\subsubsection*{Learning outcome 5}
-\subsubsection*{Learning outcome 6}
-\subsubsection*{Learning outcome 7}
-\subsubsection*{Learning outcome 8}
+Each component played a specific role: the ToF sensor was integral for distance measurement and obstacle detection, the GNSS modules were necessary for accurate positioning, the barometer provided altitude data, radio telemetry units facilitated wireless communication between the GNSS base station module and the rover module, and the voltage regulator ensured stable power supply to various components. Proper integration and functioning of these components were 
+pivotal in achieving a robust loitering control system capable of operating under various conditions.
+
+Furthermore my contribution to 3D printed components on the quadcoper should not go unnoted. 3D printed components such as the quadcopters propeller guards, footing, motor and electronic housing played pivitol rolls in both the overall quadcopters infrastructure and the protection of vaious different components.
+
+Finally, due to vaious different craches when testing the quadcopter in section:\ref(tests), I fully rebuilt the quadcopter a multiple times replacing broken components for new ones, this in turn made me compentant in knowing the quadcopters overall structure and how it is built wich was useful when writing documentation.
+
+\subsubsection*{Objective 4}
+The tests conducted on the quadcopter were described in section:\ref{tests}, they covered a wide range of topics from extensive loitering control tests to the GNSS module's precision. All of the final tests went well, although careful Proportional-Derivative (PD) adjustment was needed to get these outcomes. In order to guarantee stability and precision during flight, the control system's response had to be adjusted, and this tuning procedure was essential. 
+Moreover, simulations were created to establish the baseline data from these tests. These simulations mimicked various real-world events, allowing us to modify system parameters and anticipate obstacles before actual flight tests, thus dramatically boosting the reliability and performance of the quadcopter in its loitering control capabilities.
+
+\subsubsection*{Learning outcome analysis}
+The project successfully achieved all the set learning goals showing an understanding and application of both knowledge and practical skills needed for creating a quadcopter that utalises loitering control.
+
+To start I thoroughly reasurched various different control algorithims incluiding Linear Quadratic Regulator (LQR), PID control, PD control and Kalman filtering, which are essential, for achieving control and state estimation in systems. This knowledge played a role in implementing control algorithms that improve the quadcopters stability and precision. Moreover understanding how a GPS module works and integrating it with systems enabled real time location tracking and enhanced navigational capabilities.
+
+When it comes to hardware design the ability to create a printed circuit board (PCB) was crucial. This skill helped in combining components into a coherent unit simplifying the design process and reducing potential issues with electronic connections. Additionally having a grasp of attitude and translational dynamics was vital for effectively handling and predicting its behavior during various flight situations.
+
+Utilizing Python to simulate systems proved beneficial for testing theories and control strategies, before implementing them in real world scenarios. This method minimized risks of failure and optimized system performance.
+In addition I successfully mastered the operation of a quadcopter using a controller, which's crucial for manually controlling and testing automated functions.
+
+The seamless integration of systems hardware and software components was completed. Leveraging git and GitHub further boosted the projects achievements by streamlining version control enabling coding colaboration and ensuring management of the projects software components. 
+
+In essence accomplishing these learning objectives not only highlights the acquired expertise but also emphasizes the projects triumph, in developing a dependable and effective loitering control on a quadcopter.
 
 \section{Conclusions}
 \bibliographystyle{IEEEtran}
