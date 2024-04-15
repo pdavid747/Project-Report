@@ -54,6 +54,6 @@
 \contentsline {subsection}{\numberline {5.2}GNSS base station}{61}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{61}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Altitude control}{62}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Time analysis}{63}{section.6}%
-\contentsline {section}{\numberline {7}Objective analysis}{66}{section.7}%
-\contentsline {section}{\numberline {8}Conclusions}{68}{section.8}%
+\contentsline {section}{\numberline {6}Time analysis}{64}{section.6}%
+\contentsline {section}{\numberline {7}Objective analysis}{67}{section.7}%
+\contentsline {section}{\numberline {8}Conclusions}{69}{section.8}%

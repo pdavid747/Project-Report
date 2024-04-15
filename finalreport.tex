@@ -2141,6 +2141,25 @@ sensor data acquisition and the multi-threaded design underscore the system's ca
   \caption{Sensor flowchart}
   \label{fig:Sensor_flowchart}
 \end{figure}
+........................................................................................................ 
+The technical execution of the sensor data handling system begins with the initialization phase, where global variables are set, and a framework for data acquisition is established. During this stage, the EvoSensor class is configured to set up the serial path and baud rate for communication, define the window length for data processing, 
+and instantiate the median filter and data logger if logging is required.
+
+Once initialization is complete, the system commences a background thread—a cornerstone of the system's ability to perform asynchronous operations. This thread is responsible for the continuous reading of data from the sensor, executed in a way that does not interrupt or delay the main control loop. By employing a lock mechanism, 
+the system ensures that data access is thread-safe, preventing simultaneous read/write operations that could lead to data corruption.
+
+At the heart of the control loop, the system periodically checks the serial buffer to determine the presence of new data. Upon detection of incoming bytes, the data is parsed and translated from its raw binary form into a usable decimal format representing the sensor measurements, such as distance. This parsed data is then temporarily stored 
+in an array, respecting the synchronization enforced by the lock handling to ensure data integrity during multi-threaded operations.
+
+Logging of data is a critical operation within the control loop. When enabled, each sensor reading, timestamped accurately, is appended to a log file, creating a persistent record of the drone's sensory inputs. This data is invaluable for post-flight analysis and debugging purposes. Moreover, the system incorporates a conditional filter check 
+to decide if the newly acquired data should undergo further processing to reduce noise or outliers. If filtering is required, the MedianFilter processes the stored data and returns a refined value for use within the system.
+
+As the main loop iterates, it consistently evaluates whether to continue operation based on a 'Keep Running' check. This could be influenced by user commands or predetermined conditions that signal the completion of a flight or testing scenario. If the condition to terminate is met, the system initiates a save operation, storing all 
+collected data to ensure no loss of information. This safeguarding step is followed by structured exit handling, which includes stopping the background thread. This methodical shutdown process ensures that all processes are cleanly finalized, data is preserved, and system resources are released.
+
+In the final step, the system ceases all operations and transitions to a halt state. This cessation marks the end of the program's execution cycle, ensuring a clean and orderly shutdown. Throughout this operation, the EvoSensor class plays a pivotal role in data management and contributes significantly to the system's overall performance, 
+collecting and parsing real-time sensor data while coordinating with the main loop to enable a robust and responsive flight control system.
+
 
 \section{Tests}\label{tests}
 
