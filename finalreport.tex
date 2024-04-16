@@ -1844,7 +1844,7 @@ constellations with 0.2-meter accuracy with a maximum update frequeccy of 25Hz. 
 The Taoglas A.80 L1/L2 GNSS Antenna is used in conjunction with the GNSS module to support its exceptional performance. This antenna is a perfect fit for the ZED-F9R module because it is specifically made to improve signal reception and accuracy for L1/L2 frequencies. Advanced navigation and 
 autonomous flying systems depend on high positioning precision and dependability, which is ensured by the synergy between the Taoglas antenna and the GNSS module when provinding the GNSS rover module above with RTCM correction data. Even in challenging conditions, this combination offers a reliable way to provide exact position tracking and navigation capabilities.
 
-For testing evaluation on this module please see section:\ref{GNSS_base_station}
+For testing evaluation on this module please see section:\ref{GNSS_rover_module}
 
 \subsubsection{Base station container and stand}
 \begin{figure}[H]
@@ -2112,15 +2112,14 @@ These contributions demonstrate my involvement, with the project and dedication 
   \caption{Main loop flowchart}
   \label{fig:main_loop_flowchart}
 \end{figure}
-The drone control software initiates operations by setting up the necessary runtime environment, a process that includes initializing global variables and parameter configurations essential for flight operations. Within this phase, critical system parameters, such as the minimum altitude for altitude hold and sensor calibration data, 
-are loaded into the system from a predefined constants module. Moreover, instances of the DataLogger and AltitudeHoldKalmanFilter classes are created to ensure real-time data logging and altitude estimation capabilities, respectively.
+Setting up the required runtime environment, which involves initialising global variables and parameter configurations crucial for flying operations, is how the drone control software initiates. Within this phase, critical system parameters, such as the minimum altitude for altitude hold and sensor calibration data, are loaded into the 
+system from a predefined constants module. Additionally, to provide real-time data logging and altitude estimate capabilities, instances of the DataLogger and AltitudeHoldKalmanFilter classes are constructed.
 
-Upon defining all requisite classes and functions, the system transitions into the main operational loop. This loop represents the heart of the control system, where sensor readings and actuator commands are processed in a continuous cycle. Each iteration begins by checking a conditional flag that determines if the loop should persist. 
-This 'Keep Running Check' assesses conditions including user input and system status, ensuring that the software can gracefully exit when required, thus safeguarding against unexpected behaviors or external commands to cease operations.
+Upon defining all requisite classes and functions, the system transitions into the main operational loop. This loop represents the heart of the control system, where sensor readings and actuator commands are processed in a continuous cycle. A conditional flag specifies whether the loop should continue is checked at the start of each iteration.
+This 'Keep Running Check' checks for unexpected behaviours or external commands to stop operations. It does this by evaluating user inputs from the RC and analysing the system status, making sure the software can gracefully exit when the loop when required.
 
-The flight control logic incorporates a check for critical 'kill' and 'save' switches, as provided by the RC (Remote Control) class, enabling the operator to remotely terminate the flight or command the system to preserve flight data logs. The software performs an 'Emergency Check' to detect if immediate safety measures are warranted, 
-such as instances where the drone deviates from its altitude bounds or in the event of communication loss. These measures are predicated on real-time sensor data sourced from the TimeOfFlightSensor, with emergency responses enacted through the \(take_emergency_measure function\). Depending on the severity of the situation, actions like 
-throttle alteration are executed to mitigate any emergent risks.
+A check for  "kill" and "save" switches is incorporated into the flight control logic by the RC (Remote Control) class. This allows the user to remotely end the flight or instruct the system to store flight data logs. When a quadcopter looses communicati.on with the RC or is killed over a predefined altitude the software does a "Emergency Check"
+to determine whether immediate safety steps are necessary. The TimeOfFlightSensor provides the real-time sensor data that these measurements are based on. The take emergency measure function is used to implement emergency reactions. Depending on the severity of the problem, steps like throttle alteration are taken to reduce any emerging dangers
 
 Subsequently, the control system engages a 'Flight Mode Check', where it determines the appropriate control response—altitude hold or position control—based on the input from the RC class. Should the drone be in a suitable state, the AltitudeController class is employed to compute the necessary control signals using feedback from 
 altitude and position sensors. This controller is part of a sophisticated PID system that dynamically adjusts the drone's propulsion to maintain desired flight parameters.
@@ -2128,11 +2127,11 @@ altitude and position sensors. This controller is part of a sophisticated PID sy
 Communication with peripheral modules is handled by the EspBridge class, which serializes the control and telemetry data and transmits it to the ESP module for further communication or processing. Additionally, flight data is meticulously recorded using the DataLogger class, which logs time-stamped sensor readings and control commands. 
 This data serves as a black box record, enabling post-flight analysis and contributing to system improvements and troubleshooting.
 
-The classes provided reveal a system designed with concurrent operations in mind. The EvoSensor and Gnss classes use multi-threading to handle sensor data acquisition in parallel to the main control loop, mitigating the latency effects on sensor readings and control responsiveness. These classes utilize thread locks to synchronize 
-access to shared resources, preventing data races and ensuring the integrity of sensor data used for control decisions. Moreover, the DataLogger class's implementation ensures that data can be recorded without impacting the performance of the main control loop.
+The classes reveal the system was created with concurrent operations in mind. By handling sensor data acquisition in parallel to the primary control loop, the EvoSensor, pressure sensor and Gnss classes reduce the impact of latency on control responsiveness. To ensure the integrity of sensor data required for control decisions and to prevent data races, 
+these classes use thread locks to synchronise access to shared resources. Additionally, the construction of the DataLogger class makes sure that recording data doesn't affect the main control loop's performance.
 
-In conclusion, the drone control system's architecture facilitates robust and reliable operations through a well-orchestrated series of checks and controls. It maintains an unyielding adherence to safety through real-time monitoring and emergency management while executing precise flight control. The asynchronous handling of 
-sensor data acquisition and the multi-threaded design underscore the system's capability to perform efficiently in a real-time context, reflecting a system ready to meet the rigorous demands of aerial operations.
+In conclusion, a well-planned set of checks and controls inside the drone control system architecture enable stable and dependable operations. It executes precision flight control while upholding a constant commitment to safety through real-time monitoring and emergency management. The multi-threaded architecture and asynchronous processing of sensor 
+data gathering highlight the system's efficiency in a real-time setting, indicating a system prepared to withstand the demanding requirements of aerial operations.
 
 \subsection{Sensor Data Aqusition}
 \begin{figure}[H]
@@ -2141,30 +2140,75 @@ sensor data acquisition and the multi-threaded design underscore the system's ca
   \caption{Sensor flowchart}
   \label{fig:Sensor_flowchart}
 \end{figure}
-........................................................................................................ 
-The technical execution of the sensor data handling system begins with the initialization phase, where global variables are set, and a framework for data acquisition is established. During this stage, the EvoSensor class is configured to set up the serial path and baud rate for communication, define the window length for data processing, 
-and instantiate the median filter and data logger if logging is required.
+The initialization phase, in which global variables are configured and a framework for data collecting is constructed, is where the technical execution of the sensor data processing system starts. In this phase, the EvoSensor class is setup to define the window length for data processing, set up the serial channel and baud rate for transmission, and, 
+if necessary, instantiate the median filter and data logger.
 
-Once initialization is complete, the system commences a background thread—a cornerstone of the system's ability to perform asynchronous operations. This thread is responsible for the continuous reading of data from the sensor, executed in a way that does not interrupt or delay the main control loop. By employing a lock mechanism, 
-the system ensures that data access is thread-safe, preventing simultaneous read/write operations that could lead to data corruption.
+The system starts a background thread when initialisation is complete, which is essential to the system's capacity to carry out asynchronous actions. This thread, which runs without interfering with or delaying the main control loop, is in charge of continuously reading data from the sensor. The system ensures thread-safe data access by employing a 
+lock mechanism, which stops simultaneous read/write operations that can cause data corruption.
 
-At the heart of the control loop, the system periodically checks the serial buffer to determine the presence of new data. Upon detection of incoming bytes, the data is parsed and translated from its raw binary form into a usable decimal format representing the sensor measurements, such as distance. This parsed data is then temporarily stored 
-in an array, respecting the synchronization enforced by the lock handling to ensure data integrity during multi-threaded operations.
+The system's primary function in the control loop is to periodically check the serial buffer for the presence of fresh data. When new data is detected, the raw data is analysed and converted into a format that can be used to describe the sensor measurements like distance/altitude. Next, this parsed data is momentarily stored in an array, respecting 
+the synchronization enforced by the lock handling to ensure data integrity during multi-threaded operations.
 
-Logging of data is a critical operation within the control loop. When enabled, each sensor reading, timestamped accurately, is appended to a log file, creating a persistent record of the drone's sensory inputs. This data is invaluable for post-flight analysis and debugging purposes. Moreover, the system incorporates a conditional filter check 
-to decide if the newly acquired data should undergo further processing to reduce noise or outliers. If filtering is required, the MedianFilter processes the stored data and returns a refined value for use within the system.
+One crucial function in the control loop is data logging. When activated, a permanent record of the drone's sensory inputs is created by appending each sensor reading—which is precisely timestamped—to a log file in csv format. For post-flight analysis, this data is vital. In addition, the system includes a conditional filter check to determine 
+whether additional processing of the recently acquired data is necessary to minimise noise or outliers. When filtering is necessary, the MedianFilter analyses the data that has been stored and provides a refined value that may be used by the system.
 
-As the main loop iterates, it consistently evaluates whether to continue operation based on a 'Keep Running' check. This could be influenced by user commands or predetermined conditions that signal the completion of a flight or testing scenario. If the condition to terminate is met, the system initiates a save operation, storing all 
-collected data to ensure no loss of information. This safeguarding step is followed by structured exit handling, which includes stopping the background thread. This methodical shutdown process ensures that all processes are cleanly finalized, data is preserved, and system resources are released.
+The 'Keep Running' check is used by the main loop to determine whether to continue operating. User actions that indicate the end of a flight ie. the kill of save switch being initialised will break the code from this loop. The system starts a save operation and stores all of the data gathered to make sure that no data is lost if the termination 
+condition is satisfied. Structured exit handling, which includes terminating the background thread, comes after this protective measure. This meticulous shutdown procedure makes sure that all operations are completed without error, that data is saved, and that system resources are freed.
 
-In the final step, the system ceases all operations and transitions to a halt state. This cessation marks the end of the program's execution cycle, ensuring a clean and orderly shutdown. Throughout this operation, the EvoSensor class plays a pivotal role in data management and contributes significantly to the system's overall performance, 
-collecting and parsing real-time sensor data while coordinating with the main loop to enable a robust and responsive flight control system.
-
+The system enters a halt state and stops all operations in the last phase. The program's execution cycle comes to an end with this cessation, guaranteeing a smooth and orderly shutdown. In order to provide a stable and responsive flight control system, the EvoSensor class works in tandem with the main loop to gather and process real-time sensor data. 
+As a result, it plays a critical role in data management and greatly enhances the overall performance of the system.
 
 \section{Tests}\label{tests}
 
-\subsection{GNSS rover module}\label{GNSS_rover_module}
-\subsection{GNSS base station}\label{GNSS_base_station}
+\subsection{GNSS rover rodule test, with correction Vs without}\label{GNSS_rover_module}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Pictures/GNSS_no_RTK.png}
+  \caption{GNSS readings without the use of RTK corrections form the base station}
+  \label{fig:GNSS_no_RTK}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Pictures/GNSS_data_no_correction.png}
+  \caption{GNSS Percesion Data (Without corrections)}
+  \label{fig:GNSS_data_no_RTK}
+\end{figure}
+In the figures above, figure:\ref{fig:GNSS_no_RTK} and figure:\ref{fig:GNSS_data_no_RTK} represent the GNSS latitude and longitude recorded while the module remained in a fixed position. The purpose of this setup was to calculate the overall precision of our GNSS module without the correction data streaming from the base station.
+
+From the above graph in figure:\ref{fig:GNSS_no_RTK} we can see that the recorded longitude and latitide points are drifting. Ideally, when a GNSS module is fixed in one position, it would be expected that the recorded latitude and longitude data points to cluster tightly around a single coordinate pair, indicating a high level of precision.
+However this is not the case as the spread of data points seen here suggests a certain level of positional inaccuracy, this is due to the fact that the module is not availing of the RTK correction stream from the GNSS base station we have set up. 
+
+Figure:\ref{fig:GNSS_data_no_RTK} shows a terminal output from the python code written to summerise the data recorded. From this we can see that the range of values of longitude and latitude readings, converted to meters are, 1.887m (3.d.p) and  0.708m (3.d.p). Next the overall max and min points on the graph are calclulated using Pythagorean theorem
+showing that the readings span over 2.015m (3.d.p) accross 59 readings.
+
+In Conclusion, the test results show that,the accuracy of GNSS data is limited and are not be suitable for applications that require high precision. The variations in data points and observed drift indicate that the GNSS modules accuracy fluctuates, potentially affecting its reliability when used in position control on the quadcopter. 
+With a dispersion of 2.015 meters across 59 readings it is clear that using RTK corrections is essential for getting more accurate data. While the GNSS module offers location information it falls short in meeting the precision requirements whitch are needed for accurate position control.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Pictures/GNSS_RTK.png}
+  \caption{GNSS readings with the use of RTK corrections form the base station}
+  \label{fig:GNSS_RTK}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Pictures/GNSS_data_correction.png}
+  \caption{GNSS Percesion Data (With corrections)}
+  \label{fig:GNSS_data_RTK}
+\end{figure}
+
+In the figures above, figure:\ref{fig:GNSS_RTK} and figure:\ref{fig:GNSS_data_RTK} represent the GNSS latitude and longitude recorded while the module remained in a fixed position. The purpose of this setup was to calculate the overall precision of our GNSS module without the correction data streaming from the base station.
+
+From the above graph in figure:\ref{fig:GNSS_RTK} we can see that the recorded longitude and latitide points are in a distinct cluster. Due to the fact that RTK corrections have now been streamed from the base station there is less variation in readings, indicating a high level of precision.
+
+Figure:\ref{fig:GNSS_data_no_RTK} shows a terminal output from the python code written to summerise the data recorded. From this we can see that the range of values of longitude and latitude readings, converted to meters are, 0.148m (3.d.p) and  0.118m (3.d.p). Next the overall max and min points on the graph are calclulated using Pythagorean theorem
+showing that the readings span over 0.189m (3.d.p) accross 32 readings.
+
+In conclusion the use of RTK corrections has proven vary useful, shocasing values of high percision, which is needed for position control on the quadcopter. There is little variation in data points with a dispersion of 0.189 meters across 59 readings, when copared to 2.015 meters in the test above it is undeniable the significant enhancement in accuracy 
+achieved through ustalizing RTK corrections. 
 
 \subsection{Testing initial estimate for \(\alpha_0\) and \(\beta_0\)}
   \begin{figure}[h]
@@ -2244,6 +2288,18 @@ deriving the initial values for \(\alpha\) and \(\beta\) in the Kalman filter.
   \caption{Altitude control whilst quadcopter has little horizontal movement}
   \label{fig:Altitude_control_no_movement}
 \end{figure}
+In this test shown in figure:\ref{fig:Altitude_control_no_movement} the Quadcopter is taken off in manual flight mode as usual once a steady altitude was found using the throttle on the remote, the altitude control mode was initalised using the RC. The altitude trimmer was then used to lower the altitude refferance until it was low enough to land in manual mode.
+In the graph the Green line represents the true altitude, the Orange line represents the refferance altitude, the Red line represents the throttle and the Blue line represents the drones vertical velocity.
+
+From the above graph we can see that the quadcopter performes well in a controlled osolation around the refferance point of \(\pm10\) centimeters thought. The quadcopter behavior demonstrated a well tuned PD controller with a P gain of 0.5 and a D gain of 0.07, this control proved impressive as it was able to follow the refferance altitude down as the trimmer was decrecing,
+mentaining the same accuracy as before in a consistant altitude. The lack of spikes in velocities seen in the altitude control portion of the graph proves impressive when compared to manual mode, showcasing the its persise control over the quadcopter.
+
+In conclusion the quadcopter’s performance in the altitude control mode, as shown in this test, was deemed exceptional. The altitude accuracy of \(\pm10\) centimetres from the reference altitude shows that the system is capable of exceptional control usiing a PD controller even when the refferance altitude is being altered. Hense this test proves the quadcopter to be a good soloution for 
+many different aplications of arial control such as, photography, surveying and search and rescue. 
+
+Furthermore, It could potentially be further improved with additional calibration of the P and D values in the controller, this will take further time and testing. 
+
+
 \subsection*{Quadcopter moving whilst in altitude control mode}
 \begin{figure}[H]
   \begin{minipage}{0.5\textwidth}
