@@ -19,25 +19,25 @@
 \contentsline {subsection}{\numberline {2.5}Position control}{33}{subsection.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}PID control}{33}{subsubsection.2.5.1}%
 \contentsline {subsubsection}{\numberline {2.5.2}Simulations}{35}{subsubsection.2.5.2}%
-\contentsline {section}{\numberline {3}hardware}{38}{section.3}%
+\contentsline {section}{\numberline {3}hardware}{37}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Motors}{38}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Radio}{39}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Radio}{38}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Receiver}{39}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Flight Controller}{41}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}Flight Controller}{40}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Raspberry Pi}{41}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}ESP32}{42}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Inertial Measurement Unit (IMU)}{43}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}ESC's (Electronic Speed Controller)}{44}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.4.2}ESP32}{41}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Inertial Measurement Unit (IMU)}{42}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}ESC's (Electronic Speed Controller)}{43}{subsection.3.6}%
 \contentsline {subsection}{\numberline {3.7}Propellers}{44}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Voltage Regulator}{45}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.8}Voltage Regulator}{44}{subsection.3.8}%
 \contentsline {subsection}{\numberline {3.9}Battery}{45}{subsection.3.9}%
-\contentsline {subsection}{\numberline {3.10}Sensors}{46}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.10}Sensors}{45}{subsection.3.10}%
 \contentsline {subsubsection}{\numberline {3.10.1}GNSS Rover Module}{46}{subsubsection.3.10.1}%
-\contentsline {subsubsection}{\numberline {3.10.2}GNSS Base Station}{47}{subsubsection.3.10.2}%
-\contentsline {subsubsection}{\numberline {3.10.3}Base station container and stand}{48}{subsubsection.3.10.3}%
+\contentsline {subsubsection}{\numberline {3.10.2}GNSS Base Station}{46}{subsubsection.3.10.2}%
+\contentsline {subsubsection}{\numberline {3.10.3}Base station container and stand}{47}{subsubsection.3.10.3}%
 \contentsline {subsubsection}{\numberline {3.10.4}GNSS Calibration (U-center)}{48}{subsubsection.3.10.4}%
 \contentsline {subsubsection}{\numberline {3.10.5}Time of Flight sensor}{49}{subsubsection.3.10.5}%
-\contentsline {subsubsection}{\numberline {3.10.6}Barometer}{50}{subsubsection.3.10.6}%
+\contentsline {subsubsection}{\numberline {3.10.6}Barometer}{49}{subsubsection.3.10.6}%
 \contentsline {subsubsection}{\numberline {3.10.7}Anemometer}{50}{subsubsection.3.10.7}%
 \contentsline {subsection}{\numberline {3.11}Hardware schematic}{51}{subsection.3.11}%
 \contentsline {subsection}{\numberline {3.12}Cost of materials}{52}{subsection.3.12}%

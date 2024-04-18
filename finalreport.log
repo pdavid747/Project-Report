@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.20)  17 APR 2024 00:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.20)  18 APR 2024 01:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -608,24 +608,24 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 ) (./finalreport.aux)
 \openout1 = `finalreport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -682,7 +682,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.9).
 
-Package hyperref Info: Link coloring OFF on input line 34.
+Package hyperref Info: Link coloring OFF on input line 36.
 (./finalreport.out) (./finalreport.out)
 \@outlinefile=\write4
 \openout4 = `finalreport.out'.
@@ -695,7 +695,7 @@ Package caption Info: End \AtBeginDocument code.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.66 \newpage
+l.74 \newpage
               [1] [2] [3] [4] (./finalreport.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -709,7 +709,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `finalreport.toc'.
 
  [6] [7{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [8] [9]
-Overfull \hbox (0.67995pt too wide) in paragraph at lines 188--189
+Overfull \hbox (0.67995pt too wide) in paragraph at lines 355--363
 \OT1/cmr/m/n/10 learn-ing al-go-rithm for con-trol-ling the al-ti-tude of the quad-copter. The re-searchers em-ployed PD (Proportional-
  []
 
@@ -717,67 +717,67 @@ Overfull \hbox (0.67995pt too wide) in paragraph at lines 188--189
 <Pictures/Quad.jpg, id=400, 2825.55624pt x 3767.07375pt>
 File: Pictures/Quad.jpg Graphic file (type jpg)
 <use Pictures/Quad.jpg>
-Package pdftex.def Info: Pictures/Quad.jpg  used on input line 212.
+Package pdftex.def Info: Pictures/Quad.jpg  used on input line 427.
 (pdftex.def)             Requested size: 164.41711pt x 219.17445pt.
 <Pictures/frame_housing.png, id=401, 546.04pt x 400.49625pt>
 File: Pictures/frame_housing.png Graphic file (type png)
 <use Pictures/frame_housing.png>
-Package pdftex.def Info: Pictures/frame_housing.png  used on input line 221.
+Package pdftex.def Info: Pictures/frame_housing.png  used on input line 438.
 (pdftex.def)             Requested size: 164.41711pt x 120.5898pt.
  [11 <./Pictures/Quad.jpg> <./Pictures/frame_housing.png>]
 <Pictures/legs_baseplate.png, id=411, 2093.8225pt x 2634.84375pt>
 File: Pictures/legs_baseplate.png Graphic file (type png)
 <use Pictures/legs_baseplate.png>
-Package pdftex.def Info: Pictures/legs_baseplate.png  used on input line 238.
+Package pdftex.def Info: Pictures/legs_baseplate.png  used on input line 469.
 (pdftex.def)             Requested size: 164.41711pt x 206.89198pt.
  [12 <./Pictures/legs_baseplate.png>]
 <Pictures/electronic_housing.png, id=420, 2500.34125pt x 2587.6675pt>
 File: Pictures/electronic_housing.png Graphic file (type png)
 <use Pictures/electronic_housing.png>
-Package pdftex.def Info: Pictures/electronic_housing.png  used on input line 253.
+Package pdftex.def Info: Pictures/electronic_housing.png  used on input line 497.
 (pdftex.def)             Requested size: 164.41711pt x 170.13904pt.
  [13 <./Pictures/electronic_housing.png>]
 File: Pictures/Quad.jpg Graphic file (type jpg)
 <use Pictures/Quad.jpg>
-Package pdftex.def Info: Pictures/Quad.jpg  used on input line 381.
+Package pdftex.def Info: Pictures/Quad.jpg  used on input line 669.
 (pdftex.def)             Requested size: 211.38832pt x 281.77109pt.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <15> not available
-(Font)              size <14.4> substituted on input line 387.
+(Font)              size <14.4> substituted on input line 675.
 
-LaTeX Font Info:    Calculating math sizes for size <15> on input line 387.
+LaTeX Font Info:    Calculating math sizes for size <15> on input line 675.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.49995> not available
-(Font)              size <10.95> substituted on input line 387.
+(Font)              size <10.95> substituted on input line 675.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 387.
+(Font)              size <7> substituted on input line 675.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <15> not available
-(Font)              size <14.4> substituted on input line 387.
+(Font)              size <14.4> substituted on input line 675.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.49995> not available
-(Font)              size <10.95> substituted on input line 387.
+(Font)              size <10.95> substituted on input line 675.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 387.
+(Font)              size <7> substituted on input line 675.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <15> not available
-(Font)              size <14.4> substituted on input line 387.
+(Font)              size <14.4> substituted on input line 675.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.49995> not available
-(Font)              size <10.95> substituted on input line 387.
+(Font)              size <10.95> substituted on input line 675.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 387.
+(Font)              size <7> substituted on input line 675.
 
 [14] [15] [16] [17] [18] [19] [20] [21]
 PGFPlots: reading {Data/1045_full.csv}
@@ -791,286 +791,281 @@ PGFPlots: reading {Data/1045_low.csv}
 <Pictures/no_constant_PD.png, id=617, 1040.688pt x 624.4128pt>
 File: Pictures/no_constant_PD.png Graphic file (type png)
 <use Pictures/no_constant_PD.png>
-Package pdftex.def Info: Pictures/no_constant_PD.png  used on input line 1375.
+Package pdftex.def Info: Pictures/no_constant_PD.png  used on input line 1864.
 (pdftex.def)             Requested size: 422.77664pt x 253.66707pt.
  [28] [29 <./Pictures/no_constant_PD.png>]
 <Pictures/a_constant_PD.png, id=631, 747.9945pt x 483.4863pt>
 File: Pictures/a_constant_PD.png Graphic file (type png)
 <use Pictures/a_constant_PD.png>
-Package pdftex.def Info: Pictures/a_constant_PD.png  used on input line 1402.
+Package pdftex.def Info: Pictures/a_constant_PD.png  used on input line 1898.
 (pdftex.def)             Requested size: 422.77664pt x 273.28091pt.
  [30 <./Pictures/a_constant_PD.png>]
 <Pictures/b_constant_PD.png, id=642, 852.0633pt x 522.5121pt>
 File: Pictures/b_constant_PD.png Graphic file (type png)
 <use Pictures/b_constant_PD.png>
-Package pdftex.def Info: Pictures/b_constant_PD.png  used on input line 1427.
+Package pdftex.def Info: Pictures/b_constant_PD.png  used on input line 1956.
 (pdftex.def)             Requested size: 422.77664pt x 259.26218pt.
  [31 <./Pictures/b_constant_PD.png>] [32] [33] [34] [35]
 <Pictures/Drone_path_wind.png, id=682, 1011.78pt x 433.62pt>
 File: Pictures/Drone_path_wind.png Graphic file (type png)
 <use Pictures/Drone_path_wind.png>
-Package pdftex.def Info: Pictures/Drone_path_wind.png  used on input line 1549.
+Package pdftex.def Info: Pictures/Drone_path_wind.png  used on input line 2217.
 (pdftex.def)             Requested size: 375.80544pt x 161.05884pt.
- [36 <./Pictures/Drone_path_wind.png>]
-<Pictures/Drone_path_wind_varys.png, id=691, 1011.78pt x 433.62pt>
+<Pictures/Drone_path_wind_varys.png, id=683, 1011.78pt x 433.62pt>
 File: Pictures/Drone_path_wind_varys.png Graphic file (type png)
 <use Pictures/Drone_path_wind_varys.png>
-Package pdftex.def Info: Pictures/Drone_path_wind_varys.png  used on input line 1572.
+Package pdftex.def Info: Pictures/Drone_path_wind_varys.png  used on input line 2234.
 (pdftex.def)             Requested size: 375.80544pt x 161.05884pt.
- [37 <./Pictures/Drone_path_wind_varys.png>]
-<Pictures/motors.png, id=699, 527.47063pt x 381.92688pt>
+ [36 <./Pictures/Drone_path_wind.png>]
+<Pictures/motors.png, id=692, 527.47063pt x 381.92688pt>
 File: Pictures/motors.png Graphic file (type png)
 <use Pictures/motors.png>
-Package pdftex.def Info: Pictures/motors.png  used on input line 1598.
+Package pdftex.def Info: Pictures/motors.png  used on input line 2255.
 (pdftex.def)             Requested size: 140.92793pt x 102.03767pt.
+ [37 <./Pictures/Drone_path_wind_varys.png>]
 <Pictures/radio.jpg, id=702, 298.11375pt x 470.75874pt>
 File: Pictures/radio.jpg Graphic file (type jpg)
 <use Pictures/radio.jpg>
-Package pdftex.def Info: Pictures/radio.jpg  used on input line 1610.
+Package pdftex.def Info: Pictures/radio.jpg  used on input line 2274.
 (pdftex.def)             Requested size: 187.89914pt x 296.71606pt.
- [38 <./Pictures/motors.png>]
-<Pictures/reciever.png, id=710, 758.33313pt x 332.74312pt>
+<Pictures/reciever.png, id=703, 758.33313pt x 332.74312pt>
 File: Pictures/reciever.png Graphic file (type png)
 <use Pictures/reciever.png>
-Package pdftex.def Info: Pictures/reciever.png  used on input line 1617.
+Package pdftex.def Info: Pictures/reciever.png  used on input line 2281.
 (pdftex.def)             Requested size: 140.92793pt x 61.83575pt.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1634.
+ [38 <./Pictures/motors.png> <./Pictures/radio.jpg>]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2307.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1634.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2307.
 
-Overfull \hbox (15.64511pt too wide) in paragraph at lines 1629--1648
+Overfull \hbox (35.08963pt too wide) in paragraph at lines 2302--2322
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[39 <./Pictures/radio.jpg> <./Pictures/reciever.png>]
-<Pictures/flight_controller.png, id=727, 415.05063pt x 394.97563pt>
+[39 <./Pictures/reciever.png>]
+<Pictures/flight_controller.png, id=728, 415.05063pt x 394.97563pt>
 File: Pictures/flight_controller.png Graphic file (type png)
 <use Pictures/flight_controller.png>
-Package pdftex.def Info: Pictures/flight_controller.png  used on input line 1670.
+Package pdftex.def Info: Pictures/flight_controller.png  used on input line 2381.
 (pdftex.def)             Requested size: 164.41711pt x 156.46266pt.
- [40]
-<Pictures/raspberry_pi.png, id=732, 347.2975pt x 230.8625pt>
+<Pictures/raspberry_pi.png, id=729, 347.2975pt x 230.8625pt>
 File: Pictures/raspberry_pi.png Graphic file (type png)
 <use Pictures/raspberry_pi.png>
-Package pdftex.def Info: Pictures/raspberry_pi.png  used on input line 1682.
+Package pdftex.def Info: Pictures/raspberry_pi.png  used on input line 2393.
 (pdftex.def)             Requested size: 140.92793pt x 93.68196pt.
- [41 <./Pictures/flight_controller.png> <./Pictures/raspberry_pi.png>]
-<Pictures/esp32.png, id=742, 392.46625pt x 295.1025pt>
+ [40 <./Pictures/flight_controller.png>]
+<Pictures/esp32.png, id=737, 392.46625pt x 295.1025pt>
 File: Pictures/esp32.png Graphic file (type png)
 <use Pictures/esp32.png>
-Package pdftex.def Info: Pictures/esp32.png  used on input line 1698.
+Package pdftex.def Info: Pictures/esp32.png  used on input line 2430.
 (pdftex.def)             Requested size: 140.92793pt x 105.96663pt.
-<Pictures/IMU.png, id=743, 433.11812pt x 474.27188pt>
+ [41 <./Pictures/raspberry_pi.png> <./Pictures/esp32.png>]
+<Pictures/IMU.png, id=746, 433.11812pt x 474.27188pt>
 File: Pictures/IMU.png Graphic file (type png)
 <use Pictures/IMU.png>
-Package pdftex.def Info: Pictures/IMU.png  used on input line 1713.
+Package pdftex.def Info: Pictures/IMU.png  used on input line 2461.
 (pdftex.def)             Requested size: 93.94957pt x 102.87106pt.
- [42 <./Pictures/esp32.png>]
-<Pictures/esc.png, id=751, 787.94376pt x 498.86375pt>
+ [42 <./Pictures/IMU.png>]
+<Pictures/esc.png, id=754, 787.94376pt x 498.86375pt>
 File: Pictures/esc.png Graphic file (type png)
 <use Pictures/esc.png>
-Package pdftex.def Info: Pictures/esc.png  used on input line 1737.
+Package pdftex.def Info: Pictures/esc.png  used on input line 2510.
 (pdftex.def)             Requested size: 164.41711pt x 104.09462pt.
- [43 <./Pictures/IMU.png>]
-<Pictures/props.png, id=760, 476.27937pt x 277.035pt>
+<Pictures/props.png, id=757, 476.27937pt x 277.035pt>
 File: Pictures/props.png Graphic file (type png)
 <use Pictures/props.png>
-Package pdftex.def Info: Pictures/props.png  used on input line 1750.
+Package pdftex.def Info: Pictures/props.png  used on input line 2533.
 (pdftex.def)             Requested size: 164.41711pt x 95.63635pt.
- [44 <./Pictures/esc.png> <./Pictures/props.png>]
-<Pictures/voltage_regulator.png, id=770, 795.47188pt x 359.84438pt>
+ [43 <./Pictures/esc.png>]
+<Pictures/voltage_regulator.png, id=765, 795.47188pt x 359.84438pt>
 File: Pictures/voltage_regulator.png Graphic file (type png)
 <use Pictures/voltage_regulator.png>
-Package pdftex.def Info: Pictures/voltage_regulator.png  used on input line 1767.
+Package pdftex.def Info: Pictures/voltage_regulator.png  used on input line 2566.
 (pdftex.def)             Requested size: 164.41711pt x 74.37256pt.
-<Pictures/battery.png, id=772, 351.3125pt x 155.58125pt>
+ [44 <./Pictures/props.png> <./Pictures/voltage_regulator.png>]
+<Pictures/battery.png, id=775, 351.3125pt x 155.58125pt>
 File: Pictures/battery.png Graphic file (type png)
 <use Pictures/battery.png>
-Package pdftex.def Info: Pictures/battery.png  used on input line 1780.
+Package pdftex.def Info: Pictures/battery.png  used on input line 2585.
 (pdftex.def)             Requested size: 164.41711pt x 72.81458pt.
- [45 <./Pictures/voltage_regulator.png> <./Pictures/battery.png>]
-<Pictures/gnss_rover.png, id=781, 518.93875pt x 410.03188pt>
+<Pictures/gnss_rover.png, id=776, 518.93875pt x 410.03188pt>
 File: Pictures/gnss_rover.png Graphic file (type png)
 <use Pictures/gnss_rover.png>
-Package pdftex.def Info: Pictures/gnss_rover.png  used on input line 1804.
+Package pdftex.def Info: Pictures/gnss_rover.png  used on input line 2629.
 (pdftex.def)             Requested size: 117.43875pt x 92.79124pt.
-<Pictures/quad_antenna.png, id=782, 253.44687pt x 185.69376pt>
+<Pictures/quad_antenna.png, id=777, 253.44687pt x 185.69376pt>
 File: Pictures/quad_antenna.png Graphic file (type png)
 <use Pictures/quad_antenna.png>
-Package pdftex.def Info: Pictures/quad_antenna.png  used on input line 1810.
+Package pdftex.def Info: Pictures/quad_antenna.png  used on input line 2635.
 (pdftex.def)             Requested size: 117.43875pt x 86.04352pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 1802--1814
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 2627--2639
 []$[]$ $[]$ 
  []
 
-[46 <./Pictures/gnss_rover.png> <./Pictures/quad_antenna.png>]
-<Pictures/gnss_base_station.png, id=795, 368.87813pt x 456.70625pt>
+[45 <./Pictures/battery.png>]
+<Pictures/gnss_base_station.png, id=787, 368.87813pt x 456.70625pt>
 File: Pictures/gnss_base_station.png Graphic file (type png)
 <use Pictures/gnss_base_station.png>
-Package pdftex.def Info: Pictures/gnss_base_station.png  used on input line 1830.
+Package pdftex.def Info: Pictures/gnss_base_station.png  used on input line 2669.
 (pdftex.def)             Requested size: 117.43875pt x 145.39635pt.
-<Pictures/base_station_antenna.png, id=796, 343.2825pt x 292.09125pt>
+<Pictures/base_station_antenna.png, id=788, 343.2825pt x 292.09125pt>
 File: Pictures/base_station_antenna.png Graphic file (type png)
 <use Pictures/base_station_antenna.png>
-Package pdftex.def Info: Pictures/base_station_antenna.png  used on input line 1836.
+Package pdftex.def Info: Pictures/base_station_antenna.png  used on input line 2675.
 (pdftex.def)             Requested size: 117.43875pt x 99.92476pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 1828--1840
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 2667--2679
 []$[]$ $[]$ 
  []
 
-<Pictures/base_station_box.png, id=799, 4047.12pt x 3035.34pt>
+[46 <./Pictures/gnss_rover.png> <./Pictures/quad_antenna.png> <./Pictures/gnss_base_station.png> <./Pictures/base_station_antenna.png>]
+<Pictures/base_station_box.png, id=803, 4047.12pt x 3035.34pt>
 File: Pictures/base_station_box.png Graphic file (type png)
 <use Pictures/base_station_box.png>
-Package pdftex.def Info: Pictures/base_station_box.png  used on input line 1853.
+Package pdftex.def Info: Pictures/base_station_box.png  used on input line 2705.
 (pdftex.def)             Requested size: 164.41353pt x 123.29185pt.
-<Pictures/base_station_stand.jpg, id=800, 2768.3425pt x 3691.7925pt>
+<Pictures/base_station_stand.jpg, id=804, 2768.3425pt x 3691.7925pt>
 File: Pictures/base_station_stand.jpg Graphic file (type jpg)
 <use Pictures/base_station_stand.jpg>
-Package pdftex.def Info: Pictures/base_station_stand.jpg  used on input line 1859.
+Package pdftex.def Info: Pictures/base_station_stand.jpg  used on input line 2711.
 (pdftex.def)             Requested size: 93.94955pt x 125.28268pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 1851--1863
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 2703--2715
 []$[]$ $[]$ 
  []
 
-[47 <./Pictures/gnss_base_station.png> <./Pictures/base_station_antenna.png>]
-<Pictures/telemetry radio.png, id=815, 388.45125pt x 309.65688pt>
+<Pictures/telemetry radio.png, id=812, 388.45125pt x 309.65688pt>
 File: Pictures/telemetry radio.png Graphic file (type png)
 <use Pictures/telemetry radio.png>
-Package pdftex.def Info: Pictures/telemetry radio.png  used on input line 1871.
+Package pdftex.def Info: Pictures/telemetry radio.png  used on input line 2734.
 (pdftex.def)             Requested size: 140.92793pt x 112.34105pt.
- [48 <./Pictures/base_station_box.png> <./Pictures/base_station_stand.jpg> <./Pictures/telemetry radio.png>]
-<Pictures/ToF_sensor.png, id=825, 564.1075pt x 519.9425pt>
+[47 <./Pictures/base_station_box.png> <./Pictures/base_station_stand.jpg>] [48 <./Pictures/telemetry radio.png>]
+<Pictures/ToF_sensor.png, id=826, 564.1075pt x 519.9425pt>
 File: Pictures/ToF_sensor.png Graphic file (type png)
 <use Pictures/ToF_sensor.png>
-Package pdftex.def Info: Pictures/ToF_sensor.png  used on input line 1897.
+Package pdftex.def Info: Pictures/ToF_sensor.png  used on input line 2799.
 (pdftex.def)             Requested size: 140.92793pt x 129.89009pt.
- [49 <./Pictures/ToF_sensor.png>]
-<Pictures/bmp180.png, id=833, 304.13625pt x 302.12875pt>
+<Pictures/bmp180.png, id=828, 304.13625pt x 302.12875pt>
 File: Pictures/bmp180.png Graphic file (type png)
 <use Pictures/bmp180.png>
-Package pdftex.def Info: Pictures/bmp180.png  used on input line 1908.
+Package pdftex.def Info: Pictures/bmp180.png  used on input line 2819.
 (pdftex.def)             Requested size: 93.94957pt x 93.32701pt.
-<Pictures/Anemometer.png, id=835, 554.07pt x 338.26375pt>
+ [49 <./Pictures/ToF_sensor.png> <./Pictures/bmp180.png>]
+<Pictures/Anemometer.png, id=839, 554.07pt x 338.26375pt>
 File: Pictures/Anemometer.png Graphic file (type png)
 <use Pictures/Anemometer.png>
-Package pdftex.def Info: Pictures/Anemometer.png  used on input line 1918.
+Package pdftex.def Info: Pictures/Anemometer.png  used on input line 2837.
 (pdftex.def)             Requested size: 187.89914pt x 114.71394pt.
- [50 <./Pictures/bmp180.png> <./Pictures/Anemometer.png>]
-<Pictures/Hardware_schematic.png, id=848, 823.075pt x 342.27875pt>
+<Pictures/Hardware_schematic.png, id=842, 823.075pt x 342.27875pt>
 File: Pictures/Hardware_schematic.png Graphic file (type png)
 <use Pictures/Hardware_schematic.png>
-Package pdftex.def Info: Pictures/Hardware_schematic.png  used on input line 1934.
+Package pdftex.def Info: Pictures/Hardware_schematic.png  used on input line 2878.
 (pdftex.def)             Requested size: 375.80544pt x 156.28023pt.
- [51 <./Pictures/Hardware_schematic.png>] [52] [53]
-<Pictures/Pi_PCB_bottom.png, id=906, 431.6125pt x 313.17pt>
+ [50 <./Pictures/Anemometer.png>] [51 <./Pictures/Hardware_schematic.png>] [52] [53]
+<Pictures/Pi_PCB_bottom.png, id=907, 431.6125pt x 313.17pt>
 File: Pictures/Pi_PCB_bottom.png Graphic file (type png)
 <use Pictures/Pi_PCB_bottom.png>
-Package pdftex.def Info: Pictures/Pi_PCB_bottom.png  used on input line 2028.
+Package pdftex.def Info: Pictures/Pi_PCB_bottom.png  used on input line 3053.
 (pdftex.def)             Requested size: 117.43875pt x 85.21169pt.
-<Pictures/Pi_PCB_top.png, id=907, 404.51125pt x 361.35pt>
+<Pictures/Pi_PCB_top.png, id=908, 404.51125pt x 361.35pt>
 File: Pictures/Pi_PCB_top.png Graphic file (type png)
 <use Pictures/Pi_PCB_top.png>
-Package pdftex.def Info: Pictures/Pi_PCB_top.png  used on input line 2034.
+Package pdftex.def Info: Pictures/Pi_PCB_top.png  used on input line 3059.
 (pdftex.def)             Requested size: 117.43875pt x 104.9046pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 2026--2038
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 3051--3063
 []$[]$ $[]$ 
  []
 
-<Pictures/Pi_PCB_on_Pi.png, id=908, 411.5375pt x 360.34625pt>
+<Pictures/Pi_PCB_on_Pi.png, id=909, 411.5375pt x 360.34625pt>
 File: Pictures/Pi_PCB_on_Pi.png Graphic file (type png)
 <use Pictures/Pi_PCB_on_Pi.png>
-Package pdftex.def Info: Pictures/Pi_PCB_on_Pi.png  used on input line 2041.
+Package pdftex.def Info: Pictures/Pi_PCB_on_Pi.png  used on input line 3066.
 (pdftex.def)             Requested size: 164.41711pt x 143.96548pt.
-<Pictures/Esp_IMU_board.png, id=913, 407.5225pt x 334.24875pt>
+<Pictures/Esp_IMU_board.png, id=914, 407.5225pt x 334.24875pt>
 File: Pictures/Esp_IMU_board.png Graphic file (type png)
 <use Pictures/Esp_IMU_board.png>
-Package pdftex.def Info: Pictures/Esp_IMU_board.png  used on input line 2053.
+Package pdftex.def Info: Pictures/Esp_IMU_board.png  used on input line 3084.
 (pdftex.def)             Requested size: 164.41711pt x 134.85487pt.
 [54 <./Pictures/Pi_PCB_bottom.png> <./Pictures/Pi_PCB_top.png> <./Pictures/Pi_PCB_on_Pi.png>]
 File: Pictures/flight_controller.png Graphic file (type png)
 <use Pictures/flight_controller.png>
-Package pdftex.def Info: Pictures/flight_controller.png  used on input line 2063.
+Package pdftex.def Info: Pictures/flight_controller.png  used on input line 3100.
 (pdftex.def)             Requested size: 164.41711pt x 156.46266pt.
-<Pictures/sensorpcb.png, id=929, 412.54124pt x 360.34625pt>
+<Pictures/sensorpcb.png, id=930, 412.54124pt x 360.34625pt>
 File: Pictures/sensorpcb.png Graphic file (type png)
 <use Pictures/sensorpcb.png>
-Package pdftex.def Info: Pictures/sensorpcb.png  used on input line 2074.
+Package pdftex.def Info: Pictures/sensorpcb.png  used on input line 3120.
 (pdftex.def)             Requested size: 140.92793pt x 123.09894pt.
  [55 <./Pictures/Esp_IMU_board.png>]
-<Pictures/power_distribution_and_escs.png, id=936, 560.59438pt x 383.4325pt>
+<Pictures/power_distribution_and_escs.png, id=937, 560.59438pt x 383.4325pt>
 File: Pictures/power_distribution_and_escs.png Graphic file (type png)
 <use Pictures/power_distribution_and_escs.png>
-Package pdftex.def Info: Pictures/power_distribution_and_escs.png  used on input line 2084.
+Package pdftex.def Info: Pictures/power_distribution_and_escs.png  used on input line 3138.
 (pdftex.def)             Requested size: 234.8775pt x 160.6544pt.
  [56 <./Pictures/sensorpcb.png> <./Pictures/power_distribution_and_escs.png>]
-<Pictures/main_loop_flowchart.png, id=947, 641.39626pt x 524.96124pt>
+<Pictures/main_loop_flowchart.png, id=948, 641.39626pt x 524.96124pt>
 File: Pictures/main_loop_flowchart.png Graphic file (type png)
 <use Pictures/main_loop_flowchart.png>
-Package pdftex.def Info: Pictures/main_loop_flowchart.png  used on input line 2111.
+Package pdftex.def Info: Pictures/main_loop_flowchart.png  used on input line 3175.
 (pdftex.def)             Requested size: 375.80544pt x 307.58571pt.
  [57] [58 <./Pictures/main_loop_flowchart.png>]
-<Pictures/sensor_flowchart.png, id=959, 468.75125pt x 633.36626pt>
+<Pictures/sensor_flowchart.png, id=960, 468.75125pt x 633.36626pt>
 File: Pictures/sensor_flowchart.png Graphic file (type png)
 <use Pictures/sensor_flowchart.png>
-Package pdftex.def Info: Pictures/sensor_flowchart.png  used on input line 2139.
+Package pdftex.def Info: Pictures/sensor_flowchart.png  used on input line 3200.
 (pdftex.def)             Requested size: 375.80544pt x 507.77611pt.
  [59] [60 <./Pictures/sensor_flowchart.png>]
-<Pictures/GNSS_no_RTK.png, id=971, 722.7pt x 433.62pt>
+<Pictures/GNSS_no_RTK.png, id=972, 722.7pt x 433.62pt>
 File: Pictures/GNSS_no_RTK.png Graphic file (type png)
 <use Pictures/GNSS_no_RTK.png>
-Package pdftex.def Info: Pictures/GNSS_no_RTK.png  used on input line 2166.
+Package pdftex.def Info: Pictures/GNSS_no_RTK.png  used on input line 3222.
 (pdftex.def)             Requested size: 375.80544pt x 225.48369pt.
  [61]
-<Pictures/GNSS_data_no_correction.png, id=976, 282.05376pt x 74.2775pt>
+<Pictures/GNSS_data_no_correction.png, id=977, 282.05376pt x 74.2775pt>
 File: Pictures/GNSS_data_no_correction.png Graphic file (type png)
 <use Pictures/GNSS_data_no_correction.png>
-Package pdftex.def Info: Pictures/GNSS_data_no_correction.png  used on input line 2173.
+Package pdftex.def Info: Pictures/GNSS_data_no_correction.png  used on input line 3229.
 (pdftex.def)             Requested size: 234.8775pt x 61.85431pt.
  [62 <./Pictures/GNSS_no_RTK.png> <./Pictures/GNSS_data_no_correction.png>]
-<Pictures/GNSS_RTK.png, id=989, 722.7pt x 433.62pt>
+<Pictures/GNSS_RTK.png, id=990, 722.7pt x 433.62pt>
 File: Pictures/GNSS_RTK.png Graphic file (type png)
 <use Pictures/GNSS_RTK.png>
-Package pdftex.def Info: Pictures/GNSS_RTK.png  used on input line 2191.
+Package pdftex.def Info: Pictures/GNSS_RTK.png  used on input line 3268.
 (pdftex.def)             Requested size: 375.80544pt x 225.48369pt.
-<Pictures/GNSS_data_correction.png, id=990, 281.05pt x 73.27374pt>
+<Pictures/GNSS_data_correction.png, id=991, 281.05pt x 73.27374pt>
 File: Pictures/GNSS_data_correction.png Graphic file (type png)
 <use Pictures/GNSS_data_correction.png>
-Package pdftex.def Info: Pictures/GNSS_data_correction.png  used on input line 2198.
+Package pdftex.def Info: Pictures/GNSS_data_correction.png  used on input line 3275.
 (pdftex.def)             Requested size: 234.8775pt x 61.23532pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2213.
+(hyperref)                removing `math shift' on input line 3305.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 2213.
+(hyperref)                removing `\alpha' on input line 3305.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2213.
+(hyperref)                removing `subscript' on input line 3305.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2213.
+(hyperref)                removing `math shift' on input line 3305.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 2213.
+(hyperref)                removing `\beta' on input line 3305.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2213.
+(hyperref)                removing `subscript' on input line 3305.
 
 PGFPlots: reading {Data/1045_full.csv}
 Missing character: There is no ; in font nullfont!
@@ -1079,35 +1074,72 @@ Missing character: There is no ; in font nullfont!
 PGFPlots: reading {Data/1045_full.csv}
 PGFPlots: reading {Data/1045_low.csv}
 [63 <./Pictures/GNSS_RTK.png> <./Pictures/GNSS_data_correction.png>]
-<Pictures/Test_alitiude_control_little_movement.png, id=1006, 1029.8475pt x 585.68813pt>
+<Pictures/Test_alitiude_control_little_movement.png, id=1007, 1029.8475pt x 585.68813pt>
 File: Pictures/Test_alitiude_control_little_movement.png Graphic file (type png)
 <use Pictures/Test_alitiude_control_little_movement.png>
-Package pdftex.def Info: Pictures/Test_alitiude_control_little_movement.png  used on input line 2287.
+Package pdftex.def Info: Pictures/Test_alitiude_control_little_movement.png  used on input line 3378.
 (pdftex.def)             Requested size: 328.82707pt x 187.004pt.
  [64]
-<Pictures/Altitude_hold_test_moving.png, id=1013, 1110.0672pt x 550.6974pt>
+<Pictures/Altitude_hold_test_moving.png, id=1014, 1110.0672pt x 550.6974pt>
 File: Pictures/Altitude_hold_test_moving.png Graphic file (type png)
 <use Pictures/Altitude_hold_test_moving.png>
-Package pdftex.def Info: Pictures/Altitude_hold_test_moving.png  used on input line 2307.
+Package pdftex.def Info: Pictures/Altitude_hold_test_moving.png  used on input line 3418.
 (pdftex.def)             Requested size: 234.8775pt x 116.51537pt.
-<Pictures/GNSS_Altitude_hold_test_moving.png, id=1014, 1040.688pt x 624.4128pt>
+<Pictures/GNSS_Altitude_hold_test_moving.png, id=1015, 1040.688pt x 624.4128pt>
 File: Pictures/GNSS_Altitude_hold_test_moving.png Graphic file (type png)
 <use Pictures/GNSS_Altitude_hold_test_moving.png>
-Package pdftex.def Info: Pictures/GNSS_Altitude_hold_test_moving.png  used on input line 2314.
+Package pdftex.def Info: Pictures/GNSS_Altitude_hold_test_moving.png  used on input line 3425.
 (pdftex.def)             Requested size: 234.8775pt x 140.9251pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 2305--2319
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 3416--3430
 []$[]$ $[]$ 
  []
 
 [65 <./Pictures/Test_alitiude_control_little_movement.png>]
-<Pictures/ToF_altitude_error.png, id=1026, 662.475pt x 278.03876pt>
+<Pictures/ToF_altitude_error.png, id=1027, 662.475pt x 278.03876pt>
 File: Pictures/ToF_altitude_error.png Graphic file (type png)
 <use Pictures/ToF_altitude_error.png>
-Package pdftex.def Info: Pictures/ToF_altitude_error.png  used on input line 2336.
+Package pdftex.def Info: Pictures/ToF_altitude_error.png  used on input line 3474.
 (pdftex.def)             Requested size: 281.85587pt x 118.2943pt.
  [66 <./Pictures/Altitude_hold_test_moving.png> <./Pictures/GNSS_Altitude_hold_test_moving.png>]
-<Pictures/gantt_chart.png, id=1039, 1065.9825pt x 317.185pt>
+<Pictures/gantt_chart.png, id=1040, 1065.9825pt x 317.185pt>
 File: Pictures/gantt_chart.png Graphic file (type png)
 <use Pictures/gantt_chart.png>
-Package pdftex.def Info: Pictures/gantt_chart.png  used on inpu
+Package pdftex.def Info: Pictures/gantt_chart.png  used on input line 3498.
+(pdftex.def)             Requested size: 563.70459pt x 167.73456pt.
+<Pictures/Gantt_chart_key.png, id=1041, 86.3225pt x 89.33376pt>
+File: Pictures/Gantt_chart_key.png Graphic file (type png)
+<use Pictures/Gantt_chart_key.png>
+Package pdftex.def Info: Pictures/Gantt_chart_key.png  used on input line 3504.
+(pdftex.def)             Requested size: 93.94957pt x 97.22871pt.
+ [67 <./Pictures/ToF_altitude_error.png>] [68 <./Pictures/gantt_chart.png>] [69 <./Pictures/Gantt_chart_key.png>] [70]
+
+LaTeX Warning: Reference `(' on page 71 undefined on input line 3648.
+
+[71] (./finalreport.bbl [72]) [73] (./finalreport.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.6pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `finalreport.out' has not changed.
+(rerunfilecheck)             Checksum: 47827BA4D2270E34AF76491F8CD66195;8377.
+ ) 
+Here is how much of TeX's memory you used:
+ 36149 strings out of 476025
+ 854407 string characters out of 5790017
+ 1877388 words of memory out of 5000000
+ 55649 multiletter control sequences out of 15000+600000
+ 524316 words of font info for 79 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 99i,19n,103p,892b,2303s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on finalreport.pdf (74 pages, 32406555 bytes).
+PDF statistics:
+ 1270 PDF objects out of 1440 (max. 8388607)
+ 1050 compressed objects within 11 object streams
+ 337 named destinations out of 1000 (max. 500000)
+ 722 words of extra memory for PDF output out of 10000 (max. 10000000)
+
