@@ -53,6 +53,6 @@
 \contentsline {subsection}{\numberline {5.1}GNSS rover rodule test, with correction Vs without}{62}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{64}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Altitude control}{65}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Time analysis}{67}{section.6}%
-\contentsline {section}{\numberline {7}Objective analysis}{70}{section.7}%
-\contentsline {section}{\numberline {8}Conclusions}{72}{section.8}%
+\contentsline {section}{\numberline {6}Conclusions}{67}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Time analysis}{67}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Objective analysis}{70}{subsection.6.2}%

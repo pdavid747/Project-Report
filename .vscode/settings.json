@@ -1,5 +1,5 @@
 {
-    "editor.wordWrap": "on",
     "workbench.editor.wrapTabs": false,
-    "editor.wordWrapColumn": 60
+    "editor.wordWrapColumn": 80,
+    "editor.wordWrap": "on"
 }

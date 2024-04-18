@@ -20,14 +20,14 @@
 \usetikzlibrary{shapes.arrows}
 
 
-% Setup the header and footer
-\pagestyle{fancy}
-\fancyhf{} % Clear default headers and footers
-\renewcommand{\headrulewidth}{0pt} % Remove the header rule
-\renewcommand{\footrulewidth}{0pt} % Optional: remove the footer rule if it 
-%exists
 
-\fancyfoot[L]{% Custom footer content (bottom left)
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt} 
+
+
+\fancyfoot[L]{
     Supervisor:\\
     Dr. Pantelis Sopasakis\\
     School of EEECS%
@@ -60,8 +60,7 @@
 \end{titlepage}
  
 \newpage
-\pagestyle{plain} % Switch back to the default page style for the rest of the
-document
+\pagestyle{plain}
 
 \section*{Declaration of Integrity}
 I affirm that I am familiar with and have adhered to the plagiarism policies of
@@ -74,7 +73,12 @@ the aforementioned requirements.
 \newpage
 
 \section*{Acknowledgements}
-...
+I would like to thank Dr Pantelis Sopasakis and Mr Jamie Rainey for there
+continuous support throughout this project. 
+
+I would like to especially thank Dr Pantelis Sopasakis, invaluable technical
+assistance when it came to designing control algorithms, without said support
+the project would not have been completed.
 \newpage
 
 \section*{Original specification}
@@ -407,7 +411,7 @@ disaster management \cite{disasterManagement} and search and rescue operations
 \cite{searchAndRescue}.
 
 Although reinforcement learning shows promising advancements, this technology
-will not be utilized in the current version of the bzzz quadcopter due to its
+will not be utilised in the current version of the bzzz quadcopter due to its
 complexity and extensive data requirements that do not align with the project's
 current objectives \cite{ReinforcementLearning}. Instead, our main goal is to
 refine the PID controllers and Kalman filters to create a precise control system
@@ -1865,27 +1869,52 @@ refferance are being predicted.
   \caption{Simulation1: Both alpha and beta being predicted}
   \label{fig:no_constant_PD}
 \end{figure}
-In this simulation the quadcopters altitude control system's performance is evaluated. The system uses a Kalman filter for state estimation, tackling noise and sensor bias and a PD controller for altitude adjustments.
+In this simulation the quadcopters altitude control system's performance is
+evaluated. The system uses a Kalman filter for state estimation, tackling noise
+and sensor bias and a PD controller for altitude adjustments.
 
 Observations from the simulation after processing 2000 time steps, with a
 sampling time \(T_s\) of 0.1 seconds, reveal several key dynamics;
 
-The kalman filter’s ability to estimate values of \(\alpha\) and \(\beta\), which relate throttle input to lifting as well as for 
-\((d^{ToF})\) and \((d^{bar})\) in meters for the Time of flight and Barometer sensors respectively is clearly visible within this simulation. The estimated values for each do indeed converge in on the true values. This is a clear indication of the kalman filter’s ability to conduct real-time estimation of the values even when system and measurement noise are present.
+The kalman filter’s ability to estimate values of \(\alpha\) and \(\beta\),
+which relate throttle input to lifting as well as for \((d^{ToF})\) and
+\((d^{bar})\) in meters for the Time of flight and Barometer sensors
+respectively is clearly visible within this simulation. The estimated values for
+each do indeed converge in on the true values. This is a clear indication of the
+kalman filter’s ability to conduct real-time estimation of the values even when
+system and measurement noise are present.
 
-Beginning at a reference altitude of 0.5 meters, the quadcopters altitude begins to increase after the 500th time step to the 800th, due to the reference altitude being increased between these times. In response to this change the throttle reference 
-\((\tau)\) is changed by the PD controller. The real and estimated altitudes suggest a controlled climb during this period, showing that the system has effectively guided the quadcopter to the new reference point using a PD controller.
+Beginning at a reference altitude of 0.5 meters, the quadcopters altitude begins
+to increase after the 500th time step to the 800th, due to the reference
+altitude being increased between these times. In response to this change the
+throttle reference \((\tau)\) is changed by the PD controller. The real and
+estimated altitudes suggest a controlled climb during this period, showing that
+the system has effectively guided the quadcopter to the new reference point
+using a PD controller.
 
-The velocity graph showcases the control systems dynamic response to this change in altitude. As seen the velocity changes in-line with the altitude changes, this indicates that the PD controllers ability to change the quadcopters speed to achieve and sustain the target altitude has been well implemented.
+The velocity graph showcases the control systems dynamic response to this change
+in altitude. As seen the velocity changes in-line with the altitude changes,
+this indicates that the PD controllers ability to change the quadcopters speed
+to achieve and sustain the target altitude has been well implemented.
 
-The throttle reference graph denoted by \(\tau\) shows that the PD controller actively changes the throttle input in response to the new change in reference altitude. Once the altitude reference levels off after timestep 800 the throttle input begins to stabilise, indicating that the controller is reaching a new equilibrium point.
+The throttle reference graph denoted by \(\tau\) shows that the PD controller
+actively changes the throttle input in response to the new change in reference
+altitude. Once the altitude reference levels off after timestep 800 the throttle
+input begins to stabilise, indicating that the controller is reaching a new
+equilibrium point.
  
 A well-tuned PD controller is shown by the system's minimum overshoot and smooth
 approach to the new altitude reference. The derivative component effectively
 dampens any oscillations, contributing to a swift yet stable climb to the
 desired altitude.
 
-in conclusion, this simulation shows how the PD controller designed used in tandem with the Kalman filter may be used to successfully manage altitude in the quadcopter. The Controller adjusts the reference altitude and responds well to the changes posed on the quadcopter. The controller runs with precise state information thanks to the Kalman filter's skilful tracking and estimation of critical system parameters and sensor biases, making this a viable solution for altitude control in the real quadcopter.
+in conclusion, this simulation shows how the PD controller designed used in
+tandem with the Kalman filter may be used to successfully manage altitude in the
+quadcopter. The Controller adjusts the reference altitude and responds well to
+the changes posed on the quadcopter. The controller runs with precise state
+information thanks to the Kalman filter's skilful tracking and estimation of
+critical system parameters and sensor biases, making this a viable solution for
+altitude control in the real quadcopter.
 
 
 
@@ -1899,53 +1928,58 @@ estimated along with the Time of Flight bias (\(d^{ToF}\)), Barometer bias
   \caption{Simulation2: constant alpha and beta being predicted}
   \label{fig:a_constant_PD}
 \end{figure}
-The results of the simulation provide a detailed assessment of the quadcopter's
-altitude control system. This system incorporates a Kalman filter to ensure
-reliable state estimation amidst the inherent sensor noise and biases and
-leverages a Proportional-Derivative (PD) controller for precise altitude
-adjustments.
+In this simulation the quadcopters altitude control system's performance is
+evaluated. The system uses a Kalman filter for state estimation, tackling noise
+and sensor bias and a PD controller for altitude adjustments.
 
-Again the above figure:\ref{fig:a_constant_PD} shows a simulation after
-processing 2000 time steps, with a sampling time \(T_s\) of 0.1 seconds,
-revealing several key dynamics;
+Observations from the simulation above figure:\ref{fig:a_constant_PD} after
+processing 2000 time steps, with a sampling time \(T_s\) of 0.1 seconds, reveal
+several key dynamics;
 
-The Kalman filter consistently estimated values for \( \beta \), as well as \(
-d^{ToF} \) and \( d^{bar} \) for the Time of Flight and Barometer sensors
-respectively as well as altitude, notably when compared to the simulation above
-(Figure:\ref{fig:no_constant_PD}) \(\alpha\) is no longer being estimated. The
-estimated values for each converge on the true values, which indicates the
-kalman filters ability to estimate values in real-time, even in the presence of
-system and measurement noise
+The kalman filter’s ability to estimate values of \(\beta\), as well as for
+\(d^{ToF}\) and \(d^{bar}\) in meters for the Time of flight and Barometer
+sensors respectively is clearly visible within this simulation, notably when
+compared to the simulation above (Figure:\ref{fig:no_constant_PD}) \(\alpha\) is
+no longer being estimated. The estimated values for each do indeed converge in
+on the true values. This is a clear indication of the kalman filter’s ability to
+conduct real-time estimation of the values even when system and measurement
+noise are present.
 
-The initial reference altitude is set to of 0.5 meters, the quadcopter
-experiences a gradual increase in altitude starting from the 500th time step and
-continuing until the 800th. In response to the gradual rise in reference
-altitude during this interval, the throttle reference (\( \tau \)), manipulated
-by the PD controller, adapts accordingly. The estimated and true states of
-altitude display a gradual ascent, which suggests that the PD controller again,
-efficiently guided the system towards the revised set-point.
+Beginning at a reference altitude of 0.5 meters, the quadcopters altitude begins
+to increase after the 500th time step to the 800th, due to the reference
+altitude being increased between these times. In response to this change the
+throttle reference \((\tau)\) is changed by the PD controller. The real and
+estimated altitudes suggest a controlled climb during this period, showing that
+the system has effectively guided the quadcopter to the new reference point
+using a PD controller.
 
-The throttle reference graph (\( \tau \)), captures the PD controller's dynamic
-modulation of throttle in response to the shifting altitude reference. Post
-time-step 800 when the altitude reference stops increasing, the throttle input
-correspondingly levels off, signifying that the controller has successfully
-adapted to the new reference altitude.
+The velocity graph again showcases the control systems dynamic response to this
+change in altitude. As seen the velocity changes in-line with the altitude
+changes, this indicates that the PD controllers ability to change the
+quadcopters speed to achieve and sustain the target altitude has been well
+implemented.
 
-The system demonstrates minimal overshoot and a gradual yet deliberate approach
-to the adjusted altitude reference, indicating a well-calibrated PD controller.
-The damping action of the derivative term is apparent, mitigating potential
-oscillations and facilitating a prompt and steady rise to the designated
-altitude.
+The throttle reference graph denoted by \(\tau\) shows that the PD controller
+actively changes the throttle input in response to the new change in reference
+altitude. Once the altitude reference levels off after timestep 800 the throttle
+input begins to stabilise, indicating that the controller is reaching a new
+equilibrium point.
+ 
+A well-tuned PD controller is shown by the system's minimum overshoot and smooth
+approach to the new altitude reference. The derivative component effectively
+dampens any oscillations, contributing to a swift yet stable climb to the
+desired altitude.
 
-To summarize, the simulation showcases the effective implementation of a PD
-controller for managing the altitude of a quadcopter. While alpha is considered
-a constant in this scenario, not subject to estimation by the Kalman filter, the
-system's performance remains robust. The PD controller adeptly modifies the
-reference altitude and minimizes the potential for instability from abrupt
-changes. With the Kalman filter's precise tracking and estimation of critical
-system parameters and sensor biases, we have a reliable and practical approach
-for altitude control, paving the way for its application in real-world
-quadcopter operation.
+in conclusion, this simulation shows how the PD controller designed used in
+tandem with the Kalman filter may be used to successfully manage altitude in the
+quadcopter. While alpha is considered a constant in this scenario, not subject
+to estimation by the Kalman filter, the system's performance remains robust. The
+Controller adjusts the reference altitude and responds well to the changes posed
+on the quadcopter. The controller runs with precise state information thanks to
+the Kalman filter's skilful tracking and estimation of critical system
+parameters and sensor biases, making this a viable solution for altitude control
+in the real quadcopter.
+
 
 \subsubsection*{\(\beta\) is constant whilst \(\alpha\) is being estimated}
 In the third simulation \(\beta\) is set at as a constant and \(\alpha\) is
@@ -1957,81 +1991,85 @@ estimated along with the Time of Flight bias (\(d^{ToF}\)), Barometer bias
   \caption{Simulation3: constant beta and alpha being predicted}
   \label{fig:b_constant_PD}
 \end{figure}
-The results of the simulation offer an in-depth evaluation of the quadcopter's
-altitude control system's performance. The system employs a Kalman filter for
-reliable state estimation in the midst of sensor noise and biases, and a
-proportional-derivative (PD) controller for accurate altitude adjustments.
+In this simulation the quadcopters altitude control system's performance is
+evaluated. The system uses a Kalman filter for state estimation, tackling noise
+and sensor bias and a PD controller for altitude adjustments.
 
-finally the above figure:\ref{fig:b_constant_PD} shows a simulation after
-processing 2000 time steps, with a sampling time \(T_s\) of 0.1 seconds,
-revealing several key dynamics;
+Observations from the simulation above figure:\ref{fig:b_constant_PD} after
+processing 2000 time steps, with a sampling time \(T_s\) of 0.1 seconds, reveal
+several key dynamics;
 
-The kalman filters ability to estimate values for \(\beta\), as well as
-\(d^{ToF}\) and \(d^{bar}\), for the Time of flight, Barometer sensors and
-altitude are prevalent within this simulation, notably when compared to
-simulation one (Figure:\ref{fig:no_constant_PD}) \(\beta\) is no longer being
-estimated. The estimated values for each converge on the true values, which
-indicates the kalman filters ability to estimate values in real-time, even in
-the presence of system and measurement noise.
+The kalman filter’s ability to estimate values of \(\alpha\), as well as for
+\(d^{ToF}\) and \(d^{bar}\) in meters for the Time of flight and Barometer
+sensors respectively is clearly visible within this simulation, notably when
+compared to the simulation above (Figure:\ref{fig:no_constant_PD}) \(\beta\) is
+no longer being estimated. The estimated values for each do indeed converge in
+on the true values. This is a clear indication of the kalman filter’s ability to
+conduct real-time estimation of the values even when system and measurement
+noise are present.
 
-Starting at a reference altitude of 0.5m, the quadcopter begins to increase in
-altitude due to it reference altitude beginning to be increased gradually after
-the 500th time step to the 800th. The throttle reference \((\tau)\) is changed
-by the PD controller in response to this alteration. The altitude, as shown by
-the real and estimated states, indicates a controlled climb, showing that the
-system has been effectively guided towards the new set-point by the PD
-controller.
+Beginning at a reference altitude of 0.5 meters, the quadcopters altitude begins
+to increase after the 500th time step to the 800th, due to the reference
+altitude being increased between these times. In response to this change the
+throttle reference \((\tau)\) is changed by the PD controller. The real and
+estimated altitudes suggest a controlled climb during this period, showing that
+the system has effectively guided the quadcopter to the new reference point
+using a PD controller.
 
-The altitude velocity graph sheds light on the dynamic response of the control
-system. The trend of velocity and altitude changes in tandem, indicating the PD
-controller's computed speed control to achieve and sustain the target altitude
-has been well implemented.
+The velocity graph again showcases the control systems dynamic response to this
+change in altitude. As seen the velocity changes in-line with the altitude
+changes, this indicates that the PD controllers ability to change the
+quadcopters speed to achieve and sustain the target altitude has been well
+implemented.
 
-The throttle reference graph denoted by \(\tau\) demonstrated the PD controllers
-active change of throttle input in response to the changing altitude reference
-After time-step 800, when the altitude reference ceases to change, we observe
-that the throttle input begins to stabilize, indicating that the controller is
-reaching a new equilibrium point.
-
+The throttle reference graph denoted by \(\tau\) shows that the PD controller
+actively changes the throttle input in response to the new change in reference
+altitude. Once the altitude reference levels off after timestep 800 the throttle
+input begins to stabilise, indicating that the controller is reaching a new
+equilibrium point.
+ 
 A well-tuned PD controller is shown by the system's minimum overshoot and smooth
 approach to the new altitude reference. The derivative component effectively
 dampens any oscillations, contributing to a swift yet stable climb to the
 desired altitude.
 
-In conclusion, this simulation shows how a PD controller and a Kalman filter may
-be used to successfully manage altitude in the quadcopter. The controller not
-only adjusts the reference altitude, but it also lessens the chance of
-instability caused by sudden changes. The controller runs with precise state
+in conclusion, this simulation shows how the PD controller designed used in
+tandem with the Kalman filter may be used to successfully manage altitude in the
+quadcopter. While \(\beta\) is considered a constant in this scenario, not
+subject to estimation by the Kalman filter, the system's performance remains
+robust. The Controller adjusts the reference altitude and responds well to the
+changes posed on the quadcopter. The controller runs with precise state
 information thanks to the Kalman filter's skilful tracking and estimation of
 critical system parameters and sensor biases, making this a viable solution for
-altitude control in the real quadcopter whilst keeping \(\beta\) constant. 
+altitude control in the real quadcopter.
+
 
 \subsubsection*{Simulations conclusion}
-In summary the advanced simulation created to estimate alpha and beta parameters
-in the altitude control system of the quadcopter seen in
-figure:\ref{fig:no_constant_PD} has shown notable effectiveness. The Kalman
-filter, responsible, for estimating these parameters operates with precision as
-seen in how the estimated values converge with the values over time. This
-accurate state estimation forms a basis for the Proportional Derivative (PD)
-controllers functioning ensuring its responses are grounded on data.
+In conclusion, the simulation where both \(\alpha\) and \(\beta\) were being
+estimated shown in figure:\ref{fig:no_constant_PD} has shown notable
+effectiveness. The Kalman filters ability to estimate values in real time,
+allowing them to converge quickly on there real values should not go un noted.
+The accurate estimation of the Kalman filter forms the basis for the
+Proportional Derivative (PD) controllers ensuring its responses are reliable on
+data.
 
-The efficacy of the control approach is evident in the quadcopters performance.
-Despite requiring estimation of both alpha and beta the system displays a degree
-of stability and control. The quadcopter responds smoothly to changes in
-altitude ascending steadily to the new target altitude without any oscillations
-or instability. This suggests that including alpha and beta in the estimation
-process does not negatively impact system performance when comparing to either
-keeping alpha (\(\alpha\)) or beta (\(\beta\)) constant in
-figure:\ref{fig:a_constant_PD} and \ref{fig:b_constant_PD}. 
+The Kalman filters efficiency is evident in this simulation, despite requiring
+estimation for both \(\alpha\) and \(\beta\) the system still displays a good
+degree of stability and control. The PD controller allows the system to respond
+to a changing reference altitude without any oscillations. This suggests that
+the inclusion of \(\alpha\) and \(\beta\) has not negatively impacted the
+systems performance when coparing the results from the other two simulations in
+figures:\ref{fig:a_constant_PD} and \ref{fig:b_constant_PD}.
 
-These promising outcomes affirm the choice to estimate both alpha and beta
-within the Kalman filter design, for managing altitude in this system. By
-considering these factors the system when implemented in the quadcopter can not
-only accurately maintain an altitude but also adjust smoothly and seamlessly to
-any changes in the reference altitude. This comprehensive approach is what makes
-this particular setup an appealing choice for real-world implementation,
-offering a nuanced level of control that is both desired and necessary for the
-complexities of autonomous quadcopter flight.
+The results show that the decision to estimate both alpha and beta within the
+Kalman filter formulation for sensor fusion of altitude sensors in the system,
+is promising. This system, when designed and implemented in the quadcopter using
+a PD controller, can not only maintain the altitude accurately but also respond
+smoothly and seamlessly in the event of any changes in the reference altitude.
+It is the combination of all the elements of the system that make it a feasible
+option for real-life use. The entire proposition offers a high level of fine
+control that is not only ideal but also essential for autonomous quadcopter
+flight.
 
 \subsection{Position control}
 The incorporation of an advanced position control system is critical for
@@ -2058,12 +2096,12 @@ Proportional-Integral-Derivative (PID) controller, which is covered in more
 detail in section:\ref{PID_control}. A harmonious balance between location
 precision and altitude stability is ensured by this dual-controller approach. 
 
-The quadcopter should hover with high accuracy  because of  the smooth
-integration of various control mechanisms. The system can instantly make
-modifications by continuously comparing the current positioning data with the
-predefined reference points. This degree of responsiveness is essential for
-adjusting to outside factors like wind currents and making sure the quadcopter's
-position is unaffected by them.
+The quadcopter should hover with high accuracy because of the smooth integration
+of various control mechanisms. The system can instantly make modifications by
+continuously comparing the current positioning data with the predefined
+reference points. This degree of responsiveness is essential for adjusting to
+outside factors like wind currents and making sure the quadcopter's position is
+unaffected by them.
 
 Furthermore, new applications where accuracy and stability are critical, such as
 autonomous navigation, search and rescue, aerial photography, are made possible
@@ -2218,14 +2256,31 @@ Thought the simulations below the PID gains we set as follows:
   \caption{Path of drone from Initial to reference \\ position with wind as an acting force}
   \label{fig:Drone_path_wind}
 \end{figure}
-The quadcopter’s navigation capability is analysed during this advanced simulation as it experiences a northwest wind. The quadcopter’s ability to actively correct is course is made possible by Proportional-Integral-Derivative (PID) controllers (one for pitch control and one for roll control). The flight course instinctively reacts a constant cust of wind at the start of the program and corrects its trajectory.
+The quadcopter’s navigation capability is analysed during this advanced
+simulation as it experiences a northwest wind. The quadcopter’s ability to
+actively correct is course is made possible by Proportional-Integral-Derivative
+(PID) controllers (one for pitch control and one for roll control). The flight
+course instinctively reacts a constant cust of wind at the start of the program
+and corrects its trajectory.
 
-The Latitude and Longitude velocities demonstrate variations in the velocity chart every at the beginning showing a high spike in both longitudinal and latitudinal velocities as a result of the  PID controllers immediate feedback to the displacement force of constant wind which then converge after a short period as the integral and derivative of the PID control system work together to stabilise the quadcopter.
+The Latitude and Longitude velocities demonstrate variations in the velocity
+chart every at the beginning showing a high spike in both longitudinal and
+latitudinal velocities as a result of the  PID controllers immediate feedback to
+the displacement force of constant wind which then converge after a short period
+as the integral and derivative of the PID control system work together to
+stabilise the quadcopter.
 
-The quadcopter navigation system is also faced with a difficult dynamic situation, brought about by the northwest wind. Since the wind is not directed straight at the drone but rather moves in a south east direction, both pitch and roll PID controllers are used simultaneously in this crosswind effect. 
+The quadcopter navigation system is also faced with a difficult dynamic
+situation, brought about by the northwest wind. Since the wind is not directed
+straight at the drone but rather moves in a south east direction, both pitch and
+roll PID controllers are used simultaneously in this crosswind effect. 
 
-Finally, the quadcopter PID control systems works well, and they adapt to the wind dynamics; The drone's capacity to precisely
-maintain course and velocity is demonstrated by its ability to adapt to a constant northwest wind. This degree of control, which is significant for a number of real-world applications, validates the system's efficacy and dependability and represents a promising standard for durable drone navigation systems.
+Finally, the quadcopter PID control systems works well, and they adapt to the
+wind dynamics; The drone's capacity to precisely maintain course and velocity is
+demonstrated by its ability to adapt to a constant northwest wind. This degree
+of control, which is significant for a number of real-world applications,
+validates the system's efficacy and dependability and represents a promising
+standard for durable drone navigation systems.
 
 
 \subsection*{Varying forces of wind acting on the Quadcopter}
@@ -2236,15 +2291,32 @@ maintain course and velocity is demonstrated by its ability to adapt to a consta
   \caption{Path of drone from Initial to reference position with varying\\ wind as an acting force changing slightly every 20 seconds}
   \label{fig:Drone_path_wind_varys}
 \end{figure}
-The quadcopter’s navigation capability is analysed during this advanced simulation as it experiences changing northwest winds, which is intended to replicate the fluctuating volatility and position of actual wind patterns in real life. 
+The quadcopter’s navigation capability is analysed during this advanced
+simulation as it experiences changing northwest winds, which is intended to
+replicate the fluctuating volatility and position of actual wind patterns in
+real life. 
 
-The quadcopter’s ability to actively correct is course is made possible by Proportional-Integral-Derivative (PID) controllers (one for pitch control and one for roll control). The flight course instinctively reacts to gusts of wind that changes every 20 seconds to rebalance its movement in the desired direction to the target point. 
+The quadcopter’s ability to actively correct is course is made possible by
+Proportional-Integral-Derivative (PID) controllers (one for pitch control and
+one for roll control). The flight course instinctively reacts to gusts of wind
+that changes every 20 seconds to rebalance its movement in the desired direction
+to the target point. 
 
-The Latitude and Longitude velocities demonstrate variations in the velocity chart every 20 seconds as a result of the  PID controllers immediate feedback to the displacement force of constant rolling winds. The drone’s velocity becomes stable immediately after every gust as the integral and derivative of the PID control system work together to stabilise the quadcopter.
+The Latitude and Longitude velocities demonstrate variations in the velocity
+chart every 20 seconds as a result of the  PID controllers immediate feedback to
+the displacement force of constant rolling winds. The drone’s velocity becomes
+stable immediately after every gust as the integral and derivative of the PID
+control system work together to stabilise the quadcopter.
 
-The quadcopter navigation system is also faced with a difficult dynamic situation, brought about by the northwest rolling wind. Since the wind is not directed straight at the drone but rather moves in a south east direction, both pitch and roll PID controllers are used simultaneously in this crosswind effect. 
+The quadcopter navigation system is also faced with a difficult dynamic
+situation, brought about by the northwest rolling wind. Since the wind is not
+directed straight at the drone but rather moves in a south east direction, both
+pitch and roll PID controllers are used simultaneously in this crosswind effect. 
 
-Finally, the quadcopter PID control systems works well, and they adapt well to different wind dynamics; the results of the simulation exercise indicate high flexibility, accurate results, and stability proving the controllers effectiveness. 
+Finally, the quadcopter PID control systems works well, and they adapt well to
+different wind dynamics; the results of the simulation exercise indicate high
+flexibility, accurate results, and stability proving the controllers
+effectiveness. 
 
 \section{hardware}\label{hardware} This section outlines the various hardware
 that is used in forming the overall structure of the quadcopter.
@@ -2372,7 +2444,9 @@ Gain, Angular Velocity Gain and Yaw Angular Velocity Gain respectively (as
 denoted by brackets in table:\ref{figure:RC_Controller_Channel_Mapping}). By
 default the trimmers are set to tune the altitude controller with chanel numbers
 5 and 6 tuning the P Gain and D Gain ie. $K_{p}$ and ${K}_{d}$ (see
-Equation~\ref{PD_controller_eq}) respectively. Furthermore, channel 11 is used to Change Altitude Reference when in altitude control mode at a max rate of \unit[4]{cm/s}. 
+Equation~\ref{PD_controller_eq}) respectively. Furthermore, channel 11 is used
+to Change Altitude Reference when in altitude control mode at a max rate of
+\unit[4]{cm/s}. 
 
 
 \subsection{Flight Controller}\label{flight_controller}
@@ -2883,56 +2957,57 @@ space.
 The hardware schematic above (figure:\ref{fig:hardware_schematic}) reveals the
 detailed architecture of a quadcopter's flight control system, highlighting a
 network of interconnected components orchestrated to ensure optimal flight
-performance. Central to this network is the Raspberry Pi
-(figure:\ref{fig:rasberry_pi}), which anchors the system as the main computing
-unit. It interfaces with the Sensor PCB via a Flexible Flat Cable (FFC) and the
-ESP PCB via USB, facilitating a robust and compact connection that serves both
-for communication and power distribution throughout the system.
+performance. Central to the above network is the raspberry pi
+(figure:\ref{fig:rasberry_pi}), which is the syaytems main computing unit. It
+interfaces the sensor PCB via a Flexible Flat Cable (FFC) and the ESP PCB via
+USB, helping to facilitate communication through the system.
 
-Powering this intricate system is the battery (figure:\ref{fig:battery}), which
-routes energy to the Raspberry Pi and associated components through a power
-header situated on the Pi PCB. This centralized power distribution is crucial
-for maintaining a consistent electrical flow to the entire system.
+In order to power the system, a battery is used (figure:\ref{fig:battery}), this
+provides the Raspberry Pi and associated components power through the power
+header on the Pi PCB. The power distribution is crucial for maintaining a
+consistent electrical flow to the entire system.
 
-For navigation and environmental interaction, the Raspberry Pi utilises UART
-connections to interface with two specialized sensors. One connection leads to
-an Anemometer, tasked with measuring wind speed—a critical parameter for flight
-dynamics and control. Another UART channel connects to a GNSS module, which
-provides precise location data, enhancing the quadcopter's navigational
-capabilities.
+For navigation, the Raspberry Pi uses UART connections to communicate with two
+specialized sensors. One leads to the Anemometer, which measures wind speeds and
+the other connects to the GNSS rover module, which provides precise location
+data.
 
 Additionally, the Pi PCB is equipped with an SBUS connection to a receiver. This
-interface is used to relay remote control commands from a pilot for Pitch Roll
-and Yaw or to receive instructions to switch to different autonomous flight
-modes, thus playing a pivotal role in the control schema of the quadcopter.
+interface is used to relay remote control commands from a pilot for Pitch, Roll
+and Yaw manoeuvres or to receive instructions to switch to different autonomous
+flight modes, thus playing a pivotal role in the control schema of the
+quadcopter.
 
-Adjacent to the primary computing module, the ESP32 microcontroller is mounted
-on the ESP PCB, sharing the power supplied by the system's battery. It directly
-manages the quadcopter's propulsion system by sending Pulse Width Modulation
-(PWM) signals to Electronic Speed Controllers (ESCs). These ESCs, in turn,
-regulate the motors' speed via 3-phase signals, allowing for precise adjustments
-to the quadcopter's thrust and direction.
+The ESP32 microcontroller is mounted on the ESP PCB, which draws power form the
+systems battery through the Raspberry PI. It directly manages the quadcopters
+propulsion by sending Pulse Width Modulation (PWM) signals to the Electronic
+Speed Controllers (ESCs). The ESC’s then take these pulses and control the
+motors speed via 3-phase signals, allowing for precise adjustments to the
+quadcopter's thrust and direction.
 
-Communication between the ESP32 and the Pi is facilitated by a USB connection,
-essential for high-speed data exchange between the two processors. The ESP32
-also hosts an IMU, connected through the I2C protocol, which feeds the system
-with valuable motion tracking data for flight stabilization and orientation.
+In order for the ESP32 and the Raspberry Pi to communicate a USB connection
+between the two is essential for high-speed data exchange between the two
+processors. The ESP32 also hosts an IMU, connected through the I2C protocol,
+which feeds the system. with motion tracking data for flight stabilization and
+orientation.
 
 For immediate feedback and alerts, a buzzer is incorporated into the ESP PCB and
-controlled by the ESP32, serving as an auditory indicator of system statuses or
+controlled by the ESP32, serving as an auditory indicator of system states or
 warnings during flight operations.
 
-Beneath the quadcopter lies the Sensor PCB, a separate entity strategically
-placed to minimize interference with its sensitive onboard instruments—the
-Time-of-Flight (ToF) sensor and Barometer. Connected through a FFC, this design
+Beneath the quadcopter lies the Sensor PCB, strategically placed to minimize
+interference between the Time-of-Flight (ToF) sensor and Barometer and the other
+components, as well as for getting reliable data from the ToF sensor as it needs
+a clear view of the ground. This PCB is connected through a FFC, this design
 choice underscores the importance of unimpeded sensor functionality, as the ToF
 and Barometer provide critical altitude measurements for control.
 
-This schematic layout encapsulates a meticulously designed system where power,
-control, and data harmoniously converge to create a responsive and efficient
-flight control ecosystem. Each component and connection is deliberately
-positioned to contribute to the quadcopter's agility, stability, and
-navigational precision, affirming the system's engineering sophistication.
+The schematic layout presented in figure:\ref{fig:hardware_schematic}  above
+encapsulates a meticulously designed system where power, control, and data
+harmoniously converge to create a responsive and efficient flight control
+ecosystem. Every component and connection is deliberately positioned to
+contribute to the quadcopter’s agility, stability, and navigational precision,
+reaffirming the system’s engineering sophistication.
 
 \subsection{Cost of materials}
 \subsection*{Main Quadcopter Parts}
@@ -3160,14 +3235,35 @@ module, IMU, Anemometer, ToF sensor and Barometer, by converting the battery's
 fluctuating voltage to a constant level, which helps the quadcopter fly
 precisely and steadily.
 
-\section{Software}
-This project’s code is all located in one repository on \href{https://github.com/QUB-ASL/bzzz}{GitHub}. The purpose of a central platform for version control and communication is served by the repository. The extensive documentation to help developers understand and contribute to the project is available in the repository.  Its methodical arrangement makes it simple to navigate through a variety of components, such as control systems, Kalman filters, and sensor integration
+\section{Software}                                                                           
+This project’s code is all located in one repository on
+\href{https://github.com/QUB-ASL/bzzz}{GitHub}. The purpose of a central
+platform for version control and communication is served by the repository. The
+extensive documentation to help developers understand and contribute to the
+project is available in the repository.  Its methodical arrangement makes it
+simple to navigate through a variety of components, such as control systems,
+Kalman filters, and sensor integration
 
-My project involvement has also seen me contribute to the veatures of features that allowed the interpretation of GNSS data that translates the satellite signals into usable location information for the drone. I interpreted barometer data that gave the altitude from pressure readings, Kalman filter design. I took charge of setting up all sensors in the system paving the way for sensor fusion and data amalgamation
+My project involvement has also seen me contribute to the veatures of features
+that allowed the interpretation of GNSS data that translates the satellite
+signals into usable location information for the drone. I interpreted barometer
+data that gave the altitude from pressure readings, Kalman filter design. I took
+charge of setting up all sensors in the system paving the way for sensor fusion
+and data amalgamation
 
- I gave clear explanations and usage guidelines for our Kalman filter, to make the system easier to understand and use, setting the ground for further enhancements. I have accomplished the development of the Kalman filter itself by using simulators I found the optimal tuning valuses for performance of the Kalman filter in the Altitude and Position control tasks. I designed a PID controller for the Positioning control and a PD controller for the altitude control with the Kalman filter for the sensor fusion, determining accurate funcionality was achieved through simulation design. This underscores the projects dedication to responsive control mechanisms.
+I gave clear explanations and usage guidelines for our Kalman filter, to make
+the system easier to understand and use, setting the ground for further
+enhancements. I have accomplished the development of the Kalman filter itself by
+using simulators I found the optimal tuning valuses for performance of the
+Kalman filter in the Altitude and Position control tasks. I designed a PID
+controller for the Positioning control and a PD controller for the altitude
+control with the Kalman filter for the sensor fusion, determining accurate
+funcionality was achieved through simulation design. This underscores the
+projects dedication to responsive control mechanisms.
 
- These contributions demonstrate my involvement, with the project and dedication to enhancing the capabilities of this system while aligning with my project objectives.
+These contributions demonstrate my involvement, with the project and dedication
+to enhancing the capabilities of this system while aligning with my project
+objectives.
 
 \subsection{Main Loop}
 \begin{figure}[H]
@@ -3177,22 +3273,70 @@ My project involvement has also seen me contribute to the veatures of features t
   \label{fig:main_loop_flowchart}
 \end{figure}
 
-The drone control programme starts by configuring the necessary runtime environment, which includes initialising global variables and parameter configurations that are essential for flying operations. During this stage, the system loads vital values from a preset constants module, like the minimum altitude required for altitude hold and sensor calibration data. Furthermore, instances of the DataLogger and AltitudeHoldKalmanFilter classes are brought in,  in order to offer real-time data logging and altitude estimate capabilities.
+The drone control programme starts by configuring the necessary runtime
+environment, which includes initialising global variables and parameter
+configurations that are essential for flying operations. During this stage, the
+system loads vital values from a preset constants module, like the minimum
+altitude required for altitude hold and sensor calibration data. Furthermore,
+instances of the DataLogger and AltitudeHoldKalmanFilter classes are brought
+in,  in order to offer real-time data logging and altitude estimate
+capabilities.
 
-Once all necessary classes and functions have been defined, the system enters its main operating loop. The constant processing of actuator commands and sensor readings forms the core of the control system, represented by this loop. At the beginning of each iteration, a conditional flag that indicates whether the loop should continue is checked. The 'Keep Running Check' looks for unexpected behaviour or outside orders to halt processes. In order to make sure the software can seamlessly exit the loop when necessary, it verifies user inputs from the RC and analyses the present state of the system.
+Once all necessary classes and functions have been defined, the system enters
+its main operating loop. The constant processing of actuator commands and sensor
+readings forms the core of the control system, represented by this loop. At the
+beginning of each iteration, a conditional flag that indicates whether the loop
+should continue is checked. The 'Keep Running Check' looks for unexpected
+behaviour or outside orders to halt processes. In order to make sure the
+software can seamlessly exit the loop when necessary, it verifies user inputs
+from the RC and analyses the present state of the system.
 
-The 'kill' and 'save' switches in the RC (Remote Control) class are checked as part of the flight control logic. In unwanted situations, it enables the user to command the system to store flight data records or to stop the entire flight. In the event that the quadcopter loses communication with the remote controller or is "killed" above a predetermined height, the software initiates a "Emergency Check" to determine whether prompt safety measures are required. These measurements are based on real-time sensor data from the Time of Flight sensor. To put emergency responses into action, utilise the take emergency measure function. The likelihood of the quadcopter crashing is decreased by taking various actions, such as adjusting the throttle for a controlled landing, depending on how serious the issue is.
+The 'kill' and 'save' switches in the RC (Remote Control) class are checked as
+part of the flight control logic. In unwanted situations, it enables the user to
+command the system to store flight data records or to stop the entire flight. In
+the event that the quadcopter loses communication with the remote controller or
+is "killed" above a predetermined height, the software initiates a "Emergency
+Check" to determine whether prompt safety measures are required. These
+measurements are based on real-time sensor data from the Time of Flight sensor.
+To put emergency responses into action, utilise the take emergency measure
+function. The likelihood of the quadcopter crashing is decreased by taking
+various actions, such as adjusting the throttle for a controlled landing,
+depending on how serious the issue is.
 
-In addition, the control system carries out a 'Flight Mode Check', in which it uses the input from the RC class to determine the proper control response, such as position control or altitude hold. if the drone is in the proper state ,the AltitudeController and PositionController classes are used to calculate the necessary control signals based on the feedback from location and altitude sensors. These particular controllers are a crucial component of an intricate PD and PID systems that dynamically regulates propulsion on all axes to allow the drone to fly in the correct direction.
+In addition, the control system carries out a 'Flight Mode Check', in which it
+uses the input from the RC class to determine the proper control response, such
+as position control or altitude hold. if the drone is in the proper state ,the
+AltitudeController and PositionController classes are used to calculate the
+necessary control signals based on the feedback from location and altitude
+sensors. These particular controllers are a crucial component of an intricate PD
+and PID systems that dynamically regulates propulsion on all axes to allow the
+drone to fly in the correct direction.
 
 Communication with peripheral modules are handled by the EspBridge class, which
 serializes control and telemetry data and transmits it to the ESP module for
-further communication or processing. Moreover, the data obtained during the flight is stored using the DataLogger class that records time-stamped sensor readings alongside the control commands. This will be utilised as a black box record that is critical for post-flight assessment and provides invaluable analysis for enhancements.
+further communication or processing. Moreover, the data obtained during the
+flight is stored using the DataLogger class that records time-stamped sensor
+readings alongside the control commands. This will be utilised as a black box
+record that is critical for post-flight assessment and provides invaluable
+analysis for enhancements.
 
-The classes demonstrate that the system was developed with concurrent operation in mind. By handling sensor data acquisition in parallel to the primary control loop, the ToF, pressure sensor and Gnss classes reduce the amount of influence latency has on controller responsiveness. To ensure the integrity of sensor data required for control decisions and to avoid data races, these classes employ thread locks to synchronise access to shared resources. In addition, the DataLogger class was crafted such that the act of recording data has no effect on the main control loop's performance.
+The classes demonstrate that the system was developed with concurrent operation
+in mind. By handling sensor data acquisition in parallel to the primary control
+loop, the ToF, pressure sensor and Gnss classes reduce the amount of influence
+latency has on controller responsiveness. To ensure the integrity of sensor data
+required for control decisions and to avoid data races, these classes employ
+thread locks to synchronise access to shared resources. In addition, the
+DataLogger class was crafted such that the act of recording data has no effect
+on the main control loop's performance.
 
-In conclusion, a well-designed set of checks and controls throughout the quadcopters control system architecture allows for a secure and stable operation. The quadcopters software conducts precision flight control yet maintains an unwavering interest in safety through constant real-time monitoring and management of contingencies. The multi-threaded architecture and
-asynchronous processing of sensor data gathering highlight the system's efficiency in a real-time setting, indicating a system prepared to withstand the demanding requirements of aerial operations.
+In conclusion, a well-designed set of checks and controls throughout the
+quadcopters control system architecture allows for a secure and stable
+operation. The quadcopters software conducts precision flight control yet
+maintains an unwavering interest in safety through constant real-time monitoring
+and management of contingencies. The multi-threaded architecture and
+asynchronous processing of sensor data gathering highlight the system's
+efficiency in a real-time setting, indicating a system prepared to withstand the
+demanding requirements of aerial operations.
 
 \subsection{Sensor Data Aqusition}
 \begin{figure}[H]
@@ -3201,17 +3345,51 @@ asynchronous processing of sensor data gathering highlight the system's efficien
   \caption{Sensor flowchart}
   \label{fig:Sensor_flowchart}
 \end{figure}
-The technical execution of the sensor data processing system begins in the initialization phase: it involves configuring global variables and creating a framework for data collecting. The sensor class's are set up in this phase to specify the window length for data processing, establish the serial channel and baud rate for transmission, and, if necessary, instantiate the median filter and data logger. 
+The technical execution of the sensor data processing system begins in the
+initialization phase: it involves configuring global variables and creating a
+framework for data collecting. The sensor class's are set up in this phase to
+specify the window length for data processing, establish the serial channel and
+baud rate for transmission, and, if necessary, instantiate the median filter and
+data logger. 
 
-The system launches a background thread following the successful completion of the initialization step. This is essential to the system's capacity to carry out asynchronous operations. The thread's job is to read data from the sensor at all times, working autonomously and without interfering with or disrupting the main control loop. 
+The system launches a background thread following the successful completion of
+the initialization step. This is essential to the system's capacity to carry out
+asynchronous operations. The thread's job is to read data from the sensor at all
+times, working autonomously and without interfering with or disrupting the main
+control loop. 
 
-The system ensures that data access is thread-safe by applying a lock mechanism the system defines a lock state, which prohibits simultaneous write/read operations that can lead to data corruption. Its key action in the control loop is to periodically check the serial buffer for new data. If new data are identified, the raw data is read, processed, and converted into a format that can be used to describe the sensor measurements like distance/altitude. The parsed data is temporarily stored in an array, maintaining the synchronization guaranteed by the lock to ensure that multi-threaded operations always preserve data consistency. 
+The system ensures that data access is thread-safe by applying a lock mechanism
+the system defines a lock state, which prohibits simultaneous write/read
+operations that can lead to data corruption. Its key action in the control loop
+is to periodically check the serial buffer for new data. If new data are
+identified, the raw data is read, processed, and converted into a format that
+can be used to describe the sensor measurements like distance/altitude. The
+parsed data is temporarily stored in an array, maintaining the synchronization
+guaranteed by the lock to ensure that multi-threaded operations always preserve
+data consistency. 
 
-Another critical function in the control loop is data logging. If active, the drone's sensory inputs create a permanent record by adding each sensor reading, which is perfectly timestamped, to a log file in csv format. This data is critical for post-flight analysis. Furthermore, a conditional filter check is appended to decide if it is necessary to perform additional processing on the newly acquired data to reduce noise or outliers. When filtering is necessary, ta  Median Filter analyses the data that has been stored and returns a refined value that the system may use.
+Another critical function in the control loop is data logging. If active, the
+drone's sensory inputs create a permanent record by adding each sensor reading,
+which is perfectly timestamped, to a log file in csv format. This data is
+critical for post-flight analysis. Furthermore, a conditional filter check is
+appended to decide if it is necessary to perform additional processing on the
+newly acquired data to reduce noise or outliers. When filtering is necessary, ta
+Median Filter analyses the data that has been stored and returns a refined value
+that the system may use.
 
-In the main loop, a 'Keep Running' check determines whether or not the system should keep running. When a user tries to end a flight, such as when they activate the "kill" or "save" switches, the code will be broken out of this loop. In the event that the exit condition is satisfied, the system immediately saves all of the gathered data in order to prevent data loss. This safeguard comes before the organised method of leaving, which includes terminating the background thread. This methodical exit procedure guarantees a secure termination by ensuring that all tasks are completed smoothly, that the data is saved, and that the system resources are freed.
+In the main loop, a 'Keep Running' check determines whether or not the system
+should keep running. When a user tries to end a flight, such as when they
+activate the "kill" or "save" switches, the code will be broken out of this
+loop. In the event that the exit condition is satisfied, the system immediately
+saves all of the gathered data in order to prevent data loss. This safeguard
+comes before the organised method of leaving, which includes terminating the
+background thread. This methodical exit procedure guarantees a secure
+termination by ensuring that all tasks are completed smoothly, that the data is
+saved, and that the system resources are freed.
 
-The system enters a halt state and stops all operations in the last phase. The program’s execution thread cycles comes to an end with this step. Therefore, mentaining data safety when terminating the quadcopter.
+The system enters a halt state and stops all operations in the last phase. The
+program’s execution thread cycles comes to an end with this step. Therefore,
+mentaining data safety when terminating the quadcopter.
 
 \section{Tests}\label{tests}
 
@@ -3484,7 +3662,10 @@ capable of handling external elements like wind and movement dynamics. It can be
 further with additional calibration of the P and D values in the controller. The
 altitude control capability will need to be continuously improved and tested in
 a variety of scenarios in order to function more precisely and consistently.
-\section{Time analysis}
+
+
+\section{Conclusions}
+\subsection{Time analysis}
 In the Time analysis segrment, systematic analysis of the various aspects of the
 bzzz project, detailing the duration and sequencing of the developmental phases,
 implementation, and testing of the bzzz quadcopter. The meticulous break down of
@@ -3558,7 +3739,7 @@ control and stability took additional time. Although the simulations provided
 promising results they were not directly transferable to real life conditions
 due to several factors such as weight and enviormental conditions.
 
-\section{Objective analysis}
+\subsection{Objective analysis}
 Upon starting this project objectives were layed out as well as the learning
 outcomes, as seen below, 
 \subsection*{Objectives}
@@ -3588,11 +3769,18 @@ outcomes, as seen below,
 
 \subsubsection*{Objective 1}
 
-The Projects first objective was to design a Kalman filter to to estimate position on all axis using the information from vaiious different sensors. This objective was satisfied by my ropust  kalman filter design seen in section:\ref{Altitude_control}. using 
-Sensor fusion the kalman filter was developed to incorperate information from the GNSS module, Tof sensor and barometer. The 
-integration described allowed for centimeter level accuracy in altitude control (seen in
-section:\ref{altitude_cotrol_tests}), demonstrating the high level of engineering and strong algorithmic design which back the filter. Reliable data from the GNSS module, Tof sensor and barometer data parsing classes were imputed into the filter, this 
-along with the meticulous calibration and fine-tuning of the filter parameters led to improved flight stability, providing a solid basis for more challenging goals in the future.
+The Projects first objective was to design a Kalman filter to to estimate
+position on all axis using the information from vaiious different sensors. This
+objective was satisfied by my ropust  kalman filter design seen in
+section:\ref{Altitude_control}. using Sensor fusion the kalman filter was
+developed to incorperate information from the GNSS module, Tof sensor and
+barometer. The integration described allowed for centimeter level accuracy in
+altitude control (seen in section:\ref{altitude_cotrol_tests}), demonstrating
+the high level of engineering and strong algorithmic design which back the
+filter. Reliable data from the GNSS module, Tof sensor and barometer data
+parsing classes were imputed into the filter, this along with the meticulous
+calibration and fine-tuning of the filter parameters led to improved flight
+stability, providing a solid basis for more challenging goals in the future.
 
 \subsubsection*{Objective 2}
 Reaching the goal of creating, implementing and testing a control system, for
@@ -3621,23 +3809,24 @@ uphold a position with minimal deviation meeting crucial needs for activities,
 like aerial photography, surveillance and environmental monitoring.
 
 \subsubsection*{Objective 3}
-The projects thrird objective was to perform certain hardware tasks such as proper 
-mounting and connection of the GPS module to the on-board Raspberry Pi.
+The projects thrird objective was to perform certain hardware tasks such as
+proper mounting and connection of the GPS module to the on-board Raspberry Pi.
 
-Throught this project there was various different hardware tasks that needed to be
-completed for implementing loitering control. This includeded designining PCB's
-for vaious components seen in section:\ref{PCB_section}, as well as 
-the soldering of the vaious hardware components seen in
-section:\ref{hardware} especially the ToF sensor, GNSS modules, Barometer, Radio
-telemetry units and voltage regulator. 
+Throught this project there was various different hardware tasks that needed to
+be completed for implementing loitering control. This includeded designining
+PCB's for vaious components seen in section:\ref{PCB_section}, as well as the
+soldering of the vaious hardware components seen in section:\ref{hardware}
+especially the ToF sensor, GNSS modules, Barometer, Radio telemetry units and
+voltage regulator. 
 
 Each one of the specific hardware conponents I worked on played a specific role
-in the quadcoper, the Tof sensor was used to measure the distance, the GNSS modules 
-were necessary for accurate positioning, the barometer provided altitude data, 
-radio telemetry units facilitated wireless communication between the GNSS base 
-station module and the rover module, and the voltage regulator ensured stable power 
-supply to various components. In order for the quadcopter to function correctly 
-these componets were crutial to achiving a robust loitering control solution.
+in the quadcoper, the Tof sensor was used to measure the distance, the GNSS
+modules were necessary for accurate positioning, the barometer provided altitude
+data, radio telemetry units facilitated wireless communication between the GNSS
+base station module and the rover module, and the voltage regulator ensured
+stable power supply to various components. In order for the quadcopter to
+function correctly these componets were crutial to achiving a robust loitering
+control solution.
 
 Furthermore my contribution to 3D printed components on the quadcoper should not
 go unnoted. 3D printed components such as the quadcopters propeller guards,
@@ -3651,16 +3840,17 @@ quadcopters overall structure and how it is built wich was useful when writing
 documentation.
 
 \subsubsection*{Objective 4}
-The tests I have conducted on the quadcopter were described in section:\ref{tests},
-they covered a wide range of topics from loitering control tests to
-the GNSS module's precision. All of the final tests went well, although tuning of 
-Proportional-Derivative (PD) controlers proved a lengthy process in order to get these results.
+The tests I have conducted on the quadcopter were described in
+section:\ref{tests}, they covered a wide range of topics from loitering control
+tests to the GNSS module's precision. All of the final tests went well, although
+tuning of Proportional-Derivative (PD) controlers proved a lengthy process in
+order to get these results.
 
-Moreover, I designed extensive simulations to establisg a baseline for the tests that would follow.
-These simulations mimicked various real-world events, allowing us to modify system
-parameters and anticipate obstacles before actual flight tests, thus
-dramatically boosting the reliability and performance of the quadcopter in its
-loitering control capabilities.
+Moreover, I designed extensive simulations to establisg a baseline for the tests
+that would follow. These simulations mimicked various real-world events,
+allowing us to modify system parameters and anticipate obstacles before actual
+flight tests, thus dramatically boosting the reliability and performance of the
+quadcopter in its loitering control capabilities.
 
 \subsubsection*{Learning outcome analysis}
 The project successfully achieved all the set learning goals showing an
@@ -3669,11 +3859,12 @@ creating a quadcopter that utalises loitering control.
 
 To start I thoroughly reasurched various different control algorithims
 incluiding Linear Quadratic Regulator (LQR), PID control, PD control and Kalman
-filtering, which are essential, for achieving control and state estimation in the quadcopter. 
-The reasurch I performed played a vital role in implementing control algorithms used in the quadcopter,
-improving the quadcopters stability and precision. Moreover understanding how a
-GPS module works and integrating it with systems enabled real time location
-tracking and enhanced navigational capabilities.
+filtering, which are essential, for achieving control and state estimation in
+the quadcopter. The reasurch I performed played a vital role in implementing
+control algorithms used in the quadcopter, improving the quadcopters stability
+and precision. Moreover understanding how a GPS module works and integrating it
+with systems enabled real time location tracking and enhanced navigational
+capabilities.
 
 When it comes to hardware design the ability to create a printed circuit board
 (PCB) was crucial. This skill helped in combining components into a coherent
@@ -3682,21 +3873,22 @@ electronic connections. Additionally having a grasp of attitude and
 translational dynamics was vital for effectively handling and predicting its
 behavior during various flight situations.
 
-Performing Simulations writted in python prior to the tests poved very benifitual. 
-By doing this I minimized the risks of the tests failing leading to the quadcopter crashing, 
-optimising overall system performance. In adition i sucessfully mastered flying the quadcopter 
-using the radio controller, which was crucial for manually controlling and testing automated functions.
+Performing Simulations writted in python prior to the tests poved very
+benifitual. By doing this I minimized the risks of the tests failing leading to
+the quadcopter crashing, optimising overall system performance. In adition i
+sucessfully mastered flying the quadcopter using the radio controller, which was
+crucial for manually controlling and testing automated functions.
 
 The seamless integration of systems hardware and software components was
-completed. Leveraging GitHub further boosted the projects achievements
-by creating issues, facilitating team discussion, code reviews and helping the team 
-work on various different parts of the project on different branches to aid development.
+completed. Leveraging GitHub further boosted the projects achievements by
+creating issues, facilitating team discussion, code reviews and helping the team
+work on various different parts of the project on different branches to aid
+development.
 
 In essence accomplishing these learning objectives not only highlights the
 acquired expertise but also emphasizes the projects triumph, in developing a
 dependable and effective loitering control on a quadcopter.
 
-\section{Conclusions}
 \bibliographystyle{IEEEtran}
 \bibliography{finalReport.bib}
 
