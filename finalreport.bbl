@@ -21,13 +21,13 @@
 \BIBdecl
 
 \bibitem{photographyAndVideo}
-X.~Li and L.~Yang, ``Design and implementation of uav intelligent aerial photography system,'' vol.~2, pp. 200--203, 2012.
+X.~Li and L.~Yang, ``Design and implementation of uav intelligent aerial photography system,'' pp. 200--203, 2012.
 
 \bibitem{security}
 F.~Ondieki, O.~Odongo, and L.~G., ``An autonomous unmanned aerial security surveillance system to enhance security in remote territories,'' \emph{International Journal of Computer Applications}, vol. 179, pp. 9--16, 12 2017.
 
 \bibitem{lightShow}
-K.-C. Weng, S.-T. Lin, C.-C. Hu, R.-T. Soong, and M.-T. Chi, ``Multi-view approach for drone light show,'' \emph{The Visual Computer}, Nov. 2022.
+K.-C. Weng, S.-T. Lin, C.-C. Hu, R.-T. Soong, and M.-T. Chi, ``Multi-view approach for drone light show,'' Nov. 2022.
 
 \bibitem{agricultural}
 K.~M. Hasan, M.~T. Hasan, S.~S. Newaz, Abdullah-Al-Nahid, and M.~S. Ahsan, ``Design and development of an autonomous pesticides spraying agricultural drone,'' in \emph{2020 IEEE Region 10 Symposium (TENSYMP)}, 2020, pp. 811--814.
@@ -48,7 +48,7 @@ B.~Mishra, D.~Garg, P.~Narang, and V.~Mishra, ``Drone-surveillance for search an
 T.~Widhianto and A.~Yudhana, ``System control holding position on quadcopter using gps with waypoint,'' \emph{Control Systems and Optimization Letters}, vol.~1, pp. 12--18, 03 2023.
 
 \bibitem{AkademiaBaru2016}
-P.~A. Baru, S.~Sabikan, and S.~Nawawi, ``Title of the paper,'' \emph{Journal of Advanced Research Design}, vol.~24, no.~1, 2016.
+P.~A. Baru, S.~Sabikan, and S.~Nawawi, ``Open-source project (osps) platform for outdoor quadcopter,'' \emph{Journal of Advanced Research Design}, vol.~24, no.~1, 2016.
 
 \bibitem{AhmedHassan2016}
 A.~H. Ahmed, A.~N. Ouda, A.~M. Kamel, and Y.~Z. Elhalwagy, ``Attitude stabilization and altitude control of quadrotor,'' pp. 123--130, 2016.
@@ -65,7 +65,7 @@ J.~B. Kuipers, \emph{Quaternions and Rotation Sequences: A Primer with Applicati
 K.~Shoemake, ``Animating rotation with quaternion curves,'' \emph{SIGGRAPH Comput. Graph.}, vol.~19, no.~3, p. 245–254, 1985.
 
 \bibitem{QuaternionBasedAttitudeControl}
-E.~Fresk and G.~Nikolakopoulos, ``Full quaternion based attitude control for a quadrotor,'' pp. 3864--3869, 2013.
+E.~Fresk and G.~Nikolakopoulos, ``Full quaternion based attitude control for a quadrotor,'' IEEE, pp. 3864--3869, 2013.
 
 \bibitem{sbg_systems_2024}
 \BIBentryALTinterwordspacing
