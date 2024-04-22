@@ -75,4 +75,14 @@ E.~Fresk and G.~Nikolakopoulos, ``Full quaternion based attitude control for a q
 \bibitem{uav_wilderness_sar}
 A.~Bashyam and J.~Guggenheim, ``Uavs for wilderness search and rescue: Real-world considerations and technology roadmap for fixed wing uavs,'' 2019.
 
+\bibitem{sustainability}
+\BIBentryALTinterwordspacing
+{Environmental Protection Agency}, ``Sustainable manufacturing,'' 2023, accessed: 2023-04-21. [Online]. Available: \url{https://www.epa.gov/sustainability/sustainable-manufacturing}
+\BIBentrySTDinterwordspacing
+
+\bibitem{un}
+\BIBentryALTinterwordspacing
+{United Nations}, ``Goal 9: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation,'' Sustainable Development Goals, 2023, accessed: 2023-04-21. [Online]. Available: \url{https://sdgs.un.org/goals/goal9#progress_and_info}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}
