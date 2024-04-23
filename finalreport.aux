@@ -11,9 +11,8 @@
 \fi}
 \global\let\hyper@last\relax 
 \gdef\HyperFirstAtBeginDocument#1{#1}
-\providecommand*\HyPL@Entry[1]{}
-\HyPL@Entry{0<</S/D>>}
-\HyPL@Entry{1<</S/D>>}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
 \citation{photographyAndVideo}
 \citation{security}
 \citation{lightShow}
@@ -253,34 +252,43 @@
 \newlabel{fig:GNSS_RTK}{{5.3}{68}{GNSS readings with the use of RTK corrections form the base station\relax }{figure.caption.86}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces GNSS Percesion Data (With corrections)\relax }}{68}{figure.caption.87}\protected@file@percent }
 \newlabel{fig:GNSS_data_RTK}{{5.4}{68}{GNSS Percesion Data (With corrections)\relax }{figure.caption.87}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{69}{section.5.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Static lift (g) plotted against throttle reference (\%).\relax }}{69}{figure.caption.88}\protected@file@percent }
-\newlabel{fig:liftpwm_test}{{5.5}{69}{Static lift (g) plotted against throttle reference (\%).\relax }{figure.caption.88}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Altitude control}{70}{section.5.3}\protected@file@percent }
-\newlabel{altitude_cotrol_tests}{{5.3}{70}{Altitude control}{section.5.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Altitude control whilst quadcopter has little horizontal movement\relax }}{70}{figure.caption.90}\protected@file@percent }
-\newlabel{fig:Altitude_control_no_movement}{{5.6}{70}{Altitude control whilst quadcopter has little horizontal movement\relax }{figure.caption.90}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Altitude control test   whilst quadcopter is moving\relax }}{71}{figure.caption.92}\protected@file@percent }
-\newlabel{fig:Altitude_hold_test_moving}{{5.7}{71}{Altitude control test \\ whilst quadcopter is moving\relax }{figure.caption.92}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces GNSS Data from Altitude   Control flight path\relax }}{71}{figure.caption.92}\protected@file@percent }
-\newlabel{fig:GNSS_Altitude_hold_test_moving}{{5.8}{71}{GNSS Data from Altitude \\ Control flight path\relax }{figure.caption.92}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Moving quadcopter causing an decrease in altitude if throttle percentage is kept the same\relax }}{72}{figure.caption.93}\protected@file@percent }
-\newlabel{fig:ToF_altitude_error}{{5.9}{72}{Moving quadcopter causing an decrease in altitude if throttle percentage is kept the same\relax }{figure.caption.93}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Reflection on progress}{73}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Testing of Kalman filter}{69}{section.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Time of Flight sensor vs sensor fused Kalman filter with GPS and ToF data\relax }}{69}{figure.caption.88}\protected@file@percent }
+\newlabel{fig:Kalman_filter_test}{{5.5}{69}{Time of Flight sensor vs sensor fused Kalman filter with GPS and ToF data\relax }{figure.caption.88}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Time of Flight sensor vs sensor fused Kalman filter with GPS and ToF data zoomed\relax }}{70}{figure.caption.89}\protected@file@percent }
+\newlabel{fig:Kalman_filter_test_zoomed}{{5.6}{70}{Time of Flight sensor vs sensor fused Kalman filter with GPS and ToF data zoomed\relax }{figure.caption.89}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{70}{section.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Static lift (g) plotted against throttle reference (\%).\relax }}{70}{figure.caption.90}\protected@file@percent }
+\newlabel{fig:liftpwm_test}{{5.7}{70}{Static lift (g) plotted against throttle reference (\%).\relax }{figure.caption.90}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Altitude control}{71}{section.5.4}\protected@file@percent }
+\newlabel{altitude_cotrol_tests}{{5.4}{71}{Altitude control}{section.5.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Altitude control whilst quadcopter has little horizontal movement\relax }}{71}{figure.caption.92}\protected@file@percent }
+\newlabel{fig:Altitude_control_no_movement_altitude}{{5.8}{71}{Altitude control whilst quadcopter has little horizontal movement\relax }{figure.caption.92}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Throttle measurments in Altitude control mode whilst quadcopter has little horizontal movement\relax }}{72}{figure.caption.93}\protected@file@percent }
+\newlabel{fig:Altitude_control_no_movement_Throttle}{{5.9}{72}{Throttle measurments in Altitude control mode whilst quadcopter has little horizontal movement\relax }{figure.caption.93}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Velocity measurments in Altitude control mode whilst quadcopter has little horizontal movement\relax }}{72}{figure.caption.94}\protected@file@percent }
+\newlabel{fig:Altitude_control_no_movement_Velocity}{{5.10}{72}{Velocity measurments in Altitude control mode whilst quadcopter has little horizontal movement\relax }{figure.caption.94}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Altitude control test   whilst quadcopter is moving\relax }}{73}{figure.caption.96}\protected@file@percent }
+\newlabel{fig:Altitude_hold_test_moving}{{5.11}{73}{Altitude control test \\ whilst quadcopter is moving\relax }{figure.caption.96}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces GNSS Data from Altitude   Control flight path\relax }}{73}{figure.caption.97}\protected@file@percent }
+\newlabel{fig:GNSS_Altitude_hold_test_moving_gps}{{5.12}{73}{GNSS Data from Altitude \\ Control flight path\relax }{figure.caption.97}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Moving quadcopter causing an decrease in altitude if throttle percentage is kept the same\relax }}{74}{figure.caption.98}\protected@file@percent }
+\newlabel{fig:ToF_altitude_error}{{5.13}{74}{Moving quadcopter causing an decrease in altitude if throttle percentage is kept the same\relax }{figure.caption.98}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Reflection on progress}{76}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Time analysis}{73}{section.6.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Gantt chart\relax }}{74}{figure.caption.94}\protected@file@percent }
-\newlabel{fig:gantt_chart}{{6.1}{74}{Gantt chart\relax }{figure.caption.94}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Gantt chart key\relax }}{75}{figure.caption.95}\protected@file@percent }
-\newlabel{fig:gantt_chart_key}{{6.2}{75}{Gantt chart key\relax }{figure.caption.95}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Objective analysis}{76}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Time analysis}{76}{section.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Gantt chart\relax }}{77}{figure.caption.99}\protected@file@percent }
+\newlabel{fig:gantt_chart}{{6.1}{77}{Gantt chart\relax }{figure.caption.99}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Gantt chart key\relax }}{78}{figure.caption.100}\protected@file@percent }
+\newlabel{fig:gantt_chart_key}{{6.2}{78}{Gantt chart key\relax }{figure.caption.100}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Objective analysis}{79}{section.6.2}\protected@file@percent }
 \citation{sustainability}
 \citation{un}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Sustainability}{78}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Sustainability}{81}{section.6.3}\protected@file@percent }
 \bibstyle{IEEEtran}
 \bibdata{finalReport.bib}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{80}{chapter.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{83}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{photographyAndVideo}{1}
@@ -303,4 +311,4 @@
 \bibcite{uav_wilderness_sar}{18}
 \bibcite{sustainability}{19}
 \bibcite{un}{20}
-\gdef \@abspage@last{83}
+\gdef \@abspage@last{86}

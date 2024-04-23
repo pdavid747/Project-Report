@@ -2191,7 +2191,7 @@ where,
   \end{bmatrix}
 \end{align}
 
-these equations were derived and changed from \cite{positionControl}
+These equations were derived and changed from \cite{positionControl}
 
 \subsection{PID control}\label{PID_control} In order to utilise position
 control on the quadcopter PID (Proportional-integral-Derivative) controller's
@@ -3542,6 +3542,26 @@ meters across 59 readings, when copared to 2.015 meters in the test above it is
 undeniable the significant enhancement in accuracy achieved through ustalizing
 RTK corrections. 
 
+\section{Testing of Kalman filter}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Pictures/Altitude_with_GNSS.png}
+  \caption{Time of Flight sensor vs sensor fused Kalman filter with GPS and ToF data}
+  \label{fig:Kalman_filter_test}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Pictures/Altitude_with_GNSS_zoomed.png}
+  \caption{Time of Flight sensor vs sensor fused Kalman filter with GPS and ToF data zoomed}
+  \label{fig:Kalman_filter_test_zoomed}
+\end{figure}
+In this test the quadcopter was briefly flown in order to test the kalman filter and how well it filters noisey data when compared to using the ToF sensor by itself.
+
+From Figures:\ref{fig:Kalman_filter_test} and \ref{fig:Kalman_filter_test_zoomed} we can see that the kallman filter does a good job at filtering out the noisey data smoothing out the curve of altitude measurments.
+
+This is especially usefull when it comes to flying over uneven terain such as long grass where using the ToF sensor alone will introduce inacuracys in the altitude measurements.
+
 \section{Testing initial estimate for \(\alpha_0\) and \(\beta_0\)}
   \begin{figure}[h]
     \centering
@@ -3615,19 +3635,17 @@ equations:\ref{eq:alpha} and \ref{eq:beta} for deriving the initial values for
 \subsection*{Altitude control whilst quadcopter is static}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\textwidth]{Pictures/Test_alitiude_control_little_movement.png}
+  \includegraphics[width=0.7\textwidth]{Pictures/Altitude_hold_indoors.png}
   \caption{Altitude control whilst quadcopter has little horizontal movement}
-  \label{fig:Altitude_control_no_movement}
+  \label{fig:Altitude_control_no_movement_altitude}
 \end{figure}
-In this test shown in Figure \ref{fig:Altitude_control_no_movement} the
+In this test shown in Figure \ref{fig:Altitude_control_no_movement_altitude} tookplace indoors using the Time of Flight (ToF) sensor only, the
 Quadcopter is taken off in manual flight mode as usual once a steady altitude
 was found using the throttle on the remote, the altitude control mode was
 initalised using the RC. The altitude trimmer was then used to lower the
 altitude refferance until it was low enough to land in manual mode. In the graph
-the Green line represents the true altitude, the Orange line represents the
-refferance altitude, the Red line represents the throttle and the Blue line
-represents the drones vertical velocity.
-
+the Green line represents the true altitude from the ToF sensor, the Orange line represents the
+refferance altitude. 
 From the above graph we can see that the quadcopter performes well in a
 controlled osolation around the refferance point of \(\pm10\) centimeters
 thought. The quadcopter behavior demonstrated a well tuned PD controller with a
@@ -3637,6 +3655,23 @@ mentaining the same accuracy as before in a consistant altitude. The lack of
 spikes in velocities seen in the altitude control portion of the graph proves
 impressive when compared to manual mode, showcasing the its persise control over
 the quadcopter.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Pictures/Throttle_Altitude_hold_indoors.png}
+  \caption{Throttle measurments in Altitude control mode whilst quadcopter has little horizontal movement}
+  \label{fig:Altitude_control_no_movement_Throttle}
+\end{figure}
+
+The graph above (Figure:\ref{fig:Altitude_control_no_movement_Throttle}) depicts the throttle percentage readings against time. The graphs shows continuously smooth throttle changes when the altitude refrence is not being changed, followed by a slight osolation when the refferance is lowered gradually. This inaccuracy is then mitigated as the altitude converges back on the refferance altitude.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Pictures/Velocity_Altitude_hold_indoors.png}
+  \caption{Velocity measurments in Altitude control mode whilst quadcopter has little horizontal movement}
+  \label{fig:Altitude_control_no_movement_Velocity}
+\end{figure}
+When analysing the velocity graph in the test (Figure:\ref{fig:Altitude_control_no_movement_Velocity}) it can be seen that the velocity of the quadcopter is emediatly smoothed when altitude control mode has been initalised around the 10 second mark. The velocity of the quadcopter continues to stay smooth until the altitude reffernce is lowered causing some inaccuracy followed by a further conversion velosity as the true altitude gets closer to the refferance altitude.
 
 In conclusion the quadcopter's performance in the altitude control mode, as
 shown in this test, was deemed exceptional. The altitude accuracy of \(\pm10\)
@@ -3653,27 +3688,25 @@ and testing.
 
 \subsection*{Quadcopter moving whilst in altitude control mode}
 \begin{figure}[H]
-  \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Pictures/Altitude_hold_test_moving.png}
+    \includegraphics[width=0.6\textwidth]{Pictures/Altitude_hold_test_moving.png}
     \captionsetup{justification=centering}
     \caption{Altitude control test \\ whilst quadcopter is moving}
     \label{fig:Altitude_hold_test_moving}
-  \end{minipage}
-  \begin{minipage}{0.5\textwidth}
+\end{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Pictures/GNSS_Altitude_hold_test_moving.png}
+    \includegraphics[width=0.6\textwidth]{Pictures/GNSS_Altitude_hold_test_moving.png}
     \captionsetup{justification=centering}
     \caption{GNSS Data from Altitude \\ Control flight path}
-    \label{fig:GNSS_Altitude_hold_test_moving}
-  \end{minipage}
+    \label{fig:GNSS_Altitude_hold_test_moving_gps}
 \end{figure}
 In this test, the quadcopter was taken off and landed as normal. During the
 flight the altitude control feature was initalised on the quadcopter and flown
 the quadcopter, flying in a radius of around 10m, shown in
-Figure \ref{fig:GNSS_Altitude_hold_test_moving}.
+Figure \ref{fig:GNSS_Altitude_hold_test_moving_gps}.
 
-Figure \ref{fig:GNSS_Altitude_hold_test_moving} illustrates the quadcopters
+Figure \ref{fig:Altitude_hold_test_moving} illustrates the quadcopters
 altitude in orange, refferance altitude in green, throttle signal in red and the
 velocity in blue.
 
@@ -3692,7 +3725,7 @@ graph we can see that the quadcopter successfully reacted to this change in
 refferance, furthermore showcasing the quadcopers control algorithms abilities.
 
 The disparity in altitude control, as seen in
-Figure \ref{fig:Altitude_hold_test_moving},can be linked to the high wind
+Figure \ref{fig:Altitude_hold_test_moving},can be linked to the high wind
 velocity that was present throughout the test. Because wind exerts unpredictable
 forces on the quadcopter, it can create significant unpredictability in altitude
 control, making it more difficult to keep a steady altitude.
@@ -3706,8 +3739,7 @@ that when the quadcopter is tilted forward or sidewards for movement, it direct
 some of the thrust horizontally, thereby reducing the vertical thrust component
 that counteracts gravity. In such cases, in order to maintain the required
 height, the altitude control system has to dynamically adjust the throttle which
-can cause the controler to osolate between movements. (a possible soloution to
-this is shown in section......)
+can cause the controler to osolate between movements. In order to fix this problem the relevent pitch and roll angles should be parsed from the IMU, these angles should them be used in the basic trigonometry equation \(a = recorded_{altitude} \cdot \cos(\theta)\) where a is the true altitude and \(\theta\) is the recorded angle from the IMU.
 
 \begin{figure}[H]
   \centering
@@ -3955,9 +3987,19 @@ Throught this project sustainable development has been constantly considered. Th
 
 This project was built around sustainable practises by 3D printing components where it was viable, In contrast to traditional manufacturing techniques like machining or casting, which frequently waste material by removing it, 3D printing creates objects layer by layer, using material only where it is needed. Furthermore, there is an overall reduce in energy consumption because of the elimination of the need for producing and transporting large amounts of raw materials and the reduction in waste material that needs recycling or disposal. Finally any wasted material in the process can be recycled in order to make more parts.
 
-In adition parts were carefully analysed for durability prior to purchase, due to the fact that more durable components will not have to be replaces as often. This will again lead to less \(Co2\) emmissions when having to ship replacement parts. This aligns with the united nations 9.4th target for sustainable development. \cite{un}
+In adition parts were carefully analysed for durability prior to purchase, due to the fact that more durable components will not have to be replaces as often. This will again lead to less \(Co2\) emmissions when having to ship replacement parts. This aligns with the united nations 9.4th target for sustainable development\cite{un}.
 
 \chapter{Conclusions}
+In conclusion the GNSS base station worked very well in sending RTK corrections to the rover module figures:\ref{fig:GNSS_RTK} and \ref{fig:GNSS_no_RTK} show a distinct improvement when using these corrections, Making the GNSS data accurate to \(\pm9\)centimeters form \(\pm1\)meter
+
+The design of a Kalman filter to to estimate
+position on all axis using the information from vaiious different sensors. This objective was satisfied by a ropust  kalman filter design seen in section:\ref{Altitude_control}. using Sensor fusion the kalman filter was developed to incorperate information from the GNSS module and Tof sensor. The kalman filter Sucessfully filtered out noise as seen in Figure: as well as estimating accurate velocitys.
+
+The altitude hold controller worked well when flying both indoors and outdoors with \(\pm10\)centimetes of accuracy indoors and \(\pm30\) outdoors. This is due to the fact that when flying outdoors the ToF sesor was subjected to uneven ground, bad weather conditions and it was also moving around. 
+
+Designing extensive simulations was paramount in successfully completing the project. They provided crutial estamites to the tuning parameters which were needed for implemtation on the quadcopter for testing.
+
+Due to various different factors position control was not tested the quadcopter as lots of time was wasted waiting for correct weather conditions as well as having to rebuild the quadcopter multiple times from crashing. Although extensive simulations were carried out as well as code implemlementation. This feature should be ready to test soon under the correct testing circumstances.
 
 \bibliographystyle{IEEEtran}
 \bibliography{finalReport.bib}

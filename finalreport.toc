@@ -53,10 +53,11 @@
 \contentsline {section}{\numberline {4.2}Sensor Data Aqusition}{65}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Tests}{67}{chapter.5}%
 \contentsline {section}{\numberline {5.1}GNSS rover rodule test, with correction Vs without}{67}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{69}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Altitude control}{70}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Reflection on progress}{73}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Time analysis}{73}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Objective analysis}{76}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Sustainability}{78}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Conclusions}{80}{chapter.7}%
+\contentsline {section}{\numberline {5.2}Testing of Kalman filter}{69}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{70}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Altitude control}{71}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Reflection on progress}{76}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Time analysis}{76}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Objective analysis}{79}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Sustainability}{81}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Conclusions}{83}{chapter.7}%
