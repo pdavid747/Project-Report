@@ -11,8 +11,9 @@
 \fi}
 \global\let\hyper@last\relax 
 \gdef\HyperFirstAtBeginDocument#1{#1}
-\providecommand\HyField@AuxAddToFields[1]{}
-\providecommand\HyField@AuxAddToCoFields[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\HyPL@Entry{1<</S/D>>}
 \citation{photographyAndVideo}
 \citation{security}
 \citation{lightShow}
@@ -88,6 +89,7 @@
 \newlabel{angular_velocity}{{2.15}{23}{Attitude dynamics}{equation.2.4.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Altitude control}{23}{subsection.2.4.3}\protected@file@percent }
 \newlabel{Altitude_control}{{2.4.3}{23}{Altitude control}{subsection.2.4.3}{}}
+\newlabel{vertical acceleration}{{2.4.3}{23}{Altitude control}{equation.2.4.16}{}}
 \newlabel{eq:Fprop}{{2.17}{24}{Modelling}{equation.2.4.17}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Static lift (g) plotted against throttle reference (\%).\relax }}{24}{figure.caption.22}\protected@file@percent }
 \newlabel{fig:liftpwm}{{2.14}{24}{Static lift (g) plotted against throttle reference (\%).\relax }{figure.caption.22}{}}
@@ -114,168 +116,171 @@
 \newlabel{fig:local_vs_global_1}{{2.18}{36}{Graph representing the difference\\ between global and and local positioning \relax }{figure.caption.42}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.19}{\ignorespaces Global vs Local position\relax }}{36}{figure.caption.42}\protected@file@percent }
 \newlabel{fig:local_vs_global_2}{{2.19}{36}{Global vs Local position\relax }{figure.caption.42}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}PID control}{36}{subsection.2.5.2}\protected@file@percent }
-\newlabel{PID_control}{{2.5.2}{36}{PID control}{subsection.2.5.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.3}Simulations}{38}{subsection.2.5.3}\protected@file@percent }
-\newlabel{PID_simulations}{{2.5.3}{38}{Simulations}{subsection.2.5.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.20}{\ignorespaces Path of drone from Initial to reference   position with wind as an acting force\relax }}{39}{figure.caption.45}\protected@file@percent }
-\newlabel{fig:Drone_path_wind}{{2.20}{39}{Path of drone from Initial to reference \\ position with wind as an acting force\relax }{figure.caption.45}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.21}{\ignorespaces Path of drone from Initial to reference position with varying  wind as an acting force changing slightly every 20 seconds\relax }}{40}{figure.caption.47}\protected@file@percent }
-\newlabel{fig:Drone_path_wind_varys}{{2.21}{40}{Path of drone from Initial to reference position with varying\\ wind as an acting force changing slightly every 20 seconds\relax }{figure.caption.47}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}hardware}{41}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Modelling}{36}{subsection.2.5.2}\protected@file@percent }
+\citation{positionControl}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.3}PID control}{37}{subsection.2.5.3}\protected@file@percent }
+\newlabel{PID_control}{{2.5.3}{37}{PID control}{subsection.2.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.4}Simulations}{39}{subsection.2.5.4}\protected@file@percent }
+\newlabel{PID_simulations}{{2.5.4}{39}{Simulations}{subsection.2.5.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.20}{\ignorespaces Path of drone from Initial to reference position\relax }}{40}{figure.caption.45}\protected@file@percent }
+\newlabel{fig:Drone_path_one_waypoint}{{2.20}{40}{Path of drone from Initial to reference position\relax }{figure.caption.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.21}{\ignorespaces Path of drone from Initial position around waypoints\relax }}{41}{figure.caption.47}\protected@file@percent }
+\newlabel{fig:Drone_path_multiple_waypoints}{{2.21}{41}{Path of drone from Initial position around waypoints\relax }{figure.caption.47}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}hardware}{42}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{hardware}{{3}{41}{hardware}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Motors}{41}{section.3.1}\protected@file@percent }
-\newlabel{motors}{{3.1}{41}{Motors}{section.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 1400KV Brushless Motor\relax }}{41}{figure.caption.48}\protected@file@percent }
-\newlabel{fig:motor}{{3.1}{41}{1400KV Brushless Motor\relax }{figure.caption.48}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Radio}{42}{section.3.2}\protected@file@percent }
-\newlabel{radio}{{3.2}{42}{Radio}{section.3.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Radio Controller with Pitch, Roll, Yaw, and Throttle Indicators\relax }}{42}{figure.caption.49}\protected@file@percent }
-\newlabel{fig:radio_controller}{{3.2}{42}{Radio Controller with Pitch, Roll, Yaw, and Throttle Indicators\relax }{figure.caption.49}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Receiver}{42}{section.3.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Radiolink R12DS 2.4GHz RC Receiver\relax }}{42}{figure.caption.50}\protected@file@percent }
-\newlabel{fig:receiver}{{3.3}{42}{Radiolink R12DS 2.4GHz RC Receiver\relax }{figure.caption.50}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces RC Controller Channel Mapping\relax }}{43}{table.caption.51}\protected@file@percent }
-\newlabel{Figure RC_Controller_Channel_Mapping}{{3.1}{43}{RC Controller Channel Mapping\relax }{table.caption.51}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Flight Controller}{44}{section.3.4}\protected@file@percent }
-\newlabel{flight_controller}{{3.4}{44}{Flight Controller}{section.3.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Flight controller\relax }}{44}{figure.caption.52}\protected@file@percent }
-\newlabel{fig:flightController}{{3.4}{44}{Flight controller\relax }{figure.caption.52}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Raspberry Pi}{44}{subsection.3.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Raspberry Pi\relax }}{44}{figure.caption.53}\protected@file@percent }
-\newlabel{fig:rasberry_pi}{{3.5}{44}{Raspberry Pi\relax }{figure.caption.53}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}ESP32}{45}{subsection.3.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces esp32\relax }}{45}{figure.caption.54}\protected@file@percent }
-\newlabel{fig:esp32}{{3.6}{45}{esp32\relax }{figure.caption.54}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Inertial Measurement Unit (IMU)}{46}{section.3.5}\protected@file@percent }
-\newlabel{IMU}{{3.5}{46}{Inertial Measurement Unit (IMU)}{section.3.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces IMU\relax }}{46}{figure.caption.55}\protected@file@percent }
-\newlabel{fig:IMU}{{3.7}{46}{IMU\relax }{figure.caption.55}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}ESC's (Electronic Speed Controller)}{47}{section.3.6}\protected@file@percent }
-\newlabel{esc}{{3.6}{47}{ESC's (Electronic Speed Controller)}{section.3.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces ESC (Electronic Speed Controller)\relax }}{47}{figure.caption.56}\protected@file@percent }
-\newlabel{fig:esc}{{3.8}{47}{ESC (Electronic Speed Controller)\relax }{figure.caption.56}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Propellers}{47}{section.3.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces propellers\relax }}{47}{figure.caption.57}\protected@file@percent }
-\newlabel{fig:propellers}{{3.9}{47}{propellers\relax }{figure.caption.57}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.8}Voltage Regulator}{48}{section.3.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Voltage regulator\relax }}{48}{figure.caption.58}\protected@file@percent }
-\newlabel{fig:voltage_regulator}{{3.10}{48}{Voltage regulator\relax }{figure.caption.58}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.9}Battery}{48}{section.3.9}\protected@file@percent }
-\newlabel{battery}{{3.9}{48}{Battery}{section.3.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces battery\relax }}{48}{figure.caption.59}\protected@file@percent }
-\newlabel{fig:battery}{{3.11}{48}{battery\relax }{figure.caption.59}{}}
+\newlabel{hardware}{{3}{42}{hardware}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Motors}{42}{section.3.1}\protected@file@percent }
+\newlabel{motors}{{3.1}{42}{Motors}{section.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 1400KV Brushless Motor\relax }}{42}{figure.caption.48}\protected@file@percent }
+\newlabel{fig:motor}{{3.1}{42}{1400KV Brushless Motor\relax }{figure.caption.48}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Radio}{43}{section.3.2}\protected@file@percent }
+\newlabel{radio}{{3.2}{43}{Radio}{section.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Radio Controller with Pitch, Roll, Yaw, and Throttle Indicators\relax }}{43}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:radio_controller}{{3.2}{43}{Radio Controller with Pitch, Roll, Yaw, and Throttle Indicators\relax }{figure.caption.49}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Receiver}{43}{section.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Radiolink R12DS 2.4GHz RC Receiver\relax }}{43}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:receiver}{{3.3}{43}{Radiolink R12DS 2.4GHz RC Receiver\relax }{figure.caption.50}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces RC Controller Channel Mapping\relax }}{44}{table.caption.51}\protected@file@percent }
+\newlabel{Figure RC_Controller_Channel_Mapping}{{3.1}{44}{RC Controller Channel Mapping\relax }{table.caption.51}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Flight Controller}{45}{section.3.4}\protected@file@percent }
+\newlabel{flight_controller}{{3.4}{45}{Flight Controller}{section.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Flight controller\relax }}{45}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:flightController}{{3.4}{45}{Flight controller\relax }{figure.caption.52}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Raspberry Pi}{45}{subsection.3.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Raspberry Pi\relax }}{45}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:rasberry_pi}{{3.5}{45}{Raspberry Pi\relax }{figure.caption.53}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}ESP32}{46}{subsection.3.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces esp32\relax }}{46}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:esp32}{{3.6}{46}{esp32\relax }{figure.caption.54}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Inertial Measurement Unit (IMU)}{47}{section.3.5}\protected@file@percent }
+\newlabel{IMU}{{3.5}{47}{Inertial Measurement Unit (IMU)}{section.3.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces IMU\relax }}{47}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:IMU}{{3.7}{47}{IMU\relax }{figure.caption.55}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}ESC's (Electronic Speed Controller)}{48}{section.3.6}\protected@file@percent }
+\newlabel{esc}{{3.6}{48}{ESC's (Electronic Speed Controller)}{section.3.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces ESC (Electronic Speed Controller)\relax }}{48}{figure.caption.56}\protected@file@percent }
+\newlabel{fig:esc}{{3.8}{48}{ESC (Electronic Speed Controller)\relax }{figure.caption.56}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Propellers}{48}{section.3.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces propellers\relax }}{48}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:propellers}{{3.9}{48}{propellers\relax }{figure.caption.57}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}Voltage Regulator}{49}{section.3.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Voltage regulator\relax }}{49}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:voltage_regulator}{{3.10}{49}{Voltage regulator\relax }{figure.caption.58}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.9}Battery}{49}{section.3.9}\protected@file@percent }
+\newlabel{battery}{{3.9}{49}{Battery}{section.3.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces battery\relax }}{49}{figure.caption.59}\protected@file@percent }
+\newlabel{fig:battery}{{3.11}{49}{battery\relax }{figure.caption.59}{}}
 \citation{sbg_systems_2024}
-\@writefile{toc}{\contentsline {section}{\numberline {3.10}Sensors}{49}{section.3.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.1}GNSS Rover Module}{49}{subsection.3.10.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces GNSS Rover module\relax }}{49}{figure.caption.61}\protected@file@percent }
-\newlabel{fig:gnss_rover}{{3.12}{49}{GNSS Rover module\relax }{figure.caption.61}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Quadcopter antenna\relax }}{49}{figure.caption.61}\protected@file@percent }
-\newlabel{fig:Quadcopter antenna}{{3.13}{49}{Quadcopter antenna\relax }{figure.caption.61}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.2}GNSS Base Station}{50}{subsection.3.10.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces GNSS Base Station module\relax }}{50}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:gnss_base_station}{{3.14}{50}{GNSS Base Station module\relax }{figure.caption.62}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Base Station antenna\relax }}{50}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:base_station_antenna}{{3.15}{50}{Base Station antenna\relax }{figure.caption.62}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.3}Base station container and stand}{51}{subsection.3.10.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Base station container\relax }}{51}{figure.caption.63}\protected@file@percent }
-\newlabel{fig:Base_station_container}{{3.16}{51}{Base station container\relax }{figure.caption.63}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces Base station stand with antenna\relax }}{51}{figure.caption.63}\protected@file@percent }
-\newlabel{fig:Base_station_stand}{{3.17}{51}{Base station stand with antenna\relax }{figure.caption.63}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces telemetry radio for transmitting correction data\relax }}{51}{figure.caption.64}\protected@file@percent }
-\newlabel{fig:telemetry_radio}{{3.18}{51}{telemetry radio for transmitting correction data\relax }{figure.caption.64}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.4}GNSS Calibration (U-center)}{51}{subsection.3.10.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.5}Time of Flight sensor}{52}{subsection.3.10.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Time of Flight sensor\relax }}{52}{figure.caption.65}\protected@file@percent }
-\newlabel{fig:ToF}{{3.19}{52}{Time of Flight sensor\relax }{figure.caption.65}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.10}Sensors}{50}{section.3.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.1}GNSS Rover Module}{50}{subsection.3.10.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces GNSS Rover module\relax }}{50}{figure.caption.61}\protected@file@percent }
+\newlabel{fig:gnss_rover}{{3.12}{50}{GNSS Rover module\relax }{figure.caption.61}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Quadcopter antenna\relax }}{50}{figure.caption.61}\protected@file@percent }
+\newlabel{fig:Quadcopter antenna}{{3.13}{50}{Quadcopter antenna\relax }{figure.caption.61}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.2}GNSS Base Station}{51}{subsection.3.10.2}\protected@file@percent }
+\newlabel{GNSS_base_station}{{3.10.2}{51}{GNSS Base Station}{subsection.3.10.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces GNSS Base Station module\relax }}{51}{figure.caption.62}\protected@file@percent }
+\newlabel{fig:gnss_base_station}{{3.14}{51}{GNSS Base Station module\relax }{figure.caption.62}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Base Station antenna\relax }}{51}{figure.caption.62}\protected@file@percent }
+\newlabel{fig:base_station_antenna}{{3.15}{51}{Base Station antenna\relax }{figure.caption.62}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.3}Base station container and stand}{52}{subsection.3.10.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Base station container\relax }}{52}{figure.caption.63}\protected@file@percent }
+\newlabel{fig:Base_station_container}{{3.16}{52}{Base station container\relax }{figure.caption.63}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces Base station stand with antenna\relax }}{52}{figure.caption.63}\protected@file@percent }
+\newlabel{fig:Base_station_stand}{{3.17}{52}{Base station stand with antenna\relax }{figure.caption.63}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces telemetry radio for transmitting correction data\relax }}{52}{figure.caption.64}\protected@file@percent }
+\newlabel{fig:telemetry_radio}{{3.18}{52}{telemetry radio for transmitting correction data\relax }{figure.caption.64}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.4}GNSS Calibration (U-center)}{52}{subsection.3.10.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.5}Time of Flight sensor}{53}{subsection.3.10.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Time of Flight sensor\relax }}{53}{figure.caption.65}\protected@file@percent }
+\newlabel{fig:ToF}{{3.19}{53}{Time of Flight sensor\relax }{figure.caption.65}{}}
 \citation{uav_wilderness_sar}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.6}Barometer}{53}{subsection.3.10.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.20}{\ignorespaces Pressure sensor\relax }}{53}{figure.caption.66}\protected@file@percent }
-\newlabel{fig:bmp180}{{3.20}{53}{Pressure sensor\relax }{figure.caption.66}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.7}Anemometer}{53}{subsection.3.10.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.21}{\ignorespaces Anemometer\relax }}{53}{figure.caption.67}\protected@file@percent }
-\newlabel{fig:Anemometer}{{3.21}{53}{Anemometer\relax }{figure.caption.67}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.11}Hardware schematic}{54}{section.3.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.22}{\ignorespaces Hardware schematic\relax }}{54}{figure.caption.68}\protected@file@percent }
-\newlabel{fig:hardware_schematic}{{3.22}{54}{Hardware schematic\relax }{figure.caption.68}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.12}Cost of materials}{55}{section.3.12}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces List of main hardware parts to build the quadcopter\relax }}{55}{table.caption.70}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces list of electronic parts needed to build the quadcopter\relax }}{56}{table.caption.72}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Other parts to consider purchasing when building the quadcopter\relax }}{56}{table.caption.74}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.13}PCB design}{57}{section.3.13}\protected@file@percent }
-\newlabel{PCB_section}{{3.13}{57}{PCB design}{section.3.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.13.1}Raspberry Pi PCB}{57}{subsection.3.13.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.23}{\ignorespaces Pi PCB (bottom)\relax }}{57}{figure.caption.76}\protected@file@percent }
-\newlabel{fig:Pi_PCB_bottom}{{3.23}{57}{Pi PCB (bottom)\relax }{figure.caption.76}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.24}{\ignorespaces Pi PCB (top)\relax }}{57}{figure.caption.76}\protected@file@percent }
-\newlabel{fig:Pi_PCB_top}{{3.24}{57}{Pi PCB (top)\relax }{figure.caption.76}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.25}{\ignorespaces Pi PCB attached to Pi\relax }}{57}{figure.caption.77}\protected@file@percent }
-\newlabel{fig:Pi_PCB_on_Pi}{{3.25}{57}{Pi PCB attached to Pi\relax }{figure.caption.77}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.13.2}ESP PCB}{58}{subsection.3.13.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.26}{\ignorespaces ESP32 PCB with IMU attached\relax }}{58}{figure.caption.78}\protected@file@percent }
-\newlabel{fig:Esp_IMU_PCB}{{3.26}{58}{ESP32 PCB with IMU attached\relax }{figure.caption.78}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.27}{\ignorespaces Flight controller\relax }}{58}{figure.caption.79}\protected@file@percent }
-\newlabel{fig:flightController2}{{3.27}{58}{Flight controller\relax }{figure.caption.79}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.13.3}Sensor PCB}{59}{subsection.3.13.3}\protected@file@percent }
-\newlabel{sensorpcb}{{3.13.3}{59}{Sensor PCB}{subsection.3.13.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.28}{\ignorespaces Sensor PCB, including ToF and Barometer sensors\relax }}{59}{figure.caption.80}\protected@file@percent }
-\newlabel{fig:sensorpcb}{{3.28}{59}{Sensor PCB, including ToF and Barometer sensors\relax }{figure.caption.80}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.13.4}Power Distribution PCB}{59}{subsection.3.13.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.29}{\ignorespaces Power distribution board\relax }}{59}{figure.caption.81}\protected@file@percent }
-\newlabel{fig:power_distribution}{{3.29}{59}{Power distribution board\relax }{figure.caption.81}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Software}{61}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.6}Barometer}{54}{subsection.3.10.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.20}{\ignorespaces Pressure sensor\relax }}{54}{figure.caption.66}\protected@file@percent }
+\newlabel{fig:bmp180}{{3.20}{54}{Pressure sensor\relax }{figure.caption.66}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.10.7}Anemometer}{54}{subsection.3.10.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.21}{\ignorespaces Anemometer\relax }}{54}{figure.caption.67}\protected@file@percent }
+\newlabel{fig:Anemometer}{{3.21}{54}{Anemometer\relax }{figure.caption.67}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.11}Hardware schematic}{55}{section.3.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.22}{\ignorespaces Hardware schematic\relax }}{55}{figure.caption.68}\protected@file@percent }
+\newlabel{fig:hardware_schematic}{{3.22}{55}{Hardware schematic\relax }{figure.caption.68}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.12}Cost of materials}{56}{section.3.12}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces List of main hardware parts to build the quadcopter\relax }}{56}{table.caption.70}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces list of electronic parts needed to build the quadcopter\relax }}{57}{table.caption.72}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Other parts to consider purchasing when building the quadcopter\relax }}{57}{table.caption.74}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.13}PCB design}{58}{section.3.13}\protected@file@percent }
+\newlabel{PCB_section}{{3.13}{58}{PCB design}{section.3.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.13.1}Raspberry Pi PCB}{58}{subsection.3.13.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.23}{\ignorespaces Pi PCB (bottom)\relax }}{58}{figure.caption.76}\protected@file@percent }
+\newlabel{fig:Pi_PCB_bottom}{{3.23}{58}{Pi PCB (bottom)\relax }{figure.caption.76}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.24}{\ignorespaces Pi PCB (top)\relax }}{58}{figure.caption.76}\protected@file@percent }
+\newlabel{fig:Pi_PCB_top}{{3.24}{58}{Pi PCB (top)\relax }{figure.caption.76}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.25}{\ignorespaces Pi PCB attached to Pi\relax }}{58}{figure.caption.77}\protected@file@percent }
+\newlabel{fig:Pi_PCB_on_Pi}{{3.25}{58}{Pi PCB attached to Pi\relax }{figure.caption.77}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.13.2}ESP PCB}{59}{subsection.3.13.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.26}{\ignorespaces ESP32 PCB with IMU attached\relax }}{59}{figure.caption.78}\protected@file@percent }
+\newlabel{fig:Esp_IMU_PCB}{{3.26}{59}{ESP32 PCB with IMU attached\relax }{figure.caption.78}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.27}{\ignorespaces Flight controller\relax }}{59}{figure.caption.79}\protected@file@percent }
+\newlabel{fig:flightController2}{{3.27}{59}{Flight controller\relax }{figure.caption.79}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.13.3}Sensor PCB}{60}{subsection.3.13.3}\protected@file@percent }
+\newlabel{sensorpcb}{{3.13.3}{60}{Sensor PCB}{subsection.3.13.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.28}{\ignorespaces Sensor PCB, including ToF and Barometer sensors\relax }}{60}{figure.caption.80}\protected@file@percent }
+\newlabel{fig:sensorpcb}{{3.28}{60}{Sensor PCB, including ToF and Barometer sensors\relax }{figure.caption.80}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.13.4}Power Distribution PCB}{60}{subsection.3.13.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.29}{\ignorespaces Power distribution board\relax }}{60}{figure.caption.81}\protected@file@percent }
+\newlabel{fig:power_distribution}{{3.29}{60}{Power distribution board\relax }{figure.caption.81}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Software}{62}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Main Loop}{62}{section.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Main loop flowchart\relax }}{62}{figure.caption.82}\protected@file@percent }
-\newlabel{fig:main_loop_flowchart}{{4.1}{62}{Main loop flowchart\relax }{figure.caption.82}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Sensor Data Aqusition}{64}{section.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Sensor flowchart\relax }}{64}{figure.caption.83}\protected@file@percent }
-\newlabel{fig:Sensor_flowchart}{{4.2}{64}{Sensor flowchart\relax }{figure.caption.83}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Tests}{66}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Main Loop}{63}{section.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Main loop flowchart\relax }}{63}{figure.caption.82}\protected@file@percent }
+\newlabel{fig:main_loop_flowchart}{{4.1}{63}{Main loop flowchart\relax }{figure.caption.82}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Sensor Data Aqusition}{65}{section.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Sensor flowchart\relax }}{65}{figure.caption.83}\protected@file@percent }
+\newlabel{fig:Sensor_flowchart}{{4.2}{65}{Sensor flowchart\relax }{figure.caption.83}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Tests}{67}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{tests}{{5}{66}{Tests}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}GNSS rover rodule test, with correction Vs without}{66}{section.5.1}\protected@file@percent }
-\newlabel{GNSS_rover_module}{{5.1}{66}{GNSS rover rodule test, with correction Vs without}{section.5.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces GNSS readings without the use of RTK corrections form the base station\relax }}{66}{figure.caption.84}\protected@file@percent }
-\newlabel{fig:GNSS_no_RTK}{{5.1}{66}{GNSS readings without the use of RTK corrections form the base station\relax }{figure.caption.84}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces GNSS Percesion Data (Without corrections)\relax }}{66}{figure.caption.85}\protected@file@percent }
-\newlabel{fig:GNSS_data_no_RTK}{{5.2}{66}{GNSS Percesion Data (Without corrections)\relax }{figure.caption.85}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces GNSS readings with the use of RTK corrections form the base station\relax }}{67}{figure.caption.86}\protected@file@percent }
-\newlabel{fig:GNSS_RTK}{{5.3}{67}{GNSS readings with the use of RTK corrections form the base station\relax }{figure.caption.86}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces GNSS Percesion Data (With corrections)\relax }}{67}{figure.caption.87}\protected@file@percent }
-\newlabel{fig:GNSS_data_RTK}{{5.4}{67}{GNSS Percesion Data (With corrections)\relax }{figure.caption.87}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{68}{section.5.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Static lift (g) plotted against throttle reference (\%).\relax }}{68}{figure.caption.88}\protected@file@percent }
-\newlabel{fig:liftpwm_test}{{5.5}{68}{Static lift (g) plotted against throttle reference (\%).\relax }{figure.caption.88}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Altitude control}{69}{section.5.3}\protected@file@percent }
-\newlabel{altitude_cotrol_tests}{{5.3}{69}{Altitude control}{section.5.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Altitude control whilst quadcopter has little horizontal movement\relax }}{69}{figure.caption.90}\protected@file@percent }
-\newlabel{fig:Altitude_control_no_movement}{{5.6}{69}{Altitude control whilst quadcopter has little horizontal movement\relax }{figure.caption.90}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Altitude control test   whilst quadcopter is moving\relax }}{70}{figure.caption.92}\protected@file@percent }
-\newlabel{fig:Altitude_hold_test_moving}{{5.7}{70}{Altitude control test \\ whilst quadcopter is moving\relax }{figure.caption.92}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces GNSS Data from Altitude   Control flight path\relax }}{70}{figure.caption.92}\protected@file@percent }
-\newlabel{fig:GNSS_Altitude_hold_test_moving}{{5.8}{70}{GNSS Data from Altitude \\ Control flight path\relax }{figure.caption.92}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Moving quadcopter causing an decrease in altitude if throttle percentage is kept the same\relax }}{71}{figure.caption.93}\protected@file@percent }
-\newlabel{fig:ToF_altitude_error}{{5.9}{71}{Moving quadcopter causing an decrease in altitude if throttle percentage is kept the same\relax }{figure.caption.93}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Reflection on progress}{72}{chapter.6}\protected@file@percent }
+\newlabel{tests}{{5}{67}{Tests}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}GNSS rover rodule test, with correction Vs without}{67}{section.5.1}\protected@file@percent }
+\newlabel{GNSS_rover_module}{{5.1}{67}{GNSS rover rodule test, with correction Vs without}{section.5.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces GNSS readings without the use of RTK corrections form the base station\relax }}{67}{figure.caption.84}\protected@file@percent }
+\newlabel{fig:GNSS_no_RTK}{{5.1}{67}{GNSS readings without the use of RTK corrections form the base station\relax }{figure.caption.84}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces GNSS Percesion Data (Without corrections)\relax }}{67}{figure.caption.85}\protected@file@percent }
+\newlabel{fig:GNSS_data_no_RTK}{{5.2}{67}{GNSS Percesion Data (Without corrections)\relax }{figure.caption.85}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces GNSS readings with the use of RTK corrections form the base station\relax }}{68}{figure.caption.86}\protected@file@percent }
+\newlabel{fig:GNSS_RTK}{{5.3}{68}{GNSS readings with the use of RTK corrections form the base station\relax }{figure.caption.86}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces GNSS Percesion Data (With corrections)\relax }}{68}{figure.caption.87}\protected@file@percent }
+\newlabel{fig:GNSS_data_RTK}{{5.4}{68}{GNSS Percesion Data (With corrections)\relax }{figure.caption.87}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Testing initial estimate for \(\alpha _0\) and \(\beta _0\)}{69}{section.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Static lift (g) plotted against throttle reference (\%).\relax }}{69}{figure.caption.88}\protected@file@percent }
+\newlabel{fig:liftpwm_test}{{5.5}{69}{Static lift (g) plotted against throttle reference (\%).\relax }{figure.caption.88}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Altitude control}{70}{section.5.3}\protected@file@percent }
+\newlabel{altitude_cotrol_tests}{{5.3}{70}{Altitude control}{section.5.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Altitude control whilst quadcopter has little horizontal movement\relax }}{70}{figure.caption.90}\protected@file@percent }
+\newlabel{fig:Altitude_control_no_movement}{{5.6}{70}{Altitude control whilst quadcopter has little horizontal movement\relax }{figure.caption.90}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Altitude control test   whilst quadcopter is moving\relax }}{71}{figure.caption.92}\protected@file@percent }
+\newlabel{fig:Altitude_hold_test_moving}{{5.7}{71}{Altitude control test \\ whilst quadcopter is moving\relax }{figure.caption.92}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces GNSS Data from Altitude   Control flight path\relax }}{71}{figure.caption.92}\protected@file@percent }
+\newlabel{fig:GNSS_Altitude_hold_test_moving}{{5.8}{71}{GNSS Data from Altitude \\ Control flight path\relax }{figure.caption.92}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Moving quadcopter causing an decrease in altitude if throttle percentage is kept the same\relax }}{72}{figure.caption.93}\protected@file@percent }
+\newlabel{fig:ToF_altitude_error}{{5.9}{72}{Moving quadcopter causing an decrease in altitude if throttle percentage is kept the same\relax }{figure.caption.93}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Reflection on progress}{73}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Time analysis}{72}{section.6.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Gantt chart\relax }}{73}{figure.caption.94}\protected@file@percent }
-\newlabel{fig:gantt_chart}{{6.1}{73}{Gantt chart\relax }{figure.caption.94}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Gantt chart key\relax }}{74}{figure.caption.95}\protected@file@percent }
-\newlabel{fig:gantt_chart_key}{{6.2}{74}{Gantt chart key\relax }{figure.caption.95}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Objective analysis}{75}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Time analysis}{73}{section.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Gantt chart\relax }}{74}{figure.caption.94}\protected@file@percent }
+\newlabel{fig:gantt_chart}{{6.1}{74}{Gantt chart\relax }{figure.caption.94}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Gantt chart key\relax }}{75}{figure.caption.95}\protected@file@percent }
+\newlabel{fig:gantt_chart_key}{{6.2}{75}{Gantt chart key\relax }{figure.caption.95}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Objective analysis}{76}{section.6.2}\protected@file@percent }
 \citation{sustainability}
 \citation{un}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Sustainability}{77}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Sustainability}{78}{section.6.3}\protected@file@percent }
 \bibstyle{IEEEtran}
 \bibdata{finalReport.bib}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{79}{chapter.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{80}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{photographyAndVideo}{1}
@@ -293,8 +298,9 @@
 \bibcite{Kuipers1999}{13}
 \bibcite{quaternion_curves}{14}
 \bibcite{QuaternionBasedAttitudeControl}{15}
-\bibcite{sbg_systems_2024}{16}
-\bibcite{uav_wilderness_sar}{17}
-\bibcite{sustainability}{18}
-\bibcite{un}{19}
-\gdef \@abspage@last{82}
+\bibcite{positionControl}{16}
+\bibcite{sbg_systems_2024}{17}
+\bibcite{uav_wilderness_sar}{18}
+\bibcite{sustainability}{19}
+\bibcite{un}{20}
+\gdef \@abspage@last{83}

@@ -67,6 +67,9 @@ K.~Shoemake, ``Animating rotation with quaternion curves,'' \emph{SIGGRAPH Compu
 \bibitem{QuaternionBasedAttitudeControl}
 E.~Fresk and G.~Nikolakopoulos, ``Full quaternion based attitude control for a quadrotor,'' IEEE, pp. 3864--3869, 2013.
 
+\bibitem{positionControl}
+E.~Small, P.~Sopasakis, E.~Fresk, P.~Patrinos, and G.~Nikolakopoulos, ``Aerial navigation in obstructed environments with embedded nonlinear model predictive control,'' Accessed: Apr. 23, 2024, Apr. 2024.
+
 \bibitem{sbg_systems_2024}
 \BIBentryALTinterwordspacing
 {SBG Systems}, ``Real time operation with cm level accuracy,'' 2024, accessed: 2024-03-27, Page: 91. [Online]. Available: \url{https://support.sbg-systems.com/sc/kb/latest/inertial-sensors-operation/real-time-operation-with-cm-level-accuracy}
