@@ -18,9 +18,6 @@
 
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning, 3d,calc}
 \usetikzlibrary{shapes.arrows}
-
-
-
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt} 
@@ -82,17 +79,17 @@ the project would not have been completed.
 
 \section*{Original specification}
 Over the last couple of years, the Autonomous Systems Lab has been working on
-the development of bzzz – a radio-controlled quad-rotor (see
+the development of \textit{bzzz} - a radio-controlled quad-rotor (see
 https://github.com/QUB-ASL/bzzz for details). The quadcopter can now be flown in
 manual mode using a radio controller where the operator controls the total
 thrust directly, and in altitude hold mode where the quadcopter maintains a
 reference altitude. The next step is to make the quadcopter maintain a given
 reference (x, y, z)-position and heading. This is known as loitering mode
 operation. In this project, you will design and implement a loitering mode
-control system for bzzz. The main methodological tools for this will be the
-linear-quadratic regulator (LQR) and the Kalman filter. The estimation of the
-position of the quadcopter can be done using a GPS module in combination with
-other sensors (IMU and altimeter etc.).
+control system for \textit{bzzz}. The main methodological tools for this will be
+the linear-quadratic regulator (LQR) and the Kalman filter. The estimation of
+the position of the quadcopter can be done using a Global Positioning System (GPS) module in combination
+with other sensors (IMU and altimeter etc.).
 \subsection*{Problem Statement}
 Throughout this project I will be designing a loitering controller for a
 quadcopter. The objective of this is to enhance the quadcopters' ability to
@@ -102,8 +99,8 @@ a challenge in both commercial and civilian quadcopter use.
 Loitering technology in quadcopters offers a range of benefits and applications.
 Security and surveillance, where home/business owners can have real time
 surveillance, programming a quadcopter to parole specific areas. As well as
-aerial photography and video, for those interested in photography or vloging,
-quadcopters with loitering capabilities will allow for stable and high-quality aerial
+aerial photography and video, for those interested in photography or video,
+drones with loitering capabilities will allow for stable and high-quality aerial
 shots allowing for anything from time laps videos to landscape shots.
 
 During the development of this project, I will be researching and implementing
@@ -149,14 +146,16 @@ collaborative development using git and GitHub.
 \tableofcontents
 \newpage
 
-
 \chapter{Introduction}
-Throughout this project a loitering controller will be designed for the
-Quadcopter using a GNSS module, time of flight and barometer sensors. The objective of this is to enhance the quadcopters ability to maintain a fixed position in space with high accuracy and minimal drift, this is a challenge in both commercial and civilian quadcopter use.
+Throughout this project a loitering controller for a
+Quadcopter will be designed using a GNSS, time of flight and barometer sensors. The objective of
+this is to enhance the quadcopters' ability to maintain a fixed position in
+space with high accuracy and minimal drift, this is a challenge in both
+commercial and civilian quadcopter use.
 
 Loitering technology in quadcopters offers a range of benefits and applications.
 Security and surveillance, where home/business owners can have real time
-surveillance, programming a quadcopter to parole specific areas. As well as
+surveillance, programming a quadcopter to parole specific areas. \j As well as
 aerial photography and videography, for those interested in photography or
 vloging, quadcopters with loitering capabilities will allow for stable and
 high-quality aerial shots allowing for anything from time lapse videos to
@@ -165,30 +164,31 @@ landscape shots.
 \section{Literature review}
 This project will include the development of UAV (Unmanned Aerial
 Vehicle) technology which will be capable of position hold whilst flying.
-Throughout the development of this project control algorithms and prediction theory will hae to be researched and implemented.
+Throughout the development of this I will be utilising into complex control
+algorithms and prediction theory. 
 
-UAV's as described above have many applications in both commercial and military
-use. Commercial applications include photography and video
+UAV's as described above have many applications in both commercial and defence
+use. Commercial applications include Photography and video
 \cite{photographyAndVideo}, home surveillance and security \cite{security},
 quadcopter light shows \cite{lightShow}, agriculture \cite{agricultural} and
-construction \cite{construction}. Some military applications might include
+construction \cite{construction}. Some defence applications might include
 disaster management \cite{disasterManagement}, surveillance \cite{surveillance},
 search and rescue \cite{searchAndRescue}.
 
 Due to UAV's wide range of adaptability and use cases it has been researched
 extensively all around the world. In the study \cite{Widhianto2023Quadcopter}
-the researchers delve into the specifics of using GPS for location control in
+the researchers go into the specifics of using GPS for location control in
 quadcopters. Primarily the study focuses on enhancing the accuracy of position
 holding, they have done this by utilising a way-point system where the
 quadcopter autonomously navigates through pre-determined points.
 
 The testing which was completed evaluated the quadcopters data supply, GPS
 sensors used as sensors to determine vehicle coordination points, the LiDAR
-sensor Lite-V3 is used for measuring altitude. This sensor is accurate up to \(\pm 2.5\)cm and can read up to 500 values per second, priced around £120.
+sensor Lite-V3 is used for measuring altitude. This sensor is accurate up to +/-
+\unit[2.5]{cm} and can read up to 500 values per second, priced around £120.
 
-The waypoints, which were separated into three points at a distance of ten
-metres each to form a triangular angle; the flights are carried out at 3
-waypoints, which are 10 metres each other at a height of five metres; the
+The Waypoints, which were separated into three points at a distance of \(10m\) each to form a triangular angle; the flights are carried out at 3
+waypoints, which are \(10m\) from each other at a height of five metres \(5m\); the
 flights was conducted in the Autonomous mode; the tests were conducted six
 times. The flight path was from the home base to waypoint, to waypoint 2, to
 waypoint 3, all points were 10m apart. The quadcopters system performance was
@@ -196,31 +196,31 @@ evaluated based on error values between the actual vehicle position and the
 waypoints coordinates.
 
 They concluded that between waypoint 1 and home the best result they were able
-to get was 35.8475 cm. between waypoint 1 and 2 the result was 16.2083cm and
-finally between waypoint 2 and 3 it was 110.2508cm.
+to get was \unit[35.8475]{cm}. between waypoint 1 and 2 the result was \unit[16.2083]{cm} and
+finally between waypoint 2 and 3 it was \unit[value]{dimension}cm.
 
 Factors to consider for large errors between waypoints that cause the
-Quadcopter's level of accuracy to not be good are wind speed and inaccurate
-tuning of the PID controller they were using, this is most prevalent when
+quadcopter's level of accuracy to not be good are, wind speed and inaccurate
+tuning of the PID controller. This is most prevalent when
 testing between waypoint 2 and 3. Overall, although there could be improvements,
-I think the results were good especially in test 2 between waypoint 1 and 2 as
+The results were good especially in test 2 between waypoint 1 and 2 as
 they were off by only 16cm.
 
 Furthermore, within this paper there is no evidence of researchers utilising the Kalman filter for position estimation. This would be useful, as if satellite connections were to drop suddenly, the Kalman filter could provide a reliable alternative for estimating the quadcopter's position by fusing readings of the GPS and LiDAR sensors. The Kalman filter, known for its efficiency in dealing with uncertainty and noise in sensor data, could allow for continuous and accurate position tracking even in the absence of GPS signals. This redundancy is crucial for maintaining the stability and safety of the quadcopter during flight, especially in environments where GPS signals are obstructed or non-existent. Incorporating such a filter could significantly enhance the robustness of the control system against signal drop-out, making the quadcopter more reliable for critical applications where consistent positioning is paramount.
 
 The paper presents a detailed study on using GPS technology for the development
 of an autonomous UAV quadcopter. The GPS module plays a crucial role in outdoor
-navigation, particularly in altitude stabilization and trajectory mapping for
+navigation, particularly in altitude stabilisation and trajectory mapping for
 automated flights. The quadcopter uses GPS data for precise positioning and
 executing flight paths, ensuring stability and accuracy in various outdoor
 environments.
 
-This study \cite{AkademiaBaru2016}  by P. Akademia Baru, S. Sabikan and S. Nawawi emphasizes the integration of GPS in
+This study \cite{AkademiaBaru2016} emphasises the integration of GPS in
 autonomous flight. The GPS facilitates precise positioning, which is paramount
 for the quadcopter to execute its flight paths accurately. The described
 precision is not just in horizontal positioning, but it also plays a big part in
 maintaining a consistent altitude. The GPS data, combined with other on-board
-sensors, forms a accurate and reliable solution for navigating complex
+sensors, forms an accurate and reliable solution for navigating complex
 flightpaths in outdoor environments.
 
 Moreover, the paper describes how GPS helps the quadcopter to map out its
@@ -231,45 +231,46 @@ prediction, and search and rescue. GPS-enabled trajectory mapping enables the
 quadcopter to fly through waypoints, correcting course upon arrival at each node
 and in mid-course as environmental factors arise, such as wind.
 
-PID control is an important part of quadcopter flight operations, especially in
-stabilizing flight conditions. This control system adapts the quadcopter's
+Proportional-integral-derivative (PID) control is an important part of quadcopter flight operations, especially in
+stabilising flight conditions. This control system adapts the quadcopter's
 motors based on information provided by the sensors, helping to respond
 accordingly to environmental changes and operator input. The paper describes the
 use of PID control in the quadcopter system to ensure good stability in outdoor
-environments. The PID parameters can be fine-tuned to optimize the response of
+environments. The PID parameters can be fine-tuned to optimise the response of
 the quadcopter, increasing overall performance and reliability.
 
-Through testing they also have taken into account the effects high vibrations on
-the quadcopter and its effect on the accelerometer-based altitude and horizontal
-position estimates to drift far off from reality. Thus, it will create problems
-with altitude hold or loiter. To diminish the effects of vibrations they placed
-the flight controller on an anti-vibration plate, this significantly reduced the
-vibrations recorded on the IMU. Propeller and motor balancing, however, is also
-critical for improved performance.
+Through testing they also have taken into account the effects high vibrations
+have on the quadcopter and its effect on the accelerometer-based altitude and
+horizontal position estimates to drift far off from reality. Thus, it will
+create problems with altitude hold or loiter. To diminish the effects of
+vibrations they placed the flight controller on an anti-vibration plate, this
+significantly reduced the vibrations recorded on the IMU. Propeller and motor
+balancing, however, is also critical for improved performance.
 
 In the second experiment, mission planner software is used to create the flight
-routes for the quadcopters in advance. they choose to use separate locations for
-home and land. From WP1 to WP4, five randomly chosen waypoints were added, along
-with an extra one-second delay. For the duration of the missions, the flight
-altitude is fixed at 30 metres. The following are the speed settings for
-waypoint navigation: 700 cm/s for linear speed, 200 cm/s for radius speed, 250
-cm/s for speed up rate, 150 cm/s for speed down rate, and 1000 cm/s for loiter
-speed. This flight mission is conducted six times.
+routes for the quadcopters in advance. They choose to use separate locations for
+home and land. From WP1 to WP4 (WayPoint), five randomly chosen waypoints were added, along with an
+extra one-second delay. For the duration of the missions, the flight altitude is
+fixed at 30 metres. The following are the speed settings for waypoint
+navigation: \unit[700]{cm/s} for linear speed, \unit[200]{cm/s} for radius
+speed, \unit[250]{cm/s} for speed up rate, \unit[150]{cm/s} for speed down rate,
+and \unit[1000]{cm/s} for loiter speed. This flight mission is conducted six
+times.
 
-I found that utilising GPS, PID and compass technology they were able to make a
-quadcopter that was able to follow pre-determined set waypoints with little to
-no off set furthermore I cannot see any overshoot in and around the waypoints
-meaning that there PID technology is optimized very well. Overall, this is a
-great solution for autonomous flying of a quadcopter.
+It was found that utilising GPS, PID and compass
+technology they were able to make a quadcopter that was able to follow
+pre-determined set waypoints with little to no off set furthermore there is no overshoot
+in and around the waypoints meaning that there PID technology is optimised very
+well. Overall, this is a great solution for autonomous flying of a quadcopter.
 
 Post analysis of this paper has outlined that if control algorithms were to be
 utilised in this project it is paramount that they are precisely tuned, the
 success of the tests in this paper were due to a correctly tuned PID controller
 allowing for no overshoot. 
 
-The paper by Ahmed Hassan Ahmed et al \cite{AhmedHassan2016} addresses the
-critical aspect of attitude stabilization and altitude control in quadcopter
-UAVs, emphasizing the importance of reliable and precise control mechanisms for
+The paper by Ahmed Hassan Ahmed et al \cite{AhmedHassan2016}. addresses the
+critical aspect of attitude stabilisation and altitude control in quadcopter
+UAVs, emphasising the importance of reliable and precise control mechanisms for
 effective UAV operations. The study initiates with the implementation of a
 Single Input Single Output (SISO) approach to establish a control structure for
 a quadcopter using both traditional and modified PID controllers on a single
@@ -283,7 +284,7 @@ meticulous calibration of the IMU sensors, particularly the accelerometers and
 gyroscopes, underscores the importance of precise sensor data for accurate UAV
 control.
 
-The paper looks into the software design aspect, utilising an ARDUINO
+The paper delves into the software design aspect, utilising an ARDUINO
 microcontroller to implement the control algorithms, highlighting the role of
 digital PID controllers in managing the quadcopter's dynamic movements across
 pitch, roll, and yaw axes, along with altitude control. This detailed
@@ -291,13 +292,13 @@ exploration into the control scheme reveals the intricacies involved in
 achieving stable and responsive UAV flight, especially in the presence of
 disturbances or added weights that mimic real-world operational challenges.
 
-The MPU-6050 IMU is calibrated by putting it on a level, turntable and
-positioning each of its three accelerometers, such that its sensitive axes are
+The MPU-6050 IMU is calibrated by putting it on a level, turntable and
+positioning each of its three accelerometers, such that its sensitive axes are
 facing upwards. The average output is recorded after collecting data in this
-location for roughly 15 minutes. After that, the device is turned so that each
-sensitive axis is pointing downward, and data is once more gathered for a
+location for roughly 15 minutes. After that, the device is turned so that each
+sensitive axis is pointing downward, and data is once more gathered for a
 comparable amount of time to produce an additional average measurement. The sum
-of these two values, divided by two, to determine the bias for each
+of these two values, divided by two, to determine the bias for each
 accelerometer. in order to find the scale factor, the values of each output are
 subtracted from each other as well as subtracting twice the value of the
 gravitational acceleration (2g), and then dividing the result by twice the
@@ -310,13 +311,13 @@ controllers on individual axes, followed by a unified control strategy for all
 axes, provide valuable insights into the practical challenges and considerations
 in quadcopter control system design. The comparison between traditional and
 modified PID controllers, in terms of response to disturbances and robustness,
-adds a layer of depth to the discussion on control system optimization.
+adds a layer of depth to the discussion on control system optimisation.
 
 From analysing the tests performed, how well the control algorithms are tuned
 should be noted. In these tests the quadcopter is subjected to disturbance, this
 is performed by pushing the quadcopter while it is in position control mode.
 From graph analysis it is seen that overall the altitude stays consistent with
-an error of around \(\pm2\). When analysing the pitch and roll graphs it is
+an error of around \(\pm2\). When analysing the Pitch and Roll graphs it is
 apparent where the quadcopter is exerted to an external force, again the PID
 controllers have been tuned precisely as they converge within 1 second each time
 the force is exerted. 
@@ -328,10 +329,10 @@ It highlights the critical balance between theoretical control system design and
 practical implementation challenges, offering a valuable resource for
 researchers and practitioners in the UAV domain.
 
-For implementation on the bzzz quadcopter this paper has highlighted the
+For implementation on the \textit{bzzz} quadcopter this paper has highlighted the
 benefits of PID control algorithms when designing a position control system, as
 well as information on how to effectively calibrate the IMU. This will be taken
-into careful consideration when designing the bzzz quadcopter.
+into careful consideration when improving the \textit{bzzz} quacdopter.
 
 In the paper \cite{ReinforcementLearning} the authors  explore the application of reinforcement
 learning (RL) techniques to improve the control and stability of quadcopters,
@@ -342,10 +343,10 @@ adaptive and robust control systems.
 
 The study utilises reinforcement learning, with a particular emphasis on Q-learning which is a model-free learning algorithm for controlling the altitude
 of the quadcopter. The researchers employed PD (Proportional-Derivative) control
-to stabilize the quadcopter's x and y axes, while the altitude and path planning
+to stabilise the quadcopter's \(x\) and \(y\) axes, while the altitude and path planning
 were managed through the Q-learning algorithm. The training of the quadcopter
 was conducted in a simulated environment before real-world testing, which is a
-common practice in RL to minimize risks and costs associated with direct
+common practice in RL to minimise risks and costs associated with direct
 real-world training.
 
 A comparative analysis between the RL approach and a traditional PD algorithm
@@ -376,36 +377,37 @@ potential benefits and challenges of integrating advanced machine learning
 techniques into quadcopter technology for improved autonomy and performance in
 aerial tasks.
 
-In conclusion, the studies emphasises how crucial it is to design a quadcopter
-control system for the bzzz quadcopter. PID control mechanisms  contribute to
-accuracy and stability, this will  be a crucial component in the design of the
-bzzz quadcopters. furthermore it is  highlighted how important it is to
-fine-tune PID controllers in order to minimise overshoot and provide accurate
-reactions to changes in the environment. The UAV's ability to retain its planned
-course during intricate manoeuvres with few errors is dependent on this tuning
-process, which is crucial for the quadcopter's success in applications such as
-photography \cite{photographyAndVideo}.
+In conclusion, the studies emphasises how crucial it is to design a quadcopter
+control system for the \textit{bzzz} quadcopter. PID control
+mechanisms contribute to accuracy and stability, this will be a crucial
+component in the design of the \textit{bzzz} quadcopters. Furthermore it is
+highlighted how important it is to fine-tune PID controllers in order to
+minimise overshoot and provide accurate reactions to changes in the environment.
+The UAV's ability to retain its planned course during intricate manoeuvres with
+few errors is dependent on this tuning process, which is crucial for the
+quadcopter's success in applications such as photography
+\cite{photographyAndVideo}.
 
-Additionally, the bzzz quadcopter will integrate Kalman filters to enhance
-reliability in GPS-denied environments as indicated in existing literature. This
-integration aims to strengthen the UAV against signal disruptions, ensuring
-continuous operation, and enhancing safety—crucial considerations for tasks like
-disaster management \cite{disasterManagement} and search and rescue operations
-\cite{searchAndRescue}.
+Additionally, the \textit{bzzz} quadcopter will integrate Kalman filters to
+enhance reliability in GPS-denied environments as indicated in existing
+literature. This integration aims to strengthen the UAV against signal
+disruptions, ensuring continuous operation, and enhancing safety—crucial
+considerations for tasks like disaster management \cite{disasterManagement} and
+search and rescue operations \cite{searchAndRescue}.
 
 Although reinforcement learning shows promising advancements, this technology
-will not be utilised in the current version of the bzzz quadcopter due to its
-complexity and extensive data requirements that do not align with the project's
-current objectives \cite{ReinforcementLearning}. Instead, our main goal is to
-refine the PID controllers and Kalman filters to create a precise control system
-that meets the requirements of operating the bzzz quadcopter. This targeted
-approach ensures the deployment of a robust UAV platform, ready to excel across
-a spectrum of applications with proven technology that balances performance with
-operational feasibility.
+will not be utilised in the current version of the \textit{bzzz} quadcopter due
+to its complexity and extensive data requirements that do not align with the
+project's current objectives \cite{ReinforcementLearning}. Instead, our main
+goal is to refine the PID controllers and Kalman filters to create a precise
+control system that meets the requirements of operating the \textit{bzzz}
+quadcopter. This targeted approach ensures the deployment of a robust UAV
+platform, ready to excel across a spectrum of applications with proven
+technology that balances performance with operational feasibility.
 
 \chapter{Methodology}
 \section{Structure of the quadcopter}
-The quadcopter we have designed has an X configuration where each motor lies at
+The quadcopter we have designed has an 'X' configuration where each motor lies at
 the corner of the quadcopter and one side acts as the front of the quadcopter
 depicted below (Fig.\ref{fig:QuadDiagram}). 
 
@@ -416,8 +418,7 @@ depicted below (Fig.\ref{fig:QuadDiagram}).
   \label{fig:QuadDiagram}
 \end{figure}
 
-\noindent
-The quadcopter is shaped like an 'X,' with each arm extending diagonally from the
+Furthermore, each arm extending diagonally from the
 center body, where the core components are housed. Here's a detailed overview of
 its structure:
 \subsection*{Frame}
@@ -428,16 +429,16 @@ its structure:
   \label{fig:Central_hub_arms}
 \end{figure}
 \begin{itemize}
-  \item \textbf{The Central Hub}, the quadcopter's central hub, houses vital
-  parts required for its  functionality, making it crucial to its operation. The
+  \item \textbf{The Central Hub}, the quadcopter's central hub, houses vital
+  parts required for its functionality, making it crucial to its operation. The
   battery compartment is positioned inside this core in a way that maximises the
   quadcopter's centre of gravity and promotes steady and balanced flight
   dynamics. Mounting plates are essential for the quadcopter's operational
   capabilities and versatility as they offer safe attachment points
-  for structural components like landing gear. Moreover, the landing gear
+  for structural components like landing gear. Moreover, the landing gear
   attachments' direct integration into the hub allows for seamless and secure
   operations while strengthening the structure to withstand the stresses of
-  take-off and landing. The arrangement of parts inside the central hub improves
+  take-off and landing. The arrangement of parts inside the central hub improves
   the quadcopter's performance and manoeuvrability in addition to preserving its
   structural integrity.
   \item \textbf{The Arms}, four arms extend out of the central hub in an X
@@ -490,12 +491,12 @@ The white caged electronic housing box is where the computational unit, an
 Inertial Measurement Unit (IMU), Raspberry Pi, Radio receiver, GNSS rover module
 and voltage regulator are all placed at the center of the body, situated above
 the central hub. For more information on the electronic components used please
-see section....
+see Section:\ref{hardware}
  
 \section{Thrust Overview}
 This section briefly runs over how the quadcopter produces thrust. A quadcopter
 uses four separate brushless (BLDC) motors, each paired with a specific
-electronic speed controllers (ESCs) that adjusts how fast the motor spins. These
+electronic speed controller (ESC) that adjusts how fast the motor spins. These
 controllers work by receiving a digital signal, known as Pulse-Width Modulation
 (PWM) which have a pulse, the 'width' of these pulses (i.e., how long they stay
 'on' versus 'off' in a given cycle) is adjusted to control the speed of the
@@ -504,31 +505,30 @@ more power is delivered to the motor, making it spin faster. Digital
 microcontrollers are typically used to create these PWM signals.
 
 Propellers generate thrust through aerodynamic principles, primarily by
-leveraging the pressure differential created by the airfoil-shaped blades as
-they slice through the air. According to Bernoulli's principle, the acceleration
-of air over the blade surfaces leads to a lower pressure on the top side
-compared to the bottom, due to the faster flow of air this pressure difference
-produces lift. This is a similar concept to an aircraft wing. Furthermore,
-Newton's third law of motion: every action has an equal and opposite reaction,
-should be considered as the propeller blades push air downwards, resulting in an
-upward reactionary force. The efficiency of this process is influenced by the
-propeller's angle of attack and the rotational speed, which determine the volume
-of air displaced. However, factors such as viscous drag and turbulence can
-reduce the thrust efficiency, necessitating aerodynamic optimizations to
-minimize energy losses and maximise the generated thrust, see
-Fig.\ref{fig:thrustconfig}.
+leveraging the pressure differential created by the airfoil-shaped blades as they slice through the air. According to Bernoulli's
+principle, the acceleration of air over the blade surfaces leads to a lower
+pressure on the top side compared to the bottom, due to the faster flow of air
+this pressure difference produces lift. This is a similar concept to an aircraft
+wing. Furthermore, Newton's third law of motion: every action has an equal and
+opposite reaction, should be considered as the propeller blades push air
+downwards, resulting in an upward reactionary force. The efficiency of this
+process is influenced by the propeller's angle of attack and the rotational
+speed, which determine the volume of air displaced. However, factors such as
+viscous drag and turbulence can reduce the thrust efficiency, necessitating
+aerodynamic optimisations to minimise energy losses and maximise the generated
+thrust, see Fig.\ref{fig:thrustconfig}.
 
 On the quadcopter depicted in Fig.\ref{fig:QuadDiagram} and
 Fig.\ref{fig:motorconfig} two motors spin in a clockwise direction and two in
 the anticlockwise direction, motors which rotate in the same direction are
 placed on opposite sides of the diagonal arms. The reason for this is to provide
-stability and accurate control. By counteracting the angular momentum produced
-by each motor, this arrangement keeps the quadcopter oriented and stops it from
+stability and accurate control. By counteracting the angular momentum produced by
+each motor, this arrangement keeps the quadcopter oriented and stops it from
 spinning out of control. The quadcopter's stability is enhanced by the
 deliberate positioning of motors rotating at the same speed on opposing diagonal
 arms, which balances torque. Additionally, by adjusting the motors' rotational
 speeds, this configuration makes it easier to perform yaw motions, which are
-necessary for steering and adjusting orientation on the x-axis. This design
+necessary for steering and adjusting orientation on the \(x\)-axis. This design
 decision improves manoeuvrability and simplifies the entire structure, removing
 the need for more intricate programming to resist rotating forces. As a result,
 the control system becomes simpler and more effective through the use of the
@@ -642,12 +642,12 @@ thrust and weight is essential for the quadcopter to remain airborne and perform
 various manoeuvres.
 
 Please note that the diagrams produced are not to scale and are just for the
-readers understanding on how the quadcopers thrust dynamics are produced.
+readers understanding on how the quadcopters thrust dynamics are produced.
 
 \section{Quadcopter position
 manipulation}\label{Quadcopter_position_manipulation} In this section we will go
 through the quadcopters dynamics and how we can manipulate them in order to
-manoeuvre the quad to achieve a specified position and or direction of flight
+manoeuvre the quadcopter to achieve a specified position and or direction of flight
 
 \begin{figure}[htbp]
   \centering
@@ -687,9 +687,9 @@ manoeuvre the quad to achieve a specified position and or direction of flight
 \end{figure}
 
 \begin{enumerate}
-  \item \textbf{Pitchx}, measured around a body fixed x-axis.
-  \item \textbf{Roll}, measured around a body fixed y-axis.
-  \item \textbf{Yaw} or heading, measured along a body fixed z-axis.
+  \item \textbf{Pitch}, measured around a body fixed \(x\)-axis.
+  \item \textbf{Roll}, measured around a body fixed \(y\)-axis.
+  \item \textbf{Yaw} or heading, measured along a body fixed \(z\)-axis.
 \end{enumerate}
 
 \subsection{Electronic Speed Controllers (ESCs)}
@@ -710,16 +710,16 @@ to each other.
 To initiate a forward pitch, the rear rotors (BL and BR) are amplified to
 produce additional lift at the back of the quadcopter. At the same time,
 decelerating the front rotors reduces their lifting capacity in turn leading to
-an uneven force distribution along x-axis which causes movement towards the
+an uneven force distribution along \(x\)-axis which causes movement towards the
 front direction as the thrust produced by the back motors is greater than that
 of the front, this leads to a positive torque. Conversely, when executing a
 backward pitch manoeuvre on a quadcopter, the front rotors (FL and FR) rotate at
 an accelerated pace while the rear ones slow down, as the thrust produced by the
 front motors is greater than that of the back, this leads to a negative torque
-on the x-axis. This disparity in speed results in the unmanned aerial vehicle
+on the \(x\)-axis. This disparity in speed results in the unmanned aerial vehicle
 leaning backwards.
 
-The resulting torque produced on the x-axis is shown below:
+The resulting torque produced on the \(x\)-axis is shown below:
 \begin{equation}
   \tau_{x, total} = \frac{d}{\sqrt{2}} (T_{\text{FL}} + T_{\text{FR}} - T_{\text{BL}} - T_{\text{BR}})
   \label{torque_x}
@@ -825,18 +825,18 @@ The torque calculation is affected by the leverage effect of the motor thrusts, 
 Figure\ref{fig:forwardpitch} illustrates a pitch to the front of the quadcopter,
 motors BL and BR are spinning faster than FL and FR. This leads to more thrust
 being produced by the back two motors than the front two. This causes the
-quadcopter to rotate in a clockwise motion along the x-axis.
+quadcopter to rotate in a clockwise motion along the \(x\)-axis.
 
 On the other hand Figure\ref{fig:backwordpitch} illustrates a pitch to the back
 of the quadcopter, motors FL and FR are spinning faster than BL and BR. This
 leads to more thrust being produced by the front two motors than the back two.
 This causes the quadcopter to rotate in a anti-clockwise motion along the
-x-axis.
+\(x\)-axis.
 
 \subsection{Roll}
 To manoeuvre the quadcopters roll, adjusting the speeds of its rotors is key.
 This involves creating an imbalance, in thrust between either side of the
-aircraft prompting it to tilt along its  y-axis depicted in
+aircraft prompting it to tilt along its  \(y\)-axis depicted in
 Fig.\ref{fig:quadwithaxis}. When initiating a roll to the right side the
 quadcopter increases the speed of its left side rotors (FL and BL) while
 decreasing that of its right side rotors (FR and BR). This disparity in thrust
@@ -846,7 +846,7 @@ and BR) while decreasing that of its right side rotors (FL and BL). Through the
 use of roll the quadcopter adjusts its orientation and gains movement in that
 direction. 
 
-The resulting torque produced on the y-axis is shown below:
+The resulting torque produced on the \(y\)-axis is shown below:
 \begin{equation}
   \tau_{y, total} = \frac{d}{\sqrt{2}} (T_{\text{FL}} + T_{\text{FR}} - T_{\text{BL}} - T_{\text{BR}}),
   \label{torque_y}
@@ -951,17 +951,17 @@ by the motors, d is the distance of the center of mass from any one motor
 Figure\ref{fig:rightroll} illustrates a roll to the right of the quadcopter,
 motors FL and BL are spinning faster than FR and BR. This leads to more thrust
 being produced by the two left motors than the two right. This discrepancy in
-thrust causes the quadcopter to rotate in a clockwise motion along the y-axis.
+thrust causes the quadcopter to rotate in a clockwise motion along the \(y\)-axis.
 
 On the other hand Figure\ref{fig:leftroll} illustrates a roll to the left of the
 quadcopter, motors FR and BR are spinning faster than FL and BL. This leads to
 more thrust being produced by the two right motors than the two left motors.
 This discrepancy in thrust causes the quadcopter to rotate in a anti-clockwise
-motion along the y-axis.
+motion along the \(y\)-axis.
 
 \subsection{Yaw}
 By adjusting rotor speeds, one may precisely control a quadcopter's yaw, or
-rotation about the vertical z-axis (see Fig.\ref{fig:quadwithaxis}). To do this,
+rotation about the vertical \(z\)-axis (see Fig.\ref{fig:quadwithaxis}). To do this,
 opposing diagonal rotors must rotate at different speeds in order to produce
 torque, which causes rotation around the vertical axis.
 
@@ -1152,11 +1152,11 @@ details into the IMU which is being used can be seen below (see Section:\ref{IMU
 Controlling the pitch roll and yaw motions of the quadcopter is a crucial
 responsibility of the flight controller. It processes the IMU data to understand
 the vehicle's orientation and motion, then makes decisions to adjust the motors
-and stabilize the flight. For more information on the flight controller
-see Section:\ref{flight_controller}
+and stabilise the flight. For more information on the flight controller please
+see section:\ref{flight_controller}
 
-\section{Control and Estimation}\label{control_and_estimation} During this
-project the development of a kalman filter for position estimation on the z-axis
+\subsection{Control and Estimation}\label{control_and_estimation} During this
+project the development of a kalman filter for position estimation on the \(z\)-axis
 was paramount for sensor fusion. On the quadcopter there is a downward- facing
 time-of-flight (ToF) sensor, which is an infrared distance sensor that measures
 the distance from the ground with a standard error of ±6 cm. The quadcopter
@@ -1173,7 +1173,7 @@ Building on the foundational principles of pitch, yaw, and roll seen in
 Section\ref{Quadcopter_position_manipulation}, the system dynamics of a
 quadcopter extend into the realm of intricate motion control and stability
 mechanisms. A typical quadcopter can manoeuvre on any axis fixed to its frame,
-it can ascend or descend vertically, and move laterally in the (x, y) plane of a
+it can ascend or descend vertically, and move laterally in the \((x , y )\) plane of a
 known global reference frame. The quadcopter's ability to move in a variety of
 ways enables it to precisely navigate aerial waypoints, adapting seamlessly to
 both the immediate environment and the pilot's commands. 
@@ -1269,7 +1269,7 @@ q^{-1} = \frac{q^*}{\|q\| ^2}
 This property simplifies the computation of the inverse for unit quaternions and
 is particularly useful in rotational transformations.
 
-Quaternions are extensively used in the stabilization and control of
+Quaternions are extensively used in the stabilisation and control of
 quadcopters. For instance, the desired rotation \( q_d \) can be achieved by
 applying a control torque \( \tau \) based on the error between the desired and
 current quaternion \( q \):
@@ -1732,12 +1732,12 @@ system that combines two kinds of control:
   the current error, which is the difference between the set point and the
   processes current value. The proportional term analyses the error and produces
   a linear output based on the error. This results in the rapid response of the
-  system to deviations from the desired setpoint, helping to stabilize the
+  system to deviations from the desired setpoint, helping to stabilise the
   system by moving the process variable in the right direction. The Proportional
   gain is a variable parameter that sets the level of aggression of the PID
-  controller in its response to error. A high Kp means a larger output for
-  a given error – and, therefore, a faster response of the system to make up for
-  the error – but setting Kp too high will lead to instability in the form of
+  controller in its response to error. A high \(K_p\) will means a larger output for
+  a given error - and, therefore, a faster response of the system to make up for
+  the error - but setting \(K_p\) too high will lead to instability in the form of
   gross oscillations about the setpoint.
   \item \textbf{Derivative (D)}: The derivative term in a PD controller plays a
   crucial role in forecasting the system's future dynamics based on the current
@@ -1745,11 +1745,11 @@ system that combines two kinds of control:
   providing a damping force that enhances the stability of the system. By
   tempering the response generated by the proportional component, the derivative
   action effectively mitigates overshoot—preventing the system output from
-  exceeding the desired setpoint. Increasing the derivative time (\(K_d\)) parameter
+  exceeding the desired setpoint. Increasing the derivative time \(K_d\) parameter
   will cause the control system to react strongly to changes in the error term
   and will increase the speed of the overall control system response. Moreover,
   it contributes to a faster response by reducing the settling time, which is
-  the time it takes for the system to stabilize within a certain range of the
+  the time it takes for the system to stabilise within a certain range of the
   setpoint.
 \end{itemize}
 The general equation for a PD controller, given an error signal \(e[k]\) (the
@@ -1873,12 +1873,12 @@ and sensor bias and a PD controller for altitude adjustments.
 Observations from the simulation after processing 2000 time steps, with a
 sampling time \(T_s\) of 0.1 seconds, reveal several key dynamics;
 
-The Kalman filter’s ability to estimate values of \(\alpha\) and \(\beta\),
+The kalman filter's ability to estimate values of \(\alpha\) and \(\beta\),
 which relate throttle input to lifting as well as for \((d^{ToF})\) and
 \((d^{bar})\) in meters for the Time of flight and Barometer sensors
 respectively is clearly visible within this simulation. The estimated values for
 each do indeed converge in on the true values. This is a clear indication of the
-kalman filter’s ability to conduct real-time estimation of the values even when
+kalman filter's ability to conduct real-time estimation of the values even when
 system and measurement noise are present.
 
 Beginning at a reference altitude of 0.5 meters, the quadcopters altitude begins
@@ -1933,12 +1933,12 @@ Observations from the simulation above Figure:\ref{fig:a_constant_PD} after
 processing 2000 time steps, with a sampling time \(T_s\) of 0.1 seconds, reveal
 several key dynamics;
 
-The kalman filter’s ability to estimate values of \(\beta\), as well as for
+The kalman filter's ability to estimate values of \(\beta\), as well as for
 \(d^{ToF}\) and \(d^{bar}\) in meters for the Time of flight and Barometer
 sensors respectively is clearly visible within this simulation, notably when
 compared to the simulation above (Figure:\ref{fig:no_constant_PD}) \(\alpha\) is
 no longer being estimated. The estimated values for each do indeed converge in
-on the true values. This is a clear indication of the kalman filter’s ability to
+on the true values. This is a clear indication of the kalman filter's ability to
 conduct real-time estimation of the values even when system and measurement
 noise are present.
 
@@ -1996,12 +1996,12 @@ Observations from the simulation above Figure:\ref{fig:b_constant_PD} after
 processing 2000 time steps, with a sampling time \(T_s\) of 0.1 seconds, reveal
 several key dynamics;
 
-The kalman filter’s ability to estimate values of \(\alpha\), as well as for
+The kalman filter's ability to estimate values of \(\alpha\), as well as for
 \(d^{ToF}\) and \(d^{bar}\) in meters for the Time of flight and Barometer
 sensors respectively is clearly visible within this simulation, notably when
 compared to the simulation above (Figure:\ref{fig:no_constant_PD}) \(\beta\) is
 no longer being estimated. The estimated values for each do indeed converge in
-on the true values. This is a clear indication of the kalman filter’s ability to
+on the true values. This is a clear indication of the kalman filter's ability to
 conduct real-time estimation of the values even when system and measurement
 noise are present.
 
@@ -2213,12 +2213,12 @@ combines three kinds of control:
   the current error, which is the difference between the set point and the
   processes current value. The proportional term analyses the error and produces
   a linear output based on the error. This results in the rapid response of the
-  system to deviations from the desired setpoint, helping to stabilize the
+  system to deviations from the desired setpoint, helping to stabilise the
   system by moving the process variable in the right direction. The Proportional
   gain is a variable parameter that sets the level of aggression of the PID
-  controller in its response to error. A high Kp will means a larger output for
-  a given error – and, therefore, a faster response of the system to make up for
-  the error – but setting Kp too high will lead to instability in the form of
+  controller in its response to error. A high \(K_p\) will means a larger output for
+  a given error - and, therefore, a faster response of the system to make up for
+  the error - but setting \(K_p\) too high will lead to instability in the form of
   gross oscillations about the setpoint.
   \item \textbf{Integral (I)}: The integral control deals with the accumulated
   error over time by emphasising the difference between the system's actual
@@ -2238,11 +2238,11 @@ combines three kinds of control:
   providing a damping force that enhances the stability of the system. By
   tempering the response generated by the proportional component, the derivative
   action effectively mitigates overshoot—preventing the system output from
-  exceeding the desired setpoint. Increasing the derivative time (Kd) parameter
+  exceeding the desired setpoint. Increasing the derivative time \(K_d\) parameter
   will cause the control system to react strongly to changes in the error term
   and will increase the speed of the overall control system response. Moreover,
   it contributes to a faster response by reducing the settling time, which is
-  the time it takes for the system to stabilize within a certain range of the
+  the time it takes for the system to stabilise within a certain range of the
   setpoint.
 \end{itemize}
 generally a PID controller is given by the following equation: 
@@ -2286,11 +2286,9 @@ longitude, y represents latitude and z is the altitude in local format(Section:\
 The control action (u) is the sum of three terms: the baseline control
 inputs\((u_{\text{baseline}})\), the proportional term, the integral term and
 the derivative term. The proportional term is the product of the proportional
-gain (Kp) and the altitude error. The integral term is the product of the
-integral gain(Ki) and the position errors over time. The derivative term is the
-product of the derivative gain (Kd) and the rate of change in error.
-
-The continuous-time pitch control equation, where \( \theta^p \) represents the pitch angle and \( v_x \) is the velocity along the \(x\) axis, is given by:
+gain \(K_p\) and the altitude error. The integral term is the product of the
+integral gain \(K_i\) and the position errors over time. The derivative term is the
+product of the derivative gain \(K_d\) and the rate of change in error.
 
 \begin{equation}
   \theta^{p,\text{ref}}_t = K_{p,x} \cdot e_x + K_{i,x} \cdot \sum e_x \Delta t + K_{d,x} \cdot v_x
@@ -2358,8 +2356,8 @@ Thought the simulations below the PID gains we set are as follows:
   \caption{Path of quadcopter from Initial to reference position}
   \label{fig:Drone_path_one_waypoint}
 \end{figure}
-The quadcopter’s navigation capability is analysed during this advanced
-simulation. The quadcopter’s ability to
+The quadcopter's navigation capability is analysed during this advanced
+simulation as it experiences a northwest wind. The quadcopter's ability to
 actively correct is course is made possible by Proportional-Integral-Derivative
 (PID) controllers (one for pitch control, one for roll control and one for altitude control).
 
@@ -2383,10 +2381,22 @@ In conclusion, the quadcopter PID control systems works well, In was able to rea
   \caption{Path of quadcopter from Initial position around waypoints}
   \label{fig:Drone_path_multiple_waypoints}
 \end{figure}
-The quadcopter’s navigation capability is analysed during this advanced simulation as it manoeuvres between various different per determined way points. when the quadcopter comes within 3cm from said waypoint it is changed to the next one, and so on.
+The quadcopter's navigation capability is analysed during this advanced
+simulation as it experiences changing northwest winds, which is intended to
+replicate the fluctuating volatility and position of actual wind patterns in
+real life. 
 
-The quadcopter’s ability to actively correct is course is made possible by Proportional-Integral-Derivative (PID) controllers (one for pitch control, one for roll control and one for altitude) with little to no overshoot when flying between waypoints. The flight course instinctively reacts the changes in waypoints, by adjusting its pitch and roll angles as well asits altitude to travel to the next one. The velocities on the x, y and z axis are ever 
-changing and consistantly converging on the desired position.
+The quadcopter's ability to actively correct is course is made possible by
+Proportional-Integral-Derivative (PID) controllers (one for pitch control and
+one for roll control). The flight course instinctively reacts to gusts of wind
+that changes every 20 seconds to rebalance its movement in the desired direction
+to the target point. 
+
+The Latitude and Longitude velocities demonstrate variations in the velocity
+chart every 20 seconds as a result of the  PID controllers immediate feedback to
+the displacement force of constant rolling winds. The drone's velocity becomes
+stable immediately after every gust as the integral and derivative of the PID
+control system work together to stabilise the quadcopter.
 
 The quadcopter navigation system is also faced with a difficult dynamic situation, brought about by its everchanging waypoints. Both pitch, roll and altitude PID controllers are used simultaneously in this simulation. 
 
@@ -2613,7 +2623,7 @@ components proving its worth, in creating cutting edge aerial vehicles.
 The MPU9250 integrates a 3-axis gyroscope, a 3-axis accelerometer, and a 3-axis
 magnetometer. This 9 DoF capability allows it to provide comprehensive data on
 the quadcopter's orientation, acceleration, and magnetic heading, enabling
-precise control and stabilization.
+precise control and stabilisation.
 
 Its small footprint makes it ideal for use in compact devices like quadcopters,
 where space is at a premium and every gram of weight matters for flight
@@ -2631,7 +2641,7 @@ sensitivity based on the specific requirements of the quadcopter, enabling
 precise measurement of rotational motion. The accelerometer provides selectable
 full-scale ranges of ±2g, ±4g, ±8g, and ±16g. This adaptability allows the
 device to accurately measure acceleration due to gravity and motion,
-contributing to effective motion tracking and stabilization. The magnetometer
+contributing to effective motion tracking and stabilisation. The magnetometer
 offers a full-scale range of ±4800 µT, allowing for precise measurements of the
 Earth's magnetic field. This sensitivity is key for accurate heading
 information, vital for navigation and maintaining a desired flight path.
@@ -2767,7 +2777,7 @@ by ensuring that each cell is charged equally.
 This section outlines the various different sensors that were used on the
 quadcopter, delving into the specs, compatibility and test performance. The
 analysis includes an examination of the sensors' roles in navigation,
-stabilization, and telemetry data acquisition.
+stabilisation, and telemetry data acquisition.
 
 \subsection*{GNSS modules}
 \subsection{GNSS Rover Module}
@@ -2801,7 +2811,7 @@ control on the quadcopter.
 To complement the capabilities of the GNSS rover module, it is coupled with the
 Tallysman 33-SSL889XF L1/L2 GNSS Antenna. This pairing is key to maximizing the
 performance of the ZED-F9P module, as the Tallysman antenna is designed to
-optimize signal reception and accuracy for L1/L2 frequencies. Such an
+optimise signal reception and accuracy for L1/L2 frequencies. Such an
 integration ensures that the quadcopter benefits from the best possible GNSS
 performance, crucial for maintaining high precision and reliability in
 navigation and positioning tasks. This setup is expected to provide the
@@ -3053,21 +3063,21 @@ quadcopter.
 The ESP32 microcontroller is mounted on the ESP PCB, which draws power form the
 systems battery through the Raspberry PI. It directly manages the quadcopters
 propulsion by sending Pulse Width Modulation (PWM) signals to the Electronic
-Speed Controllers (ESCs). The ESC’s then take these pulses and control the
+Speed Controllers (ESCs). The ESC's then take these pulses and control the
 motors speed via 3-phase signals, allowing for precise adjustments to the
 quadcopter's thrust and direction.
 
 In order for the ESP32 and the Raspberry Pi to communicate a USB connection
 between the two is essential for high-speed data exchange between the two
 processors. The ESP32 also hosts an IMU, connected through the I2C protocol,
-which feeds the system. with motion tracking data for flight stabilization and
+which feeds the system. with motion tracking data for flight stabilisation and
 orientation.
 
 For immediate feedback and alerts, a buzzer is incorporated into the ESP PCB and
 controlled by the ESP32, serving as an auditory indicator of system states or
 warnings during flight operations.
 
-Beneath the quadcopter lies the Sensor PCB, strategically placed to minimize
+Beneath the quadcopter lies the Sensor PCB, strategically placed to minimise
 interference between the Time-of-Flight (ToF) sensor and Barometer and the other
 components, as well as for getting reliable data from the ToF sensor as it needs
 a clear view of the ground. This PCB is connected through a FFC, this design
@@ -3078,8 +3088,8 @@ The schematic layout presented in Figure:\ref{fig:hardware_schematic}  above
 encapsulates a meticulously designed system where power, control, and data
 harmoniously converge to create a responsive and efficient flight control
 ecosystem. Every component and connection is deliberately positioned to
-contribute to the quadcopter’s agility, stability, and navigational precision,
-reaffirming the system’s engineering sophistication.
+contribute to the quadcopter's agility, stability, and navigational precision,
+reaffirming the system's engineering sophistication.
 
 \section{Cost of materials}
 \subsection*{Main Parts}
@@ -3319,9 +3329,8 @@ module, IMU, Anemometer, ToF sensor and Barometer, by converting the battery's
 fluctuating voltage to a constant level, which helps the quadcopter fly
 precisely and steadily.
 
-
-\chapter{Software}                            
-This project’s code is all located in one repository on
+\section{Software}                                                                           
+This project's code is all located in one repository on
 \href{https://github.com/QUB-ASL/bzzz}{GitHub}. The purpose of a central
 platform for version control and communication is served by the repository. The
 extensive documentation to help developers understand and contribute to the
@@ -3464,7 +3473,7 @@ that the system may use.
 
 In the main loop, a 'Keep Running' check determines whether or not the system
 should keep running. When a user tries to end a flight, such as when they
-activate the 'kill' or 'save' switches, the code will be broken out of this
+activate the "kill" or "save" switches, the code will be broken out of this
 loop. In the event that the exit condition is satisfied, the system immediately
 saves all of the gathered data in order to prevent data loss. This safeguard
 comes before the organised method of leaving, which includes terminating the
@@ -3473,7 +3482,7 @@ termination by ensuring that all tasks are completed smoothly, that the data is
 saved, and that the system resources are freed.
 
 The system enters a halt state and stops all operations in the last phase. The
-program’s execution thread cycles comes to an end with this step. Therefore,
+program's execution thread cycles comes to an end with this step. Therefore,
 mentaining data safety when terminating the quadcopter.
 
 
@@ -3567,16 +3576,17 @@ undeniable the significant enhancement in accuracy achieved through ustalizing
 RTK corrections. 
 
 \section{Testing of Kalman filter}
+\subsection{Kalman filter with ToF and GNSS}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{Pictures/Altitude_with_GNSS.png}
+  \includegraphics[width=0.7\textwidth]{Pictures/Altitude_with_GNSS.png}
   \caption{Time of Flight sensor vs sensor fused Kalman filter with GPS and ToF data}
   \label{fig:Kalman_filter_test}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{Pictures/Altitude_with_GNSS_zoomed.png}
+  \includegraphics[width=0.7\textwidth]{Pictures/Altitude_with_GNSS_zoomed.png}
   \caption{Time of Flight sensor vs sensor fused Kalman filter with GPS and ToF data zoomed}
   \label{fig:Kalman_filter_test_zoomed}
 \end{figure}
@@ -3585,12 +3595,13 @@ In this test the quadcopter was briefly flown in order to test the kalman filter
 From Figures:\ref{fig:Kalman_filter_test} and \ref{fig:Kalman_filter_test_zoomed} we can see that the kallman filter does a good job at filtering out the noisey data smoothing out the curve of altitude measurments.
 
 This is especially usefull when it comes to flying over uneven terain such as long grass where using the ToF sensor alone will introduce inacuracys in the altitude measurements.
+\subsection{Kalman filter with ToF, barometer and GNSS}
 
 \section{Testing initial estimate for \(\alpha_0\) and \(\beta_0\)}
   \begin{figure}[h]
     \centering
     \begin{tikzpicture}
-      \begin{axis}[ width= 4in, height=2in, scale only axis, ylabel={Lift (g)},
+      \begin{axis}[ width= 3.5in, height=1.6in, scale only axis, ylabel={Lift (g)},
           xlabel={Throttle reference (\%)}, xmajorgrids, ymajorgrids, ylabel
           near ticks, xmin=10, xmax=40, ymin=0, ymax=2500, legend columns=1,
           legend style={fill=white, fill opacity=0.4, text opacity=1,
@@ -3656,10 +3667,11 @@ equations:\ref{eq:alpha} and \ref{eq:beta} for deriving the initial values for
 \(\alpha\) and \(\beta\) in the Kalman filter.
 
 \section{Altitude control}\label{altitude_cotrol_tests}
+\section*{Indoor test}
 \subsection*{Altitude control whilst quadcopter is static}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\textwidth]{Pictures/Altitude_hold_indoors.png}
+  \includegraphics[width=0.65\textwidth]{Pictures/Altitude_hold_indoors.png}
   \caption{Altitude control whilst quadcopter has little horizontal movement}
   \label{fig:Altitude_control_no_movement_altitude}
 \end{figure}
@@ -3682,7 +3694,7 @@ the quadcopter.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\textwidth]{Pictures/Throttle_Altitude_hold_indoors.png}
+  \includegraphics[width=0.65\textwidth]{Pictures/Throttle_Altitude_hold_indoors.png}
   \caption{Throttle measurments in Altitude control mode whilst quadcopter has little horizontal movement}
   \label{fig:Altitude_control_no_movement_Throttle}
 \end{figure}
@@ -3691,7 +3703,7 @@ The graph above (Figure:\ref{fig:Altitude_control_no_movement_Throttle}) depicts
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\textwidth]{Pictures/Velocity_Altitude_hold_indoors.png}
+  \includegraphics[width=0.65\textwidth]{Pictures/Velocity_Altitude_hold_indoors.png}
   \caption{Velocity measurments in Altitude control mode whilst quadcopter has little horizontal movement}
   \label{fig:Altitude_control_no_movement_Velocity}
 \end{figure}
@@ -3709,6 +3721,14 @@ Furthermore, It could potentially be further improved with additional
 calibration of the P and D values in the controller, this will take further time
 and testing. 
 
+\section*{Outdoor tests}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Pictures/Testing_location.jpg}
+  \caption{Location of outdoor feild tests}
+  \label{fig:Testing_location}
+\end{figure}
+All outdoor field tests took place in Fugure:\label{fig:Testing_location} where the drone was flown over both the long grass and the adjacent path.
 
 \subsection*{Quadcopter moving whilst in altitude control mode}
 \begin{figure}[H]
@@ -3726,13 +3746,11 @@ and testing.
     \label{fig:GNSS_Altitude_hold_test_moving_gps}
 \end{figure}
 In this test, the quadcopter was taken off and landed as normal. During the
-flight the altitude control feature was initalised on the quadcopter and flown
-the quadcopter, flying in a radius of around 10m, shown in
-Figure:\ref{fig:GNSS_Altitude_hold_test_moving_gps}.
+flight the altitude control feature was initalised on the quadcopter using the ToF sensor only, flying in a radius of around 10m, shown in
+Figure:\ref{fig:GNSS_Altitude_hold_test_moving_gps} about the testing location (Figure:\ref{fig:Testing_location}).
 
 Figure:\ref{fig:Altitude_hold_test_moving} illustrates the quadcopters
-altitude in orange, refferance altitude in green, throttle signal in red and the
-velocity in blue.
+true altitude in blue, refferance altitude in orange and estimated altitude in green.
 
 It is crucial to take into account the circumstances and external influences
 that might have affected the recorded outcomes when assessing how well the
@@ -3755,11 +3773,11 @@ forces on the quadcopter, it can create significant unpredictability in altitude
 control, making it more difficult to keep a steady altitude.
 
 Furthermore, altitude control may become even more challenging due to the
-quadcopter's movement, particularly when it involves pitch and roll changes. A
-forward/backword pitch or left/right roll can cause a drop in altitude if it
+quadcopter's movement, particularly when it involves pitch and roll changes. A
+forward/backword pitch or left/right roll can cause a drop in altitude if it
 isn't corrected for by increasing the throttle, as
 Figure:\ref{fig:ToF_altitude_error} shows bellow. This is due to the fact
-that when the quadcopter is tilted forward or sidewards for movement, it directs
+that when the quadcopter is tilted forward or sidewards for movement, it directs
 some of the thrust horizontally, thereby reducing the vertical thrust component
 that counteracts gravity. In such cases, in order to maintain the required
 height, the altitude control system has to dynamically adjust the throttle which
@@ -3777,18 +3795,22 @@ quadcopter's performance in the altitude control mode, as proven in this test,
 was deemed good. Even if there is still space for development, the altitude
 accuracy of 0.6 metres from the reference altitude shows that the system is
 capable of handling external elements like wind and movement dynamics. It can be
-further with additional calibration of the P and D values in the controller. The
+further with additional calibration of the P and D values in the controller. The
 altitude control capability will need to be continuously improved and tested in
 a variety of scenarios in order to function more precisely and consistently.
+
+\subsection*{Quadcopter in altitude control mode using kalman filter estimations from all 3 sensors.}
+
+
 
 
 \chapter{Reflection on progress}
 \section{Time analysis}
 In the Time analysis segrment, systematic analysis of the various aspects of the
-bzzz project, detailing the duration and sequencing of the developmental phases,
-implementation, and testing of the bzzz quadcopter. The meticulous break down of
-time alocation for each task in the project, highlighting efficiency gains and
-bottlenecks encountered.
+\textit{bzzz} project, detailing the duration and sequencing of the
+developmental phases, implementation, and testing of the \textit{bzzz}
+quadcopter. The meticulous break down of time alocation for each task in the
+project, highlighting efficiency gains and bottlenecks encountered.
 
 Below in figures:\ref{fig:gantt_chart} and \ref{fig:gantt_chart_key} is the
 gantt chart and key provided in the Intrim report:
@@ -3820,7 +3842,7 @@ functionality and reliability for more integration with the UAV system were
 made possible by the well-organized testing processes.
 
 Controller research also progressed within the alocated time constraints,
-exploring various control strategies that could be applied to the bzzz
+exploring various control strategies that could be applied to the \textit{bzzz}
 quadcopter. Due to this extensive resurch it was determined that a PD controller
 for altitude control and a PID controller for position control was most
 applicable. The derived plan from the resurch pathed the way for a quick
@@ -3848,7 +3870,7 @@ station to the rover module, designing a water ressistant casing and finally the
 design of the station that allowed for portability. 
 
 Testing setbacks for altitude control were encountered due to unfavorable
-weather conditions and an unfortunate incident of crashing. These external
+weather conditions and an unfortunate incident of crashing, as well as other students needing to do tests on the quadcopter. These external
 factors meant that this process to longer than anticipated.
 
 Lastly, the PD control implementation for altitude control faced hurdles. The
@@ -3902,8 +3924,8 @@ stability, providing a solid basis for more challenging goals in the future.
 \subsubsection*{Objective 2}
 Reaching the goal of creating, implementing and testing a control system, for
 monitoring marked a milestone in the project. This was achieved by utilising
-Proportional Derivative (PD) in Section:\ref{PD_control} and Proportional
-Integral Derivative (PID) control algorithms in Section:\ref{PID_control}, which
+Proportional Derivative (PD) in section:\ref{PD_control} and Proportional
+Integral Derivative (PID) control algorithms in section:\ref{PID_control}, which
 were thoroughly detailed and assessed throughout sections of the paper.
 
 The theoretical foundation for both control methods was first confirmed through
@@ -3991,8 +4013,8 @@ translational dynamics was vital for effectively handling and predicting its
 behavior during various flight situations.
 
 Performing Simulations writted in python prior to the tests poved very
-benifitual. By doing this I minimized the risks of the tests failing leading to
-the quadcopter crashing, optimising overall system performance. In adition I
+benifitual. By doing this I minimised the risks of the tests failing leading to
+the quadcopter crashing, optimising overall system performance. In adition i
 sucessfully mastered flying the quadcopter using the radio controller, which was
 crucial for manually controlling and testing automated functions.
 
@@ -4003,7 +4025,7 @@ work on various different parts of the project on different branches to aid
 development.
 
 In essence accomplishing these learning objectives not only highlights the
-acquired expertise but also emphasizes the projects triumph, in developing a
+acquired expertise but also emphasises the projects triumph, in developing a
 dependable and effective loitering control on a quadcopter.
 
 \section{Future work}
