@@ -3596,6 +3596,22 @@ From Figures:\ref{fig:Kalman_filter_test} and \ref{fig:Kalman_filter_test_zoomed
 
 This is especially usefull when it comes to flying over uneven terain such as long grass where using the ToF sensor alone will introduce inacuracys in the altitude measurements.
 \subsection{Kalman filter with ToF, barometer and GNSS}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Pictures/Kalman Filter 3 tests/estimator_compare.png}
+  \caption{Time of Flight sensor vs sensor fused Kalman filter with GNSS, barometer and ToF data}
+  \label{fig:Kalman_filter_test2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Pictures/Kalman Filter 3 tests/estimator_compare_zoom.png}
+  \caption{Time of Flight sensor vs sensor fused Kalman filter with GNSS, barometer and ToF data zoomed}
+  \label{fig:Kalman_filter_test2_zoomed}
+\end{figure}
+
+In this test the quadcopter was flown manually in order to test the kalman filter, utalising altitude measurments from the ToF, GNSS and barometer sensors through sensor fusion. The results were tested against the an estimation using the ToF sensor only on the same flight.
+
+As you can see from Figures:\ref{fig:Kalman_filter_test2} and \ref{fig:Kalman_filter_test2_zoomed} the estimated altitude from using all three sensors is much smoother than using the ToF sensor alone. Furthermore you can see that noise is being filtered out of the estamator, which in conclusion may lead to better altitude control below.
 
 \section{Testing initial estimate for \(\alpha_0\) and \(\beta_0\)}
   \begin{figure}[h]
@@ -3733,14 +3749,14 @@ All outdoor field tests took place in Fugure:\label{fig:Testing_location} where 
 \subsection*{Quadcopter moving whilst in altitude control mode}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{Pictures/Altitude_hold_test_moving.png}
+    \includegraphics[width=0.7\textwidth]{Pictures/Altitude_hold_test_moving.png}
     \captionsetup{justification=centering}
     \caption{Altitude control test \\ whilst quadcopter is moving}
     \label{fig:Altitude_hold_test_moving}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{Pictures/GNSS_Altitude_hold_test_moving.png}
+    \includegraphics[width=0.7\textwidth]{Pictures/GNSS_Altitude_hold_test_moving.png}
     \captionsetup{justification=centering}
     \caption{GNSS Data from Altitude \\ Control flight path}
     \label{fig:GNSS_Altitude_hold_test_moving_gps}
@@ -3800,8 +3816,39 @@ altitude control capability will need to be continuously improved and tested in
 a variety of scenarios in order to function more precisely and consistently.
 
 \subsection*{Quadcopter in altitude control mode using kalman filter estimations from all 3 sensors.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Pictures/Kalman Filter 3 tests/Altitude.png}
+  \caption{Altitude graph when using kalman filter estimations from all 3 sensors.}
+  \label{fig:altitude_3Kf}
+\end{figure}
 
+In this test, the quadcopter was taken off and manouvered between the grass and path in Figure:\ref{fig:Testing_location}. The graph in figure:\ref{fig:ToF_altitude_error} shows an orange line representing the estimated altitude using the GNSS module ToF and barometer sensor. The blue line represents the refferance altitude. 
 
+At 60 seconds the altitude control mode is initialised, here we can see initial big osolations in the altitude estimate as the quadcopter was manouvering over grass where the ground is not level. At 80 seconds the quadcopter flys over the path were the grond is level when comparing to the grass, here you can see a clear conversion on the altitude refferance line. The quadcopter then moves back over the grass area where the accuracy becomes less again, before the trimmer is decreased when over the path, leading to the estimated altitude converging on the refferance again. 
+
+when the quadcopter is on the path it has an accuracy of around \(\pm5\)cm, which is comendable. In contrast when flown over grass the accuracy is around \(\pm25\)cm. This in accuracy when flying over the uneven grass could be mitagated by increasing the variance of the ToF sensor.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Pictures/Kalman Filter 3 tests/Throttle.png}
+  \caption{Throttle percentage graph when using kalman filter estimations from all 3 sensors.}
+  \label{fig:throttle_3Kf}
+\end{figure}
+The graph above \ref{fig:throttle_3Kf} depicts the throttle percentage readings against time. The graphs shows continuously smooth throttle changes when the quadcopter is flying iover a smooth surface. On the other hand there are some osolations when flying over grass causing the throttle in some cases to max out at \(50\%\) when in altitude control mode. The trottle mentains controlled slight corrections when decreasing the refferance altotude, allowing for a smooth landing.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Pictures/Kalman Filter 3 tests/Velocity.png}
+  \caption{Velocity graph when using kalman filter estimations from all 3 sensors.}
+  \label{fig:velocity_3Kf}
+\end{figure}
+
+When analysing the velocity graph in Figure:\ref{fig:velocity_3Kf} it can be seen that the velocity of the quadcopter is emediatly smoothed when 
+the quadcopter is flown over the level path at the 80 second and 140 second mark. The velocity of the quadcopter continues to stay smooth until the 
+quadcopter is flown over the uneven grass causing some velocity osolations. 
+
+In conclusion, this test showed some promising results. The estimator from the Kalman filter sucessuly utalized sensor fusion to provide accurate estimates. The PD controller was tuned well and showed very high accuracy when flying over a smooth surface. If this experiment was to be completed again, tuning of the ToF variance constant would be needed in order to prevent inaccuracies when flying over uneven terain.
 
 
 \chapter{Reflection on progress}
@@ -4044,7 +4091,7 @@ In adition parts were carefully analysed for durability prior to purchase, due t
 In conclusion the GNSS base station worked very well in sending RTK corrections to the rover module figures:\ref{fig:GNSS_RTK} and \ref{fig:GNSS_no_RTK} show a distinct improvement when using these corrections, Making the GNSS data accurate to \(\pm9\)centimeters form \(\pm1\)meter
 
 The design of a Kalman filter to to estimate
-position on all axis using the information from vaiious different sensors. This objective was satisfied by a ropust  kalman filter design seen in Section:\ref{Altitude_control}. using Sensor fusion the kalman filter was developed to incorperate information from the GNSS module and Tof sensor. The kalman filter Sucessfully filtered out noise as seen in Figure: as well as estimating accurate velocitys.
+position on all axis using the information from various different sensors. This objective was satisfied by a ropust  kalman filter design seen in Section:\ref{Altitude_control}. using Sensor fusion the kalman filter was developed to incorperate information from the GNSS module and Tof sensor. The kalman filter Sucessfully filtered out noise as seen in Figure: as well as estimating accurate velocitys.
 
 The altitude hold controller worked well when flying both indoors and outdoors with \(\pm10\)centimetes of accuracy indoors and \(\pm30\) outdoors. This is due to the fact that when flying outdoors the ToF sesor was subjected to uneven ground, bad weather conditions and it was also moving around. 
 
