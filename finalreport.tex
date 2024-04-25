@@ -114,8 +114,8 @@ This project aims to enhance quadcopter navigation and stability through advance
 \newpage
 \subsection*{Objectives}
 \begin{enumerate}
-    \item To design, implement and test a Kalman filter to estimate the (x, y,
-    z)-	position and the heading of the quadcopter using information from the
+    \item To design, implement and test a Kalman filter to estimate the \((x, y,
+    z)\)-	position and the heading of the quadcopter using information from the
     IMU, the altimeter, and a GPS module.
     \item To design, implement and test a control system for loitering.
     \item To perform certain hardware tasks (proper mounting and connection of
@@ -155,7 +155,7 @@ commercial and civilian quadcopter use.
 
 Loitering technology in quadcopters offers a range of benefits and applications.
 Security and surveillance, where home/business owners can have real time
-surveillance, programming a quadcopter to parole specific areas. \j As well as
+surveillance, programming a quadcopter to parole specific areas. As well as
 aerial photography and videography, for those interested in photography or
 vloging, quadcopters with loitering capabilities will allow for stable and
 high-quality aerial shots allowing for anything from time lapse videos to
@@ -184,12 +184,13 @@ quadcopter autonomously navigates through pre-determined points.
 
 The testing which was completed evaluated the quadcopters data supply, GPS
 sensors used as sensors to determine vehicle coordination points, the LiDAR
-sensor Lite-V3 is used for measuring altitude. This sensor is accurate up to +/-
+sensor Lite-V3 is used for measuring altitude. This sensor is accurate up to \(\pm\)
 \unit[2.5]{cm} and can read up to 500 values per second, priced around £120.
 
-The Waypoints, which were separated into three points at a distance of \(10m\) each to form a triangular angle; the flights are carried out at 3
-waypoints, which are \(10m\) from each other at a height of five metres \(5m\); the
-flights was conducted in the Autonomous mode; the tests were conducted six
+The Waypoints, which were separated into three points at a distance of
+\unit[10]{m} each to form a triangular angle; the flights are carried out at 3
+waypoints, which are \unit[10]{m} from each other at a height of \unit[5]{m};
+the flights was conducted in the Autonomous mode; the tests were conducted six
 times. The flight path was from the home base to waypoint, to waypoint 2, to
 waypoint 3, all points were 10m apart. The quadcopters system performance was
 evaluated based on error values between the actual vehicle position and the
@@ -197,14 +198,14 @@ waypoints coordinates.
 
 They concluded that between waypoint 1 and home the best result they were able
 to get was \unit[35.8475]{cm}. between waypoint 1 and 2 the result was \unit[16.2083]{cm} and
-finally between waypoint 2 and 3 it was \unit[value]{dimension}cm.
+finally between waypoint 2 and 3 it was \unit[110.2508]{cm}.
 
 Factors to consider for large errors between waypoints that cause the
 quadcopter's level of accuracy to not be good are, wind speed and inaccurate
 tuning of the PID controller. This is most prevalent when
 testing between waypoint 2 and 3. Overall, although there could be improvements,
 The results were good especially in test 2 between waypoint 1 and 2 as
-they were off by only 16cm.
+they were off by only \unit[16]{cm}.
 
 Furthermore, within this paper there is no evidence of researchers utilising the Kalman filter for position estimation. This would be useful, as if satellite connections were to drop suddenly, the Kalman filter could provide a reliable alternative for estimating the quadcopter's position by fusing readings of the GPS and LiDAR sensors. The Kalman filter, known for its efficiency in dealing with uncertainty and noise in sensor data, could allow for continuous and accurate position tracking even in the absence of GPS signals. This redundancy is crucial for maintaining the stability and safety of the quadcopter during flight, especially in environments where GPS signals are obstructed or non-existent. Incorporating such a filter could significantly enhance the robustness of the control system against signal drop-out, making the quadcopter more reliable for critical applications where consistent positioning is paramount.
 
@@ -301,9 +302,9 @@ comparable amount of time to produce an additional average measurement. The sum
 of these two values, divided by two, to determine the bias for each
 accelerometer. in order to find the scale factor, the values of each output are
 subtracted from each other as well as subtracting twice the value of the
-gravitational acceleration (2g), and then dividing the result by twice the
-gravitational acceleration (2g). This process is repeated for each axis to find
-individual biases and scale factors, ensuring accurate readings from the
+gravitational acceleration \((2g)\), and then dividing the result by twice the
+gravitational acceleration \((2g)\). This process is repeated for each axis to
+find individual biases and scale factors, ensuring accurate readings from the
 accelerometers.
 
 Furthermore, the study's experimental setup and implementation of PID
@@ -407,7 +408,7 @@ technology that balances performance with operational feasibility.
 
 \chapter{Methodology}
 \section{Structure of the quadcopter}
-The quadcopter we have designed has an 'X' configuration where each motor lies at
+The quadcopter we have designed has an `X' configuration where each motor lies at
 the corner of the quadcopter and one side acts as the front of the quadcopter
 depicted below (Fig.\ref{fig:QuadDiagram}). 
 
@@ -441,7 +442,7 @@ its structure:
   take-off and landing. The arrangement of parts inside the central hub improves
   the quadcopter's performance and manoeuvrability in addition to preserving its
   structural integrity.
-  \item \textbf{The Arms}, four arms extend out of the central hub in an X
+  \item \textbf{The Arms}, four arms extend out of the central hub in an `X'
   configuration, this is where the motor housings are fastened, these housings
   are designed to accommodate the quadcopter's motors, protecting them from
   damage while ensuring they remain firmly attached, even under the stress of
@@ -498,9 +499,9 @@ This section briefly runs over how the quadcopter produces thrust. A quadcopter
 uses four separate brushless (BLDC) motors, each paired with a specific
 electronic speed controller (ESC) that adjusts how fast the motor spins. These
 controllers work by receiving a digital signal, known as Pulse-Width Modulation
-(PWM) which have a pulse, the 'width' of these pulses (i.e., how long they stay
-'on' versus 'off' in a given cycle) is adjusted to control the speed of the
-motor. This is known as the duty cycle. A longer 'on' time (wider pulse) means
+(PWM) which have a pulse, the `width' of these pulses (i.e., how long they stay
+`on' versus `off' in a given cycle) is adjusted to control the speed of the
+motor. This is known as the duty cycle. A longer `on' time (wider pulse) means
 more power is delivered to the motor, making it spin faster. Digital
 microcontrollers are typically used to create these PWM signals.
 
@@ -519,8 +520,8 @@ aerodynamic optimisations to minimise energy losses and maximise the generated
 thrust, see Fig.\ref{fig:thrustconfig}.
 
 On the quadcopter depicted in Fig.\ref{fig:QuadDiagram} and
-Fig.\ref{fig:motorconfig} two motors spin in a clockwise direction and two in
-the anticlockwise direction, motors which rotate in the same direction are
+Fig.\ref{fig:motorconfig} two motors spin in a clockwise (CW) direction and two in
+the anticlockwise (ACW) direction, motors which rotate in the same direction are
 placed on opposite sides of the diagonal arms. The reason for this is to provide
 stability and accurate control. By counteracting the angular momentum produced by
 each motor, this arrangement keeps the quadcopter oriented and stops it from
@@ -549,12 +550,12 @@ ESC's.
     (bl) at (0,-4) {}; \node[motor] (br) at (4,-4) {};
     
     % Hover speed arcs Clockwise motors
-    \draw[hoverarc] (fl) ++(30:0.7) arc (30:-310:0.7); \draw[hoverarc] (br)
-    ++(30:0.7) arc (30:-310:0.7);
+    \draw[hoverarc] (fl) ++(30:0.7) arc (30:-310:0.7); 
+    \draw[hoverarc] (br) ++(30:0.7) arc (30:-310:0.7);
     
     % Counterclockwise motors
-    \draw[hoverarc] (fr) ++(150:0.7) arc (150:490:0.7); \draw[hoverarc] (bl)
-    ++(150:0.7) arc (150:490:0.7);
+    \draw[hoverarc] (fr) ++(150:0.7) arc (150:490:0.7); 
+    \draw[hoverarc] (bl) ++(150:0.7) arc (150:490:0.7);
     
     % Labels inside motors
     \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at (fl) {Motor FL};
@@ -697,7 +698,7 @@ Electronic Speed Controllers (ESCs) precisely control the speed of each rotor,
 enabling pilots to execute complex pitch roll and yaw manoeuvres and retain
 stability, even in challenging conditions. This is accomplished by computing the
 difference in velocity that controls the rate of rotation between pairs of
-rotors spinning clockwise and anticlockwise on every axis.
+rotors spinning CW and ACW on every axis.
 
 \subsection{Pitch}
 Pitch control in a quadcopter is achieved through the manipulation of the
@@ -726,7 +727,7 @@ The resulting torque produced on the \(x\)-axis is shown below:
 \end{equation}
 
 \noindent
-Where, \(T_{FL}\),  \(T_{FR}\), \(T_{BL}\) and \(T_{BR}\) are forces of thrust by the motors, d is the distance of the center of mass from any one motor (length of the quadcopters arm).
+Where, \(T_{FL}\),  \(T_{FR}\), \(T_{BL}\) and \(T_{BR}\) are forces of thrust by the motors, \(d\) is the distance of the center of mass from any one motor (length of the quadcopters arm).
 
 The torque calculation is affected by the leverage effect of the motor thrusts, namely the perpendicular distance between the centre and the line of action of each motor's thrust. Because the perpendicular distance in a square arrangement is smaller than the diagonal by a factor of 
 \(\sqrt{2}\), the torque formula divides by \(\sqrt{2}\).
@@ -747,12 +748,12 @@ The torque calculation is affected by the leverage effect of the motor thrusts, 
     (bl) at (0,-4) {}; \node[motor] (br) at (4,-4) {};
     
     % Hover speed arcs Clockwise motors
-    \draw[hoverarcgreen] (bl) ++(30:0.7) arc (30:-310:0.7); \draw[hoverarcgreen]
-    (br) ++(30:0.7) arc (30:-310:0.7);
+    \draw[hoverarcgreen] (bl) ++(150:0.7) arc (150:490:0.7); 
+    \draw[hoverarcgreen] (br) ++(30:0.7) arc (30:-310:0.7);
     
     % Counterclockwise motors
     \draw[hoverarcorange] (fr) ++(150:0.7) arc (150:490:0.7);
-    \draw[hoverarcorange] (fl) ++(150:0.7) arc (150:490:0.7);
+    \draw[hoverarcorange] (fl) ++(30:0.7) arc (30:-310:0.7);
     
     % Labels inside motors
     \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at (fl) {Low Speed};
@@ -791,12 +792,12 @@ The torque calculation is affected by the leverage effect of the motor thrusts, 
     (bl) at (0,-4) {}; \node[motor] (br) at (4,-4) {};
     
     % Hover speed arcs Clockwise motors
-    \draw[hoverarcorange] (bl) ++(30:0.7) arc (30:-310:0.7);
+    \draw[hoverarcorange] (bl) ++(150:0.7) arc (150:490:0.7);
     \draw[hoverarcorange] (br) ++(30:0.7) arc (30:-310:0.7);
     
     % Counterclockwise motors
     \draw[hoverarcgreen] (fr) ++(150:0.7) arc (150:490:0.7);
-    \draw[hoverarcgreen] (fl) ++(150:0.7) arc (150:490:0.7);
+    \draw[hoverarcgreen] (fl) ++(30:0.7) arc (30:-310:0.7);
     
     % Labels inside motors
     \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at (fl) {High
@@ -825,12 +826,12 @@ The torque calculation is affected by the leverage effect of the motor thrusts, 
 Figure\ref{fig:forwardpitch} illustrates a pitch to the front of the quadcopter,
 motors BL and BR are spinning faster than FL and FR. This leads to more thrust
 being produced by the back two motors than the front two. This causes the
-quadcopter to rotate in a clockwise motion along the \(x\)-axis.
+quadcopter to rotate in a CW motion along the \(x\)-axis.
 
 On the other hand Figure\ref{fig:backwordpitch} illustrates a pitch to the back
 of the quadcopter, motors FL and FR are spinning faster than BL and BR. This
 leads to more thrust being produced by the front two motors than the back two.
-This causes the quadcopter to rotate in a anti-clockwise motion along the
+This causes the quadcopter to rotate in an ACW motion along the
 \(x\)-axis.
 
 \subsection{Roll}
@@ -852,7 +853,7 @@ The resulting torque produced on the \(y\)-axis is shown below:
   \label{torque_y}
 \end{equation}
 where, \(T_{FL}\),  \(T_{FR}\), \(T_{BL}\) and \(T_{BR}\) are forces of thrust
-by the motors, d is the distance of the center of mass from any one motor
+by the motors, \(d\) is the distance of the center of mass from any one motor
 (length of the quadcopters arm).
 
 \begin{figure}[H]
@@ -951,12 +952,12 @@ by the motors, d is the distance of the center of mass from any one motor
 Figure\ref{fig:rightroll} illustrates a roll to the right of the quadcopter,
 motors FL and BL are spinning faster than FR and BR. This leads to more thrust
 being produced by the two left motors than the two right. This discrepancy in
-thrust causes the quadcopter to rotate in a clockwise motion along the \(y\)-axis.
+thrust causes the quadcopter to rotate in a CW motion along the \(y\)-axis.
 
 On the other hand Figure\ref{fig:leftroll} illustrates a roll to the left of the
 quadcopter, motors FR and BR are spinning faster than FL and BL. This leads to
 more thrust being produced by the two right motors than the two left motors.
-This discrepancy in thrust causes the quadcopter to rotate in a anti-clockwise
+This discrepancy in thrust causes the quadcopter to rotate in an ACW
 motion along the \(y\)-axis.
 
 \subsection{Yaw}
@@ -965,13 +966,13 @@ rotation about the vertical \(z\)-axis (see Fig.\ref{fig:quadwithaxis}). To do t
 opposing diagonal rotors must rotate at different speeds in order to produce
 torque, which causes rotation around the vertical axis.
 
-The quadcopter rotates clockwise when viewed from above, it achieves this by
-increasing the speed of the counter-clockwise (FL and BR) and reducing the speed
-of the clockwise (FR and BL) (Fig.\ref{fig:motorconfig}) spinning rotors. This
-generates positive (upward) torque that turns it to the right. this torque can
+The quadcopter rotates CW when viewed from above, it achieves this by
+increasing the speed of the ACW (FL and BR) and reducing the speed
+of the CW (FR and BL) (Fig.\ref{fig:motorconfig}) spinning rotors. This
+generates positive (upward) torque that turns it to the right. This torque can
 be represented by \(\tau_{cw}\).
 
-Similar adjustments are performed to the rotor speeds for an anticlockwise or
+Similar adjustments are performed to the rotor speeds for an ACW or
 leftward movement: FR and BL spin more quickly as FL and BR slow down,
 generating an overall negative (downward) torque \(\tau_{acw}\) causing the
 quadcopter to turn to the left.
@@ -987,9 +988,8 @@ Rule: Point your right hand's fingers in the direction of the position vector
 (from the axis of rotation to the point where force is applied). Curl them
 toward the direction of the force. Your thumb points in the direction of the
 torque vector. If your thumb points out of the page (towards you), the torque is
-anti-clockwise (acw), leading to anti-clockwise motion. If your thumb points
-into the page (away from you), the torque is clockwise (cw), leading to
-clockwise motion.
+ACW, leading to ACW motion. If your thumb points into the page (away from you),
+the torque is CW, leading to CW motion.
 
 Expanding on the idea of using torque to determine motion direction, it's vital
 to acknowledge that a system comprising several motors (FL, FR, BL, BR)  can
@@ -1022,40 +1022,46 @@ produced by each motor is represented in the Equation below.
       motorlabel/.style={font=\fontsize{8pt}{12pt}\selectfont, text=black} ]
     
     % Motors
-    \node[motor] (fl) at (0,0) {}; \node[motor] (fr) at (4,0) {}; \node[motor]
-    (bl) at (0,-4) {}; \node[motor] (br) at (4,-4) {};
+    \node[motor] (fl) at (0,0) {}; 
+    \node[motor] (fr) at (4,0) {}; 
+    \node[motor] (bl) at (0,-4) {}; 
+    \node[motor] (br) at (4,-4) {};
     
     % Hover speed arcs Clockwise motors
-    \draw[hoverarcgreen] (fl) ++(30:0.7) arc (30:-310:0.7); \draw[hoverarcgreen]
-    (br) ++(30:0.7) arc (30:-310:0.7);
+    \draw[hoverarcgreen] (fl) ++(30:0.7) arc (30:-310:0.7); 
+    \draw[hoverarcgreen] (br) ++(30:0.7) arc (30:-310:0.7);
     
     % Counterclockwise motors
     \draw[hoverarcorange] (fr) ++(150:0.7) arc (150:490:0.7);
     \draw[hoverarcorange] (bl) ++(150:0.7) arc (150:490:0.7);
     
     % Labels inside motors
-    \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at (fl) {High
-    Speed}; \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at (fr) {Low
-    Speed}; \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at (bl) {Low
-    Speed}; \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at (br)
-    {High Speed};
+    \node[text=white, rotate=10, font=\fontsize{8pt}{10pt}\selectfont] 
+    at (fl) {High Speed}; 
+    \node[text=white, rotate=10, font=\fontsize{8pt}{10pt}\selectfont] 
+    at (fr) {Low Speed}; 
+    \node[text=white, rotate=10, font=\fontsize{8pt}{10pt}\selectfont] 
+    at (bl) {Low Speed}; 
+    \node[text=white, rotate=10, font=\fontsize{8pt}{10pt}\selectfont] 
+    at (br) {High Speed};
 
     % Motor labels outside circles
-    \node[motorlabel] at ($(fl)+(135:1.6)$) {FL}; \node[motorlabel] at
-    ($(fr)+(45:1.6)$) {FR}; \node[motorlabel] at ($(bl)+(-135:1.6)$) {BL};
+    \node[motorlabel] at ($(fl)+(135:1.6)$) {FL}; 
+    \node[motorlabel] at ($(fr)+(45:1.6)$) {FR}; 
+    \node[motorlabel] at ($(bl)+(-135:1.6)$) {BL};
     \node[motorlabel] at ($(br)+(-45:1.6)$) {BR};
     
     % Diagonal lines
-    \draw[line width=5pt, red] (fl) -- (br); \draw[line width=5pt, red] (fr) --
-    (bl);
+    \draw[line width=5pt, red] (fl) -- (br); 
+    \draw[line width=5pt, red] (fr) -- (bl);
     
     % Black body in the center
-    \node[body] (quad) at ($(fl)!.5!(br)$) {};
+    \node[body, rotate=10] (quad) at ($(fl)!.5!(br)$) {};
     
     % Central red arrow
     \draw[centerarrow] ($(quad)+(1,0)$) arc (0:300:1);
     
-    \node[text=white, font=\fontsize{6pt}{10pt}\selectfont] at ($(quad)+(0,0)$)
+    \node[text=white, rotate=10, font=\fontsize{6pt}{10pt}\selectfont] at ($(quad)+(0,0)$)
     {Yaw left};
     
     \end{tikzpicture}
@@ -1086,28 +1092,32 @@ produced by each motor is represented in the Equation below.
     \draw[hoverarcgreen] (bl) ++(150:0.7) arc (150:490:0.7);
     
     % Labels inside motors
-    \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at (fl) {Low Speed};
-    \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at (fr) {High
-    Speed}; \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at (bl)
-    {High Speed}; \node[text=white, font=\fontsize{8pt}{10pt}\selectfont] at
-    (br) {Low Speed};
+    \node[text=white, rotate=-10, font=\fontsize{8pt}{10pt}\selectfont] 
+    at (fl) {Low Speed};
+    \node[text=white, rotate=-10, font=\fontsize{8pt}{10pt}\selectfont] 
+    at (fr) {High Speed}; 
+    \node[text=white, rotate=-10, font=\fontsize{8pt}{10pt}\selectfont] 
+    at (bl) {High Speed}; 
+    \node[text=white, rotate=-10, font=\fontsize{8pt}{10pt}\selectfont] 
+    at (br) {Low Speed};
 
     % Motor labels outside circles
-    \node[motorlabel] at ($(fl)+(135:1.6)$) {FL}; \node[motorlabel] at
-    ($(fr)+(45:1.6)$) {FR}; \node[motorlabel] at ($(bl)+(-135:1.6)$) {BL};
+    \node[motorlabel] at ($(fl)+(135:1.6)$) {FL}; 
+    \node[motorlabel] at ($(fr)+(45:1.6)$) {FR}; 
+    \node[motorlabel] at ($(bl)+(-135:1.6)$) {BL};
     \node[motorlabel] at ($(br)+(-45:1.6)$) {BR};
     
     % Diagonal lines
-    \draw[line width=5pt, red] (fl) -- (br); \draw[line width=5pt, red] (fr) --
-    (bl);
+    \draw[line width=5pt, red] (fl) -- (br); 
+    \draw[line width=5pt, red] (fr) -- (bl);
     
     % Black body in the center
-    \node[body] (quad) at ($(fl)!.5!(br)$) {};
+    \node[body, rotate=-10] (quad) at ($(fl)!.5!(br)$) {};
     
     % Central red arrow
     \draw[centerarrow] ($(quad)+(1,0)$) arc (0:300:1);
     
-    \node[text=white, font=\fontsize{6pt}{10pt}\selectfont] at ($(quad)+(0,0)$)
+    \node[text=white, rotate=-10, font=\fontsize{6pt}{10pt}\selectfont] at ($(quad)+(0,0)$)
     {Yaw right};
 
     \end{tikzpicture}
@@ -1121,13 +1131,13 @@ Fig.\ref{fig:second-cwyaw} show the cw and acw yaw mechanics.
 Fig.\ref{fig:first-acwyaw} shows a yew to the left, this is due to the fact that
 motors, FL and BR are running faster than the motors FR and BL this produces a
 positive total torque as a result of equation \ref{total_torque}, this in turn,
-will cause the quadcopter to yaw in an anti-clockwise direction (to the left).
+will cause the quadcopter to yaw in an ACW direction (to the left).
 
 Conversely, Fig.\ref{fig:second-cwyaw}  shows a yew to the right, this is due to
 the fact that motors, FR and BL are running faster than the motors FL and BR
 this produces a negative total torque as a result of equation
 \ref{total_torque}, this in turn,  will cause the quadcopter to yaw in a
-clockwise direction (to the Right).
+CW direction (to the Right).
 
 Finally when all motors spin at the same rate the resultant total torque
 (\(\tau_{total}\)) is zero, resulting in the quadcopter staying stationary.
@@ -1156,30 +1166,33 @@ and stabilise the flight. For more information on the flight controller please
 see section:\ref{flight_controller}
 
 \subsection{Control and Estimation}\label{control_and_estimation} During this
-project the development of a kalman filter for position estimation on the \(z\)-axis
-was paramount for sensor fusion. On the quadcopter there is a downward- facing
-time-of-flight (ToF) sensor, which is an infrared distance sensor that measures
-the distance from the ground with a standard error of ±6 cm. The quadcopter
-carries a barometer which by measuring the barometric pressure can give an
-estimate of the altitude (where the altitude is zero at sea level); the standard
-error of this sensor is ±25cm. The quadcopter is also equipped with a GNSS
-(global navigation satellite system) sensor, which uses the ZED-FP9 module. The
-GNSS module is couples with a base GNSS station, which allows it to produce
-accurate position estimates. The GNSS can estimate the altitude of the vehicle
-(with respect to the sea level) with a standard error of ±5 cm. for more
-information on the sensors used see Section:\ref{hardware}.
+project the development of a Kalman filter for position estimation on the
+\(z\)-axis was paramount for sensor fusion. On the quadcopter there is a
+downward- facing time-of-flight (ToF) sensor, which is an infrared distance
+sensor that measures the distance from the ground with a standard error of
+\(\pm\)\unit[4]{cm} within \unit[14]{m} and 1.5\% beyond \unit[14]{m}. The
+quadcopter carries a barometer which by measuring the barometric pressure can
+give an estimate of the altitude (where the altitude is zero at sea level); the
+standard error of this sensor is \(\pm\)\unit[25]{cm}. The quadcopter is also
+equipped with a GNSS (global navigation satellite system) sensor, which uses the
+ZED-FP9 module. The GNSS module is couples with a base GNSS station, which
+allows it to produce accurate position estimates. The GNSS can estimate the
+altitude of the vehicle (with respect to the sea level) with a standard error of
+\(\pm\)\unit[2]{cm}. for more information on the sensors used see
+Section:\ref{hardware}.
+
 \subsection{Quaternions}
-Building on the foundational principles of pitch, yaw, and roll seen in
+Building on the foundational principles of pitch, roll and yaw seen in
 Section\ref{Quadcopter_position_manipulation}, the system dynamics of a
 quadcopter extend into the realm of intricate motion control and stability
 mechanisms. A typical quadcopter can manoeuvre on any axis fixed to its frame,
-it can ascend or descend vertically, and move laterally in the \((x , y )\) plane of a
-known global reference frame. The quadcopter's ability to move in a variety of
-ways enables it to precisely navigate aerial waypoints, adapting seamlessly to
-both the immediate environment and the pilot's commands. 
+it can ascend or descend vertically, and move laterally in the \((x , y )\)
+plane of a known global reference frame. The quadcopter's ability to move in a
+variety of ways enables it to precisely navigate aerial waypoints, adapting
+seamlessly to both the immediate environment and the pilot's commands. 
 
 A quaternion is a mathematical entity that extends complex numbers,
-characterized by a four-dimensional vector space. It can be depicted through
+characterised by a four-dimensional vector space. It can be depicted through
 various notations; the following expressions illustrate two commonly recognised
 methods. The operation of quaternion multiplication is inherently
 non-commutative, mirroring the nature of rotational operations. The components
@@ -1190,7 +1203,7 @@ component, whereas \( q_0 \) serves as its scalar component. As seen below,
   q =& [q_0 + q_1 + q_2 + q_3]^T
 \end{align}
 The elements \(i , j\) and \(k\) satisfy the properties \( i^2 = j^2 = k^2 = ijk
-= -1 \). A quaternion with a norm equal to 1 this can be used to represent a
+= -1 \). A quaternion with a norm equal to 1 can be used to represent a
 rotation of the quadcopter. Specifically, one can express a unit quaternion with
 the formula \( q = \cos \left(\frac{\theta}{2}\right) + \left(i\hat{n}_x +
 j\hat{n}_y + k\hat{n}_z\right) \sin \left(\frac{\theta}{2}\right), \) depicting
@@ -1303,7 +1316,7 @@ equations:
 Equation\eqref{3d_oriantation_quaternion} uses quaternions to handle the orientation of the quadcopter in 3D space. Quaternions are an
 alternative to Euler angles and avoid the problem of gimbal lock, making them
 favourable for applications like quadcopter control where orientation needs to
-be tracked continuously and smoothly.\(\dot{q}\) represents the time derivative
+be tracked continuously and smoothly. \(\dot{q}\) represents the time derivative
 of the quaternion, essentially describing how the orientation changes over time,
 \(q\) represents the current orientation of the quaternion equation and
 \(\omega\) is the angular velocity vector of the quadcopter taken from the IMU
@@ -1352,12 +1365,12 @@ Let \( y_{t}^z = z_t \) be the output equation of the system.
   The two main forces acting on the quadcopter are the weight, $mg$, and the
   force from the propellers, $F_{\rm prop}$, which has been found to depend
   linearly on the throttle reference signal $\tau\in[0,1]$. The throttle
-  reference signal is a signal that is sent to the electronic speed controllers
-  (ESCs) of the four motors; at $\tau=0$ the motors do not spin, whereas
-  $\tau=1$ corresponds to the maximum rotation speed.
+  reference signal is a signal that is sent to the ESCs of the four motors; at
+  $\tau=0$ the motors do not spin, whereas $\tau=1$ corresponds to the maximum
+  rotation speed.
   
   In an experiment, the quadcopter was placed on digital scales and the lift (in
-  $\unit{g}$) was measured for different values of $\tau$. The experimental
+  \unit{g}) was measured for different values of $\tau$. The experimental
   results are shown in Figure:\ref{fig:liftpwm}, from which it seems that a
   reasonable model for the lifting force is
   \begin{equation}
@@ -1472,7 +1485,9 @@ Let \( y_{t}^z = z_t \) be the output equation of the system.
         \label{stateVectorXt}
     \end{equation}
 
-    in order to compute the throttle signal \(\theta\) values for \(z, v, \alpha\) and \(\beta\) need to be estimated. These measurements often are subject to noise, therefore the system dynamics are seen below,
+    in order to compute the throttle signal \(\theta\) values for \(z, v,
+    \alpha\) and \(\beta\) need to be estimated. These measurements often are
+    subject to noise, therefore the system dynamics are seen below,
     \begin{align}
         z_{t+1} =& z_t + {T_s}{v_t} + w^{z}_{t}\\
         v_{t+1}^z =& v_t^z + T_s (\alpha_t \tau_t + \beta_t) + w_t^v\\
@@ -1734,7 +1749,7 @@ system that combines two kinds of control:
   a linear output based on the error. This results in the rapid response of the
   system to deviations from the desired setpoint, helping to stabilise the
   system by moving the process variable in the right direction. The Proportional
-  gain is a variable parameter that sets the level of aggression of the PID
+  gain is a variable parameter that sets the level of aggression of the PD
   controller in its response to error. A high \(K_p\) will means a larger output for
   a given error - and, therefore, a faster response of the system to make up for
   the error - but setting \(K_p\) too high will lead to instability in the form of
@@ -1745,12 +1760,12 @@ system that combines two kinds of control:
   providing a damping force that enhances the stability of the system. By
   tempering the response generated by the proportional component, the derivative
   action effectively mitigates overshoot—preventing the system output from
-  exceeding the desired setpoint. Increasing the derivative time \(K_d\) parameter
-  will cause the control system to react strongly to changes in the error term
-  and will increase the speed of the overall control system response. Moreover,
-  it contributes to a faster response by reducing the settling time, which is
-  the time it takes for the system to stabilise within a certain range of the
-  setpoint.
+  exceeding the desired setpoint. Increasing the derivative time \(K_d\)
+  parameter will cause the control system to react strongly to changes in the
+  rate of change of the error term and will increase the speed of the overall
+  control system response. Moreover, it contributes to a faster response by
+  reducing the settling time, which is the time it takes for the system to
+  stabilise within a certain range of the setpoint.
 \end{itemize}
 The general equation for a PD controller, given an error signal \(e[k]\) (the
 difference between the desired set-point and the actual process variable), can be
@@ -1871,17 +1886,17 @@ evaluated. The system uses a Kalman filter for state estimation, tackling noise
 and sensor bias and a PD controller for altitude adjustments.
 
 Observations from the simulation after processing 2000 time steps, with a
-sampling time \(T_s\) of 0.1 seconds, reveal several key dynamics;
+sampling time \(T_s\) of \unit[0.1]{s}, reveal several key dynamics;
 
-The kalman filter's ability to estimate values of \(\alpha\) and \(\beta\),
+The Kalman filter's ability to estimate values of \(\alpha\) and \(\beta\),
 which relate throttle input to lifting as well as for \((d^{ToF})\) and
 \((d^{bar})\) in meters for the Time of flight and Barometer sensors
 respectively is clearly visible within this simulation. The estimated values for
 each do indeed converge in on the true values. This is a clear indication of the
-kalman filter's ability to conduct real-time estimation of the values even when
+Kalman filter's ability to conduct real-time estimation of the values even when
 system and measurement noise are present.
 
-Beginning at a reference altitude of 0.5 meters, the quadcopters altitude begins
+Beginning at a reference altitude of \unit[0.5]{m}, the quadcopters altitude begins
 to increase after the 500th time step to the 800th, due to the reference
 altitude being increased between these times. In response to this change the
 throttle reference \((\tau)\) is changed by the PD controller. The real and
@@ -1930,19 +1945,19 @@ evaluated. The system uses a Kalman filter for state estimation, tackling noise
 and sensor bias and a PD controller for altitude adjustments.
 
 Observations from the simulation above Figure:\ref{fig:a_constant_PD} after
-processing 2000 time steps, with a sampling time \(T_s\) of 0.1 seconds, reveal
+processing 2000 time steps, with a sampling time \(T_s\) of \unit[0.1]{s}, reveal
 several key dynamics;
 
-The kalman filter's ability to estimate values of \(\beta\), as well as for
+The Kalman filter's ability to estimate values of \(\beta\), as well as for
 \(d^{ToF}\) and \(d^{bar}\) in meters for the Time of flight and Barometer
 sensors respectively is clearly visible within this simulation, notably when
 compared to the simulation above (Figure:\ref{fig:no_constant_PD}) \(\alpha\) is
 no longer being estimated. The estimated values for each do indeed converge in
-on the true values. This is a clear indication of the kalman filter's ability to
+on the true values. This is a clear indication of the Kalman filter's ability to
 conduct real-time estimation of the values even when system and measurement
 noise are present.
 
-Beginning at a reference altitude of 0.5 meters, the quadcopters altitude begins
+Beginning at a reference altitude of \unit[0.5]{m}, the quadcopters altitude begins
 to increase after the 500th time step to the 800th, due to the reference
 altitude being increased between these times. In response to this change the
 throttle reference \((\tau)\) is changed by the PD controller. The real and
@@ -1993,19 +2008,19 @@ evaluated. The system uses a Kalman filter for state estimation, tackling noise
 and sensor bias and a PD controller for altitude adjustments.
 
 Observations from the simulation above Figure:\ref{fig:b_constant_PD} after
-processing 2000 time steps, with a sampling time \(T_s\) of 0.1 seconds, reveal
+processing 2000 time steps, with a sampling time \(T_s\) of \unit[0.1]{s}, reveal
 several key dynamics;
 
-The kalman filter's ability to estimate values of \(\alpha\), as well as for
+The Kalman filter's ability to estimate values of \(\alpha\), as well as for
 \(d^{ToF}\) and \(d^{bar}\) in meters for the Time of flight and Barometer
 sensors respectively is clearly visible within this simulation, notably when
 compared to the simulation above (Figure:\ref{fig:no_constant_PD}) \(\beta\) is
 no longer being estimated. The estimated values for each do indeed converge in
-on the true values. This is a clear indication of the kalman filter's ability to
+on the true values. This is a clear indication of the Kalman filter's ability to
 conduct real-time estimation of the values even when system and measurement
 noise are present.
 
-Beginning at a reference altitude of 0.5 meters, the quadcopters altitude begins
+Beginning at a reference altitude of \unit[0.5]{m}, the quadcopters altitude begins
 to increase after the 500th time step to the 800th, due to the reference
 altitude being increased between these times. In response to this change the
 throttle reference \((\tau)\) is changed by the PD controller. The real and
@@ -2228,7 +2243,7 @@ combines three kinds of control:
   reacts to the current error. This feature of the controller ensures that the
   process variable finally converges to the setpoint and is especially useful at
   removing steady-state faults. The controller's sensitivity to the cumulative
-  mistake is controlled by the Integral gain, or Ki. A well adjusted Ki can
+  mistake is controlled by the Integral gain, or \(K_i\). A well adjusted \(K_i\) can
   minimise offset considerably, but an overly high value could cause
   oscillations and overshooting, which would compromise the stability of the
   system.
@@ -2238,12 +2253,12 @@ combines three kinds of control:
   providing a damping force that enhances the stability of the system. By
   tempering the response generated by the proportional component, the derivative
   action effectively mitigates overshoot—preventing the system output from
-  exceeding the desired setpoint. Increasing the derivative time \(K_d\) parameter
-  will cause the control system to react strongly to changes in the error term
-  and will increase the speed of the overall control system response. Moreover,
-  it contributes to a faster response by reducing the settling time, which is
-  the time it takes for the system to stabilise within a certain range of the
-  setpoint.
+  exceeding the desired setpoint. Increasing the derivative time \(K_d\)
+  parameter will cause the control system to react strongly to changes in the
+  rate of change of the error term and will increase the speed of the overall
+  control system response. Moreover, it contributes to a faster response by
+  reducing the settling time, which is the time it takes for the system to
+  stabilise within a certain range of the setpoint.
 \end{itemize}
 generally a PID controller is given by the following equation: 
 
@@ -2389,18 +2404,18 @@ real life.
 The quadcopter's ability to actively correct is course is made possible by
 Proportional-Integral-Derivative (PID) controllers (one for pitch control and
 one for roll control). The flight course instinctively reacts to gusts of wind
-that changes every 20 seconds to rebalance its movement in the desired direction
+that changes every \unit[20]{s} to rebalance its movement in the desired direction
 to the target point. 
 
 The Latitude and Longitude velocities demonstrate variations in the velocity
-chart every 20 seconds as a result of the  PID controllers immediate feedback to
+chart every \unit[20]{s} as a result of the  PID controllers immediate feedback to
 the displacement force of constant rolling winds. The drone's velocity becomes
 stable immediately after every gust as the integral and derivative of the PID
 control system work together to stabilise the quadcopter.
 
-The quadcopter navigation system is also faced with a difficult dynamic situation, brought about by its everchanging waypoints. Both pitch, roll and altitude PID controllers are used simultaneously in this simulation. 
+The quadcopter navigation system is also faced with a difficult dynamic situation, brought about by its ever-changing waypoints. Both pitch, roll and altitude PID controllers are used simultaneously in this simulation. 
 
-Finally, the quadcopter PID control systems works well as it moves between waypoints; the results of the simulation exercise indicate high flexibility, accurate results, and stability proving the controllers effectiveness. There is little to no overshoot on when flying between waypoints and all angles and velocities converge on the wapoints. 
+Finally, the quadcopter PID control systems works well as it moves between waypoints; the results of the simulation exercise indicate high flexibility, accurate results, and stability proving the controllers effectiveness. There is little to no overshoot on when flying between waypoints and all angles and velocities converge on the waypoints. 
 
 \chapter{hardware}\label{hardware}
  This section outlines the various hardware
@@ -2418,12 +2433,13 @@ solid performance right out of the box. It features tight windings, smooth
 bearings, precision cut stator, and balanced rotors for reliable operation.
 
 Key specifications include its 1400KV (Kilo Volt) rating, meaning that for every
-1 Volt applied the motor will turn 1400 times. A maximum current of 45A, and
-compatibility with with the Skywalker 50A ESC's which we are using below
-(Section:\ref{esc}). The motor is suitable for use with 3-4 cell batteries,
-again making it compatible with the 5500mAh 4S 70C LiPo Battery's being used
-(Section:\ref{battery}). It has 25mm bolt holes with an M3 bolt thread. It
-weighs around 121g and comes with 3.5mm bullet connectors.
+\unit[1]{V} applied the motor will turn 1400 times. A maximum current of
+\unit[45]{A}, and compatibility with with the Skywalker \unit[50]{A} ESC's which
+we are using below (Section:\ref{esc}). The motor is suitable for use with 3-4
+cell batteries, again making it compatible with the \unit[5500]{mAh} 4S 70C LiPo
+Battery's being used (Section:\ref{battery}). Each motor weighs \unit[121]{g}
+and comes with \unit[3.5]{mm} bullet connectors, and is attached to the
+quadcopter using M3 bolts.
 
 \section{Radio}\label{radio}
 \begin{figure}[H]
@@ -2436,12 +2452,12 @@ weighs around 121g and comes with 3.5mm bullet connectors.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.3\textwidth]{Pictures/reciever.png}
-  \caption{Radiolink R12DS 2.4GHz RC Receiver}
+  \caption{Radiolink R12DS \unit[2.4]{GHz} RC Receiver}
   \label{fig:receiver}
 \end{figure}
 The radio transmitter and receiver pairs used for this project are the RadioLink
 AT10II (Tx) and R12DS (Rx), which are depicted in Figures
-\ref{fig:radio_controller} and \ref{fig:receiver}, respectively. At 2.45GHz
+\ref{fig:radio_controller} and \ref{fig:receiver}, respectively. At \unit[2.4]{GHz}
 bandwidth, the transmitter can deliver data across 12 channels.
 Table:\ref{Figure:RC_Controller_Channel_Mapping} presents the channel mapping
 for the 12 channels.
@@ -2482,13 +2498,13 @@ channel and ranges.
 The physical control sticks, switches, and knobs of the transmitter are
 represented as data elements in Table
 \ref{Figure:RC_Controller_Channel_Mapping}'s column Mapping. The column labelled
-'Channel number' has their matching channel number. The data is sent by the
+`Channel number' has their matching channel number. The data is sent by the
 transmitter in ascending order according to the channel number; that is, the
 data packet begins with channel 0 and concludes with channel 11 data.
 
 The receiver reads the data channels beginning with channel 0 and ending with
-channel 11. The term 'raw data' is now used to describe this received data. The
-column labelled 'Signal range' displays the actual range of the raw data that
+channel 11. The term `raw data' is now used to describe this received data. The
+column labelled `Signal range' displays the actual range of the raw data that
 was received; the units used are milliseconds. The Raspberry Pi uses SBUS to
 read this raw data.
 
@@ -2498,7 +2514,7 @@ displayed in the column Mapped range, and the remapped purpose is displayed in
 the Purpose column. The generated references for the attitude controller are the
 roll reference, throttle reference, pitch reference, and yaw rate reference in
 the Purpose column. To provide the controller commands room, the throttle
-reference is set to its maximum at 900 ms.
+reference is set to its maximum at \unit[900]{ms}.
 
 The ESP32 receives the state of Switch B and Switch D as well as the attitude
 reference data. The ESP 32  arms and kills the quadcopter in accordance with the data
@@ -2517,7 +2533,7 @@ signal from the transmitter is sent to the attitude controller while switch C is
 in the manual mode and Position hold. Switch C's altitude hold mode activates
 the Raspberry Pi's altitude controller and altitude Kalman filter algorithms,
 which in turn override the transmitter's throttle reference command. The current
-altitude reference is adjusted by ±0.25 metres in altitude hold mode using gain
+altitude reference is adjusted by \(\pm\unit[0.25]{m}\) in altitude hold mode using gain
 4. In the position control mode the reference latitude and longitude are
 sent to the Raspberry Pi's altitude controller where the PID controller aims to
 keep the Quadcopter in the same position.
@@ -2527,7 +2543,7 @@ tuning the attitude controller channel numbers 5, 6, 7 are set to Quaternion
 Gain, Angular Velocity Gain and Yaw Angular Velocity Gain respectively (as
 denoted by brackets in table:\ref{Figure:RC_Controller_Channel_Mapping}). By
 default the trimmers are set to tune the altitude controller with chanel numbers
-5 and 6 tuning the P Gain and D Gain ie. $K_{p}$ and ${K}_{d}$ (see
+5 and 6 tuning the P Gain and D Gain i.e. $K_{p}$ and ${K}_{d}$ (see
 Equation~\ref{PD_controller_eq}) respectively. Furthermore, channel 11 is used
 to Change Altitude Reference when in altitude control mode at a max rate of
 \unit[4]{cm/s}. 
@@ -2554,20 +2570,20 @@ The flight controller is made up of two main components:
 \end{figure}
 The Raspberry Pi is a particularly good option for inclusion into a quadcopter
 project because of its powerful processing and multitasking properties. With a
-potent quad core Cortex-A72 (ARM v8) 64-bit SoC clocked at 1.5GHz, the Broadcom
-BCM2711, the Pi 4B is well-suited to manage intricate calculations and numerous
-code executions concurrently. This is critical for a quadcopter, as it handles
-multiple tasks at once, including processing real-time sensor data and flying
-control algorithms. It is also the perfect brain for a quadcopter because of its
-small size, low power consumption, and plenty of GPIO pins for peripheral
+potent quad core Cortex-A72 (ARM v8) 64-bit SoC clocked at \unit[1.5]{GHz}, the
+Broadcom BCM2711, the Pi 4B is well-suited to manage intricate calculations and
+numerous code executions concurrently. This is critical for a quadcopter, as it
+handles multiple tasks at once, including processing real-time sensor data and
+flying control algorithms. It is also the perfect brain for a quadcopter because
+of its small size, low power consumption, and plenty of GPIO pins for peripheral
 connections. This combination enables an aerial platform that is lightweight,
 adaptable, and extremely customisable.
 
 The Raspberry Pi can run advanced computer vision and control algorithms
 utilising Python programming language because of its greater clock speed of
-1.5GHz. This is essential for implementing algorithms for position and altitude
+\unit[1.5]{GHz}. This is essential for implementing algorithms for position and altitude
 control in a fully autonomous quadcopter. Because these algorithms only need to
-operate at a few hertz (5 to 10 Hz), the Raspberry Pi is an appropriate
+operate at a few hertz (5 to \unit[10]{Hz}), the Raspberry Pi is an appropriate
 candidate. Pi is linked to a radio receiver module, which collects reference
 data from the radio controller.
 
@@ -2591,14 +2607,14 @@ algorithms.
 \end{figure}
 The ESP32 stands out as an exceptionally versatile and cost-effective
 microcontroller. This particular microcontroller stands out due, to its 32 bit
-architecture and the capability to run at a system clock speed of up to 240MHz
-with the version utilised in this project operating at 160MHz. This ensures
-processing power for handling demanding tasks.
+architecture and the capability to run at a system clock speed of up to
+\unit[240]{MHz} with the version utilised in this project operating at
+\unit[160]{MHz}. This ensures processing power for handling demanding tasks.
 
 A crucial aspect for a quadcopter is an attitude control system, which requires
 a microcontroller of performing pulse width modulation (PWM) at high frequencies
-preferably above 50Hz to ensure precise control over motor speeds. The ESP32s
-PWM capabilities along with its 160MHz clock speed make it a great choice for
+preferably above \unit[50]{Hz} to ensure precise control over motor speeds. The ESP32s
+PWM capabilities along with its \unit[160]{MHz} clock speed make it a great choice for
 real time control operations. The strong community support and extensive
 documentation further enhance its suitability for projects offering developers
 an array of resources to utilise.
@@ -2630,21 +2646,22 @@ where space is at a premium and every gram of weight matters for flight
 efficiency and duration.
 
 The MPU9250 is designed for low power consumption, which is crucial for
-battery-operated devices like quadcopters to maximize flight time.
+battery-operated devices like quadcopters to maximise flight time.
 
 It offers high-resolution sensor data, which is essential for maintaining stable
 flight and accurate navigation in a quadcopter. This precision enables the
 execution of complex manoeuvres and stability in various flying conditions. The
-gyroscope in the MPU9250 offers selectable full-scale ranges of ±250, ±500,
-±1000, and ±2000 degrees per second (dps). This allows for fine-tuning the
-sensitivity based on the specific requirements of the quadcopter, enabling
-precise measurement of rotational motion. The accelerometer provides selectable
-full-scale ranges of ±2g, ±4g, ±8g, and ±16g. This adaptability allows the
-device to accurately measure acceleration due to gravity and motion,
-contributing to effective motion tracking and stabilisation. The magnetometer
-offers a full-scale range of ±4800 µT, allowing for precise measurements of the
-Earth's magnetic field. This sensitivity is key for accurate heading
-information, vital for navigation and maintaining a desired flight path.
+gyroscope in the MPU9250 offers selectable full-scale ranges of \(\pm250\),
+\(\pm500\), \(\pm1000\), and \(\pm2000\) degree per second (dps). This allows
+for fine-tuning the sensitivity based on the specific requirements of the
+quadcopter, enabling precise measurement of rotational motion. The accelerometer
+provides selectable full-scale ranges of \(\pm2g\), \(\pm4g\), \(\pm8g\) and
+\(\pm16g\). This adaptability allows the device to accurately measure
+acceleration due to gravity and motion, contributing to effective motion
+tracking and stabilisation. The magnetometer offers a full-scale range of
+\(\pm\unit[4800]{\mu T}\), allowing for precise measurements of the Earth's
+magnetic field. This sensitivity is key for accurate heading information, vital
+for navigation and maintaining a desired flight path.
 
 The MPU9250's ability to output data from all nine sensors (gyroscope,
 accelerometer, magnetometer) allows for advanced sensor fusion algorithms, such
@@ -2655,12 +2672,12 @@ For the above reasons as well as its low cost the MPU9250 IMU has been chosen.
 
 This project utilises both I2C and SPI protocols for communication, with the
 MPU9250 IMU connected to the ESP 32 WROOM using the I2C protocol at a data
-transmission rate of 400KHz. Through the I2C protocol, the ESP 32 WROOM, serving
-as the master device on the bus, retrieves sensor data from the IMU, which
-functions as the slave device. The MPU9250 IMU offers various configurable
-measurement scales for its sensors, with the specific ranges employed in the
-quadcopter being: Gyroscope ±2000 degrees per second (dps), accelerometer ±16g
-and Magnetometer ±4800µT.
+transmission rate of \unit[400]{KHz}. Through the I2C protocol, the ESP 32
+WROOM, serving as the master device on the bus, retrieves sensor data from the
+IMU, which functions as the slave device. The MPU9250 IMU offers various
+configurable measurement scales for its sensors, with the specific ranges
+employed in the quadcopter being: Gyroscope \(\pm2000\) degrees per second
+(dps), accelerometer \(\pm16g\) and Magnetometer \(\pm\unit[4800]{\mu T}\).
 
 \section{ESC's (Electronic Speed Controller)}\label{esc}
 \begin{figure}[H]
@@ -2669,18 +2686,19 @@ and Magnetometer ±4800µT.
   \caption{ESC (Electronic Speed Controller)}
   \label{fig:esc}
 \end{figure}
-Designed specifically for quadcopters, the Skywalker 50A V2 is a brushless
-electronic speed controller (ESC). It can withstand peaks of up to 70A and runs
-at a constant 50A current, making it compatible with the motors above
-(Section:\ref{motors}). This ESC has an integrated switch mode BEC with a 5A
-output at 5V and is compatible with 4S LiPo batteries (Section:\ref{battery}).
-To guarantee durability and dependability, it also offers a variety of
-protection features such ESC heat protection and abnormal input voltage.
+Designed specifically for quadcopters, the Skywalker \unit[50]{A} V2 is a
+brushless electronic speed controller (ESC). It can withstand peaks of up to
+\unit[70]{A} and runs at a constant \unit[50]{A} current, making it compatible
+with the motors above (Section:\ref{motors}). This ESC has an integrated switch
+mode BEC with a \unit[5]{A} output at \unit[5]{V} and is compatible with 4S LiPo
+batteries (Section:\ref{battery}). To guarantee durability and dependability, it
+also offers a variety of protection features such ESC heat protection and
+abnormal input voltage.
 
 The ESC controllers work by receiving a digital signal, known as Pulse-Width
-Modulation (PWM) which have a pulse, the 'width' of these pulses (i.e., how long
-they stay 'on' versus 'off' in a given cycle) is adjusted to control the speed
-of the motor. This is known as the duty cycle. A longer 'on' time (wider pulse)
+Modulation (PWM) which have a pulse, the `width' of these pulses (i.e., how long
+they stay `on' versus `off' in a given cycle) is adjusted to control the speed
+of the motor. This is known as the duty cycle. A longer `on' time (wider pulse)
 means more power is delivered to the motor, making it spin faster. The ESC also
 includes features like a built-in BEC to power flight controllers and safety
 protocols for heat and voltage protection, ensuring reliable operation.
@@ -2694,11 +2712,11 @@ protocols for heat and voltage protection, ensuring reliable operation.
 \end{figure}
 An essential part that greatly enhances the aircraft's performance and
 manoeuvrability are the 1045 propellers. This specific quadcopter build is a
-good fit for these propellers because of their 10 inch diameter and 4.5 inch
+good fit for these propellers because of their 10 inch diameter and 4.5 inch
 pitch, which combine to produce a balanced combination of thrust and efficiency. 
 
-With '10' denoting the propeller's diameter in inches and '4.5' denoting its
-pitch in inches, the identifier '1045' describes the propeller's measurements.
+With `10' denoting the propeller's diameter in inches and `4.5' denoting its
+pitch in inches, the identifier `1045' describes the propeller's measurements.
 Understanding the pitch is essential to comprehending the propeller's thrust
 capabilities and how it will work with the quadcopter's overall aerodynamic
 design. Pitch is defined as the propeller's theoretical maximum airborne speed
@@ -2710,10 +2728,10 @@ rigours of flight without significantly increasing the quadcopter's total mass,
 which is crucial for preserving the best possible flight dynamics and
 battery efficiency 
 
-There are two variants for the 1045 propellers: clockwise (CW) and anticlockwise
-(CCW). This is crucial for quadcopters because, in order to offset the
-rotational torque generated by each motor and maintain stability and control
-during flight, each propeller's rotation direction must alternate.
+There are two variants for the 1045 propellers: CW and ACW. This is crucial for
+quadcopters because, in order to offset the rotational torque generated by each
+motor and maintain stability and control during flight, each propeller's
+rotation direction must alternate.
 
 For more information on how these propellers generate thrust, counteract
 rotational torque and allow for pitch roll and yaw manoeuvres please see
@@ -2726,11 +2744,12 @@ Section:\ref{Quadcopter_position_manipulation}
   \label{fig:voltage_regulator}
 \end{figure}
 
-The  Matek Systems Matek - UBEC DUO is a dual-output voltage regulator that
+The Matek Systems Matek - UBEC DUO is a dual-output voltage regulator that
 offers flexible power management. Wide input voltage range support is provided,
 and two output channels with substantial power management. While one channel can
-be adjusted between 5V and 12V to accommodate different components, the other is
-set at 5V and ideal for receivers or flight controllers.
+be adjusted between \unit[5]{V} and \unit[12]{V} to accommodate different
+components, the other is set at \unit[5]{V} and ideal for receivers or flight
+controllers.
 
 The GNSS base station module and the flight controller/Raspberry Pi are powered
 by the voltage regulator on the quadcopter. The GNSS base station is powered by
@@ -2744,30 +2763,31 @@ powered from battery's seen in Figure:\ref{battery}.
   \caption{battery}
   \label{fig:battery}
 \end{figure}
-The GNB 5500mAh 4S 70C LiPo Battery with an XT90 connector is a The GNB 5500mAh
-4S 70C LiPo Battery with an XT90 connector is a high-capacity, high-discharge
-battery designed for use in various remote-controlled (RC) applications. This
-5500mAh battery is perfect for long flight times because it keeps a substantial
-charge and allows for longer use between recharges.
+The GNB \unit[5500]{mAh} 4S 70C LiPo Battery with an XT90 connector is a The GNB
+\unit[5500]{mAh} 4S 70C LiPo Battery with an XT90 connector is a high-capacity,
+high-discharge battery designed for use in various remote-controlled (RC)
+applications. This \unit[5500]{mAh} battery is perfect for long flight times
+because it keeps a substantial charge and allows for longer use between
+recharges.
 
 With four cells connected in series, this battery has a 4S1P configuration,
-producing a nominal voltage of 14.8V. Our high-performance quadcopter needs a
-lot of power to run due to its weight. This 70C continuous discharge rate
-shows the battery maintains a steady power flow even while it is under the heavy
-load of the quadcopter. The battery can safely discharge in this scenario at a
-rate of 70 times its capacity, or 385A, which provides sufficient power for
-demanding applications.
+producing a nominal voltage of \unit[14.8]{V}. Our high-performance quadcopter
+needs a lot of power to run due to its weight. This 70C continuous discharge
+rate shows the battery maintains a steady power flow even while it is under the
+heavy load of the quadcopter. The battery can safely discharge in this scenario
+at a rate of 70 times its capacity, or \unit[385]{A}, which provides sufficient
+power for demanding applications.
 
 The battery also has a burst discharge rate of 140C, which enables brief bursts
-of even higher power output up to 770A. This feature is helpful in situations
-where immediate action or rapid acceleration is required. Maintaining
+of even higher power output up to \unit[770]{A}. This feature is helpful in
+situations where immediate action or rapid acceleration is required. Maintaining
 performance and safety requires a dependable connection that can handle high
 current without producing a lot of heat, which is what the XT90 connector
 offers.
 
 The battery's weight and dimensions are indicative of its high capacity and
 voltage. Its dependability and longevity are further increased by the inclusion
-of safety features like short-circuit protection, overcharge and overdischarge
+of safety features like short-circuit protection, over-charge and over-discharge
 prevention, and others. Like this one, the majority of LiPo batteries also
 include a balancing plug, which is often a JST-XH connector and is used for
 balance charging. This keeps the battery's general health and efficiency intact
@@ -2800,13 +2820,13 @@ to be a good option for my onboard GPS module due to its precise GNSS
 capabilities. It is significantly better than the MikroElektronika GPS Click
 featuring the LEA-6S, especially in its technical specification. The u-blox
 ZED-F9P module within, is known for high accuracy and multi- band GNSS support
-with a maximum update frequeccy of 25Hz. This allows the quadcopter to utilise
-real-time kinematic (RTK) positioning which is great for applications which need
-centimetre level signalling \cite{sbg_systems_2024}. Ensures comprehensive
-coverage and reliability due to its ability to access a wide range of satellite
-systems (GPS, GLONASS, Galileo, and BeiDou). This should prove ideal for getting
-centimeter accurate data for the quadcopter, hence gaining precise position
-control on the quadcopter.
+with a maximum update frequeccy of \unit[25]{Hz}. This allows the quadcopter to
+utilise real-time kinematic (RTK) positioning which is great for applications
+which need centimetre level signalling \cite{sbg_systems_2024}. Ensures
+comprehensive coverage and reliability due to its ability to access a wide range
+of satellite systems (GPS, GLONASS, Galileo, and BeiDou). This should prove
+ideal for getting centimeter accurate data for the quadcopter, hence gaining
+precise position control on the quadcopter.
 
 To complement the capabilities of the GNSS rover module, it is coupled with the
 Tallysman 33-SSL889XF L1/L2 GNSS Antenna. This pairing is key to maximizing the
@@ -2839,18 +2859,18 @@ The SparkFun GPS-RTK Dead Reckoning Breakout - ZED-F9R
 (Fig.\ref{fig:gnss_base_station}) features make it a highly sophisticated option
 for GPS-related applications. The modules feature a 184-channel u-blox F9 engine
 GNSS receiver which will receive signals from GPS, GLONASS, Galileo, and BeiDou
-constellations with 0.2-meter accuracy with a maximum update frequeccy of 25Hz.
-This makes it a superior choice when utilising base station NTRIP technology as
-well as RTCM (Radio Technical Commission for Maritime Services) messages to
-communicate correction data to the onboard GNSS module.
+constellations with \unit[O.2]{m} accuracy with a maximum update frequeccy of
+\unit[25]{Hz}. This makes it a superior choice when utilising base station NTRIP
+technology as well as RTCM (Radio Technical Commission for Maritime Services)
+messages to communicate correction data to the onboard GNSS module.
 
 The Taoglas A.80 L1/L2 GNSS Antenna is used in conjunction with the GNSS module
 to support its exceptional performance. This antenna is a perfect fit for the
 ZED-F9R module because it is specifically made to improve signal reception and
 accuracy for L1/L2 frequencies. Advanced navigation and autonomous
-flying systems depend on high positioning precision and dependability, which is
+flying systems depend on high positioning precision and dependability, which is
 ensured by the synergy between the Taoglas antenna and the GNSS module when
-provinding the GNSS rover module above with RTCM correction data. Even in
+providing the GNSS rover module above with RTCM correction data. Even in
 challenging conditions, this combination offers a reliable way to provide exact
 position tracking and navigation capabilities.
 
@@ -2881,7 +2901,7 @@ telemetry radio—which is essential for transmitting correction data—was plac
 strategically on the outside (Figure:\ref{fig:gnss_rover}).
 
 An essential part of the high-performance GNSS base station module is
-the Taoglas A.80 L1/L2 GNSS Antenna (Figure:\ref{fig:base_station_antenna}). In
+the Taoglas A.80 L1/L2 GNSS Antenna (Figure:\ref{fig:base_station_antenna}). In
 order to ensure that the base station can efficiently support precise
 positioning for the GNSS rover module, this antenna was installed on a tripod to
 secure its position and optimise signal reception
@@ -2893,11 +2913,11 @@ secure its position and optimise signal reception
   \caption{telemetry radio for transmitting correction data}
   \label{fig:telemetry_radio}
 \end{figure}
-The Holybro SiK Telemetry Radio V3 100mW 433MH 915MHz
+The Holybro SiK Telemetry Radio V3 \unit[100]{mW} \unit[433]{MHz}
 (Fig\ref{fig:telemetry_radio}) will be used to transmit the RCTCM data from the
 base station to the on board GNSS module to provide it with the necessary
 correction data mentioned above. This radio is a lightweight and typically
-offers a range of over 300 meters. It's important to ensure that the radio
+offers a range of over \unit[300]{m}. It's important to ensure that the radio
 telemetry is properly configured to communicate with the GNSS module. This
 involves setting up parameters such as frequency, power output, and the
 transmitting of RCTCM data.
@@ -2925,7 +2945,7 @@ messages while disabling others to streamline output. Saving these
 configurations in the module's non volatile memory ensures they are maintained
 through power cycles. When it comes to how updates are made, the SparkFun GPS
 RTK SMA Breakout ZED F9P and SparkFun GPS RTK Dead Reckoning Breakout ZED F9R
-can both handle update rates of, up to 25 Hz. This rapid update frequency is
+can both handle update rates of, up to \unit[25]{Hz}. This rapid update frequency is
 ideal for tasks that demand fast results. The ZED F9R, equipped with built in
 sensors brings advantages for dead reckoning by delivering improved accuracy and
 consistency even in tough conditions.
@@ -2935,15 +2955,15 @@ to set the GNSS modules mode to function as a base station choose the RTK
 correction messages, in this case RTCM3 is used, and specify the output via the
 correct communication port. These adjustments guarantee that the base station
 transmits RTK corrections ensuring efficient and accurate data transmission. In
-order to get the most reliable RTK data from the base station, the 'survey in'
-feature was used. During the Survey-in process, the base station collects GNSS
-data over time, and this data is used to calculate a more reliable and stable
-coordinate estimate of its location. For our particlar use case we wanted the
-base stations position to be as accurate as possible, in order to achieve this
-the minimum duration for the survey and the desired positional accuracy were set
-to 5 minutes and 0.2m, ensuring that the base station's location is determined
-with high confidence before it begins to transmit the  RTK corrections to rover
-unit.
+order to get reliable RTK data from the base station, the `survey in' feature
+was used. During the Survey-in process, the base station collects GNSS data over
+time, and this data is used to calculate a more reliable and stable coordinate
+estimate of its location. For our particlar use case we wanted the base stations
+position to be as accurate as possible, in order to achieve this the minimum
+duration for the survey and the desired positional accuracy were set to 5
+minutes and \unit[0.5]{m}, ensuring that the base station's location is
+determined with high confidence before it begins to transmit the RTK
+corrections to rover unit.
 
 By integrating these functionalities and setups we can attain high levels of
 precision and dependability in our GNSS modules, highlighting U-center as a
@@ -2958,16 +2978,18 @@ vital tool in satellite navigation practices.
 \end{figure}
 The ToF sensor used to measure the altitude of the quadcopter is shown in Figure
 \ref{fig:ToF} is the TR-EVO-60M sensor utilises infrared Time-of-Flight
-technology to detect objects at distances ranging from 0.5 to 60 meters indoors
-and 0.5 to 10-60 meters outdoors. With an impressive update rate of up to 240
-readings per second, it ensures real-time data collection. Accuracy varies from
-±4cm within 14m to 1.5\% beyond 14m, and it provides a minimalistic Field of
-View of approximately 2°. The device requires a 5V DC power supply, with an
-operational current between 90mA to 330mA. Communication is versatile, with USB,
-UART, and I2C options available, and it features a Micro USB connector. Its
-compact dimensions are approximately 29x29x22mm, with a feather-light weight of
-9g for the sensor and an additional 3g for the backboard, totalling 12g. The
-device is also CE certified for eye safety.
+technology to detect objects at distances ranging from \unit[0.5]{m} to
+\unit[60]{m} indoors and \unit[0.5]{m} to \unit[10]{m} - \unit[60]{m} outdoors
+(depending on conditions). With an impressive update rate of up to 240 readings
+per second, it ensures real-time data collection. Accuracy varies from
+\(\pm\)\unit[4]{cm} within \unit[14]{m} to 1.5\% beyond \unit[14]{m}, and it
+provides a minimalistic Field of View of approximately 2°. The device requires a
+\unit[5]{V} DC power supply, with an operational current between \unit[90]{mA}
+to \unit[330]{mA}. Communication is versatile, with USB, UART, and I2C options
+available, and it features a Micro USB connector. Its compact dimensions are
+approximately \(29\times29\times\unit[22]{mm}\), with a light weight of
+\unit[9]{g} for the sensor and an additional \unit[3]{g} for the backboard,
+totalling \unit[12]{g}. The device is also CE certified for eye safety.
 
 \subsection{Barometer}
 \begin{figure}[H]
@@ -2980,12 +3002,13 @@ The BMP180 Digital Barometric Pressure Sensor Module seen in Figure
 \ref{fig:bmp180} is perfect for applications including weather and altitude
 monitoring dues to its compactness, low-power demand and cost effectiveness. It
 ensures efficiency in battery-powered devices with as little as 0.5 microamperes
-at 1Hz. With a precision of up to 0.02 hPa—which translates to an altitude
-detection difference of 17 cm—the sensor offers exceptionally low noise levels.
-Its pressure measuring range is 300 hPa to 1100 hPa, which allows it to track
-altitudes from +9000 metres above sea level to about -500 metres below sea
-level. The module can work between 1.8 and 3.6 volts in the supply voltage range
-and can communicate at up to 3.5 MHz using an I2C interface.
+at \unit[1]{Hz}. With a precision of up to \unit[0.02]{hPa} which translates to
+an altitude detection difference of \unit[17]{cm} the sensor offers
+exceptionally low noise levels. Its pressure measuring range is \unit[300]{hPa}
+to \unit[1100]{hPa}, which allows it to track altitudes from \unit[9000]{m}
+above sea level to about \unit[300]{m} below sea level. The module can work
+between \unit[1.8]{V} and \unit[3.6]{V} in the supply voltage range and can
+communicate at up to \unit[3.5]{MHz} using an I2C interface.
 
 \subsection{Anemometer}
 \begin{figure}[H]
@@ -3000,27 +3023,28 @@ includes an anemometer, The LI-550 TriSonica Mini in
 Figure:\ref{fig:Anemometer}. Real-time wind measurements are essential for the
 aircraft's stability and manoeuvrability, particularly when performing precise
 duties like surveying or search and rescue missions \cite{uav_wilderness_sar}.
-This advanced anemometer, capable of operating within a broad voltage range of 5
-- 32 V and consuming a modest power of 400 mW,ensures reliable performance even
-in the most demanding environments. With its robust design, the anemometer
-remains functional at altitudes up to 5000 meters and within a wide temperature
-range of -20 to 72 °C, making it versatile for various atmospheric conditions.
+This advanced anemometer, capable of operating within a broad voltage range of
+\unit[5]{V} to \unit[32]{V} and consuming a modest power of \unit[400]{mW},ensures
+reliable performance even in the most demanding environments. With its robust
+design, the anemometer remains functional at altitudes up to \unit[5000]{m} and
+within a wide temperature range of -20 to 72 °C, making it versatile for various
+atmospheric conditions.
 
 High-tech instruments called ultrasonic anemometers like the LI-550 TriSonica
 Mini, are used to measure wind directions and speeds very precisely. The system
 uses the differential time of flight of ultrasonic pulses between pairs of
 sensors placed at key angles to function. The device determines wind velocity
 and bearing by computing the variance when wind modifies the speed of these
-pulses, with an accuacy of 0.2m/s.
+pulses, with an accuacy of \unit[0.2]{m/s}.
 
 The device's high-resolution wind direction readings, which span a range of 0 to
 359°, further highlight its remarkable precision in wind speed and direction
 measurements and guarantee accurate navigation corrections. Real-time,
 high-fidelity wind data can be obtained using the anemometer's advanced design,
-which permits a maximum sampling frequency of 40 Hz and ultrasonic frequency
-settings around 60 kHz. The anemometer's lightweight design, weighing only 50–67
-grammes, ensures that its sophisticated features won't negatively affect the
-quadcopter's payload.
+which permits a maximum sampling frequency of \unit[40]{Hz} and ultrasonic
+frequency settings around \unit[60]{KHz}. The anemometer's lightweight design,
+weighing only \unit[50]{g}, ensures that its sophisticated features won't
+negatively affect the quadcopter's payload.
 
 The sensitivity, resolution, and reaction time of the sensor are critical in
 delivering real-time analytics for the quadcopter's navigation system and data
@@ -3256,11 +3280,11 @@ Figure:\ref{fig:Pi_PCB_on_Pi}
 \end{figure}
 The ESP shield is a custom designed PCD for electrical designs on the ESP32
 WROOM board. All of the connections required to link the ESP and IMU via I2C are
-included in the circuit. It additionally allows the ESP to connect to the ESCs
+included in the circuit. It additionally allows the ESP to connect to the ESCs
 and a buzzer. The ESP shield is depicted above in Figure:\ref{fig:Esp_IMU_PCB}.
 
 The ESP, the IMU, and the buzzer can all be accommodated on the board.
-Furthermore, every unassigned pin is now connected to one of three ports; PORT
+Furthermore, every unassigned pin is now connected to one of three ports; PORT
 1, PORT 2, and PORT 3, respectively. Four mounting holes on the board line up
 with the Pi's mounting holes, depicted in Figure:\ref{fig:flightController2}.
 
@@ -3336,14 +3360,14 @@ platform for version control and communication is served by the repository. The
 extensive documentation to help developers understand and contribute to the
 project is available in the repository.  Its methodical arrangement makes it
 simple to navigate through a variety of components, such as control systems,
-Kalman filters, and sensor integration
+Kalman filters, and sensor integration.
 
 My project involvement has also seen me contribute to the veatures of features
 that allowed the interpretation of GNSS data that translates the satellite
 signals into usable location information for the quadcopter. I interpreted barometer
 data that gave the altitude from pressure readings, Kalman filter design. I took
 charge of setting up all sensors in the system paving the way for sensor fusion
-and data amalgamation
+and data amalgamation.
 
 I gave clear explanations and usage guidelines for our Kalman filter, to make
 the system easier to understand and use, setting the ground for further
@@ -3380,16 +3404,16 @@ Once all necessary classes and functions have been defined, the system enters
 its main operating loop. The constant processing of actuator commands and sensor
 readings forms the core of the control system, represented by this loop. At the
 beginning of each iteration, a conditional flag that indicates whether the loop
-should continue is checked. The 'Keep Running Check' looks for unexpected
+should continue is checked. The `Keep Running Check' looks for unexpected
 behaviour or outside orders to halt processes. In order to make sure the
 software can seamlessly exit the loop when necessary, it verifies user inputs
 from the RC and analyses the present state of the system.
 
-The 'kill' and 'save' switches in the RC (Remote Control) class are checked as
+The `kill' and `save' switches in the RC (Remote Control) class are checked as
 part of the flight control logic. In unwanted situations, it enables the user to
 command the system to store flight data records or to stop the entire flight. In
 the event that the quadcopter loses communication with the remote controller or
-is 'killed' above a predetermined height, the software initiates a 'Emergency
+is `killed' above a predetermined height, the software initiates a `Emergency
 Check' to determine whether prompt safety measures are required. These
 measurements are based on real-time sensor data from the Time of Flight sensor.
 To put emergency responses into action, utilise the take emergency measure
@@ -3397,7 +3421,7 @@ function. The likelihood of the quadcopter crashing is decreased by taking
 various actions, such as adjusting the throttle for a controlled landing,
 depending on how serious the issue is.
 
-In addition, the control system carries out a 'Flight Mode Check', in which it
+In addition, the control system carries out a `Flight Mode Check', in which it
 uses the input from the RC class to determine the proper control response, such
 as position control or altitude hold. If the quadcopter is in the proper state ,the
 AltitudeController and PositionController classes are used to calculate the
@@ -3440,14 +3464,14 @@ demanding requirements of aerial operations.
   \label{fig:Sensor_flowchart}
 \end{figure}
 The technical execution of the sensor data processing system begins in the
-initialization phase: it involves configuring global variables and creating a
+initialisation phase: it involves configuring global variables and creating a
 framework for data collecting. The sensor class's are set up in this phase to
 specify the window length for data processing, establish the serial channel and
 baud rate for transmission, and, if necessary, instantiate the median filter and
 data logger. 
 
 The system launches a background thread following the successful completion of
-the initialization step. This is essential to the system's capacity to carry out
+the initialisation step. This is essential to the system's capacity to carry out
 asynchronous operations. The thread's job is to read data from the sensor at all
 times, working autonomously and without interfering with or disrupting the main
 control loop. 
@@ -3471,9 +3495,9 @@ newly acquired data to reduce noise or outliers. When filtering is necessary, ta
 Median Filter analyses the data that has been stored and returns a refined value
 that the system may use.
 
-In the main loop, a 'Keep Running' check determines whether or not the system
+In the main loop, a `Keep Running' check determines whether or not the system
 should keep running. When a user tries to end a flight, such as when they
-activate the "kill" or "save" switches, the code will be broken out of this
+activate the `kill' or `save' switches, the code will be broken out of this
 loop. In the event that the exit condition is satisfied, the system immediately
 saves all of the gathered data in order to prevent data loss. This safeguard
 comes before the organised method of leaving, which includes terminating the
@@ -3520,19 +3544,19 @@ from the GNSS base station we have set up.
 
 Figure:\ref{fig:GNSS_data_no_RTK} shows a terminal output from the python code
 written to summerise the data recorded. From this we can see that the range of
-values of longitude and latitude readings, converted to meters are, 1.887m
-(3.d.p) and  0.708m (3.d.p). Next the overall max and min points on the graph
-are calclulated using Pythagorean theorem showing that the readings span over
-2.015m (3.d.p) accross 59 readings.
+values of longitude and latitude readings, converted to meters are,
+\unit[1.887]{m} (3.d.p) and \unit[0.708]{m} (3.d.p). Next the overall max and
+min points on the graph are calclulated using Pythagorean theorem showing that
+the readings span over \unit[2.015]{m} (3.d.p) accross 59 readings.
 
 In Conclusion, the test results show that,the accuracy of GNSS data is limited
 and are not be suitable for applications that require high precision. The
 variations in data points and observed drift indicate that the GNSS modules
 accuracy fluctuates, potentially affecting its reliability when used in position
-control on the quadcopter. With a dispersion of 2.015 meters across 59 readings
-it is clear that using RTK corrections is essential for getting more accurate
-data. While the GNSS module offers location information it falls short in
-meeting the precision requirements whitch are needed for accurate position
+control on the quadcopter. With a dispersion of \unit[2.015]{m} across 59
+readings it is clear that using RTK corrections is essential for getting more
+accurate data. While the GNSS module offers location information it falls short
+in meeting the precision requirements whitch are needed for accurate position
 control.
 
 
@@ -3563,17 +3587,17 @@ variation in readings, indicating a high level of precision.
 
 Figure:\ref{fig:GNSS_data_no_RTK} shows a terminal output from the python code
 written to summerise the data recorded. From this we can see that the range of
-values of longitude and latitude readings, converted to meters are, 0.148m
-(3.d.p) and  0.118m (3.d.p). Next the overall max and min points on the graph
-are calclulated using Pythagorean theorem showing that the readings span over
-0.189m (3.d.p) accross 32 readings.
+values of longitude and latitude readings, converted to meters are,
+\unit[0.148]{m} (3.d.p) and  \unit[0.118]{m} (3.d.p). Next the overall max and
+min points on the graph are calclulated using Pythagorean theorem showing that
+the readings span over \unit[0.189]{m} (3.d.p) accross 32 readings.
 
 In conclusion the use of RTK corrections has proven vary useful, shocasing
 values of high percision, which is needed for position control on the
-quadcopter. There is little variation in data points with a dispersion of 0.189
-meters across 59 readings, when copared to 2.015 meters in the test above it is
-undeniable the significant enhancement in accuracy achieved through ustalizing
-RTK corrections. 
+quadcopter. There is little variation in data points with a dispersion of
+\unit[0.189]{m} across 59 readings, when copared to \unit[2.015]{m} in the test
+above it is undeniable the significant enhancement in accuracy achieved through
+ustalizing RTK corrections. 
 
 \section{Testing of Kalman filter}
 \subsection{Kalman filter with ToF and GNSS}
@@ -3590,7 +3614,7 @@ RTK corrections.
   \caption{Time of Flight sensor vs sensor fused Kalman filter with GPS and ToF data zoomed}
   \label{fig:Kalman_filter_test_zoomed}
 \end{figure}
-In this test the quadcopter was briefly flown in order to test the kalman filter and how well it filters noisey data when compared to using the ToF sensor by itself.
+In this test the quadcopter was briefly flown in order to test the Kalman filter and how well it filters noisey data when compared to using the ToF sensor by itself.
 
 From Figures:\ref{fig:Kalman_filter_test} and \ref{fig:Kalman_filter_test_zoomed} we can see that the kallman filter does a good job at filtering out the noisey data smoothing out the curve of altitude measurments.
 
@@ -3609,7 +3633,7 @@ This is especially usefull when it comes to flying over uneven terain such as lo
   \label{fig:Kalman_filter_test2_zoomed}
 \end{figure}
 
-In this test the quadcopter was flown manually in order to test the kalman filter, utalising altitude measurments from the ToF, GNSS and barometer sensors through sensor fusion. The results were tested against the an estimation using the ToF sensor only on the same flight.
+In this test the quadcopter was flown manually in order to test the Kalman filter, utalising altitude measurments from the ToF, GNSS and barometer sensors through sensor fusion. The results were tested against the an estimation using the ToF sensor only on the same flight.
 
 As you can see from Figures:\ref{fig:Kalman_filter_test2} and \ref{fig:Kalman_filter_test2_zoomed} the estimated altitude from using all three sensors is much smoother than using the ToF sensor alone. Furthermore you can see that noise is being filtered out of the estamator, which in conclusion may lead to better altitude control below.
 
@@ -3699,7 +3723,7 @@ altitude refferance until it was low enough to land in manual mode. In the graph
 the Green line represents the true altitude from the ToF sensor, the Orange line represents the
 refferance altitude. 
 From the above graph we can see that the quadcopter performes well in a
-controlled osolation around the refferance point of \(\pm10\) centimeters
+controlled osolation around the refferance point of \(\pm\)\unit[10]{cm}
 thought. The quadcopter behavior demonstrated a well tuned PD controller with a
 P gain of 0.5 and a D gain of 0.07, this control proved impressive as it was
 able to follow the refferance altitude down as the trimmer was decrecing,
@@ -3726,12 +3750,12 @@ The graph above (Figure:\ref{fig:Altitude_control_no_movement_Throttle}) depicts
 When analysing the velocity graph in the test (Figure:\ref{fig:Altitude_control_no_movement_Velocity}) it can be seen that the velocity of the quadcopter is emediatly smoothed when altitude control mode has been initalised around the 10 second mark. The velocity of the quadcopter continues to stay smooth until the altitude reffernce is lowered causing some inaccuracy followed by a further conversion velosity as the true altitude gets closer to the refferance altitude.
 
 In conclusion the quadcopter's performance in the altitude control mode, as
-shown in this test, was deemed exceptional. The altitude accuracy of \(\pm10\)
-centimetres from the reference altitude shows that the system is capable of
-exceptional control usiing a PD controller even when the refferance altitude is
-being altered. Hense this test proves the quadcopter to be a good soloution for
-many different aplications of arial control such as, photography, surveying and
-search and rescue. 
+shown in this test, was deemed exceptional. The altitude accuracy of
+\(\pm\)\unit[10]{cm} from the reference altitude shows that the system is
+capable of exceptional control usiing a PD controller even when the refferance
+altitude is being altered. Hense this test proves the quadcopter to be a good
+soloution for many different aplications of arial control such as, photography,
+surveying and search and rescue. 
 
 Furthermore, It could potentially be further improved with additional
 calibration of the P and D values in the controller, this will take further time
@@ -3771,7 +3795,7 @@ true altitude in blue, refferance altitude in orange and estimated altitude in g
 It is crucial to take into account the circumstances and external influences
 that might have affected the recorded outcomes when assessing how well the
 quadcopter's altitude control capability performed. The quadcopter flew with an
-altitude accuracy of about \(\pm30\) centimetres from the reference altitude of
+altitude accuracy of about \(\pm\)\unit[30]{cm} from the reference altitude of
 3.1m, as stated in the test description. This indicates a reasonably stable
 performance while operating in the altitude control mode. This degree of
 accuracy is impressive, especially in light of the difficulties caused by
@@ -3809,30 +3833,30 @@ can cause the controler to osolate between movements. In order to fix this probl
 In light of the operational and environmental difficulties encountered, the
 quadcopter's performance in the altitude control mode, as proven in this test,
 was deemed good. Even if there is still space for development, the altitude
-accuracy of 0.6 metres from the reference altitude shows that the system is
+accuracy of \unit[0.6]{m} from the reference altitude shows that the system is
 capable of handling external elements like wind and movement dynamics. It can be
 further with additional calibration of the P and D values in the controller. The
 altitude control capability will need to be continuously improved and tested in
 a variety of scenarios in order to function more precisely and consistently.
 
-\subsection*{Quadcopter in altitude control mode using kalman filter estimations from all 3 sensors.}
+\subsection*{Quadcopter in altitude control mode using Kalman filter estimations from all 3 sensors.}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{Pictures/Kalman Filter 3 tests/Altitude.png}
-  \caption{Altitude graph when using kalman filter estimations from all 3 sensors.}
+  \caption{Altitude graph when using Kalman filter estimations from all 3 sensors.}
   \label{fig:altitude_3Kf}
 \end{figure}
 
 In this test, the quadcopter was taken off and manouvered between the grass and path in Figure:\ref{fig:Testing_location}. The graph in figure:\ref{fig:ToF_altitude_error} shows an orange line representing the estimated altitude using the GNSS module ToF and barometer sensor. The blue line represents the refferance altitude. 
 
-At 60 seconds the altitude control mode is initialised, here we can see initial big osolations in the altitude estimate as the quadcopter was manouvering over grass where the ground is not level. At 80 seconds the quadcopter flys over the path were the grond is level when comparing to the grass, here you can see a clear conversion on the altitude refferance line. The quadcopter then moves back over the grass area where the accuracy becomes less again, before the trimmer is decreased when over the path, leading to the estimated altitude converging on the refferance again. 
+At \unit[60]{s} the altitude control mode is initialised, here we can see initial big osolations in the altitude estimate as the quadcopter was manouvering over grass where the ground is not level. At \unit[80]{s} the quadcopter flys over the path were the grond is level when comparing to the grass, here you can see a clear conversion on the altitude refferance line. The quadcopter then moves back over the grass area where the accuracy becomes less again, before the trimmer is decreased when over the path, leading to the estimated altitude converging on the refferance again. 
 
-when the quadcopter is on the path it has an accuracy of around \(\pm5\)cm, which is comendable. In contrast when flown over grass the accuracy is around \(\pm25\)cm. This in accuracy when flying over the uneven grass could be mitagated by increasing the variance of the ToF sensor.
+when the quadcopter is on the path it has an accuracy of around \(\pm\)\unit[5]{cm}, which is comendable. In contrast when flown over grass the accuracy is around \(\pm\)\unit[25]{cm}. This in accuracy when flying over the uneven grass could be mitagated by increasing the variance of the ToF sensor.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{Pictures/Kalman Filter 3 tests/Throttle.png}
-  \caption{Throttle percentage graph when using kalman filter estimations from all 3 sensors.}
+  \caption{Throttle percentage graph when using Kalman filter estimations from all 3 sensors.}
   \label{fig:throttle_3Kf}
 \end{figure}
 The graph above \ref{fig:throttle_3Kf} depicts the throttle percentage readings against time. The graphs shows continuously smooth throttle changes when the quadcopter is flying iover a smooth surface. On the other hand there are some osolations when flying over grass causing the throttle in some cases to max out at \(50\%\) when in altitude control mode. The trottle mentains controlled slight corrections when decreasing the refferance altotude, allowing for a smooth landing.
@@ -3840,7 +3864,7 @@ The graph above \ref{fig:throttle_3Kf} depicts the throttle percentage readings 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{Pictures/Kalman Filter 3 tests/Velocity.png}
-  \caption{Velocity graph when using kalman filter estimations from all 3 sensors.}
+  \caption{Velocity graph when using Kalman filter estimations from all 3 sensors.}
   \label{fig:velocity_3Kf}
 \end{figure}
 
@@ -3895,14 +3919,14 @@ for altitude control and a PID controller for position control was most
 applicable. The derived plan from the resurch pathed the way for a quick
 turnaround when it came to simulating the controller. 
 
-Finally, designing simulations for the kalman filter progressed well, this was
+Finally, designing simulations for the Kalman filter progressed well, this was
 due to the fact that extensive documentation was written prior to designing
 these simulations. This documentation layed the groundwork for simulation
 implementation providing great results from the get go meaning that little
 tuning was needed, allowing for a quick turn around. 
 
 \subsection*{Steps outside time constraints}
-The Design of the kalman filter documentation percisted chalanges, taking longer
+The Design of the Kalman filter documentation percisted chalanges, taking longer
 than expected. The complexity of the mathematical modeling required a more
 extensive developmental phase to ensure the filter's accuracy and reliability
 when it came to making simulations and overall implementation. On the otehr hand
@@ -3957,8 +3981,8 @@ outcomes, as seen below,
 \subsubsection*{Objective 1}
 The Projects first objective was to design a Kalman filter to to estimate
 position on all axis using the information from vaiious different sensors. This
-objective was satisfied by my ropust  kalman filter design seen in
-Section:\ref{Altitude_control}. Using Sensor fusion the kalman filter was
+objective was satisfied by my robust  Kalman filter design seen in
+Section:\ref{Altitude_control}. Using Sensor fusion the Kalman filter was
 developed to incorperate information from the GNSS module, Tof sensor and
 barometer. The integration described allowed for centimeter level accuracy in
 altitude control (seen in Section:\ref{altitude_cotrol_tests}), demonstrating
@@ -4026,7 +4050,7 @@ quadcopters overall structure and how it is built wich was useful when writing
 documentation.
 
 \subsubsection*{Objective 4}
-The tests I have conducted on the quadcopter were described in
+The tests I have conducted on the quadcopter were described in
 Section:\ref{tests}, they covered a wide range of topics from loitering control
 tests to the GNSS module's precision. All of the final tests went well, although
 tuning of Proportional-Derivative (PD) controlers proved a lengthy process in
@@ -4034,7 +4058,7 @@ order to get these results.
 
 Moreover, I designed extensive simulations to establisg a baseline for the tests
 that would follow. These simulations mimicked various real-world events,
-allowing us to modify system parameters and anticipate obstacles before actual
+allowing us to modify system parameters and anticipate obstacles before actual
 flight tests, thus dramatically boosting the reliability and performance of the
 quadcopter in its loitering control capabilities.
 
@@ -4076,9 +4100,9 @@ acquired expertise but also emphasises the projects triumph, in developing a
 dependable and effective loitering control on a quadcopter.
 
 \section{Future work}
-If I had more time on this project I would consider making vaious diffent changes and improvements to the quadcopter. In the future the position control algorithm should be installed on the quadcopter. Once this has been completed vaious different features can be developed on top of this foundataion. These would include waypoint integration, allowing the quadocopter to autonomously fly a perdefined 'course', placing lidar sensors around the quadcopter for obstical avoidance, installing a camera with a low latency stream to a screen on the remote, allowing for first person view flights, automated take off and an automated return to home feature on the quadcopter. 
+If I had more time on this project I would consider making vaious diffent changes and improvements to the quadcopter. In the future the position control algorithm should be installed on the quadcopter. Once this has been completed vaious different features can be developed on top of this foundataion. These would include waypoint integration, allowing the quadocopter to autonomously fly a perdefined `course', placing lidar sensors around the quadcopter for obstical avoidance, installing a camera with a low latency stream to a screen on the remote, allowing for first person view flights, automated take off and an automated return to home feature on the quadcopter. 
 
-By implemeting these features on the quadcopter it will put it 'on par' with the current high end quadcopters on market from companies such as 'DJI'.
+By implemeting these features on the quadcopter it will put it `on par' with the current high end quadcopters on market from companies such as `DJI'.
 
 \section{Sustainability}
 Throught this project sustainable development has been constantly considered. The United States Enviournmental Protection Agency defines sustainable manufacturing as 'The creation of manufactured products through economically-sound processes that minimize negative environmental impacts while conserving energy and natural resources.'\cite{sustainability}
@@ -4088,12 +4112,12 @@ This project was built around sustainable practises by 3D printing components wh
 In adition parts were carefully analysed for durability prior to purchase, due to the fact that more durable components will not have to be replaces as often. This will again lead to less \(Co2\) emmissions when having to ship replacement parts. This aligns with the United Nations 9.4th target for sustainable development\cite{un}.
 
 \chapter{Conclusions}
-In conclusion the GNSS base station worked very well in sending RTK corrections to the rover module figures:\ref{fig:GNSS_RTK} and \ref{fig:GNSS_no_RTK} show a distinct improvement when using these corrections, Making the GNSS data accurate to \(\pm9\)centimeters form \(\pm1\)meter
+In conclusion the GNSS base station worked very well in sending RTK corrections to the rover module figures:\ref{fig:GNSS_RTK} and \ref{fig:GNSS_no_RTK} show a distinct improvement when using these corrections, Making the GNSS data accurate to \(\pm\)\unit[9]{cm} form \(\pm\)\unit[1]{m}
 
 The design of a Kalman filter to to estimate
-position on all axis using the information from various different sensors. This objective was satisfied by a ropust  kalman filter design seen in Section:\ref{Altitude_control}. using Sensor fusion the kalman filter was developed to incorperate information from the GNSS module and Tof sensor. The kalman filter Sucessfully filtered out noise as seen in Figure: as well as estimating accurate velocitys.
+position on all axis using the information from various different sensors. This objective was satisfied by a robust Kalman filter design seen in Section:\ref{Altitude_control}. using Sensor fusion the Kalman filter was developed to incorperate information from the GNSS module and Tof sensor. The Kalman filter Sucessfully filtered out noise as seen in Figure: as well as estimating accurate velocitys.
 
-The altitude hold controller worked well when flying both indoors and outdoors with \(\pm10\)centimetes of accuracy indoors and \(\pm30\) outdoors. This is due to the fact that when flying outdoors the ToF sesor was subjected to uneven ground, bad weather conditions and it was also moving around. 
+The altitude hold controller worked well when flying both indoors and outdoors with \(\pm\)\unit[10]{cm} of accuracy indoors and \(\pm\)\unit[30]{cm} outdoors. This is due to the fact that when flying outdoors the ToF sesor was subjected to uneven ground, bad weather conditions and it was also moving around. 
 
 Designing extensive simulations was paramount in successfully completing the project. They provided crutial estamites to the tuning parameters which were needed for implemtation on the quadcopter for testing.
 
